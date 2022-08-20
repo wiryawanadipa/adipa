@@ -1,0 +1,198 @@
+/*
+Theme Name: Wiryawan Adipa Theme
+Author: Wiryawan Adipa
+Author URI: https://wiryawanadipa.com
+Version: 0.1.1
+ */
+
+html {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    background-color: #171717;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+main {
+    background-color: #ffffff;
+    animation: fadeInAnimation ease .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+body.loaded .fadein {
+    opacity: 1;
+}
+
+.navbar-brand {
+    display: flex;
+    padding: 0;
+}
+
+.navbar-brand span {
+    margin: auto .5rem;
+}
+
+.bd-navbar {
+    padding: 1rem 0;
+    background-color: #272727;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.15)
+}
+
+.main-page {
+    background-color: #171717;
+}
+
+.postcard {
+    background-color: #272727;
+}
+
+.stretched-link {
+    text-decoration: none;
+    color: black;
+}
+
+.postcard .row .col-auto img {
+    transition: all .2s linear;
+}
+
+.postcard:hover .row .col-auto img {
+    transform: scale(1.1);
+}
+
+.post-title {
+    padding: 0 1rem;
+}
+
+.wa-post .post-title p {
+    font-size: 1rem !important;
+    line-height: 1.5rem;
+    margin-bottom: 0 !important;
+}
+
+.post-title p span {
+    margin-left: .5rem;
+    margin-right: 1rem;
+}
+
+.wa-post p {
+    font-size: 1.1rem !important;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem !important;
+}
+
+.wa-post-article a {
+    color: #6a5acd;
+    font-weight: 500;
+    padding: 0.1rem .25rem 0.25rem;
+    text-decoration: none;
+}
+
+.wa-post-article a:hover {
+    background-color: #6a5acd;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+
+.wa-post figure img {
+    width: 100%;
+    height: auto;
+}
+
+.wa-post blockquote {
+    background-color: #efefef;
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    border-left: .5rem solid #6a5acd;
+    border-radius: .5rem;
+    margin: 0 1rem 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.wa-post blockquote p {
+    line-height: 1.8rem;
+    margin-bottom: 0 !important;
+}
+
+.wa-post blockquote p:before {
+    font: 1.8rem/1.8rem Georgia, serif;
+    padding: 0 .4rem;
+    content: open-quote;
+}
+
+.wa-post blockquote p:after {
+    font: 1.8rem/1.8rem Georgia, serif;
+    padding: 0 .4rem;
+    content: close-quote;
+}
+
+.wa-post blockquote p:not(:first-child):last-child {
+    color: #7e7e7e !important;
+    font-size: .8rem !important;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    text-align: right;
+}
+
+.wa-post blockquote p:not(:first-child):last-child:before, .wa-post blockquote p:not(:first-child):last-child:after {
+    font: 1rem/1rem Georgia, serif;
+    content: "-";
+}
+
+.youtube {
+    margin-bottom: 1.5rem !important;
+}
+
+.wa-post .hcb_wrap {
+    border-left: .5rem solid #6a5acd;
+    margin-top: 0rem !important;
+    margin-bottom: 1.5rem !important;
+    word-wrap: break-word;
+}
+
+#comments {
+    border-top: 2px dashed #dee2e6;
+    margin: 3rem 0 0px;
+    padding: 2rem;
+}
+
+#wpdcom {
+    margin-bottom: 0;
+    max-width:100%;
+}
+
+#wpdcom .ql-editor{
+    min-height:100px;
+}
+
+.sidebar-list li:hover {
+    background-color: rgba(180,180,180,0.15);
+}
+
+@media (min-width: 768px) {
+    .h-md-250 {
+        height: 250px;
+    }
+}
