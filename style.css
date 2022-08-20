@@ -15,7 +15,6 @@ body {
 }
 
 main {
-    background-color: #ffffff;
     animation: fadeInAnimation ease .5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -61,21 +60,21 @@ body.loaded .fadein {
     background-color: #171717;
 }
 
+.big-article-post-list {
+    color: #fff;
+}
+
 .postcard {
+    background-color: #171717;
+}
+
+.postcard-inside {
     background-color: #272727;
 }
 
 .stretched-link {
     text-decoration: none;
     color: #ffffff;
-}
-
-.postcard .row .col-auto img {
-    transition: all .2s linear;
-}
-
-.postcard:hover .row .col-auto img {
-    transform: scale(1.1);
 }
 
 .post-title {
@@ -189,10 +188,4 @@ body.loaded .fadein {
 
 .sidebar-list li:hover {
     background-color: rgba(180,180,180,0.15);
-}
-
-@media (min-width: 768px) {
-    .h-md-250 {
-        height: 250px;
-    }
 }
