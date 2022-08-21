@@ -12,10 +12,7 @@ html {
 body {
     background-color: #171717;
     font-family: 'Poppins', sans-serif !important;
-}
-
-main {
-    animation: fadeInAnimation ease 1s;
+    animation: fadeInAnimation ease .5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -45,6 +42,11 @@ main {
 .wa-navbar {
     padding: 1rem 0;
     background-color: #272727;
+}
+
+.wa-navbar ul {
+    background-color: #272727;
+    border-color: #272727;
 }
 
 .main-page {
@@ -220,6 +222,10 @@ main {
     margin-top: 0rem !important;
     margin-bottom: 1.5rem !important;
     word-wrap: break-word;
+}
+
+.wa-post .hcb_wrap pre, .wa-post .hcb_wrap code {
+    background-color: #272727 !important;
 }
 
 .sidebar-list li:hover {
