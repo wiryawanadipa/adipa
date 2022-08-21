@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<main class="container-xl py-4 main-page">
-	<div class="container-xl py-xl-5 mb-5 hero">
-		<div class="row">
+<div class="hero">
+	<div class="container-xl py-5">
+		<div class="row py-5">
 			<div class="col-lg-9 p-xl-3">
 				<div class="hero-heading-name">
 					Hi! I'm Wiryawan Adipa.
@@ -15,6 +15,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+<main class="container-xl py-4 main-page">
 	<div class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php include get_template_directory() . '/includes/postcard.php'; ?>

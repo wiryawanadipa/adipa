@@ -134,7 +134,7 @@ add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Add Image Size
-add_image_size('bigthumb', 274, 250, true);
+add_image_size('bigthumb', 384, 350, true);
 
 function figure_tag_img ( $content ) {
     $content = preg_replace(

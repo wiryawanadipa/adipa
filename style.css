@@ -53,6 +53,10 @@ body {
     background-color: #171717;
 }
 
+.hero {
+    background-color: #303030;
+}
+
 .hero-heading-name {
     color: #dedede;
     font-size: 3rem;
@@ -66,6 +70,45 @@ body {
 .hero-photo img {
     width: 192px;
     height: 192px;
+}
+
+.buildzoid-quote {
+    background-color: #303030;
+    color: #dedede;
+}
+
+.buildzoid-quote a {
+    color: #dedede;
+}
+
+.buildzoid-quote blockquote p:before {
+    font: 1.8rem/1.8rem Georgia, serif;
+    padding: 0 .4rem;
+    content: open-quote;
+}
+
+.buildzoid-quote blockquote p:after {
+    font: 1.8rem/1.8rem Georgia, serif;
+    padding: 0 .4rem;
+    content: close-quote;
+}
+
+.buildzoid-quote blockquote p:first-child {
+    font-size: 1.5rem;
+}
+
+.buildzoid-quote blockquote p:not(:first-child):last-child {
+    color: #7e7e7e !important;
+    font-size: .8rem !important;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    text-align: right;
+}
+
+.buildzoid-quote blockquote p:not(:first-child):last-child:before, .buildzoid-quote blockquote p:not(:first-child):last-child:after {
+    font: 1rem/1rem Georgia, serif;
+    content: "-";
 }
 
 .postcard {
