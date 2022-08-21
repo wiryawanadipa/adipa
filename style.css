@@ -230,3 +230,20 @@ main {
     background-color: #272727;
     color: #dedede;
 }
+
+.wa-footer a {
+    color: #dedede;
+    text-decoration: none;
+}
+
+.wa-footer a:hover {
+    text-decoration: underline;
+}
+
+.wa-footer .social {
+    min-height: 42px;
+}
+
+.wa-footer .small-text {
+    font-size: .875rem;
+}

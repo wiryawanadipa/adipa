@@ -50,9 +50,6 @@
 									<?php wp_list_pages('&title_li='); ?>
 								</ul>
 							</li>
-							<li class="nav-item mx-lg-2">
-								<a class="nav-link" href="<?php bloginfo('url'); ?>/about/">About</a>
-							</li>
 						</ul>
 					</div>
 				</div>
