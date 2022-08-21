@@ -29,18 +29,6 @@ main {
     }
 }
 
-.fadein {
-    opacity: 0;
-    -moz-transition: opacity 1.5s;
-    -webkit-transition: opacity 1.5s;
-    -o-transition: opacity 1.5s;
-    transition: opacity 1.5s;
-}
-
-body.loaded .fadein {
-    opacity: 1;
-}
-
 .navbar a {
     color: #dedede;
 }
@@ -73,7 +61,9 @@ body.loaded .fadein {
 }
 
 .postcard h2 {
+    height: 64px;
     line-height: 1;
+    overflow: hidden;
 }
 
 .postcard-image {

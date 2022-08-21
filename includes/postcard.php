@@ -27,7 +27,6 @@
                     <?php the_title() ?>
                 </a>
             </h2>
-            <?php the_excerpt(); ?>
             <span class="d-inline-block text-white">#<?php echo get_the_category()[0]->name; ?></span>
         </div>
     </div>

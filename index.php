@@ -10,7 +10,7 @@
 			Text Right
 		</div>
 	</div>
-	<div class="row" data-masonry='{"percentPosition": true }'>
+	<div class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php include get_template_directory() . '/includes/postcard.php'; ?>
 		<?php endwhile; ?>
