@@ -3,14 +3,14 @@
 	<div class="row big-article-post-list">
 		<div class="col-lg-6 col-md-12">
 			<div class="big-post px-3">
-				welcome
+				Text Left
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-12">
-			welcome
+			Text Right
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" data-masonry='{"percentPosition": true }'>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php include get_template_directory() . '/includes/postcard.php'; ?>
 		<?php endwhile; ?>

@@ -2,7 +2,7 @@
 Theme Name: Wiryawan Adipa Theme
 Author: Wiryawan Adipa
 Author URI: https://wiryawanadipa.com
-Version: 0.2
+Version: 0.3
  */
 
 html {
@@ -15,7 +15,7 @@ body {
 }
 
 main {
-    animation: fadeInAnimation ease .5s;
+    animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -41,6 +41,10 @@ body.loaded .fadein {
     opacity: 1;
 }
 
+.navbar a {
+    color: #dedede;
+}
+
 .navbar-brand {
     display: flex;
     padding: 0;
@@ -61,11 +65,38 @@ body.loaded .fadein {
 }
 
 .big-article-post-list {
-    color: #fff;
+    color: #dedede;
 }
 
 .postcard {
     background-color: #171717;
+}
+
+.postcard h2 {
+    line-height: 1;
+}
+
+.postcard-image {
+    overflow: hidden;
+}
+
+.postcard-image img {
+    width: 100%;
+    height: auto;
+    transition: all .2s linear;
+}
+
+.postcard:hover img {
+    transform: scale(1.1);
+}
+
+.postcard p {
+    color: #dedede;
+}
+
+.postcard a:hover {
+    color: #dedede;
+    text-decoration: underline;
 }
 
 .postcard-inside {
@@ -74,7 +105,7 @@ body.loaded .fadein {
 
 .stretched-link {
     text-decoration: none;
-    color: #ffffff;
+    color: #dedede;
 }
 
 .post-title {
@@ -93,6 +124,7 @@ body.loaded .fadein {
 }
 
 .wa-post p {
+    color: #dedede;
     font-size: 1.1rem !important;
     line-height: 1.75rem;
     margin-bottom: 1.5rem !important;
@@ -108,7 +140,7 @@ body.loaded .fadein {
 .wa-post-article a:hover {
     background-color: #6a5acd;
     border-radius: .25rem;
-    color: #fff;
+    color: #dedede;
 }
 
 

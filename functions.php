@@ -32,7 +32,30 @@ function login_error() {
 }
 add_filter('login_errors', 'login_error');
 
-add_theme_support( 'post-thumbnails' );
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    function easy_add_thumbnail($post) {
+        $already_has_thumb = has_post_thumbnail();
+        $post_type = get_post_type( $post->ID );
+        $exclude_types = array('');
+        $exclude_types = apply_filters( 'eat_exclude_types', $exclude_types );
+        if ( $already_has_thumb ) {
+            return;
+        }
+        if ( ! in_array( $post_type, $exclude_types ) ) {
+            $attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+            if ( $attached_image ) {
+                $attachment_values = array_values( $attached_image );
+                add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );
+            }
+        }
+    }
+    add_action('the_post', 'easy_add_thumbnail');
+    add_action('new_to_publish', 'easy_add_thumbnail');
+    add_action('draft_to_publish', 'easy_add_thumbnail');
+    add_action('pending_to_publish', 'easy_add_thumbnail');
+    add_action('future_to_publish', 'easy_add_thumbnail');
+}
 
 // Remove Admin Bar
 add_filter('show_admin_bar', '__return_false');
@@ -86,7 +109,7 @@ add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Add Image Size
-add_image_size('bigthumb', 200, 250, true);
+add_image_size('bigthumb', 274, 250, true);
 
 function figure_tag_img ( $content ) {
     $content = preg_replace(
@@ -162,6 +185,12 @@ function wp_example_excerpt_length( $length ) {
     return 15;
 }
 add_filter( 'excerpt_length', 'wp_example_excerpt_length');
+
+function replace_content( $content) {
+    $content = str_replace(array( '[&hellip;]', '[...]', '...' ), '', $content);
+    return $content;
+}
+add_filter('the_excerpt','replace_content');
 
 // Page Navigation
 function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pages_to_show = 1, $always_show = false) {
@@ -255,7 +284,7 @@ function theme_op_general() {
 
 function add_home_title() {
 	global $post;
-	$variable = get_option('home_title', '[domain] - [desc]');
+	$variable = get_option('home_title', '[sitename] - [desc]');
 	$shortcode  = array(
 		'[sitename]',
 		'[domain]',

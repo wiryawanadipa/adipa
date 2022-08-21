@@ -1,7 +1,7 @@
-<div class="col-xl-3 card border-0 postcard">
-    <div class="row p-2 g-0 rounded overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
-        <div class="col p-3 d-flex flex-column">
-            <div class="mb-2">
+<div class="col-sm-6 col-lg-4 col-xl-3 pb-4 card border-0 postcard">
+    <div class="row g-0 rounded overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
+        <div class="p-3 d-flex flex-column">
+            <div class="col-12 mb-3 postcard-image">
                 <?php
                 $inc = get_post_thumbnail_id(get_the_id());
                 $images = get_children( array (
@@ -22,13 +22,13 @@
                 ?>
             </div>
             <div class="text-muted"><?php echo get_the_date('F j, Y'); ?></div>
-            <h2>
+            <h2 class="mb-3">
                 <a class="fs-5 stretched-link" href="<?php the_permalink() ?>">
                     <?php the_title() ?>
                 </a>
             </h2>
             <?php the_excerpt(); ?>
-            <span class="d-inline-block mb-2 text-white"><?php echo get_the_category()[0]->name; ?></span>
+            <span class="d-inline-block text-white">#<?php echo get_the_category()[0]->name; ?></span>
         </div>
     </div>
 </div>
