@@ -1,5 +1,5 @@
 <div class="col-sm-6 col-lg-4 col-xl-3 pb-4 card border-0 postcard">
-    <div class="row g-0 rounded overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
+    <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
         <div class="p-3 d-flex flex-column">
             <div class="col-12 mb-3 postcard-image">
                 <?php
@@ -21,13 +21,23 @@
                 endif;
                 ?>
             </div>
-            <div class="text-muted"><?php echo get_the_date('F j, Y'); ?></div>
+            <div class="text-muted postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
             <h2 class="mb-3">
                 <a class="fs-5 stretched-link" href="<?php the_permalink() ?>">
                     <?php the_title() ?>
                 </a>
             </h2>
-            <span class="d-inline-block text-white">#<?php echo get_the_category()[0]->name; ?></span>
+            <?php the_excerpt(); ?>
+            <ul class="row postcard-tag-list">
+                <?php
+                    $categories = get_the_category();
+                    foreach( $categories as $category) {
+                        $category_link = get_category_link( $category->term_id );
+                        $name = $category->name;
+                        echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $category_link . '">' . esc_attr( $name) . '</a></li>';
+                    }
+                ?>
+            </ul>
         </div>
     </div>
 </div>

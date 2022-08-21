@@ -208,7 +208,7 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 			$paged = 1;
 		}
 		if ($max_page > 1 || $always_show) {
-			echo $before.'<nav class="blog-pagination text-center" aria-label="Pagination">';
+			echo $before.'<nav class="blog-pagination text-end" aria-label="Pagination">';
 			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
 				if ($i >= 1 && $i <= $max_page) {
 					if($i == $paged) {

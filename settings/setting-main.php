@@ -18,6 +18,14 @@
 				</tr>
 				<tr>
 					<th>
+						<label>Footer Code</label>
+					</th>
+					<td>
+						<textarea name="footer_code" cols="80" rows="12" placeholder="This code will be placed just right before </body>"><?php echo get_option('footer_code'); ?></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>Responsive Ads Code Horizontal (Change data-ad-format to horizontal)</label>
 					</th>
 					<td>
@@ -38,14 +46,6 @@
 					</th>
 					<td>
 						<textarea name="ads_code_vertical" cols="80" rows="10" placeholder="This ads will be placed in sidebar"><?php echo get_option('ads_code_vertical'); ?></textarea>
-					</td>
-				</tr>
-				<tr>
-					<th>
-						<label>Footer Code</label>
-					</th>
-					<td>
-						<textarea name="footer_code" cols="80" rows="12" placeholder="This code will be placed just right before </body>"><?php echo get_option('footer_code'); ?></textarea>
 					</td>
 				</tr>
 			</table>

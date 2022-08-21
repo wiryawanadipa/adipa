@@ -2,7 +2,7 @@
 Theme Name: Wiryawan Adipa Theme
 Author: Wiryawan Adipa
 Author URI: https://wiryawanadipa.com
-Version: 0.3
+Version: 0.4
  */
 
 html {
@@ -42,42 +42,58 @@ main {
     margin: auto .5rem;
 }
 
-.bd-navbar {
+.wa-navbar {
     padding: 1rem 0;
     background-color: #272727;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.15)
 }
 
 .main-page {
     background-color: #171717;
 }
 
-.big-article-post-list {
+.hero-heading-name {
     color: #dedede;
+    font-size: 3rem;
+}
+
+.hero-heading-text {
+    color: #dedede;
+    font-size: 1.5rem;
+}
+
+.hero-photo img {
+    width: 192px;
+    height: 192px;
 }
 
 .postcard {
     background-color: #171717;
 }
 
-.postcard h2 {
-    height: 64px;
-    line-height: 1;
-    overflow: hidden;
+.postcard-inside {
+    background-color: #272727;
 }
 
-.postcard-image {
-    overflow: hidden;
-}
-
-.postcard-image img {
+.postcard-inside img {
     width: 100%;
     height: auto;
     transition: all .2s linear;
 }
 
-.postcard:hover img {
+.postcard-inside:hover img {
     transform: scale(1.1);
+}
+
+.postcard-date {
+    font-size: .9rem;
+}
+
+.postcard h2 {
+    line-height: 1;
+}
+
+.postcard-image {
+    overflow: hidden;
 }
 
 .postcard p {
@@ -89,8 +105,26 @@ main {
     text-decoration: underline;
 }
 
-.postcard-inside {
-    background-color: #272727;
+.postcard-tag-list, .postcard-tag-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    gap: 8px;
+}
+
+.postcard-tag-list li {
+    z-index: 9999;
+}
+
+.postcard-tag {
+    font-size: .9rem;
+    z-index: 9999;
+}
+
+.postcard-tag:before {
+    content: "#";
+    user-select: none;
 }
 
 .stretched-link {
@@ -210,4 +244,9 @@ main {
 
 .sidebar-list li:hover {
     background-color: rgba(180,180,180,0.15);
+}
+
+.wa-footer {
+    background-color: #272727;
+    color: #dedede;
 }
