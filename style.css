@@ -150,7 +150,7 @@ main {
 .wa-post p {
     color: #dedede;
     font-size: 1.1rem !important;
-    line-height: 1.75rem;
+    line-height: 2rem;
     margin-bottom: 1.5rem !important;
 }
 
@@ -174,13 +174,8 @@ main {
 }
 
 .wa-post blockquote {
-    background-color: #efefef;
-    border-top: 1px solid #dee2e6;
-    border-right: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
-    border-left: .5rem solid #6a5acd;
+    background-color: #272727;
     border-radius: .5rem;
-    margin: 0 1rem 1.5rem;
     padding: 1rem;
     text-align: center;
 }
@@ -225,21 +220,6 @@ main {
     margin-top: 0rem !important;
     margin-bottom: 1.5rem !important;
     word-wrap: break-word;
-}
-
-#comments {
-    border-top: 2px dashed #dee2e6;
-    margin: 3rem 0 0px;
-    padding: 2rem;
-}
-
-#wpdcom {
-    margin-bottom: 0;
-    max-width:100%;
-}
-
-#wpdcom .ql-editor{
-    min-height:100px;
 }
 
 .sidebar-list li:hover {

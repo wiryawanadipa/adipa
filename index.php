@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <main class="container-xl py-4 main-page">
-	<div class="container-xl py-5 mb-5 hero">
+	<div class="container-xl py-xl-5 mb-5 hero">
 		<div class="row">
-			<div class="col-lg-8 p-3">
+			<div class="col-lg-8 p-xl-3">
 				<div class="hero-heading-name">
 					Hi! I'm Wiryawan Adipa.
 				</div>
