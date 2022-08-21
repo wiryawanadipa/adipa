@@ -94,31 +94,31 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
-// get theme version
-function wpmix_get_version() {
+// Get Theme Version
+function style_get_version() {
 	$theme_data = wp_get_theme();
 	return $theme_data->Version;
 }
-$theme_version = wpmix_get_version();
+$theme_version = style_get_version();
 global $theme_version;
 
-// get random number
-function wpmix_get_random() {
+// Get Random Number
+function style_get_random() {
 	$randomizr = '.' . rand(100,9999);
 	return $randomizr;
 }
-$random_number = wpmix_get_random();
+$random_number = style_get_random();
 global $random_number;
 
 // include custom stylesheet
-function wpmix_queue_css() {
+function style_queue_css() {
 	global $theme_version, $random_number;
 	if (!is_admin()) {
-		wp_register_style('custom_styles', get_template_directory_uri() . '/style.css', false, $theme_version . $random_number);
-		wp_enqueue_style('custom_styles');
+		wp_register_style('style', get_template_directory_uri() . '/style.css', false, $theme_version . $random_number);
+		wp_enqueue_style('style');
 	}
 }
-add_action('wp_print_styles', 'wpmix_queue_css');
+add_action('wp_enqueue_scripts', 'style_queue_css');
 
 // Disable Auto Generate Images
 function disable_media($sizes) {
