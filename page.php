@@ -8,16 +8,25 @@
                 <div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(<?php echo $img_link[0]; ?>) no-repeat center / cover; height: 360px;">
                     <header class="w-100 my-auto post-title">
                         <h1><?php the_title(); ?></h1>
-                        <p><i class="fa-solid fa-user"></i><span><?php the_post(); echo get_the_author(); rewind_posts(); ?></span><i class="fa-solid fa-calendar"></i><span><time><?php echo get_the_date(); ?></time></p>
+                        <p>
+                            <i class="fa-solid fa-user"></i><span><?php the_post(); echo get_the_author(); rewind_posts(); ?></span>
+                            <i class="fa-solid fa-calendar-days"></i><span><time><?php echo get_the_date(); ?></time>
+                        </p>
                     </header>
                 </div>
             </div>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php
+            if ( have_posts() ) {
+                while ( have_posts() ) {
+                    the_post(); 
+            ?>
                 <div class="container wa-post-article">
                     <?php the_content(); ?>
                 </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
+            <?php
+                }
+            }
+            ?>
         </article>
 	</div>
 </main>

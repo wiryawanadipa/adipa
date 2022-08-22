@@ -1,18 +1,20 @@
 <?php get_header(); ?>
-<main class="container-xl p-4 my-xl-4 main-page">
+<?php include get_template_directory() . '/includes/hero.php'; ?>
+<main class="container-xl py-4 main-page">
 	<div class="row">
-		<div class="col-xl-9 ps-xl-4 pe-xl-3">
-			<h2 class="mb-4"><?php echo single_cat_title( '', false ); ?></h2>
-			<?php if ( have_posts() ) : ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php include get_template_directory() . '/includes/postcard.php'; ?>
-				<?php endwhile; ?>
-			<?php else : ?>
-				<?php echo '<p>There are no posts!</p>'; ?>
-			<?php endif; ?>
-			<?php pagenavi(); ?>
-		</div>
-        <?php get_sidebar(); ?>
+		<h2 class="mb-4 text-white"><?php echo single_cat_title( '', false ); ?></h2>
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				include get_template_directory() . '/includes/postcard.php';
+			}
+		} else {
+			echo '<p>There are no posts!</p>';
+		}
+		?>
 	</div>
+	<?php pagenavi(); ?>
 </main>
+<?php include get_template_directory() . '/includes/quote.php'; ?>
 <?php get_footer(); ?>

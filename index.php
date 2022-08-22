@@ -1,13 +1,17 @@
 <?php get_header(); ?>
 <?php include get_template_directory() . '/includes/hero.php'; ?>
 <main class="container-xl py-4 main-page">
-	<div class="row">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<?php include get_template_directory() . '/includes/postcard.php'; ?>
-		<?php endwhile; ?>
-		<?php else : ?>
-			<?php echo '<p>There are no posts!</p>'; ?>
-		<?php endif; ?>
+	<div class="row mb-1">
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				include get_template_directory() . '/includes/postcard.php';
+			}
+		} else {
+			echo '<p>There are no posts!</p>';
+		}
+		?>
 	</div>
 	<?php pagenavi(); ?>
 </main>

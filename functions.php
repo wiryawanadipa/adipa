@@ -110,7 +110,7 @@ function style_get_random() {
 $random_number = style_get_random();
 global $random_number;
 
-// include custom stylesheet
+// Include Custom Stylesheet on Head
 function style_queue_css() {
 	global $theme_version, $random_number;
 	if (!is_admin()) {
@@ -233,10 +233,10 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 					if($i == $paged) {
 					}
 					elseif ($i < $paged) {
-						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary me-2" ' . $i . '">Newer</a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary me-2" ' . $i . '"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
 					}
 					else {
-						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary" ' . $i . '">Older</a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary" ' . $i . '">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
 					}
 				}
 			}

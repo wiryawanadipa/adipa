@@ -165,6 +165,12 @@ body {
 .postcard-tag {
     font-size: .9rem;
     z-index: 9999;
+    text-decoration: underline .15em #ffffff !important;
+    transition: text-decoration-color 300ms;
+}
+
+.postcard-tag:hover {
+    text-decoration-color: #6a5acd !important;
 }
 
 .postcard-tag:before {
@@ -192,6 +198,19 @@ body {
     margin-right: 1rem;
 }
 
+.post-title p .post-tag-list {
+    margin: 0 .25rem;
+}
+
+.post-title p .post-tag-list a {
+    text-decoration: underline .15em #ffffff;
+    transition: text-decoration-color 300ms;
+}
+
+.post-title p .post-tag-list a:hover {
+    text-decoration-color: #6a5acd;
+}
+
 .wa-post p {
     color: #dedede;
     font-size: 1.1rem !important;
@@ -200,18 +219,15 @@ body {
 }
 
 .wa-post-article a {
-    color: #6a5acd;
+    color: #ffffff;
     font-weight: 500;
-    padding: 0.1rem .25rem 0.25rem;
-    text-decoration: none;
+    text-decoration: underline .15em #ffffff;
+    transition: text-decoration-color 300ms;
 }
 
 .wa-post-article a:hover {
-    background-color: #6a5acd;
-    border-radius: .25rem;
-    color: #dedede;
+    text-decoration-color: #6a5acd;
 }
-
 
 .wa-post figure img {
     width: 100%;
