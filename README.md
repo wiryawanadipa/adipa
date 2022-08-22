@@ -1,1 +1,1 @@
-This is my personal project for my personal blog
+This theme is my personal project for my personal blog, feel free to use this wordpress theme for any purpose.
