@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-xl-4 pb-4 card border-0 postcard">
+<div class="col-sm-6 col-xl-4 pb-2 pb-sm-3 pb-md-4 card border-0 postcard">
     <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
         <div class="p-3 d-flex flex-column">
             <div class="col-12 mb-3 postcard-image">

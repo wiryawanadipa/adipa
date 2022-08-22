@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php include get_template_directory() . '/includes/hero.php'; ?>
-<main class="container-xl py-4 main-page">
-	<div class="row">
+<main class="container-xl px-2 py-4 main-page">
+	<div class="row mb-1">
 		<h2 class="mb-4 text-white"><?php echo single_cat_title( '', false ); ?></h2>
 		<?php
 		if ( have_posts() ) {

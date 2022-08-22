@@ -7,10 +7,11 @@ Version: 0.5
 
 :root {
     --main-color: #f79f00;
-    --text-normal-color: #dedede;
     --first-bg-color: #171717;
     --second-bg-color: #272727;
     --third-bg-color: #303030;
+    --text-normal-color: #dedede;
+    --text-muted-color: #6c757d;
 }
 
 html {
@@ -209,8 +210,25 @@ body {
     color: var(--text-normal-color);
 }
 
+.btn-primary {
+    color: var(nor);
+    background-color: var(--third-bg-color);
+    border-color: var(--third-bg-color);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    color: var(--main-color);
+    background-color: var(--second-bg-color);
+    border-color: var(--second-bg-color);
+    box-shadow: none;
+}
+
 .post-title {
     padding: 0 1rem;
+}
+
+.post-title h1 {
+    margin-bottom: 1rem;
 }
 
 .wa-post .post-title p {
@@ -244,6 +262,32 @@ body {
     margin-bottom: 1.5rem !important;
 }
 
+.wa-post-article {
+    color: var(--text-normal-color);
+}
+
+.wa-post-article h2,
+.wa-post-article h3,
+.wa-post-article h4,
+.wa-post-article h5,
+.wa-post-article h6,
+.wa-post-article pre {
+    color: var(--text-normal-color);
+    margin-bottom: 1.5rem;
+}
+
+.wa-post-article pre {
+    font-size: 1.1rem;
+}
+
+.wa-post-article ol, .wa-post-article ul {
+    font-size: 1.1rem;
+}
+
+.wa-post-article ol li, .wa-post-article ul li {
+    color: var(--text-normal-color);
+}
+
 .wa-post-article a {
     color: var(--text-normal-color);
     font-weight: 500;
@@ -263,6 +307,7 @@ body {
 .wa-post blockquote {
     background-color: var(--second-bg-color);
     border-radius: .5rem;
+    margin-bottom: 1.5rem;
     padding: 1rem;
     text-align: center;
 }
@@ -285,7 +330,7 @@ body {
 }
 
 .wa-post blockquote p:not(:first-child):last-child {
-    color: #7e7e7e !important;
+    color: var(--text-muted-color) !important;
     font-size: .8rem !important;
     font-style: italic;
     font-weight: 500;
@@ -339,4 +384,12 @@ body {
 
 .wa-footer .small-text {
     font-size: .875rem;
+}
+
+.theme-version {
+    transition: text-decoration-color 300ms;
+}
+
+.theme-version:hover {
+    text-decoration: underline .1em var(--main-color) !important;
 }
