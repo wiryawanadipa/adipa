@@ -1,10 +1,10 @@
 <div class="wrap">
 	<h2 style="padding:10px;background:#006080;color:#fff;border-radius:5px;margin-bottom:10px;">General</h2>
-	<?php if( isset( $_GET['settings-updated'] ) ) { ?>
-		<div style="margin: 10px 0" class="updated">
+	<?php if( isset( $_GET['settings-updated'] ) ) : ?>
+		<div style="margin: 10px 0;" class="updated">
 			<p>Settings updated</p>
 		</div>
-	<?php } ?>
+	<?php endif; ?>
 	<div style="background: #fff; border-radius: 3px; padding: 5px 15px 10px; margin-top: 5px; box-shadow: 0 0 2px rgba(0,0,0,.15);">
 		<form method="post" action="options.php">
 			<table class="form-table">
