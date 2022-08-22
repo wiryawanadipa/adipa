@@ -5,12 +5,20 @@ Author URI: https://wiryawanadipa.com
 Version: 0.5
  */
 
+:root {
+    --main-color: #f79f00;
+    --text-normal-color: #dedede;
+    --first-bg-color: #171717;
+    --second-bg-color: #272727;
+    --third-bg-color: #303030;
+}
+
 html {
     font-family: 'Poppins', sans-serif !important;
 }
 
 body {
-    background-color: #171717;
+    background-color: var(--first-bg-color);
     font-family: 'Poppins', sans-serif !important;
     animation: fadeInAnimation ease .5s;
     animation-iteration-count: 1;
@@ -26,10 +34,7 @@ body {
     }
 }
 
-.navbar a {
-    color: #dedede;
-}
-
+/* Navigation Bar */
 .navbar-brand {
     display: flex;
     padding: 0;
@@ -41,29 +46,42 @@ body {
 
 .wa-navbar {
     padding: 1rem 0;
-    background-color: #272727;
+    background-color: var(--second-bg-color);
+}
+
+.wa-navbar a, .wa-navbar a:focus {
+    color: var(--text-normal-color);
+}
+
+.wa-navbar a:hover{
+    color: var(--main-color);
 }
 
 .wa-navbar ul {
-    background-color: #272727;
-    border-color: #272727;
+    background-color: var(--second-bg-color);
+    border-color: var(--second-bg-color);
 }
 
+.dropdown-item:focus, .dropdown-item:hover, .dropdown-item:active {
+    background-color: var(--second-bg-color);
+}
+
+/* Main */
 .main-page {
-    background-color: #171717;
+    background-color: var(--first-bg-color);
 }
 
 .hero {
-    background-color: #303030;
+    background-color: var(--third-bg-color);
 }
 
 .hero-heading-name {
-    color: #dedede;
+    color: var(--text-normal-color);
     font-size: 3rem;
 }
 
 .hero-heading-text {
-    color: #dedede;
+    color: var(--text-normal-color);
     font-size: 1.5rem;
 }
 
@@ -73,12 +91,17 @@ body {
 }
 
 .buildzoid-quote {
-    background-color: #303030;
-    color: #dedede;
+    background-color: var(--third-bg-color);
+    color: var(--text-normal-color);
 }
 
 .buildzoid-quote a {
-    color: #dedede;
+    color: var(--text-normal-color);
+    transition: text-decoration-color 300ms;
+}
+
+.buildzoid-quote a:hover {
+    text-decoration: underline .15em var(--main-color) !important;
 }
 
 .buildzoid-quote blockquote p:before {
@@ -98,7 +121,6 @@ body {
 }
 
 .buildzoid-quote blockquote p:not(:first-child):last-child {
-    color: #7e7e7e !important;
     font-size: .8rem !important;
     font-style: italic;
     font-weight: 500;
@@ -112,11 +134,11 @@ body {
 }
 
 .postcard {
-    background-color: #171717;
+    background-color: var(--first-bg-color);
 }
 
 .postcard-inside {
-    background-color: #272727;
+    background-color: var(--second-bg-color);
 }
 
 .postcard-inside img {
@@ -142,12 +164,16 @@ body {
 }
 
 .postcard p {
-    color: #dedede;
+    color: var(--text-normal-color);
+}
+
+.postcard a {
+    transition: text-decoration-color 300ms;
 }
 
 .postcard a:hover {
-    color: #dedede;
-    text-decoration: underline;
+    color: var(--text-normal-color);
+    text-decoration: underline .15em var(--main-color) !important;
 }
 
 .postcard-tag-list, .postcard-tag-list li {
@@ -165,12 +191,12 @@ body {
 .postcard-tag {
     font-size: .9rem;
     z-index: 9999;
-    text-decoration: underline .15em #ffffff !important;
+    text-decoration: underline .15em var(--text-normal-color) !important;
     transition: text-decoration-color 300ms;
 }
 
 .postcard-tag:hover {
-    text-decoration-color: #6a5acd !important;
+    text-decoration-color: var(--main-color) !important;
 }
 
 .postcard-tag:before {
@@ -180,7 +206,7 @@ body {
 
 .stretched-link {
     text-decoration: none;
-    color: #dedede;
+    color: var(--text-normal-color);
 }
 
 .post-title {
@@ -203,30 +229,30 @@ body {
 }
 
 .post-title p .post-tag-list a {
-    text-decoration: underline .15em #ffffff;
+    text-decoration: underline .15em var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
 .post-title p .post-tag-list a:hover {
-    text-decoration-color: #6a5acd;
+    text-decoration-color: var(--main-color);
 }
 
 .wa-post p {
-    color: #dedede;
+    color: var(--text-normal-color);
     font-size: 1.1rem !important;
     line-height: 2rem;
     margin-bottom: 1.5rem !important;
 }
 
 .wa-post-article a {
-    color: #ffffff;
+    color: var(--text-normal-color);
     font-weight: 500;
-    text-decoration: underline .15em #ffffff;
+    text-decoration: underline .15em var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
 .wa-post-article a:hover {
-    text-decoration-color: #6a5acd;
+    text-decoration-color: var(--main-color);
 }
 
 .wa-post figure img {
@@ -235,7 +261,7 @@ body {
 }
 
 .wa-post blockquote {
-    background-color: #272727;
+    background-color: var(--second-bg-color);
     border-radius: .5rem;
     padding: 1rem;
     text-align: center;
@@ -277,27 +303,25 @@ body {
 }
 
 .wa-post .hcb_wrap {
-    border-left: .5rem solid #6a5acd;
+    border-left: .5rem solid var(--main-color);
     margin-top: 0rem !important;
     margin-bottom: 1.5rem !important;
     word-wrap: break-word;
 }
 
 .wa-post .hcb_wrap pre, .wa-post .hcb_wrap code {
-    background-color: #272727 !important;
+    background-color: var(--second-bg-color) !important;
 }
 
-.sidebar-list li:hover {
-    background-color: rgba(180,180,180,0.15);
-}
+/* Footer */
 
 .wa-footer {
-    background-color: #272727;
-    color: #dedede;
+    background-color: var(--second-bg-color);
+    color: var(--text-normal-color);
 }
 
 .wa-footer a {
-    color: #dedede;
+    color: var(--text-normal-color);
     text-decoration: none;
 }
 
@@ -307,6 +331,10 @@ body {
 
 .wa-footer .social {
     min-height: 42px;
+}
+
+.wa-footer i:hover {
+    color: var(--main-color);
 }
 
 .wa-footer .small-text {

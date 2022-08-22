@@ -1,7 +1,7 @@
         <div class="wa-footer">
             <div class="container-xl py-5 wa-footer">
                 <div class="row">
-                    <div class="col-12 col-lg-6 fs-1 mb-3 mb-sm-0 text-center text-sm-start">Thanks for visiting! <i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="col-12 col-lg-6 fs-1 mb-3 mb-sm-0 text-center text-sm-start">Thanks for visiting!</div>
                     <div class="col-12 col-lg-6 fs-5 d-flex mb-3 mb-sm-0 align-content-center justify-content-center justify-content-sm-end flex-wrap social">
                         <a rel="nofollow" class="mx-sm-1 p-1" href="https://twitter.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-twitter fa-2x"></i></a>
                         <a rel="nofollow" class="mx-sm-1 p-1" href="https://www.youtube.com/channel/UCpP1g9Vcl33ucu5mO2vr-5Q" target="_blank"><i class="fa-brands fa-youtube fa-2x"></i></a>
@@ -9,7 +9,7 @@
                         <a rel="nofollow" class="mx-sm-1 p-1" href="https://www.linkedin.com/in/wiryawanadipa/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
                         <a rel="nofollow" class="mx-sm-1 p-1" href="https://medium.com/@wiryawanadipa" target="_blank"><i class="fa-brands fa-medium fa-2x"></i></a>
                     </div>
-                    <div class="col-12 col-lg-6 small-text  text-center text-sm-start"><i class="fa-solid fa-copyright"></i> 2017-<?php echo date( 'Y' ); ?>, <?php bloginfo( 'name' ); ?></div>
+                    <div class="col-12 col-lg-6 mb-1 small-text text-center text-sm-start"><i class="fa-solid fa-copyright"></i> 2017-<?php echo date( 'Y' ); ?>, <?php bloginfo( 'name' ); ?></div>
                     <div class="col-12 col-lg-6"></div>
                     <div class="col-12 col-lg-6 small-text text-muted  text-center text-sm-start"><i class="fa-brands fa-html5"></i> Theme by Wiryawan Adipa v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></div>
                 </div>
