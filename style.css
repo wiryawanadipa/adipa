@@ -21,14 +21,15 @@ html {
 body {
     background-color: var(--first-bg-color);
     font-family: 'Poppins', sans-serif !important;
-    animation: fadeInAnimation ease .5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    -webkit-animation: webkit-mainbody .5s 1 linear; 
+    -moz-animation: moz-mainbody .5s 1 linear;
+    -o-animation: o-mainbody .5s 1 linear;
+    animation: mainbody .5s 1 linear;
 }
 
-@keyframes fadeInAnimation {
+@keyframes mainbody {
     0% {
-        opacity: 0.5;
+        opacity: .7;
     }
     100% {
         opacity: 1;
@@ -84,44 +85,65 @@ body {
 .hero-heading-text {
     color: var(--text-normal-color);
     font-size: 1.5rem;
+    overflow: hidden;
 }
 
 .hero-photo img {
     width: 192px;
     height: 192px;
+    -webkit-animation: webkit-heroimage .7s 1 linear; 
+    -moz-animation: moz-heroimage .7s 1 linear;
+    -o-animation: o-heroimage .7s 1 linear;
+    animation: heroimage .7s 1 linear;
 }
 
-.buildzoid-quote {
+@keyframes heroimage {
+    0% {
+        width: 192px;
+        height: 192px;
+    }
+    50% {
+        width: 212px;
+        height: 212px;
+    }
+    100% {
+        width: 192px;
+        height: 192px;
+    }
+}
+
+.home-quote {
     background-color: var(--third-bg-color);
     color: var(--text-normal-color);
 }
 
-.buildzoid-quote a {
+.home-quote a {
     color: var(--text-normal-color);
+    text-decoration: underline .2rem;
     transition: text-decoration-color 300ms;
 }
 
-.buildzoid-quote a:hover {
-    text-decoration: underline .15em var(--main-color) !important;
+.home-quote a:hover {
+    text-decoration: underline .2rem var(--main-color) !important;
 }
 
-.buildzoid-quote blockquote p:before {
+.home-quote blockquote p:before {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: open-quote;
 }
 
-.buildzoid-quote blockquote p:after {
+.home-quote blockquote p:after {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: close-quote;
 }
 
-.buildzoid-quote blockquote p:first-child {
+.home-quote blockquote p:first-child {
     font-size: 1.5rem;
 }
 
-.buildzoid-quote blockquote p:not(:first-child):last-child {
+.home-quote blockquote p:not(:first-child):last-child {
     font-size: .8rem !important;
     font-style: italic;
     font-weight: 500;
@@ -129,7 +151,7 @@ body {
     text-align: right;
 }
 
-.buildzoid-quote blockquote p:not(:first-child):last-child:before, .buildzoid-quote blockquote p:not(:first-child):last-child:after {
+.home-quote blockquote p:not(:first-child):last-child:before, .home-quote blockquote p:not(:first-child):last-child:after {
     font: 1rem/1rem Georgia, serif;
     content: "-";
 }
@@ -174,7 +196,7 @@ body {
 
 .postcard a:hover {
     color: var(--text-normal-color);
-    text-decoration: underline .15em var(--main-color) !important;
+    text-decoration: underline .2rem var(--main-color) !important;
 }
 
 .postcard-tag-list, .postcard-tag-list li {
@@ -192,7 +214,7 @@ body {
 .postcard-tag {
     font-size: .9rem;
     z-index: 9999;
-    text-decoration: underline .15em var(--text-normal-color) !important;
+    text-decoration: underline .2rem var(--text-normal-color) !important;
     transition: text-decoration-color 300ms;
 }
 
@@ -211,7 +233,7 @@ body {
 }
 
 .btn-primary {
-    color: var(nor);
+    color: var(--text-normal-color);
     background-color: var(--third-bg-color);
     border-color: var(--third-bg-color);
 }
@@ -220,7 +242,7 @@ body {
     color: var(--main-color);
     background-color: var(--second-bg-color);
     border-color: var(--second-bg-color);
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .post-title {
@@ -247,7 +269,7 @@ body {
 }
 
 .post-title p .post-tag-list a {
-    text-decoration: underline .15em var(--text-normal-color);
+    text-decoration: underline .2rem var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
@@ -257,31 +279,39 @@ body {
 
 .wa-post p {
     color: var(--text-normal-color);
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
     line-height: 2rem;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .wa-post-article {
     color: var(--text-normal-color);
 }
 
+.wa-post-article p {
+    margin: 0 auto 2rem;
+    max-width: 900px;
+}
+
 .wa-post-article h2,
 .wa-post-article h3,
 .wa-post-article h4,
 .wa-post-article h5,
-.wa-post-article h6,
-.wa-post-article pre {
+.wa-post-article h6 {
     color: var(--text-normal-color);
-    margin-bottom: 1.5rem;
+    margin: 0 auto 2rem;
+    max-width: 900px;
 }
 
 .wa-post-article pre {
-    font-size: 1.1rem;
+    color: var(--text-normal-color);
+    font-size: 1.1rem !important;
 }
 
 .wa-post-article ol, .wa-post-article ul {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin: 0 auto 2rem;
+    max-width: 900px;
 }
 
 .wa-post-article ol li, .wa-post-article ul li {
@@ -291,12 +321,16 @@ body {
 .wa-post-article a {
     color: var(--text-normal-color);
     font-weight: 500;
-    text-decoration: underline .15em var(--text-normal-color);
+    text-decoration: underline .2rem var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
 .wa-post-article a:hover {
     text-decoration-color: var(--main-color);
+}
+
+.wa-post figure {
+    margin-bottom: 2rem;
 }
 
 .wa-post figure img {
@@ -307,7 +341,7 @@ body {
 .wa-post blockquote {
     background-color: var(--second-bg-color);
     border-radius: .5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     text-align: center;
 }
@@ -315,6 +349,7 @@ body {
 .wa-post blockquote p {
     line-height: 1.8rem;
     margin-bottom: 0 !important;
+    max-width: 100%;
 }
 
 .wa-post blockquote p:before {
@@ -344,18 +379,33 @@ body {
 }
 
 .youtube {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .wa-post .hcb_wrap {
     border-left: .5rem solid var(--main-color);
     margin-top: 0rem !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem !important;
     word-wrap: break-word;
+}
+
+.hcb_wrap .hcb-clipboard {
+    background-color: var(--main-color) !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.hcb_wrap .hcb-clipboard.-done:before {
+    color: var(--text-normal-color);
+    font-size: 1.1rem !important;
 }
 
 .wa-post .hcb_wrap pre, .wa-post .hcb_wrap code {
     background-color: var(--second-bg-color) !important;
+}
+
+.wa-post .hcb_wrap pre {
+    padding: 2.75rem !important;
 }
 
 /* Footer */
@@ -391,5 +441,5 @@ body {
 }
 
 .theme-version:hover {
-    text-decoration: underline .1em var(--main-color) !important;
+    text-decoration: underline .1rem var(--main-color) !important;
 }

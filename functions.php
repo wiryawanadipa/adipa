@@ -134,7 +134,7 @@ add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Add Image Size
-add_image_size('bigthumb', 384, 350, true);
+add_image_size('bigthumb', 416, 260, true);
 
 function figure_tag_img ( $content ) {
     $content = preg_replace(
@@ -257,6 +257,13 @@ function show_options() {
 	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
 }
 add_action('admin_menu', 'show_options');
+
+// Shortcodes
+// Youtube Shortcode
+function youtube_link( $atts, $content = null ) {
+	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+}
+add_shortcode( 'youtube', 'youtube_link' );
 
 // Custom Theme Settings
 function theme_options_panel() {

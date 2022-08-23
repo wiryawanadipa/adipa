@@ -10,7 +10,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4 d-none d-lg-block position-relative hero-photo">
-				<img class="position-absolute top-50 start-50 translate-middle rounded-circle" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png" alt="">
+				<img class="position-absolute top-50 start-50 translate-middle rounded-circle" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png" alt="wiryawan adipa logo big">
 			</div>
 		</div>
 	</div>
