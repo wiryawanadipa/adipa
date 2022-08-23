@@ -51,11 +51,16 @@ body {
     background-color: var(--second-bg-color);
 }
 
+.navbar-toggler:focus {
+    color: var(--main-color);
+}
+
 .wa-navbar a, .wa-navbar a:focus {
+    border-radius: .5rem;
     color: var(--text-normal-color);
 }
 
-.wa-navbar a:hover{
+.wa-navbar a:hover, .wa-navbar a:active {
     color: var(--main-color);
     background-color: var(--third-bg-color);
 }

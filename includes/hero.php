@@ -2,10 +2,10 @@
 	<div class="container-xl py-0 py-sm-5">
 		<div class="row py-5 py-sm-5">
 			<div class="col-lg-8 p-xl-3">
-				<div class="hero-heading-name">
+				<div class="hero-heading-name pb-5 text-center text-sm-start">
 					Hi! I'm Wiryawan Adipa.
 				</div>
-				<div class="hero-heading-text">
+				<div class="hero-heading-text text-center text-sm-start">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, modi dicta molestias eveniet, perspiciatis neque incidunt eaque dolore ratione, deleniti illo? Sunt, non. Ab atque facere, veniam error itaque enim.
 				</div>
 			</div>

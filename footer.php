@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-12 col-lg-6 mb-1 small-text text-center text-sm-start"><i class="fa-solid fa-copyright"></i> 2017-<?php echo date( 'Y' ); ?>, <?php bloginfo( 'name' ); ?></div>
                     <div class="col-12 col-lg-6"></div>
-                    <div class="col-12 col-lg-6 small-text text-muted text-center text-sm-start"><i class="fa-brands fa-html5"></i> <a class="small-text text-muted theme-version" rel="nofollow" href="https://github.com/wiryawanadipa" target="_blank">Theme by Wiryawan Adipa v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a></div>
+                    <div class="col-12 col-lg-6 small-text text-muted text-center text-sm-start"><i class="fa-brands fa-html5"></i> <a class="small-text text-muted theme-version" rel="nofollow" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a></div>
                 </div>
             </div>
         </div>
