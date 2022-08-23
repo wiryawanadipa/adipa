@@ -1,5 +1,5 @@
 <?php
-// Auto Theme Setting Upon Activation
+// Auto theme setting upon activation
 if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'posts_per_page', 10 );
 	update_option( 'thumbnail_size_w', 0 );
@@ -11,22 +11,28 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'medium_large_size_h', '0');
 	update_option( 'large_size_w', 0 );
 	update_option( 'large_size_h', 0 );
+	update_option( 'require_name_email', 1 );
+	update_option( 'comment_registration', 1 );
 	update_option( 'default_pingback_flag', 0 );
 	update_option( 'default_comment_status', 'closed' );
 	update_option( 'default_ping_status', 'closed' );
+	update_option( 'comments_notify', 0 );
+	update_option( 'moderation_notify', 0 );
+	update_option( 'comment_moderation', 1 );
+	update_option( 'comment_whitelist', 1 );
 	update_option( 'show_avatars', 0 );
 	update_option( 'permalink_structure', '/%postname%/' );
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
 }
 
-// Stop Wordpress Heartbeat
+// Stop wordpress heartbeat
 function stop_heartbeat() {
 	wp_deregister_script('heartbeat');
 }
 add_action('init', 'stop_heartbeat', 1);
 
-// Show Fake Login Error
+// Show fake login error
 function login_error() {
 	return '<center>Your IP is blocked</center>';
 }
@@ -57,10 +63,10 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_action('future_to_publish', 'easy_add_thumbnail');
 }
 
-// Remove Admin Bar
+// Remove admin bar
 add_filter('show_admin_bar', '__return_false');
 
-// Remove Unnecessary HTML tag
+// Remove unnecessary HTML tag
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'rsd_link');
@@ -94,7 +100,7 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
-// Get Theme Version
+// Get theme version
 function style_get_version() {
 	$theme_data = wp_get_theme();
 	return $theme_data->Version;
@@ -102,7 +108,7 @@ function style_get_version() {
 $theme_version = style_get_version();
 global $theme_version;
 
-// Get Random Number
+// Get random number
 function style_get_random() {
 	$randomizr = '.' . rand(100,9999);
 	return $randomizr;
@@ -110,7 +116,7 @@ function style_get_random() {
 $random_number = style_get_random();
 global $random_number;
 
-// Include Custom Stylesheet on Head
+// Include custom stylesheet on head
 function style_queue_css() {
 	global $theme_version, $random_number;
 	if (!is_admin()) {
@@ -120,7 +126,7 @@ function style_queue_css() {
 }
 add_action('wp_enqueue_scripts', 'style_queue_css');
 
-// Disable Auto Generate Images
+// Disable Wordpress auto generated images
 function disable_media($sizes) {
 	unset($sizes['thumbnail']);
 	unset($sizes['medium']);
@@ -133,9 +139,10 @@ function disable_media($sizes) {
 add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter( 'big_image_size_threshold', '__return_false' );
 
-// Add Image Size
+// Add image size
 add_image_size('bigthumb', 416, 260, true);
 
+// Add <figure> tag on <img>
 function figure_tag_img ( $content ) {
     $content = preg_replace(
         '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
@@ -146,7 +153,7 @@ function figure_tag_img ( $content ) {
 }
 add_filter( 'the_content', 'figure_tag_img', 99 );
 
-// Fix Search Function
+// Fix search function
 if (!is_user_logged_in() || !is_admin()) {
 	function search_filter( $query ) {
 		if ($query->is_search) {
@@ -157,7 +164,7 @@ if (!is_user_logged_in() || !is_admin()) {
 	add_filter('pre_get_posts', 'search_filter');
 }
 
-// Disable Wordpress Auto Guessing
+// Disable wordpress auto guessing url
 function stop_guessing($url) {
 	if (is_404()) {
 		return false;
@@ -166,7 +173,7 @@ function stop_guessing($url) {
 }
 add_filter('redirect_canonical','stop_guessing');
 
-// Clean Category List
+// Clean category list
 function categories_clean($wp_list_categories) {
 	$pattern = array(
 		'/\<li class="cat-item cat-item[^>]*><a /'
@@ -178,7 +185,7 @@ function categories_clean($wp_list_categories) {
 }
 add_filter('wp_list_categories','categories_clean');
 
-// Clean Page List
+// Clean page list
 function pages_clean($wp_list_pages) {
 	$pattern = array(
 		'/\<li class="page_item[^>]*><a /'
@@ -190,19 +197,20 @@ function pages_clean($wp_list_pages) {
 }
 add_filter('wp_list_pages','pages_clean');
 
-// Limit The Excerpt Length
+// Limit the excerpt length
 function wp_example_excerpt_length( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'wp_example_excerpt_length');
 
+// Remove dots on the_excerpt
 function replace_content( $content) {
     $content = str_replace(array( '[&hellip;]', '[...]', '...' ), '', $content);
     return $content;
 }
 add_filter('the_excerpt','replace_content');
 
-// Page Navigation
+// Page navigation
 function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pages_to_show = 1, $always_show = false) {
 	global $request, $wpdb, $posts_per_page, $paged;
 	if (!is_single()) {
@@ -249,14 +257,13 @@ function show_options() {
 }
 add_action('admin_menu', 'show_options');
 
-// Shortcodes
-// Youtube Shortcode
+// Youtube shortcode
 function youtube_link( $atts, $content = null ) {
 	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
 }
 add_shortcode( 'youtube', 'youtube_link' );
 
-// Custom Theme Settings
+// Custom theme settings
 function theme_options_panel() {
 	add_menu_page(
 		'Wiryawan Adipa Theme Options',
