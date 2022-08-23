@@ -2,7 +2,7 @@
 Theme Name: Wiryawan Adipa Theme
 Author: Wiryawan Adipa
 Author URI: https://wiryawanadipa.com
-Version: 0.7.0
+Version: 0.7.2
  */
 
 :root {
@@ -12,6 +12,18 @@ Version: 0.7.0
     --third-bg-color: #212121;
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--second-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
 }
 
 html {
