@@ -29,13 +29,13 @@
 					<div class="collapse navbar-collapse mt-1 mt-sm-0" id="navbarSupportedContent">
 						<ul class="navbar-nav ms-auto mb-2 mb-sm-0 me-sm-2 mt-3 mt-sm-0">
 							<li class="nav-item mx-lg-2">
-								<a class="nav-link py-3 py-sm-2" href="<?php bloginfo('url'); ?>">Home</a>
+								<a class="nav-link py-3 py-sm-2 px-3 px-sm-2" href="<?php bloginfo('url'); ?>">Home</a>
 							</li>
 							<li class="nav-item mx-lg-2">
-								<a class="nav-link py-3 py-sm-2" href="<?php bloginfo('url'); ?>">Blog</a>
+								<a class="nav-link py-3 py-sm-2 px-3 px-sm-2" href="<?php bloginfo('url'); ?>">Blog</a>
 							</li>
 							<li class="nav-item mx-lg-2 dropdown">
-								<a class="nav-link dropdown-toggle py-3 py-sm-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<a class="nav-link dropdown-toggle py-3 py-sm-2 px-3 px-sm-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Category
 								</a>
 								<ul class="dropdown-menu">
@@ -43,7 +43,7 @@
 								</ul>
 							</li>
 							<li class="nav-item mx-lg-2 dropdown">
-								<a class="nav-link dropdown-toggle py-3 py-sm-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<a class="nav-link dropdown-toggle py-3 py-sm-2 px-3 px-sm-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Page
 								</a>
 								<ul class="dropdown-menu">

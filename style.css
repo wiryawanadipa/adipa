@@ -2,14 +2,14 @@
 Theme Name: Wiryawan Adipa Theme
 Author: Wiryawan Adipa
 Author URI: https://wiryawanadipa.com
-Version: 0.5
+Version: 0.6
  */
 
 :root {
     --main-color: #f79f00;
-    --first-bg-color: #171717;
+    --first-bg-color: #303030;
     --second-bg-color: #272727;
-    --third-bg-color: #303030;
+    --third-bg-color: #212121;
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
 }
@@ -29,7 +29,7 @@ body {
 
 @keyframes mainbody {
     0% {
-        opacity: .7;
+        opacity: .8;
     }
     100% {
         opacity: 1;
@@ -57,6 +57,7 @@ body {
 
 .wa-navbar a:hover{
     color: var(--main-color);
+    background-color: var(--third-bg-color);
 }
 
 .wa-navbar ul {
@@ -234,14 +235,14 @@ body {
 
 .btn-primary {
     color: var(--text-normal-color);
-    background-color: var(--third-bg-color);
-    border-color: var(--third-bg-color);
+    background-color: var(--second-bg-color);
+    border-color: var(--second-bg-color);
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
     color: var(--main-color);
-    background-color: var(--second-bg-color);
-    border-color: var(--second-bg-color);
+    background-color: var(--third-bg-color);
+    border-color: var(--third-bg-color);
     box-shadow: none !important;
 }
 

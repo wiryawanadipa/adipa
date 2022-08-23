@@ -172,7 +172,7 @@ function categories_clean($wp_list_categories) {
 		'/\<li class="cat-item cat-item[^>]*><a /'
 	);
 	$replace = array(
-		'<li><a class="dropdown-item" '
+		'<li><a class="dropdown-item py-3 py-sm-2 px-5 px-sm-2" '
 	);
 	return preg_replace($pattern, $replace, $wp_list_categories);
 }
@@ -184,24 +184,15 @@ function pages_clean($wp_list_pages) {
 		'/\<li class="page_item[^>]*><a /'
 	);
 	$replace = array(
-		'<li><a class="dropdown-item" '
+		'<li><a class="dropdown-item py-3 py-sm-2 px-5 px-sm-2" '
 	);
 	return preg_replace($pattern, $replace, $wp_list_pages);
 }
 add_filter('wp_list_pages','pages_clean');
 
-/*
-// Modify <p> in Content
-function modify_p_tag($content) {
-    $content = str_replace('<p>', '<p class="wa-post">', $content);
-    return $content;
-}
-add_filter('the_content', 'modify_p_tag', 9999);
-*/
-
 // Limit The Excerpt Length
 function wp_example_excerpt_length( $length ) {
-    return 15;
+    return 20;
 }
 add_filter( 'excerpt_length', 'wp_example_excerpt_length');
 

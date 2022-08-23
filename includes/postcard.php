@@ -24,7 +24,7 @@
             <div class="text-muted postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
             <h2 class="mb-3">
                 <a class="fs-5 stretched-link" href="<?php the_permalink() ?>">
-                    <?php the_title() ?>
+                    <?php the_title(); ?>
                 </a>
             </h2>
             <?php the_excerpt(); ?>
