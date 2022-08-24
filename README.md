@@ -4,4 +4,5 @@ This Wordpress theme is using:
 1. Bootstrap 5.2.0
 2. Font Awesome 6.1.2 (Free Version)
 3. Poppins Font
-4. Color variant from https://www.colorhexa.com/36454f
+4. Mogra Font
+5. Color variant from https://www.colorhexa.com/36454f
