@@ -2,7 +2,7 @@
 Theme Name: Wiryawan Adipa Theme
 Author: Wiryawan Adipa
 Author URI: https://wiryawanadipa.com
-Version: 0.7.2
+Version: 0.8.0
  */
 
 :root {
@@ -268,6 +268,10 @@ body {
     box-shadow: none !important;
 }
 
+.tag-title:before {
+    content: "#";
+}
+
 .post-title {
     padding: 0 1rem;
 }
@@ -284,6 +288,10 @@ body {
     margin-bottom: 0 !important;
 }
 
+.wa-post .post-title .post-info-top {
+    margin-bottom: 1rem !important;
+}
+
 .post-title p span {
     margin-left: .5rem;
     margin-right: 1rem;
@@ -293,12 +301,17 @@ body {
     margin: 0 .25rem;
 }
 
-.post-title p .post-tag-list a {
+.post-title p .post-cat-list a, .post-title p .post-tag-list a {
+    color: var(--text-normal-color);
     text-decoration: underline .2rem var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
-.post-title p .post-tag-list a:hover {
+.post-title p .post-tag-list a:before {
+    content: "#";
+}
+
+.post-title p .post-cat-list a:hover, .post-title p .post-tag-list a:hover {
     text-decoration-color: var(--main-color);
 }
 

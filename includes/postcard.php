@@ -30,11 +30,11 @@
             <?php the_excerpt(); ?>
             <ul class="row postcard-tag-list">
                 <?php
-                    $categories = get_the_category();
-                    foreach( $categories as $category) {
-                        $category_link = get_category_link( $category->term_id );
-                        $name = $category->name;
-                        echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $category_link . '">' . esc_attr( $name) . '</a></li>';
+                    $tags = get_the_tags();
+                    foreach( $tags as $tag) {
+                        $tag_link = get_tag_link( $tag->term_id );
+                        $name = $tag->name;
+                        echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr( $name) . '</a></li>';
                     }
                 ?>
             </ul>

@@ -18,6 +18,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
 		<?php wp_head(); ?>
+		<?php
+		$headcode = trim( get_option( 'head_code' ) );
+		if ( null != get_option( 'head_code' ) && !empty ( $headcode ) ) {
+			echo get_option( 'head_code' ) . "\n";
+		}
+		?>
 	</head>
 	<body>
 		<header>
