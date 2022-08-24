@@ -17,7 +17,7 @@
 <?php if ( is_category() ) : ?>
     <?php if ($paged): ?>
         <title><?php do_action ( 'cat_page_title' ); ?> - Page <?php echo $paged; ?></title>
-        <meta name="description" content="Category page of <?php echo single_cat_title( '', false ); ?> on <?php bloginfo('name'); ?> - Page <?php echo $paged; ?>." />
+        <meta name="description" content="Category page of <?php echo single_cat_title( '', false ); ?> on <?php bloginfo('name'); ?> - Page <?php echo $paged; ?>" />
     <?php else: ?>
         <title><?php do_action ( 'cat_page_title' ); ?></title>
         <meta name="description" content="<?php do_action ( 'cat_page_desc' ); ?>" />
@@ -41,7 +41,7 @@
 <?php // Search ?>
 <?php if ( is_search() ) : ?>
     <title>Search Result for <?php ucwords(the_search_query()); ?> - <?php bloginfo('name'); ?></title>
-    <meta name="description" content="Search result for <?php ucwords(the_search_query()); ?> on <?php bloginfo('name'); ?>." />
+    <meta name="description" content="Search result for <?php ucwords(the_search_query()); ?> on <?php bloginfo('name'); ?>" />
 <?php endif; ?>
 <?php // 404 ?>
 <?php if ( is_404() ) : ?>

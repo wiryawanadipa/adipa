@@ -272,6 +272,10 @@ body {
     content: "#";
 }
 
+.error-404 {
+    color: var(--text-normal-color);
+}
+
 .post-title {
     padding: 0 1rem;
 }
