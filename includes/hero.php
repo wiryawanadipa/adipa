@@ -2,7 +2,7 @@
 	<div class="container-xl py-0 py-sm-5">
 		<div class="row py-5 py-sm-5">
 			<div class="col-lg-8 p-xl-3">
-				<div class="hero-heading-name pb-5 text-center text-sm-start">
+				<div class="hero-heading-name pb-5 pb-sm-0 text-center text-sm-start">
 					Hi! I'm Wiryawan Adipa.
 				</div>
 				<div class="hero-heading-text text-center text-sm-start">

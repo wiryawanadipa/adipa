@@ -8,15 +8,17 @@ Version: 0.7.2
 :root {
     --main-color: #f79f00;
     --secondary-color: #ce8600;
-    --first-bg-color: #303030;
-    --second-bg-color: #272727;
-    --third-bg-color: #212121;
+    --first-bg-color: #36454f;
+    --second-bg-color: #2c3840;
+    --third-bg-color: #212b31;
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-mogra: 'Mogra', cursive;
 }
 
 ::-webkit-scrollbar {
-    width: 14px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -32,12 +34,12 @@ Version: 0.7.2
 }
 
 html {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: var(--font-poppins) !important;
 }
 
 body {
     background-color: var(--first-bg-color);
-    font-family: 'Poppins', sans-serif !important;
+    font-family: var(--font-poppins) !important;
     -webkit-animation: webkit-mainbody .5s 1 linear; 
     -moz-animation: moz-mainbody .5s 1 linear;
     -o-animation: o-mainbody .5s 1 linear;
@@ -56,6 +58,7 @@ body {
 /* Navigation Bar */
 .navbar-brand {
     display: flex;
+    font-family: var(--font-mogra);
     padding: 0;
 }
 
@@ -168,10 +171,7 @@ body {
 
 .home-quote blockquote p:not(:first-child):last-child {
     font-size: .8rem !important;
-    font-style: italic;
-    font-weight: 500;
     padding-top: 1.5rem;
-    text-align: right;
 }
 
 .home-quote blockquote p:not(:first-child):last-child:before, .home-quote blockquote p:not(:first-child):last-child:after {
@@ -273,6 +273,8 @@ body {
 }
 
 .post-title h1 {
+    color: var(--text-normal-color);
+    font-weight: 800;
     margin-bottom: 1rem;
 }
 
