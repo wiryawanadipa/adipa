@@ -307,7 +307,7 @@ body {
 
 .post-title p .post-cat-list a, .post-title p .post-tag-list a {
     color: var(--text-normal-color);
-    text-decoration: underline .2rem var(--text-normal-color);
+    text-decoration: underline .15rem var(--text-normal-color);
     transition: text-decoration-color 300ms;
 }
 
