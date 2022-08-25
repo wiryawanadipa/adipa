@@ -1,12 +1,12 @@
-<div class="wrap">
-    <h2 style="padding: 10px; background: #4d7592; color: #fff; border-radius: 5px;">About</h2>
+<div class="wrap custom-theme-section">
+    <h2>About</h2>
     <div class="tabs">
         <ul class="tab-links">
-            <li class="active"><a href="#tab1">Notes</a></li>
-            <li><a href="#tab2">Changelog</a></li>
-            <li><a href="#tab3">About</a></li>
+            <li class="active"><a href="#tab1"><div class="wa-custom-tab-icon"><i class="fa-solid fa-note-sticky"></i></div>Notes</a></li>
+            <li><a href="#tab2"><div class="wa-custom-tab-icon"><i class="fa-solid fa-list-ul"></i></div>Changelog</a></li>
+            <li><a href="#tab3"><div class="wa-custom-tab-icon"><i class="fa-solid fa-address-book"></i></div>About</a></li>
         </ul>
-        <div class="tab-content">
+        <div class="custom-theme-container">
             <div id="tab1" class="tab active">
                 <table class="form-table">
                     <tr>
@@ -45,10 +45,18 @@
                 </table>
             </div>
             <div id="tab3" class="tab">
-                <center style="margin:20px auto;"><img style="border-radius:3px;" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png"></center>
-                <center style="font-size:24px; margin:14px auto;"><b><a href="https://github.com/wiryawanadipa/adipa" target="_blank">Wiryawan Adipa Wordpress Theme 1.0.0</b></a></center>
-                <center style="font-size:14px; margin:10px auto;">by</center>
-                <center style="font-size:14px; margin-bottom:10px;"><a href="https://wiryawanadipa.com" target="_blank">Wiryawan Adipa</a></center>
+                <div class="wa-theme-logo"><img style="border-radius:3px;" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png"></div>
+                <div class="theme-github-link">
+                    <a href="https://github.com/wiryawanadipa/adipa" target="_blank">Wiryawan Adipa Wordpress v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a>
+                </div>
+                <div class="wa-theme-social">
+                    <a href="https://wiryawanadipa.com" target="_blank"><i class="fa-solid fa-globe fa-2x"></i></i></a>
+                    <a href="https://www.facebook.com/wiryawanadipa/" target="_blank"><i class="fa-brands fa-square-facebook fa-2x"></i></a>
+                    <a href="https://twitter.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-twitter fa-2x"></i></a>
+                    <a href="https://www.instagram.com/wiryawanadipa/" target="_blank"><i class="fa-brands fa-square-instagram fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/wiryawanadipa/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                    <a href="https://github.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-github fa-2x"></i></a>
+                </div>
             </div>
         </div>
     </div>

@@ -10,6 +10,7 @@ What is in this theme?
 7. Custom theme settings (BETA)
 8. Custom admin font
 9. Custom login page
+10. It's responsive!
 
 Plan:
 I will remove bootstrap in the future and use my own custom CSS or scss/sass. The reason I'm using Bootstrap in this theme is to practice my skill using CSS framework (I've never using CSS framework in the past, I always write my own CSS to design). That's why I'm still using my own custom CSS in some part.

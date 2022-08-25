@@ -50,7 +50,6 @@ body {
 
 /* Navigation Bar */
 .navbar-brand {
-    display: flex;
     font-family: var(--font-mogra);
     padding: 0;
 }

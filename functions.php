@@ -85,6 +85,12 @@ function wa_custom_setting_style() {
 }
 add_action( 'admin_enqueue_scripts', 'wa_custom_setting_style' );
 
+function fontawesome_icon() {
+	wp_register_style( 'wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' );
+	wp_enqueue_style( 'wa_fontawesome_icon' );
+}
+add_action( 'admin_enqueue_scripts', 'fontawesome_icon' );
+
 // Insert custom script in custom setting
 function wa_custom_setting_script() {
 	global $theme_version, $random_number;
@@ -299,42 +305,54 @@ function show_options() {
 add_action('admin_menu', 'show_options');
 
 // Custom theme settings
-function theme_options_panel() {
+function theme_settings_panel() {
 	add_menu_page(
-		'Wiryawan Adipa Theme Options',
-		'Theme Options',
+		'Wiryawan Adipa Theme Settings',
+		'Theme Settings',
 		'manage_options',
-		'wa-theme-options',
-		'theme_op_general',
+		'wa-theme-settings',
+		'theme_settings_general',
 		get_template_directory_uri() . '/assets/favicon/favicon-16x16.png',
-		'60'
+		'2'
 	);
 	add_submenu_page(
-		'wa-theme-options',
+		'wa-theme-settings',
 		'General',
 		'General',
 		'manage_options',
-		'wa-theme-options',
-		'theme_op_general'
+		'wa-theme-settings',
+		'theme_settings_general'
 	);
 	add_submenu_page(
-		'wa-theme-options',
+		'wa-theme-settings',
 		'Meta',
 		'Meta',
 		'manage_options',
-		'wa-theme-options-meta',
-		'theme_op_meta'
+		'wa-theme-settings-meta',
+		'theme_settings_meta'
 	);
 	add_submenu_page(
-		'wa-theme-options',
+		'wa-theme-settings',
 		'About',
 		'About',
 		'manage_options',
-		'wa-theme-options-about',
-		'theme_op_about'
+		'wa-theme-settings-about',
+		'theme_settings_about'
 	);
 }
-add_action('admin_menu', 'theme_options_panel');
+add_action('admin_menu', 'theme_settings_panel');
+
+function theme_settings_general() {
+	include 'settings/setting-main.php';
+}
+
+function theme_settings_meta() {
+	include 'settings/setting-meta.php';
+}
+
+function theme_settings_about() {
+	include 'settings/setting-about.php';
+}
 
 function register_general_setting() {
 	register_setting( 'main-settings', 'head_code' );
@@ -359,18 +377,6 @@ function register_general_setting() {
 	register_setting( 'tag-settings', 'tag_meta_desc' );
 }
 add_action('admin_init', 'register_general_setting');
-
-function theme_op_general() {
-	include 'settings/setting-main.php';
-}
-
-function theme_op_meta() {
-	include 'settings/setting-meta.php';
-}
-
-function theme_op_about() {
-	include 'settings/setting-about.php';
-}
 
 function add_hero_desc() {
 	global $post;

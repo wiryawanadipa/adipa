@@ -1,5 +1,5 @@
-<div class="wrap">
-    <h2 style="padding: 10px; background: #4d7592; color: #fff; border-radius: 5px;">Page Settings</h2>
+<div class="wrap custom-theme-section">
+    <h2>Page Settings</h2>
     <?php if(isset( $_GET['settings-updated'])) { ?>
         <div style="margin: 10px 0" class="updated">
             <p>Settings updated successfully</p>
@@ -7,13 +7,13 @@
     <?php } ?>
     <div class="tabs">
         <ul class="tab-links">
-            <li class="active"><a href="#tab1"><div style="display: inline-block; font-size: 20px; margin-right: 5px;" class="dashicons-before dashicons-welcome-widgets-menus"></div>Homepage</a></li>
-            <li><a href="#tab2"><div style="display: inline-block; font-size: 20px; margin-right: 5px;" class="dashicons-before dashicons-align-left"></div>Post</a></li>
-            <li><a href="#tab3"><div style="display: inline-block; font-size: 20px; margin-right: 5px;" class="dashicons-before dashicons-media-text"></div>Page</a></li>
-            <li><a href="#tab4"><div style="display: inline-block; font-size: 20px; margin-right: 5px;" class="dashicons-before dashicons-list-view"></div>Category</a></li>
-            <li><a href="#tab5"><div style="display: inline-block; font-size: 20px; margin-right: 5px;" class="dashicons-before dashicons-tag"></div>Tag</a></li>
+            <li class="active"><a href="#tab1"><div class="wa-custom-tab-icon"><i class="fa-solid fa-house"></i></div>Homepage</a></li>
+            <li><a href="#tab2"><div class="wa-custom-tab-icon"><i class="fa-solid fa-newspaper"></i></div>Post</a></li>
+            <li><a href="#tab3"><div class="wa-custom-tab-icon"><i class="fa-solid fa-file"></i></div>Page</a></li>
+            <li><a href="#tab4"><div class="wa-custom-tab-icon"><i class="fa-solid fa-tag"></i></div>Category</a></li>
+            <li><a href="#tab5"><div class="wa-custom-tab-icon"><i class="fa-solid fa-tags"></i></div>Tag</a></li>
         </ul>
-        <div class="tab-content">
+        <div class="custom-theme-container">
             <!-- Homepage -->
             <div id="tab1" class="tab active">
                 <form method="post" action="options.php">
@@ -21,7 +21,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input style="width: 30em;" name="home_title" type="text" value="<?php echo get_option('home_title', '[sitename] - [tagline]'); ?>">
+                                <input class="wa-input-title" name="home_title" type="text" value="<?php echo get_option('home_title', '[sitename] - [tagline]'); ?>">
                                 <br>
                                 <p class="description">[sitename] [tagline]</p>
                             </td>
@@ -47,7 +47,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input style="width: 30em;" name="post_title" type="text" value="<?php echo get_option('post_title', '[title] - [sitename]'); ?>">
+                                <input class="wa-input-title" name="post_title" type="text" value="<?php echo get_option('post_title', '[title] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[title] [sitename]</p>
                             </td>
@@ -73,7 +73,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input style="width: 30em;" name="page_title" type="text" value="<?php echo get_option('page_title', '[title] - [sitename]'); ?>">
+                                <input class="wa-input-title" name="page_title" type="text" value="<?php echo get_option('page_title', '[title] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[title] [sitename]</p>
                             </td>
@@ -99,7 +99,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input style="width: 30em;" name="cat_title" type="text" value="<?php echo get_option('cat_title', '[catname] - [sitename]'); ?>">
+                                <input class="wa-input-title" name="cat_title" type="text" value="<?php echo get_option('cat_title', '[catname] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[catname] [sitename]</p>
                             </td>
@@ -125,7 +125,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input style="width: 30em;" name="tag_title" type="text" value="<?php echo get_option('tag_title', '[tagname] - [domain]'); ?>">
+                                <input class="wa-input-title" name="tag_title" type="text" value="<?php echo get_option('tag_title', '[tagname] - [domain]'); ?>">
                                 <br>
                                 <p class="description">[tagname] [sitename]</p>
                             </td>

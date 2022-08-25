@@ -1,11 +1,11 @@
-<div class="wrap">
-	<h2 style="padding:10px;background:#006080;color:#fff;border-radius:5px;margin-bottom:10px;">General</h2>
+<div class="wrap custom-theme-section">
+	<h2>General</h2>
 	<?php if( isset( $_GET['settings-updated'] ) ) : ?>
 		<div style="margin: 10px 0;" class="updated">
 			<p>Settings updated</p>
 		</div>
 	<?php endif; ?>
-	<div style="background: #fff; border-radius: 3px; padding: 5px 15px 10px; margin-top: 5px; box-shadow: 0 0 2px rgba(0,0,0,.15);">
+	<div class="custom-theme-container">
 		<form method="post" action="options.php">
 			<table class="form-table">
 				<!-- Head Code -->
@@ -42,7 +42,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook'); ?>">
+							<input class="wa-input-social-id" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -53,7 +53,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter'); ?>">
+							<input class="wa-input-social-id" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -64,7 +64,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram'); ?>">
+							<input class="wa-input-social-id" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -75,7 +75,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin'); ?>">
+							<input class="wa-input-social-id" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -86,7 +86,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github'); ?>">
+							<input class="wa-input-social-id" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -97,7 +97,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube'); ?>">
+							<input class="wa-input-social-id" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -108,7 +108,7 @@
 					</th>
 					<td>
 						<label>
-							<input style="width: 25em;margin-right: .5em;" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium'); ?>">
+							<input class="wa-input-social-id" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium'); ?>">
 						</label>
 					</td>
 				</tr>

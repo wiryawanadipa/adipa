@@ -1,11 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 :root {
+    --main-color: #f79f00;
+    --secondary-color: #ce8600;
+    --first-bg-color: #36454f;
+    --second-bg-color: #2c3840;
+    --third-bg-color: #212b31;
+    --text-normal-color: #dedede;
+    --text-muted-color: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--text-normal-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--third-bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--third-bg-color);
 }
 
 body {
     font-family: var(--font-poppins) !important;
+}
+
+.custom-theme-section h2 {
+    background: var(--first-bg-color) !important;
+    border-radius: .25rem !important;
+    color: var(--text-normal-color) !important;
+    margin-bottom: 1rem !important;
+    padding: .5rem !important;
+}
+
+.custom-theme-container {
+    background: var(--first-bg-color);
+    border-radius: 0 0 .25rem .25rem;
+    padding: 1rem;
+    box-shadow: 0 0 2px rgba(0,0,0,.15);
+}
+
+.custom-theme-container label, .custom-theme-container tr th, .custom-theme-container tr td p {
+    color: var(--text-normal-color) !important;
+}
+
+.custom-theme-container textarea:focus, .custom-theme-container input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+.custom-theme-container code {
+    background-color: var(--text-normal-color);
+    color: var(--second-bg-color);
 }
 
 .tabs {
@@ -29,7 +81,7 @@ body {
     list-style: none;
 }
 
-.tab-links a {
+.tab-links li a {
     padding: 9px 11px 9px 10px;
     display: inline-block;
     border-radius: 3px 3px 0 0;
@@ -42,14 +94,19 @@ body {
 }
 
 .tab-links a:hover {
-    background: #a7cce5;
+    background: var(--first-bg-color);
+    color: var(--text-normal-color);
     text-decoration: none;
+}
+
+.tab-links a:focus {
+    outline: none;
 }
 
 li.active a,
 li.active a:hover {
-    background: #fff;
-    color: #4c4c4c;
+    background: var(--first-bg-color);
+    color: var(--text-normal-color);
 }
 
 .tab-content {
@@ -67,6 +124,17 @@ li.active a:hover {
     display: block;
 }
 
+.wa-input-social-id {
+    margin-right: .5rem;
+    max-width: 25rem;
+    width: 100%;
+}
+
+.wa-input-title {
+    max-width: 40rem;
+    width: 100%;
+}
+
 input[type=radio] {
     box-shadow: none;
 }
@@ -81,4 +149,47 @@ input[type=radio]:checked {
 
 #disable:checked {
     border: 8px solid red;
+}
+
+.wa-custom-tab-icon {
+    display: inline-block;
+    font-size: 1.25rem;
+    margin-right: .625rem;
+}
+
+.wa-theme-logo {
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+.theme-github-link {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+.theme-github-link a {
+    color: var(--text-normal-color) !important;
+    line-height: 2rem;
+    text-decoration: underline .2rem var(--text-normal-color);
+}
+
+.theme-github-link a:hover {
+    text-decoration: underline .2rem var(--main-color);
+}
+
+.wa-theme-social {
+    font-size: 1.5rem;
+    margin: 2rem 0 2rem;
+    text-align: center;
+}
+
+.wa-theme-social a {
+    color: var(--text-normal-color) !important;
+    margin: 0 .25rem;
+}
+
+.wa-theme-social a:hover {
+    color: var(--main-color) !important;
 }
