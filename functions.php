@@ -117,14 +117,14 @@ $random_number = style_get_random();
 global $random_number;
 
 // Include custom stylesheet on head
-function style_queue_css() {
+function wa_style_queue_css() {
 	global $theme_version, $random_number;
 	if (!is_admin()) {
-		wp_register_style('style', get_template_directory_uri() . '/style.css', false, $theme_version . $random_number);
-		wp_enqueue_style('style');
+		wp_register_style('wa-style', get_template_directory_uri() . '/assets/wa-style.css', false, $theme_version . $random_number);
+		wp_enqueue_style('wa-style');
 	}
 }
-add_action('wp_enqueue_scripts', 'style_queue_css');
+add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 // Disable Wordpress auto generated images
 function disable_media($sizes) {
