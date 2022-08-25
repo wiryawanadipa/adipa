@@ -1,3 +1,4 @@
+        <?php include get_template_directory() . '/includes/quote.php'; ?>
         <div class="wa-footer">
             <div class="container-xl py-5 wa-footer">
                 <div class="row">

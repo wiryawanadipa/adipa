@@ -9,5 +9,4 @@
         </div>
 	</div>
 </main>
-<?php include get_template_directory() . '/includes/quote.php'; ?>
 <?php get_footer(); ?>
