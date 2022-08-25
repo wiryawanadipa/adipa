@@ -5,9 +5,7 @@
             $image_id = get_post_thumbnail_id( get_the_ID() );
             $image_title = get_the_title($image_id);
             $image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'bigthumb' );
-            echo '<div class="col-12 postcard-image">' . "\n";
-            echo '<img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" />' . "\n";
-            echo '</div>' . "\n";
+            echo '<div class="col-12 postcard-image"><img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" /></div>' . "\n";
         }
         ?>
         <div class="p-3 d-flex flex-column">
