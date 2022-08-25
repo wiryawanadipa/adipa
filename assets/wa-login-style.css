@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mogra&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
     --main-color: #f79f00;
@@ -9,7 +9,6 @@
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
-    --font-mogra: 'Mogra', cursive;
 }
 
 :focus {

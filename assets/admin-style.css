@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-poppins) !important;
+}
+
 .tabs {
     width: 100%;
     display: inline-block;
@@ -25,7 +35,6 @@
     border-radius: 3px 3px 0 0;
     background: #e4e4e4;
     font-size: 16px;
-    font-weight: 600;
     color: #4c4c4c;
     transition: all linear .15s;
     text-decoration: none;

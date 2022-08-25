@@ -1,8 +1,12 @@
-This theme is my personal project for my personal blog. Built on Wordpress version 6.0.1. It has custom theme settings, for now it only has few features.
+This theme is my personal project for my personal blog.
 
-This Wordpress theme is using:
-1. Bootstrap 5.2.0
-2. Font Awesome 6.1.2 (Free Version)
-3. Poppins Font
-4. Mogra Font
-5. Color variant from https://www.colorhexa.com/36454f
+What is in this theme?
+1. Built in Wordpress version 6.0.1
+2. Bootstrap 5.2.0 (grid system) & custom CSS
+3. Font Awesome 6.1.2 (free version) for icon
+4. Poppins Font
+5. Mogra Font
+6. Theme color #36454f
+7. Custom theme settings (BETA)
+8. Custom admin font
+9. Custom login page
