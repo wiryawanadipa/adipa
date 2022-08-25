@@ -21,20 +21,17 @@ body.login {
     font-family: var(--font-poppins) !important;
 }
 
-body.login div#login {
+#login {
     display: grid;
 }
 
-body.login div#login h1 {
-
-}
-
-body.login div#login h1 a {
+#login h1 a {
     background-image: url(../assets/wiryawan-adipa-logo-medium.png);
+    background-repeat: no-repeat;
+    margin: .5rem auto !important;
     height: 80px;
     width: 80px;
     background-size: 80px;
-    background-repeat: no-repeat;
 
 }
 
@@ -42,30 +39,34 @@ input[type=text]:focus {
     border-color: var(--secondary-color);
 }
 
-body.login div#login form#loginform {
+#loginform, #lostpasswordform {
     background-color: var(--third-bg-color);
     border: 0;
-    border-radius: .5rem;
+    border-radius: .25rem;
+    margin: .5rem 0 !important;
 }
 
-body.login div#login form#loginform label {
+#loginform label, #lostpasswordform label {
     color: var(--text-normal-color);
 }
 
-body.login div#login form#loginform input {
+#loginform input {
     background-color: var(--second-bg-color);
+    color: var(--text-normal-color);
     border: 0;
 }
 
-body.login div#login form#loginform input#user_login {
+#user_login {
+    background-color: var(--second-bg-color);
+    border: none !important;
     color: var(--text-normal-color);
 }
 
-input#wp-submit {
+#wp-submit {
     background-color: var(--first-bg-color);
 }
 
-input#wp-submit:hover {
+#wp-submit:hover {
     background-color: var(--main-color);
 }
 
@@ -73,55 +74,32 @@ input#wp-submit:hover {
     border: 0 !important;
 }
 
-body.login div#login p#nav {
-    margin: 0;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-body.login div#login p#nav a {
-    color: var(--main-color);
-}
-
-body.login div#login p#backtoblog {
-    text-align: center;
-}
-
 .dashicons-visibility, .dashicons-hidden {
     color: var(--text-normal-color);
 }
 
-.login #login_error, .login .message, .login .success {
-    background-color: var(--third-bg-color);
-    border-left-color: var(--main-color);
-    color: var(--text-normal-color);
+#login_error, .message, .success {
+    background-color: var(--third-bg-color) !important;
+    border-left-color: var(--main-color) !important;
+    color: var(--text-normal-color) !important;
+    margin: .5rem 0 !important;
 }
 
-body.login div#login form#lostpasswordform {
-    background-color: var(--third-bg-color);
-    border: 0;
+#nav, #backtoblog, .privacy-policy-page-link {
+    margin: 1.25rem 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
 }
 
-body.login div#login form#lostpasswordform label {
-    color: var(--text-normal-color);
-}
-
-body.login div#login form#lostpasswordform input#user_login {
-    background-color: var(--second-bg-color);
-    border: none !important;
-    color: var(--text-normal-color);
-}
-
-p#nav a, #backtoblog a, .privacy-policy-link {
+#nav a, #backtoblog a, .privacy-policy-link {
     background-color: var(--second-bg-color);
     border-radius: .25rem;
     color: var(--text-normal-color) !important;
     padding: 1rem;
     text-decoration: none;
-    text-align: center;
 }
 
-p#nav a:hover, #backtoblog a:hover, .privacy-policy-link:hover {
+#nav a:hover, #backtoblog a:hover, .privacy-policy-link:hover {
     background: var(--secondary-color);
     color: var(--text-normal-color);
 }
