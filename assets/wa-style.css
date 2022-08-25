@@ -417,6 +417,10 @@ body {
     margin-bottom: 2rem !important;
 }
 
+.twitter-tweet {
+    margin: 0 auto 2rem !important;
+}
+
 .wa-post .hcb_wrap {
     border-left: .5rem solid var(--main-color);
     margin-top: 0rem !important;

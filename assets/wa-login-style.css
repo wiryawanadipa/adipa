@@ -39,35 +39,29 @@ input[type=text]:focus {
     border-color: var(--secondary-color);
 }
 
-#loginform, #lostpasswordform {
+#loginform, #lostpasswordform, #registerform {
     background-color: var(--third-bg-color);
     border: 0;
     border-radius: .25rem;
     margin: .5rem 0 !important;
 }
 
-#loginform label, #lostpasswordform label {
+#loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
     color: var(--text-normal-color);
 }
 
-#loginform input {
-    background-color: var(--second-bg-color);
-    color: var(--text-normal-color);
-    border: 0;
-}
-
-#user_login {
-    background-color: var(--second-bg-color);
-    border: none !important;
-    color: var(--text-normal-color);
+#user_login, #loginform input, #user_email {
+    background-color: var(--second-bg-color) !important;
+    color: var(--text-normal-color) !important;
+    border: 0 !important;
 }
 
 #wp-submit {
-    background-color: var(--first-bg-color);
+    background-color: var(--secondary-color);
 }
 
 #wp-submit:hover {
-    background-color: var(--main-color);
+    background-color: var(--main-color) !important;
 }
 
 .button {

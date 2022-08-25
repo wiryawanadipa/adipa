@@ -61,7 +61,7 @@ function wa_login_style() {
 }
 add_action( 'login_enqueue_scripts', 'wa_login_style' );
 
-// Show fake login error (just for fun)
+// Show fake error in login page (just for fun)
 function login_error() {
 	return '<center>Your IP is blocked</center>';
 }
