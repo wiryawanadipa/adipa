@@ -1,25 +1,15 @@
 <div class="col-sm-6 col-xl-4 card border-0 postcard">
     <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
-            <div class="col-12 postcard-image">
-                <?php
-                $inc = get_post_thumbnail_id(get_the_id());
-                $images = get_children( array (
-                    'post_parent' => $post->ID,
-                    'post_type' => 'attachment',
-                    'post_mime_type' => 'image',
-                    'include' => $inc
-                ));
-                if ( empty($images) ) :
-                else :
-                    foreach ( $images as $attachment ) :
-                        $att_id = $attachment->ID;
-                        $att_title = str_replace('-', ' ', $attachment->post_title);
-                        $att_src = wp_get_attachment_image_src( $attachment->ID, 'bigthumb' );
-                        echo '<img width="' . $att_src[1] . '" height="' . $att_src[2] . '" src="' . $att_src[0] . '" alt="' . $att_title . '" />' . "\n";
-                    endforeach;
-                endif;
-                ?>
-            </div>
+        <?php
+        if ( has_post_thumbnail ( get_the_ID() ) ) {
+            $image_id = get_post_thumbnail_id( get_the_ID() );
+            $image_title = get_the_title($image_id);
+            $image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'bigthumb' );
+            echo '<div class="col-12 postcard-image">' . "\n";
+            echo '<img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" />' . "\n";
+            echo '</div>' . "\n";
+        }
+        ?>
         <div class="p-3 d-flex flex-column">
             <div class="text-muted postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
             <h2 class="mb-3">
