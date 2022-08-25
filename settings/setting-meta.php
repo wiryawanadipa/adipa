@@ -1,4 +1,3 @@
-<?php include "style.php"; ?>
 <div class="wrap">
     <h2 style="padding: 10px; background: #4d7592; color: #fff; border-radius: 5px;">Page Settings</h2>
     <?php if(isset( $_GET['settings-updated'])) { ?>

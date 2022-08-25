@@ -5,9 +5,7 @@
 				<div class="hero-heading-name pb-5 pb-sm-0 text-center text-sm-start">
 					Hi! I'm Wiryawan Adipa.
 				</div>
-				<div class="hero-heading-text text-center text-sm-start">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, modi dicta molestias eveniet, perspiciatis neque incidunt eaque dolore ratione, deleniti illo? Sunt, non. Ab atque facere, veniam error itaque enim.
-				</div>
+				<div class="hero-heading-text text-center text-sm-start"><?php do_action( 'hero_desc' ); ?></div>
 			</div>
 			<div class="col-lg-4 d-none d-lg-block position-relative hero-photo">
 				<img class="position-absolute top-50 start-50 translate-middle rounded-circle" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png" alt="wiryawan adipa logo big">

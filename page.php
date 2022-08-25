@@ -6,7 +6,7 @@
                 <?php
                 $img_link = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
                 ?>
-                <div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(<?php echo $img_link[0]; ?>) no-repeat center / cover; min-height: 400px;">
+                <div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(<?php echo $img_link[0]; ?>) no-repeat center / cover; min-height: 400px;">
                     <header class="w-100 my-auto py-3 post-title">
                         <h1><?php the_title(); ?></h1>
                         <p>

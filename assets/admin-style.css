@@ -1,0 +1,75 @@
+.tabs {
+    width: 100%;
+    display: inline-block;
+}
+
+.tab-links {
+    margin: 5px 0 0;
+}
+
+.tab-links:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.tab-links li {
+    margin: 0 10px 0 0;
+    float: left;
+    list-style: none;
+}
+
+.tab-links a {
+    padding: 9px 11px 9px 10px;
+    display: inline-block;
+    border-radius: 3px 3px 0 0;
+    background: #e4e4e4;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4c4c4c;
+    transition: all linear .15s;
+    text-decoration: none;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tab-links a:hover {
+    background: #a7cce5;
+    text-decoration: none;
+}
+
+li.active a,
+li.active a:hover {
+    background: #fff;
+    color: #4c4c4c;
+}
+
+.tab-content {
+    padding: 15px;
+    border-radius: 0 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    background:#fff;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+input[type=radio] {
+    box-shadow: none;
+}
+
+input[type=radio]:checked:before {
+    background: none;
+}
+
+input[type=radio]:checked {
+    border: 8px solid #4d7592;
+}
+
+#disable:checked {
+    border: 8px solid red;
+}

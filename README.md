@@ -1,4 +1,4 @@
-This theme is my personal project for my personal blog.
+This theme is my personal project for my personal blog. Built on Wordpress version 6.0.1. It has custom theme settings, for now it only has few features.
 
 This Wordpress theme is using:
 1. Bootstrap 5.2.0

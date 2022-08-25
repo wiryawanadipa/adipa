@@ -251,17 +251,31 @@ function add_nofollow($text) {
 }
 add_filter('wp_list_pages', 'add_nofollow');
 
+// Youtube shortcode
+function youtube_link( $atts, $content = null ) {
+	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+}
+add_shortcode( 'youtube', 'youtube_link' );
+
 // Show Advanced Option in Settings
 function show_options() {
 	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
 }
 add_action('admin_menu', 'show_options');
 
-// Youtube shortcode
-function youtube_link( $atts, $content = null ) {
-	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+// Insert custom style in custom setting
+function wa_custom_setting_style() {
+	wp_register_style( 'wa_custom_admin_css', get_template_directory_uri() . '/assets/admin-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'wa_custom_admin_css' );
 }
-add_shortcode( 'youtube', 'youtube_link' );
+add_action( 'admin_enqueue_scripts', 'wa_custom_setting_style' );
+
+// Insert custom script in custom setting
+function wa_custom_setting_script() {
+	wp_register_script( 'wa_custom_admin_js', get_template_directory_uri() . '/assets/admin-script.js', false, '1.0.0' );
+	wp_enqueue_script( 'wa_custom_admin_js' );
+}
+add_action( 'admin_enqueue_scripts', 'wa_custom_setting_script' );
 
 // Custom theme settings
 function theme_options_panel() {
@@ -302,8 +316,16 @@ function theme_options_panel() {
 add_action('admin_menu', 'theme_options_panel');
 
 function register_general_setting() {
-	register_setting('main-settings', 'head_code');
-	register_setting('main-settings', 'footer_code');
+	register_setting( 'main-settings', 'head_code' );
+	register_setting( 'main-settings', 'footer_code' );
+	register_setting( 'main-settings', 'hero_desc' );
+	register_setting( 'main-settings', 'wa_facebook' );
+	register_setting( 'main-settings', 'wa_twitter' );
+	register_setting( 'main-settings', 'wa_instagram' );
+	register_setting( 'main-settings', 'wa_linkedin' );
+	register_setting( 'main-settings', 'wa_github' );
+	register_setting( 'main-settings', 'wa_youtube' );
+	register_setting( 'main-settings', 'wa_medium' );
 	register_setting( 'home-settings', 'home_title' );
 	register_setting( 'home-settings', 'home_meta_desc' );
 	register_setting( 'post-settings', 'post_title' );
@@ -328,6 +350,19 @@ function theme_op_meta() {
 function theme_op_about() {
 	include 'settings/setting-about.php';
 }
+
+function add_hero_desc() {
+	global $post;
+	$variable = get_option('hero_desc', '[lorem]');
+	$shortcode  = array(
+		'[lorem]'
+	);
+	$function = array(
+		'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, ex doloribus quasi quos aut dicta error, nulla facere velit perspiciatis ut voluptatem. Fugiat possimus esse dolor unde ullam fugit dolores?'
+	);
+	echo str_replace($shortcode, $function, $variable);
+}
+add_action('hero_desc', 'add_hero_desc');
 
 function add_home_title() {
 	global $post;

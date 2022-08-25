@@ -237,7 +237,7 @@ body {
 .postcard-tag {
     font-size: .9rem;
     z-index: 9999;
-    text-decoration: underline .2rem var(--text-normal-color) !important;
+    text-decoration: underline .15rem var(--text-normal-color) !important;
     transition: text-decoration-color 300ms;
 }
 
