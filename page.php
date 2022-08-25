@@ -2,6 +2,7 @@
 <main class="container-xl my-4 main-page">
 	<div class="row wa-post">
         <article class="col-xl-12">
+            <!-- Post Title -->
             <div class="container px-0 px-md-3 mb-4">
                 <?php
                 $img_link = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
@@ -16,6 +17,7 @@
                     </header>
                 </div>
             </div>
+            <!-- Post Article -->
             <?php
             if ( have_posts() ) {
                 while ( have_posts() ) {

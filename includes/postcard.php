@@ -34,7 +34,7 @@
                     foreach( $tags as $tag) {
                         $tag_link = get_tag_link( $tag->term_id );
                         $name = $tag->name;
-                        echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr( $name) . '</a></li>';
+                        echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr( $name) . '</a></li>' . "\n";
                     }
                 ?>
             </ul>
