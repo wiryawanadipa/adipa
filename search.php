@@ -1,9 +1,8 @@
 <?php get_header(); ?>
-<?php include get_template_directory() . '/includes/hero.php'; ?>
 <main class="container-xl py-4 py-lg-5 main-page">
 	<div class="row mb-5 g-2 g-xxl-3">
 		<?php if ( have_posts() ) { ?>
-            <h1 class="text-center mb-5 text-white">Search results for <em><?php echo get_search_query(); ?></em></h1>
+            <h1 class="text-center mt-4 mt-sm-3 mb-5 text-white">Search results for <em><?php echo get_search_query(); ?></em></h1>
         <?php
 			while ( have_posts() ) {
 				the_post();

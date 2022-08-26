@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php include get_template_directory() . '/includes/hero.php'; ?>
 <main class="container-xl py-4 py-lg-5 main-page">
 	<div class="row">
         <div class="col-12 text-center my-5 error-404">
