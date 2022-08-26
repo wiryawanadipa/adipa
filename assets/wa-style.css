@@ -83,6 +83,11 @@ body {
     border-color: var(--second-bg-color);
 }
 
+.wa-navbar ul.children {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
 .dropdown-item:focus, .dropdown-item:hover, .dropdown-item:active {
     background-color: var(--second-bg-color);
 }
@@ -164,13 +169,13 @@ input:focus-visible {
     text-decoration: underline .2rem var(--main-color) !important;
 }
 
-.home-quote blockquote p:before {
+.home-quote blockquote p::before {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: open-quote;
 }
 
-.home-quote blockquote p:after {
+.home-quote blockquote p::after {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: close-quote;
@@ -185,7 +190,7 @@ input:focus-visible {
     padding-top: 1.5rem;
 }
 
-.home-quote blockquote p:not(:first-child):last-child:before, .home-quote blockquote p:not(:first-child):last-child:after {
+.home-quote blockquote p:not(:first-child):last-child::before, .home-quote blockquote p:not(:first-child):last-child::after {
     font: 1rem/1rem Georgia, serif;
     content: "-";
 }
@@ -274,7 +279,7 @@ input:focus-visible {
     text-decoration-color: var(--main-color) !important;
 }
 
-.postcard-tag:before {
+.postcard-tag::before {
     content: "#";
     user-select: none;
 }
@@ -297,7 +302,7 @@ input:focus-visible {
     box-shadow: none !important;
 }
 
-.tag-title:before {
+.tag-title::before {
     content: "#";
 }
 
@@ -339,7 +344,7 @@ input:focus-visible {
     transition: text-decoration-color 300ms;
 }
 
-.post-title p .post-tag-list a:before {
+.post-title p .post-tag-list a::before {
     content: "#";
 }
 
@@ -422,13 +427,13 @@ input:focus-visible {
     max-width: 100%;
 }
 
-.wa-post blockquote p:before {
+.wa-post blockquote p::before {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: open-quote;
 }
 
-.wa-post blockquote p:after {
+.wa-post blockquote p::after {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: close-quote;
@@ -443,7 +448,7 @@ input:focus-visible {
     text-align: right;
 }
 
-.wa-post blockquote p:not(:first-child):last-child:before, .wa-post blockquote p:not(:first-child):last-child:after {
+.wa-post blockquote p:not(:first-child):last-child::before, .wa-post blockquote p:not(:first-child):last-child::after {
     font: 1rem/1rem Georgia, serif;
     content: "-";
 }
@@ -469,7 +474,7 @@ input:focus-visible {
     height: 48px !important;
 }
 
-.hcb_wrap .hcb-clipboard.-done:before {
+.hcb_wrap .hcb-clipboard.-done::before {
     color: var(--text-normal-color);
     font-size: 1.1rem !important;
 }

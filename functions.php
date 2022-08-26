@@ -22,6 +22,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'comment_whitelist', 1 );
 	update_option( 'show_avatars', 0 );
 	update_option( 'permalink_structure', '/%postname%/' );
+	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
 }
@@ -220,7 +221,7 @@ function categories_clean($wp_list_categories) {
 		'/\<li class="cat-item cat-item[^>]*><a /'
 	);
 	$replace = array(
-		'<li><a class="dropdown-item py-3 py-sm-2 px-5 px-sm-2" '
+		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" '
 	);
 	return preg_replace($pattern, $replace, $wp_list_categories);
 }
@@ -232,7 +233,7 @@ function pages_clean($wp_list_pages) {
 		'/\<li class="page_item[^>]*><a /'
 	);
 	$replace = array(
-		'<li><a class="dropdown-item py-3 py-sm-2 px-5 px-sm-2" '
+		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" '
 	);
 	return preg_replace($pattern, $replace, $wp_list_pages);
 }

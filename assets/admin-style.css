@@ -109,8 +109,8 @@ body {
     outline: none;
 }
 
-li.active a,
-li.active a:hover {
+.tab-links li.active a,
+.tab-links li.active a:hover {
     background: var(--first-bg-color);
     color: var(--text-normal-color);
 }
@@ -139,18 +139,6 @@ li.active a:hover {
 .wa-input-title {
     max-width: 40rem;
     width: 100%;
-}
-
-input[type=radio] {
-    box-shadow: none;
-}
-
-input[type=radio]:checked:before {
-    background: none;
-}
-
-input[type=radio]:checked {
-    border: 8px solid #4d7592;
 }
 
 #disable:checked {
