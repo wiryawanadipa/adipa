@@ -1,4 +1,4 @@
-This theme is my personal project for my personal blog.
+This theme is my personal project for my personal blog. For demo see the screenshots at demo folder.
 
 What is in this theme?
 1. Built in Wordpress version 6.0.1
