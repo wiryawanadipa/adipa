@@ -1,6 +1,6 @@
 <?php // Home ?>
 <?php if ( is_home() ) : ?>
-    <?php if ($paged): ?>
+    <?php if ( is_paged() ): ?>
         <title><?php do_action ( 'homepage_title' ); ?> - Page <?php echo $paged; ?></title>
         <meta name="description" content="<?php bloginfo('description'); ?> - Page <?php echo $paged; ?>" />
     <?php else: ?>
@@ -15,7 +15,7 @@
 <?php endif; ?>
 <?php // Category ?>
 <?php if ( is_category() ) : ?>
-    <?php if ($paged): ?>
+    <?php if ( is_paged() ): ?>
         <title><?php do_action ( 'cat_page_title' ); ?> - Page <?php echo $paged; ?></title>
         <meta name="description" content="Category page of <?php echo single_cat_title( '', false ); ?> on <?php bloginfo('name'); ?> - Page <?php echo $paged; ?>" />
     <?php else: ?>
@@ -25,11 +25,11 @@
 <?php endif; ?>
 <?php // Tag ?>
 <?php if ( is_tag() ) : ?>
-    <?php if ($paged): ?>
-        <title><?php do_action ( 'tag_page_title' ); ?> - Page <?php echo $paged; ?></title>
+    <?php if ( is_paged() ): ?>
+        <title>#<?php do_action ( 'tag_page_title' ); ?> - Page <?php echo $paged; ?></title>
         <meta name="description" content="<?php do_action ( 'tag_page_desc' ); ?>" />
     <?php else: ?>
-        <title><?php do_action ( 'tag_page_title' ); ?></title>
+        <title>#<?php do_action ( 'tag_page_title' ); ?></title>
         <meta name="description" content="<?php do_action ( 'tag_page_desc' ); ?>" />
     <?php endif; ?>
 <?php endif; ?>

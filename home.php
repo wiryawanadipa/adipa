@@ -1,7 +1,15 @@
 <?php get_header(); ?>
 <?php include get_template_directory() . '/includes/hero.php'; ?>
-<main class="container-xl py-4 py-lg-5 main-page">
-	<div class="row mb-5 g-2 g-xxl-3">
+<main class="container-xl py-5 main-page">
+	<?php
+		if ( is_paged() ) {
+			echo '<h3 class="text-center mb-5 fs-1 text-white">Page ' . $paged . '</h3>';
+		} else {
+			echo '<h3 class="text-center mb-5 fs-1 text-white">Recent Post</h3>';
+		}
+	?>
+	<?php pagenavi(); ?>
+	<div class="row mt-4 mb-5 g-2 g-xxl-3">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {

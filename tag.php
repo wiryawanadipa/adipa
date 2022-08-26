@@ -1,7 +1,14 @@
 <?php get_header(); ?>
-<main class="container-xl py-4 py-lg-5 main-page">
-	<div class="row mb-5 g-2 g-xxl-3">
-		<h1 class="text-center mb-4 text-white tag-title"><?php echo single_tag_title( '', false ); ?></h1>
+<main class="container-xl py-5 main-page">
+	<?php
+		if ( is_paged() ) {
+			echo '<h1 class="text-center mb-5 text-white tag-title">' . single_tag_title( '', false ) . ' - Page ' . $paged . '</h1>';
+		} else {
+			echo '<h1 class="text-center mb-5 text-white tag-title">' . single_tag_title( '', false ) . '</h1>';
+		}
+	?>
+	<?php pagenavi(); ?>
+	<div class="row mt-4 mb-5 g-2 g-xxl-3">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
