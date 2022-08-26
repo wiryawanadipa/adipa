@@ -28,5 +28,5 @@
 		?>
 	</head>
 	<body>
-		<?php include get_template_directory() . '/includes/navigation.php'; ?>
+		<?php include get_template_directory() . '/includes/top-nav.php'; ?>
 		<!-- Main -->

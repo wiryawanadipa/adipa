@@ -6,7 +6,7 @@
 		if ( have_posts() ) {
 			while ( have_posts() ) {
 				the_post();
-				include get_template_directory() . '/includes/postcard.php';
+				include get_template_directory() . '/includes/post-card.php';
 			}
 		} else {
 			echo '<p>There are no posts!</p>';

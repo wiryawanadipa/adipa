@@ -87,6 +87,21 @@ body {
     background-color: var(--second-bg-color);
 }
 
+.dropdown-menu {
+    border-radius: 0 0 .375rem .375rem !important;
+    top: 54px !important;
+}
+
+.dropdown-menu input {
+    margin: 0 .5rem;
+    min-width: 80%;
+    padding: .375rem;
+}
+
+input:focus-visible {
+    outline-color: var(--first-bg-color);
+}
+
 /* Main */
 .main-page {
     background-color: var(--first-bg-color);
