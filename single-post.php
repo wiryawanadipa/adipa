@@ -5,11 +5,15 @@
             <!-- Post Title -->
             <div class="container px-0 px-md-3 mb-4 mb-md-5">
                 <?php
-                $img_link = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
                 $the_cat = get_the_category();
                 $category_name = $the_cat[0]->cat_name;
+                if ( has_post_thumbnail ( $post->ID ) ) {
+                    $img_link = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
+                    echo '<div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(' . $img_link[0] . ') no-repeat center / cover; min-height: 400px;">' . "\n";
+                } else {
+                    echo '<div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: #212b31; min-height: 400px;">' . "\n";
+                }
                 ?>
-                <div class="col-12 d-flex rounded-3 text-white text-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(<?php echo $img_link[0]; ?>) no-repeat center / cover; min-height: 400px;">
                     <header class="w-100 my-auto py-3 post-title">
                         <h1><?php the_title(); ?></h1>
                         <p class="post-info-top">
@@ -21,7 +25,7 @@
                                 foreach( $categories as $category) {
                                     $category_link = get_category_link( $category->term_id );
                                     $name = $category->name;
-                                    echo '<span class="post-cat-list"><a href="' . $category_link . '">' . esc_attr( $name) . '</a></span>';
+                                    echo '<span class="post-cat-list"><a href="' . $category_link . '">' . esc_attr( $name) . '</a></span>' . "\n";
                                 }
                             ?>
                         </p>
@@ -32,7 +36,7 @@
                                 foreach( $tags as $tag) {
                                     $tag_link = get_tag_link( $tag->term_id );
                                     $name = $tag->name;
-                                    echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name) . '</a></span>';
+                                    echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name) . '</a></span>' . "\n";
                                 }
                             ?>
                         </p>

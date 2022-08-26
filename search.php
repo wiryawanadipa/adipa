@@ -3,7 +3,7 @@
 <main class="container-xl py-4 py-lg-5 main-page">
 	<div class="row">
 		<?php if ( have_posts() ) { ?>
-            <h2 class="text-center mt-4 mb-5">Search results for <em><?php echo get_search_query(); ?></em></h2>
+            <h1 class="text-center mt-4 mb-5">Search results for <em><?php echo get_search_query(); ?></em></h2>
         <?php
 			while ( have_posts() ) {
 				the_post();

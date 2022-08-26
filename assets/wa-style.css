@@ -4,6 +4,7 @@
     --first-bg-color: #36454f;
     --second-bg-color: #2c3840;
     --third-bg-color: #212b31;
+    --second-bg-color-hover: rgba(33, 43, 49, .75);
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
@@ -97,6 +98,9 @@ body {
 
 .hero-heading-name {
     color: var(--text-normal-color);
+}
+
+.hero-heading-name h1 {
     font-size: 3rem;
 }
 
@@ -177,6 +181,10 @@ body {
 
 .postcard-inside {
     background-color: var(--second-bg-color);
+}
+
+.postcard-inside:hover {
+    background-color: var(--second-bg-color-hover);
 }
 
 .postcard-inside img {
@@ -289,12 +297,11 @@ body {
 }
 
 .post-title p span {
-    margin-left: .5rem;
-    margin-right: 1rem;
+    margin: 0 0.5rem;
 }
 
 .post-title p .post-tag-list {
-    margin: 0 .25rem;
+    margin: 0 .125rem;
 }
 
 .post-title p .post-cat-list a, .post-title p .post-tag-list a {
