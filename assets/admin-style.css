@@ -40,7 +40,7 @@ body {
 }
 
 .custom-theme-container {
-    background: var(--first-bg-color);
+    background: var(--second-bg-color);
     border-radius: 0 0 .25rem .25rem;
     padding: 1rem;
     box-shadow: 0 0 2px rgba(0,0,0,.15);
@@ -48,6 +48,12 @@ body {
 
 .custom-theme-container label, .custom-theme-container tr th, .custom-theme-container tr td p {
     color: var(--text-normal-color) !important;
+}
+
+.custom-theme-container textarea, .custom-theme-container input {
+    background-color: var(--first-bg-color);
+    border: none;
+    color: var(--text-normal-color);
 }
 
 .custom-theme-container textarea:focus, .custom-theme-container input:focus {

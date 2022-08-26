@@ -5,7 +5,7 @@
                     <div class="col-12 col-md-6 fs-1 mb-3 mb-md-0 text-center text-md-start">Thanks for visiting!</div>
                     <!-- Social Links -->
                     <?php include get_template_directory() . '/includes/social.php'; ?>
-                    <div class="col-12 col-md-6 mb-1 small-text text-center text-md-start"><i class="fa-solid fa-copyright"></i> 2017-<?php echo date( 'Y' ); ?>, <?php bloginfo( 'name' ); ?></div>
+                    <div class="col-12 col-md-6 mb-1 small-text text-center text-md-start"><i class="fa-solid fa-copyright"></i> <?php echo date( 'Y' ); ?>, <?php bloginfo( 'name' ); ?></div>
                     <div class="col-12 col-md-6"></div>
                     <div class="col-12 col-md-6 small-text text-muted text-center text-md-start"><i class="fa-brands fa-html5"></i> <a class="small-text text-muted theme-version" rel="nofollow" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a></div>
                 </div>

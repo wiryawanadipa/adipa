@@ -216,8 +216,8 @@ input:focus-visible {
 .category-name-card {
     background-color: var(--third-bg-color);
     color: var(--text-normal-color);
-    top: 2px;
-    right: 2px;
+    top: 8px;
+    right: 8px;
     width: auto !important;
     z-index: 9997;
 }
