@@ -1,6 +1,9 @@
 <div class="col-sm-6 col-xl-4 card border-0 postcard">
     <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
         <?php
+        $getcat = get_the_category();
+        $catname = $getcat[0]->cat_name;
+        echo '<div class="position-absolute d-inline-block p-1 category-name-card">' . $catname . '</div>';
         if ( has_post_thumbnail ( $post->ID ) ) {
             $image_id = get_post_thumbnail_id( $post->ID );
             $image_title = get_the_title($image_id);

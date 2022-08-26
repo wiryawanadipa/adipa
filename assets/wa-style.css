@@ -191,10 +191,24 @@ body {
     width: 100%;
     height: auto;
     transition: all .2s linear;
+    z-index: 9996;
 }
 
 .postcard-inside:hover img {
     transform: scale(1.1);
+}
+
+.category-name-card {
+    background-color: var(--third-bg-color);
+    color: var(--text-normal-color);
+    top: 2px;
+    right: 2px;
+    width: auto !important;
+    z-index: 9997;
+}
+
+.postcard-image {
+    overflow: hidden;
 }
 
 .postcard-date {
@@ -205,16 +219,16 @@ body {
     line-height: 1;
 }
 
-.postcard-image {
-    overflow: hidden;
-}
-
 .postcard p {
     color: var(--text-normal-color);
 }
 
 .postcard a {
     transition: text-decoration-color 300ms;
+}
+
+.postcard .stretched-link::after {
+    z-index: 9998;
 }
 
 .postcard a:hover {
