@@ -42,7 +42,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook'); ?>">
+							<input class="wa-input-social-id" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -53,7 +53,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter'); ?>">
+							<input class="wa-input-social-id" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -64,7 +64,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram'); ?>">
+							<input class="wa-input-social-id" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -75,7 +75,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin'); ?>">
+							<input class="wa-input-social-id" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -86,7 +86,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github'); ?>">
+							<input class="wa-input-social-id" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -97,7 +97,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube'); ?>">
+							<input class="wa-input-social-id" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube', 'UCpP1g9Vcl33ucu5mO2vr-5Q'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -108,7 +108,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium'); ?>">
+							<input class="wa-input-social-id" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
