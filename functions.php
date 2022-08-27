@@ -195,17 +195,6 @@ function figure_tag_img ( $content ) {
 }
 add_filter( 'the_content', 'figure_tag_img', 99 );
 
-// Fix search function
-if (!is_user_logged_in() || !is_admin()) {
-	function search_filter( $query ) {
-		if ($query->is_search) {
-			$query->set('post_type','post');
-		}
-		return $query;
-	}
-	add_filter('pre_get_posts', 'search_filter');
-}
-
 // Disable wordpress auto guessing url
 function stop_guessing($url) {
 	if (is_404()) {
@@ -223,7 +212,7 @@ function categories_clean($wp_list_categories) {
 	);
 	$replace = array(
 		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" ',
-		'<li class="py-3 py-sm-2 px-4 px-sm-3 text-white">'
+		'<li class="py-3 py-sm-2 px-3 text-white">'
 	);
 	return preg_replace($pattern, $replace, $wp_list_categories);
 }

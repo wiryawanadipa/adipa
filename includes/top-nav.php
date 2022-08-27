@@ -9,29 +9,29 @@
             <div class="collapse navbar-collapse mt-1 mt-md-0" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-md-2 mt-3 mt-md-0">
                     <li class="nav-item mx-lg-1">
-                        <a class="nav-link py-3 py-sm-2 px-3" href="<?php bloginfo('url'); ?>">
-                            <i class="fa-solid fa-house"></i> Home
+                        <a class="nav-link py-3 py-sm-2 px-2" href="<?php bloginfo('url'); ?>">
+                            <i class="fa-solid fa-house"></i>Home
                         </a>
                     </li>
                     <li class="nav-item mx-lg-1 dropdown">
-                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-tag"></i> Category
+                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-tag"></i>Category
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <?php wp_list_categories('title_li='); ?>
                         </ul>
                     </li>
                     <li class="nav-item mx-lg-1 dropdown">
-                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-file"></i> Page
+                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-file"></i>Page
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <?php wp_list_pages('&title_li='); ?>
                         </ul>
                     </li>
                     <li class="nav-item mx-lg-1 dropdown">
-                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-magnifying-glass"></i> Search
+                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>Search
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <form action="<?php bloginfo('url'); ?>" method="get">

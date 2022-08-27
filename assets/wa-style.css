@@ -85,9 +85,17 @@ body {
     border-color: var(--second-bg-color);
 }
 
+.wa-navbar ul li a i {
+    margin-right: .375rem;
+}
+
 .wa-navbar ul.children {
     list-style-type: none;
-    padding-left: 1rem;
+    padding-left: .5rem;
+}
+
+.wa-navbar ul.children li a::before {
+    content: "- ";
 }
 
 .dropdown-item:focus, .dropdown-item:hover, .dropdown-item:active {
@@ -101,7 +109,7 @@ body {
 
 .dropdown-menu input {
     margin: 0 .5rem;
-    min-width: 80%;
+    min-width: 90%;
     padding: .375rem;
 }
 
@@ -220,13 +228,16 @@ input:focus-visible {
     transform: scale(1.1);
 }
 
+.category-list-card {
+    top: 4px;
+    right: 4px;
+    z-index: 9997;
+    width: auto !important;
+}
+
 .category-name-card {
     background-color: var(--third-bg-color);
     color: var(--text-normal-color);
-    top: 4px;
-    right: 4px;
-    width: auto !important;
-    z-index: 9997;
 }
 
 .postcard-image {
