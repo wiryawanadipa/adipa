@@ -218,10 +218,12 @@ add_filter('redirect_canonical','stop_guessing');
 // Clean category list
 function categories_clean($wp_list_categories) {
 	$pattern = array(
-		'/\<li class="cat-item cat-item[^>]*><a /'
+		'/\<li class="cat-item cat-item[^>]*><a /',
+		'/\<li class="cat-item-none[^>]*>/'
 	);
 	$replace = array(
-		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" '
+		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" ',
+		'<li class="py-3 py-sm-2 px-4 px-sm-3 text-white">'
 	);
 	return preg_replace($pattern, $replace, $wp_list_categories);
 }
