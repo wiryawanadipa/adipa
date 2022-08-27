@@ -21,12 +21,14 @@
             <?php the_excerpt(); ?>
             <ul class="row postcard-tag-list">
                 <?php
+                if (has_tag()) {
                     $tags = get_the_tags();
                     foreach( $tags as $tag) {
                         $tag_link = get_tag_link( $tag->term_id );
                         $name = $tag->name;
                         echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr( $name) . '</a></li>' . "\n";
                     }
+                }
                 ?>
             </ul>
         </div>

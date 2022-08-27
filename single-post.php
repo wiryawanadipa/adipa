@@ -27,17 +27,18 @@
                                 }
                             ?>
                         </p>
-                        <p>
-                            <i class="fa-solid fa-tags"></i>
-                            <?php
-                                $tags = get_the_tags();
-                                foreach( $tags as $tag) {
-                                    $tag_link = get_tag_link( $tag->term_id );
-                                    $name = $tag->name;
-                                    echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name) . '</a></span>' . "\n";
-                                }
-                            ?>
-                        </p>
+                        <?php
+                        if (has_tag()) {
+                            echo '<p><i class="fa-solid fa-tags"></i>';
+                            $tags = get_the_tags();
+                            foreach( $tags as $tag) {
+                                $tag_link = get_tag_link( $tag->term_id );
+                                $name = $tag->name;
+                                echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name) . '</a></span>' . "\n";
+                            }
+                            echo '</p>';
+                        }
+                        ?>
                     </header>
                 </div>
             </div>
