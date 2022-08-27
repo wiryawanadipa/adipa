@@ -471,7 +471,6 @@ input:focus-visible {
 }
 
 .wa-post-article .hcb_wrap {
-    border-left: .5rem solid var(--main-color);
     margin: 0rem auto 2rem !important;
     max-width: var(--content-width);
     word-wrap: break-word;
