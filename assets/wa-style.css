@@ -221,8 +221,8 @@ input:focus-visible {
 .category-name-card {
     background-color: var(--third-bg-color);
     color: var(--text-normal-color);
-    top: 8px;
-    right: 8px;
+    top: 4px;
+    right: 4px;
     width: auto !important;
     z-index: 9997;
 }
@@ -334,7 +334,7 @@ input:focus-visible {
     margin: 0 0.5rem;
 }
 
-.post-title p .post-tag-list {
+.post-title p .post-cat-list, .post-title p .post-tag-list {
     margin: 0 .125rem;
 }
 
@@ -354,9 +354,9 @@ input:focus-visible {
 
 .wa-post p {
     color: var(--text-normal-color);
-    font-size: 1.2rem !important;
-    line-height: 2rem;
-    margin-bottom: 2rem !important;
+    font-size: 1.1rem !important;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem !important;
 }
 
 .wa-post-article {
@@ -364,7 +364,7 @@ input:focus-visible {
 }
 
 .wa-post-article p {
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem !important;
     max-width: 900px;
 }
 
@@ -373,9 +373,12 @@ input:focus-visible {
 .wa-post-article h4,
 .wa-post-article h5,
 .wa-post-article h6 {
+    background: var(--third-bg-color);
+    border-radius: 0.25rem;
     color: var(--text-normal-color);
     margin: 0 auto 2rem;
     max-width: 900px;
+    padding: 1rem;
 }
 
 .wa-post-article pre {
@@ -384,13 +387,14 @@ input:focus-visible {
 }
 
 .wa-post-article ol, .wa-post-article ul {
-    font-size: 1.2rem;
-    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    margin: 0 auto 2.5rem;
     max-width: 900px;
 }
 
 .wa-post-article ol li, .wa-post-article ul li {
     color: var(--text-normal-color);
+    line-height: 2.5rem;
 }
 
 .wa-post-article a {
@@ -405,7 +409,7 @@ input:focus-visible {
 }
 
 .wa-post figure {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .wa-post figure img {
@@ -416,13 +420,13 @@ input:focus-visible {
 .wa-post blockquote {
     background-color: var(--second-bg-color);
     border-radius: .5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding: 1rem;
     text-align: center;
 }
 
 .wa-post blockquote p {
-    line-height: 1.8rem;
+    line-height: 2rem;
     margin-bottom: 0 !important;
     max-width: 100%;
 }
@@ -454,7 +458,7 @@ input:focus-visible {
 }
 
 .youtube {
-    margin-bottom: 2rem !important;
+    margin-bottom: 2.5rem !important;
 }
 
 .twitter-tweet {
@@ -484,7 +488,7 @@ input:focus-visible {
 }
 
 .wa-post .hcb_wrap pre {
-    padding: 2.75rem !important;
+    padding: 2.75rem 2rem !important;
 }
 
 /* Footer */
@@ -521,4 +525,40 @@ input:focus-visible {
 
 .theme-version:hover {
     text-decoration: underline .1rem var(--main-color) !important;
+}
+
+@media (max-width: 576px) {
+    .wa-post-article h2,
+    .wa-post-article h3,
+    .wa-post-article h4,
+    .wa-post-article h5,
+    .wa-post-article h6,
+    .wa-post p,
+    .wa-post-article ol li,
+    .wa-post-article ul li {
+        line-height: 2rem !important;
+    }
+
+    .wa-post blockquote p {
+        line-height: 1.75rem !important;
+    }
+
+    .wa-post-article pre {
+        font-size: 1rem !important;
+    }
+
+    .wa-post-article h2,
+    .wa-post-article h3,
+    .wa-post-article h4,
+    .wa-post-article h5,
+    .wa-post-article h6,
+    .wa-post-article p,
+    .wa-post blockquote,
+    .wa-post figure,
+    .wa-post-article ol,
+    .wa-post-article ul,
+    .youtube,
+    .wa-post .hcb_wrap {
+        margin: 0 auto 1.5rem !important;
+    }
 }

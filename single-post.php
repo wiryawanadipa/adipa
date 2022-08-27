@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="container-xl my-4 main-page">
+<main class="container-xl my-3 my-sm-5 main-page">
 	<div class="row wa-post">
         <article class="col-xl-12">
             <!-- Post Title -->

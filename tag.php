@@ -16,7 +16,7 @@
 				include get_template_directory() . '/includes/post-card.php';
 			}
 		} else {
-			echo '<p>There are no posts!</p>';
+			echo '<p class="text-center text-white">There are no posts, yet!</p>';
 		}
 		?>
 	</div>
