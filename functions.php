@@ -19,7 +19,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'comments_notify', 0 );
 	update_option( 'moderation_notify', 0 );
 	update_option( 'comment_moderation', 1 );
-	update_option( 'comment_whitelist', 1 );
+	update_option( 'comment_previously_approved', 1 );
 	update_option( 'show_avatars', 0 );
 	update_option( 'permalink_structure', '/%postname%/' );
 	wp_delete_comment(1);
