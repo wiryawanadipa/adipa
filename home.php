@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part( 'template-parts/header' ); ?>
 <?php include get_template_directory() . '/includes/hero.php'; ?>
 <main class="container-xl py-5 main-page">
 	<?php
@@ -23,4 +23,4 @@
 	</div>
 	<?php pagenavi(); ?>
 </main>
-<?php get_footer(); ?>
+<?php get_template_part( 'template-parts/footer' ); ?>

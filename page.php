@@ -22,16 +22,26 @@
                 </div>
             </div>
             <!-- Post Article -->
-            <?php
-            if ( have_posts() ) {
-                while ( have_posts() ) {
-                    the_post();
-                    echo '<div class="container px-0 px-md-3 wa-post-article">';
-                        the_content();
-                    echo '</div>';
-                }
-            }
-            ?>
+            <div class="container px-0 px-md-3 wa-post-article">
+                <div class="wa-post-article-box">
+                    <?php
+                    if ( is_page('About') ) {
+                        include get_template_directory() . '/page-templates/about.php';
+                    } elseif ( is_page('Contact') ) {
+                        include get_template_directory() . '/page-templates/contact.php';
+                    } elseif ( is_page('Privacy Policy') ) {
+                        include get_template_directory() . '/page-templates/privacy-policy.php';
+                    } else {
+                        if ( have_posts() ) {
+                            while ( have_posts() ) {
+                                the_post();
+                                the_content();
+                            }
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         </article>
 	</div>
 </main>

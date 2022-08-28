@@ -48,7 +48,9 @@
                 while ( have_posts() ) {
                     the_post();
                     echo '<div class="container px-0 px-md-3 wa-post-article">';
-                        the_content();
+                        echo '<div class="wa-post-article-box">';
+                            the_content();
+                        echo '</div>';
                     echo '</div>';
                 }
             }
