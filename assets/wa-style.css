@@ -104,17 +104,37 @@ body {
 
 .dropdown-menu {
     border-radius: 0 0 .375rem .375rem !important;
+    padding: .5rem;
     top: 54px !important;
 }
 
+.dropdown-menu form {
+    display:flex;
+    flex-direction:row;
+    width: 100%;
+}
+
 .dropdown-menu input {
-    margin: 0 .5rem;
-    min-width: 90%;
+    border: none;
     padding: .375rem;
+    min-width: 240px;
+    width: 100%;
+}
+
+.dropdown-menu button {
+    background-color: var(--third-bg-color);
+    border: none !important;
+    color: var(--text-normal-color);
+    height: 38px;
+    width: 38px;
+}
+
+.dropdown-menu button:hover {
+    background-color: var(--secondary-color);
 }
 
 input:focus-visible {
-    outline-color: var(--first-bg-color);
+    outline-color: var(--main-color);
 }
 
 /* Main */
@@ -217,7 +237,10 @@ input:focus-visible {
     background-color: var(--second-bg-color-hover);
 }
 
-.postcard-inside img {
+.postcard-image {
+    overflow: hidden;
+}
+.postcard-image img {
     width: 100%;
     height: auto;
     transition: all .2s linear;
@@ -238,10 +261,7 @@ input:focus-visible {
 .category-name-card {
     background-color: var(--third-bg-color);
     color: var(--text-normal-color);
-}
-
-.postcard-image {
-    overflow: hidden;
+    margin-bottom: 4px;
 }
 
 .postcard-date {
@@ -282,14 +302,15 @@ input:focus-visible {
 }
 
 .postcard-tag {
+    background-color: var(--first-bg-color);
     font-size: .9rem;
-    z-index: 9999;
+    padding: .25rem .5rem;
     text-decoration: underline .15rem var(--text-normal-color) !important;
-    transition: text-decoration-color 300ms;
+    z-index: 9999;
 }
 
-.postcard-tag:hover {
-    text-decoration-color: var(--main-color) !important;
+a.postcard-tag:hover {
+    text-decoration: underline .15rem var(--main-color) !important;
 }
 
 .postcard-tag::before {
@@ -413,12 +434,12 @@ input:focus-visible {
 .wa-post-article a {
     color: var(--text-normal-color);
     font-weight: 500;
-    text-decoration: underline .2rem var(--text-normal-color);
+    text-decoration: underline .2rem var(--main-color);
     transition: text-decoration-color 300ms;
 }
 
 .wa-post-article a:hover {
-    text-decoration-color: var(--main-color);
+    text-decoration: underline .375rem var(--main-color);
 }
 
 .wa-post-article figure {
@@ -542,6 +563,10 @@ input:focus-visible {
 }
 
 @media (max-width: 576px) {
+
+    .dropdown-menu input {
+        min-width: 180px;
+    }
 
     .wa-post p,
     .wa-post blockquote p,

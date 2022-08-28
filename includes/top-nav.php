@@ -34,8 +34,9 @@
                             <i class="fa-solid fa-magnifying-glass"></i>Search
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <form action="<?php bloginfo('url'); ?>" method="get">
+                            <form action="<?php bloginfo('url'); ?>" role="search" method="get">
                                 <input type="search" name="s" autocomplete="off" placeholder="Search here..." title="Search" required>
+                                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                         </ul>
                     </li>
