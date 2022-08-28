@@ -192,7 +192,7 @@ input:focus-visible {
 .home-quote a {
     color: var(--text-normal-color);
     text-decoration: underline .2rem;
-    transition: text-decoration-color 300ms;
+    transition: text-decoration-color .2s;
 }
 
 .home-quote a:hover {
@@ -243,12 +243,13 @@ input:focus-visible {
 .postcard-image img {
     width: 100%;
     height: auto;
-    transition: all .2s linear;
+    transition: 1s;
     z-index: 9996;
 }
 
 .postcard-inside:hover img {
     transform: scale(1.1);
+    transition: 1s;
 }
 
 .category-list-card {
@@ -277,7 +278,7 @@ input:focus-visible {
 }
 
 .postcard a {
-    transition: text-decoration-color 300ms;
+    transition: text-decoration-color .2s;
 }
 
 .postcard .stretched-link::after {
@@ -385,7 +386,7 @@ a.postcard-tag:hover {
 .post-title p .post-cat-list a, .post-title p .post-tag-list a {
     color: var(--text-normal-color);
     text-decoration: underline .15rem var(--text-normal-color);
-    transition: text-decoration-color 300ms;
+    transition: text-decoration-color .2s;
 }
 
 .post-title p .post-tag-list a::before {
@@ -438,7 +439,7 @@ a.postcard-tag:hover {
     color: var(--text-normal-color);
     font-weight: 500;
     text-decoration: underline .2rem var(--main-color);
-    transition: text-decoration-color 300ms;
+    transition: text-decoration-color .2s;
 }
 
 .wa-post-article a:hover {
@@ -549,8 +550,13 @@ a.postcard-tag:hover {
     min-height: 42px;
 }
 
+.wa-footer i {
+    transition: .2s;
+}
+
 .wa-footer i:hover {
     color: var(--main-color);
+    transition: .2s;
 }
 
 .wa-footer .small-text {
@@ -558,7 +564,7 @@ a.postcard-tag:hover {
 }
 
 .theme-version {
-    transition: text-decoration-color 300ms;
+    transition: text-decoration-color .2s;
 }
 
 .theme-version:hover {
