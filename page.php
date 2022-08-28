@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part( 'template-parts/header' ); ?>
 <main class="container-xl my-3 my-sm-5 main-page">
 	<div class="row wa-post">
         <article class="col-xl-12">
@@ -26,11 +26,11 @@
                 <div class="wa-post-article-box">
                     <?php
                     if ( is_page('About') ) {
-                        include get_template_directory() . '/page-templates/about.php';
+                        get_template_part( 'template-parts/pages/about' );
                     } elseif ( is_page('Contact') ) {
-                        include get_template_directory() . '/page-templates/contact.php';
+                        get_template_part( 'template-parts/pages/contact' );
                     } elseif ( is_page('Privacy Policy') ) {
-                        include get_template_directory() . '/page-templates/privacy-policy.php';
+                        get_template_part( 'template-parts/pages/privacy-policy' );
                     } else {
                         if ( have_posts() ) {
                             while ( have_posts() ) {
@@ -45,4 +45,4 @@
         </article>
 	</div>
 </main>
-<?php get_footer(); ?>
+<?php get_template_part( 'template-parts/footer' ); ?>

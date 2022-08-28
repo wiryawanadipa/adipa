@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<?php include get_template_directory() . '/includes/meta.php'; ?>
+		<?php get_template_part( 'template-parts/parts/meta' ); ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- External Assets CDN -->
 		<link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -28,5 +28,5 @@
 		?>
 	</head>
 	<body>
-		<?php include get_template_directory() . '/includes/top-nav.php'; ?>
+	<?php get_template_part( 'template-parts/parts/topnav' ); ?>
 		<!-- Main -->

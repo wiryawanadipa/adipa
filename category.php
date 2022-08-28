@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part( 'template-parts/header' ); ?>
 <main class="container-xl py-5 main-page">
 	<?php
 		if ( is_paged() ) {
@@ -13,7 +13,7 @@
 		if ( have_posts() ) {
 			while ( have_posts() ) {
 				the_post();
-				include get_template_directory() . '/includes/post-card.php';
+				get_template_part( 'template-parts/parts/postcard' );
 			}
 		} else {
 			echo '<p class="text-center text-white">There are no posts, yet!</p>';
@@ -22,4 +22,4 @@
 	</div>
 	<?php pagenavi(); ?>
 </main>
-<?php get_footer(); ?>
+<?php get_template_part( 'template-parts/footer' ); ?>

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part( 'template-parts/header' ); ?>
 <main class="container-xl py-5 main-page">
 	<div class="row mb-5 g-2 g-xxl-3">
         <div class="col-12 text-center my-5 error-404">
@@ -8,4 +8,4 @@
         </div>
 	</div>
 </main>
-<?php get_footer(); ?>
+<?php get_template_part( 'template-parts/footer' ); ?>
