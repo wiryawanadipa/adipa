@@ -1,8 +1,7 @@
 <?php get_template_part( 'template-parts/header' ); ?>
-<main class="container-xl py-5 main-page">
+<main class="container-xl py-4 py-xl-5 main-page">
 	<?php if ( have_posts() ) { ?>
 		<h1 class="text-center mb-5 text-white">Search results for <em><?php echo get_search_query(); ?></em></h1>
-		<?php pagenavi(); ?>
 		<div class="row mt-4 mb-5 g-2 g-xxl-3">
 			<?php
 				while ( have_posts() ) {

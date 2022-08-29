@@ -53,7 +53,6 @@ body {
 
 /* Navigation Bar */
 .navbar-brand {
-    font-family: var(--font-mogra);
     padding: 0;
 }
 
@@ -83,19 +82,6 @@ body {
 .wa-navbar ul {
     background-color: var(--second-bg-color);
     border-color: var(--second-bg-color);
-}
-
-.wa-navbar ul li a i {
-    margin-right: .375rem;
-}
-
-.wa-navbar ul.children {
-    list-style-type: none;
-    padding-left: .5rem;
-}
-
-.wa-navbar ul.children li a::before {
-    content: "- ";
 }
 
 .dropdown-item:focus, .dropdown-item:hover, .dropdown-item:active {
@@ -225,10 +211,6 @@ input:focus-visible {
     content: "-";
 }
 
-.postcard {
-    background-color: var(--first-bg-color);
-}
-
 .postcard-inside {
     background-color: var(--second-bg-color);
 }
@@ -295,7 +277,7 @@ input:focus-visible {
     margin: 0;
     padding: 0;
     width: auto;
-    gap: 8px;
+    gap: 4px;
 }
 
 .postcard-tag-list li {
@@ -327,17 +309,18 @@ a.postcard-tag:hover {
     color: var(--text-normal-color);
 }
 
-.btn-primary {
+.pagination {
     color: var(--text-normal-color);
     background-color: var(--second-bg-color);
-    border-color: var(--second-bg-color);
+    border-radius: .25rem;
+    display: inline-block;
+    padding: .5rem .75rem;
+    text-decoration: none;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+.pagination:hover {
     color: var(--main-color);
     background-color: var(--third-bg-color);
-    border-color: var(--third-bg-color);
-    box-shadow: none !important;
 }
 
 .tag-title::before {
@@ -371,30 +354,26 @@ a.postcard-tag:hover {
     margin-bottom: 0 !important;
 }
 
-.post-title .post-info-top {
-    margin-bottom: 1rem !important;
-}
-
 .post-title p span {
     margin: 0 0.5rem;
 }
 
-.post-title p .post-cat-list, .post-title p .post-tag-list {
-    margin: 0 .125rem;
+.post-tag-list {
+    margin: 0 0 0 .25rem !important;
 }
 
-.post-title p .post-cat-list a, .post-title p .post-tag-list a {
+.post-title p .post-tag-list a {
     color: var(--text-normal-color);
     text-decoration: underline .15rem var(--text-normal-color);
     transition: text-decoration-color .2s;
 }
 
-.post-title p .post-tag-list a::before {
+.post-tag-list a::before {
     content: "#";
 }
 
-.post-title p .post-cat-list a:hover, .post-title p .post-tag-list a:hover {
-    text-decoration-color: var(--main-color);
+.post-tag-list a:hover {
+    text-decoration-color: var(--main-color) !important;
 }
 
 .wa-post-article {

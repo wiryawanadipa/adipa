@@ -1,4 +1,8 @@
-This theme is my personal project for my personal blog. For live demo: https://wiryawanadipa.com
+This theme is my personal project for my personal blog.
+
+Use v0.9.9 if you want to use for your personal project because it's still using category instead of tag. https://github.com/wiryawanadipa/adipa/releases/tag/v0.9.9
+
+For live demo: https://wiryawanadipa.com only for v1.0.0++
 
 What is in this theme?
 1. Built in Wordpress version 6.0.1

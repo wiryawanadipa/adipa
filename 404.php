@@ -1,5 +1,5 @@
 <?php get_template_part( 'template-parts/header' ); ?>
-<main class="container-xl py-5 main-page">
+<main class="container-xl py-4 py-xl-5 main-page">
 	<div class="row mb-5 g-2 g-xxl-3">
         <div class="col-12 text-center my-5 error-404">
             <h1>Error 404</h1>

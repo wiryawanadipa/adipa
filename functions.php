@@ -265,10 +265,10 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 					if($i == $paged) {
 					}
 					elseif ($i < $paged) {
-						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary me-2" ' . $i . '"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="pagination me-2" ' . $i . '"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
 					}
 					else {
-						echo '<a href="'.get_pagenum_link($i).'" class="btn btn-primary" ' . $i . '">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="pagination" ' . $i . '">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
 					}
 				}
 			}

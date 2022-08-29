@@ -3,7 +3,7 @@
 	<div class="row wa-post">
         <article class="col-xl-12">
             <!-- Post Title -->
-            <div class="container px-0 px-md-3 mb-4">
+            <div class="container px-0 mb-4">
                 <?php
                 if ( has_post_thumbnail ( $post->ID ) ) {
                     $img_link = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');

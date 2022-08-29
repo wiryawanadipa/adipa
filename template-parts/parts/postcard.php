@@ -1,22 +1,6 @@
-<div class="col-sm-6 col-xl-4 card border-0 postcard">
+<div class="col-sm-6 col-xl-4 border-0 postcard">
     <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
         <?php
-        $posttype = get_post_type();
-        if ( $posttype == 'post' ) {
-            echo '<div class="position-absolute d-inline-block category-list-card">' . "\n";
-            $getcat = get_the_category();
-            if ( count ( $getcat ) == 1 ) {
-                $catname = $getcat[0]->cat_name;
-                echo '<div class="d-inline-block p-1 px-2 rounded-1 category-name-card">' . $catname . '</div>' . "\n";
-            } else {
-                foreach ( $getcat as $category) {
-                    $category_link = get_category_link( $category->term_id );
-                    $catname = $category->cat_name;
-                    echo '<div class="d-inline-block p-1 px-2 rounded-1 category-name-card">' . $catname . '</div>' . "\n";
-                }
-            }
-            echo '</div>' . "\n";
-        }
         if ( has_post_thumbnail ( $post->ID ) ) {
             $image_id = get_post_thumbnail_id( $post->ID );
             $image_title = get_the_title( $image_id );
@@ -31,8 +15,11 @@
                     <?php the_title(); ?>
                 </a>
             </h2>
-            <?php the_excerpt(); ?>
-            <?php if ( $posttype == 'post' ) { ?>
+            <?php
+            the_excerpt();
+            $posttype = get_post_type();
+            if ( $posttype == 'post' ) {
+            ?>
                 <ul class="row postcard-tag-list">
                     <?php
                     if (has_tag()) {
