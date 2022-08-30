@@ -1,3 +1,8 @@
+<div class="cosmetic-4">
+	<div class="cosmetic-box">
+		<div class="cosmetic-main cosmetic-main-4"></div>
+	</div>
+</div>
 <div class="home-quote">
 	<div class="container py-5">
 		<div class="row justify-content-end"> 
@@ -8,5 +13,10 @@
 		</blockquote>
 		</div>
 		</div>
+	</div>
+</div>
+<div class="cosmetic-5">
+	<div class="cosmetic-box">
+		<div class="cosmetic-main cosmetic-main-5"></div>
 	</div>
 </div>

@@ -1,5 +1,10 @@
+<div class="cosmetic-1">
+	<div class="cosmetic-box">
+		<div class="cosmetic-main cosmetic-main-1"></div>
+	</div>
+</div>
 <div class="hero">
-	<div class="container-xl py-0 py-sm-5">
+	<div class="herobox container-xl py-0 py-sm-5">
 		<div class="row py-4 py-sm-5">
 			<div class="col-lg-8 p-xl-3">
 				<div class="hero-heading-name pb-3 pb-sm-0 text-center text-sm-start">

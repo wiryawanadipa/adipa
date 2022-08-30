@@ -1,6 +1,6 @@
 :root {
-    --main-color: #f79f00;
-    --secondary-color: #ce8600;
+    --main-color: #fc5c65;
+    --secondary-color: #eb3b5a;
     --first-bg-color: #36454f;
     --second-bg-color: #2c3840;
     --third-bg-color: #212b31;
@@ -8,7 +8,6 @@
     --text-normal-color: #dedede;
     --text-muted-color: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
-    --font-mogra: 'Mogra', cursive;
     --content-width: 900px;
 }
 
@@ -130,6 +129,38 @@ input:focus-visible {
 
 .hero {
     background-color: var(--third-bg-color);
+    -webkit-animation: webkit-hero 1.6s 1 linear; 
+    -moz-animation: moz-hero 1.6s 1 linear;
+    -o-animation: o-hero 1.6s 1 linear;
+    animation: hero 1.6s 1 linear;
+}
+
+@keyframes hero {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 200rem;
+    }
+}
+
+.herobox {
+    border: 1rem solid var(--third-bg-color);
+    border-radius: .5rem;
+    overflow: hidden;
+    -webkit-animation: webkit-herobox 1.2s 1 linear; 
+    -moz-animation: moz-herobox 1.2s 1 linear;
+    -o-animation: o-herobox 1.2s 1 linear;
+    animation: herobox 1.2s 1 linear;
+}
+
+@keyframes herobox {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .hero-heading-name {
@@ -168,6 +199,150 @@ input:focus-visible {
         width: 192px;
         height: 192px;
     }
+}
+
+.cosmetic-1 {
+    background-color: var(--third-bg-color);
+}
+
+.cosmetic-2 {
+    background-color: var(--second-bg-color);
+}
+
+.cosmetic-3 {
+    background-color: var(--first-bg-color);
+}
+
+.cosmetic-4 {
+    background-color: var(--third-bg-color);
+}
+
+.cosmetic-5 {
+    background-color: var(--second-bg-color);
+}
+
+.cosmetic-box {
+    height: 200px;
+    overflow: hidden;
+}
+
+.cosmetic-main {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(357deg);
+    transform-origin: top left;
+    border-bottom: 1rem solid var(--secondary-color);
+}
+
+.cosmetic-main-1 {
+    background-color: var(--second-bg-color);
+}
+
+.cosmetic-main-2 {
+    background-color: var(--third-bg-color);
+}
+
+.cosmetic-main-3 {
+    background-color: var(--second-bg-color);
+}
+
+.cosmetic-main-4 {
+    background-color: var(--first-bg-color);
+}
+
+.cosmetic-main-5 {
+    background-color: var(--third-bg-color);
+}
+
+.despro {
+    background-color: var(--second-bg-color);
+    -webkit-animation: webkit-despro 2s 1 linear; 
+    -moz-animation: moz-despro 2s 1 linear;
+    -o-animation: o-despro 2s 1 linear;
+    animation: despro 2s 1 linear;
+}
+
+@keyframes despro {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 200rem;
+    }
+}
+
+.despro-wrap {
+    border: 1rem solid var(--third-bg-color);
+    border-radius: .5rem;
+    overflow: hidden;
+    -webkit-animation: webkit-desprowrap 1.6s 1 linear; 
+    -moz-animation: moz-desprowrap 1.6s 1 linear;
+    -o-animation: o-desprowrap 1.6s 1 linear;
+    animation: desprowrap 1.6s 1 linear;
+}
+
+@keyframes desprowrap {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.despro-wrap img {
+    -webkit-transition: transform 1s ease-out;
+    -moz-transition: transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    width: 100%;
+}
+
+.despro-wrap:hover img, .despro-wrap:hover img {
+    transform: scale(1.2);
+}
+
+.despro-link-box {
+    background-color: rgba(33, 43, 49, .8);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+.despro-link-box:hover {
+    background-color: rgba(33, 43, 49, .6);
+}
+
+.despro-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.despro-link a {
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+.despro-link:hover a {
+    color: var(--text-normal-color);
+    background-color: var(--secondary-color);
 }
 
 .home-quote {
@@ -338,34 +513,34 @@ a.postcard-tag:hover {
     margin-bottom: 2.5rem !important;
 }
 
-.post-title {
+.post-title-header {
     padding: 0 1rem;
 }
 
-.post-title h1 {
+.post-title-header h1 {
     color: var(--text-normal-color);
     font-weight: 800;
     margin-bottom: 1rem;
 }
 
-.post-title p {
+.post-title-header p {
     font-size: 1rem !important;
     line-height: 1.5rem;
     margin-bottom: 0 !important;
 }
 
-.post-title p span {
+.post-title-header p span {
     margin: 0 0.5rem;
+}
+
+.post-title-header p .post-tag-list a {
+    color: var(--text-normal-color);
+    text-decoration: underline .15rem var(--text-normal-color);
+    transition: text-decoration-color .2s;
 }
 
 .post-tag-list {
     margin: 0 0 0 .25rem !important;
-}
-
-.post-title p .post-tag-list a {
-    color: var(--text-normal-color);
-    text-decoration: underline .15rem var(--text-normal-color);
-    transition: text-decoration-color .2s;
 }
 
 .post-tag-list a::before {
@@ -554,6 +729,10 @@ a.postcard-tag:hover {
         min-width: 180px;
     }
 
+    .cosmetic-box {
+        height: 65px;
+    }
+
     .wa-post p,
     .wa-post blockquote p,
     .wa-post-article ol li,
@@ -579,5 +758,47 @@ a.postcard-tag:hover {
     .youtube,
     .wa-post .hcb_wrap {
         margin: 0 auto 1.5rem !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .cosmetic-box {
+        height: 75px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cosmetic-box {
+        height: 85px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cosmetic-box {
+        height: 90px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cosmetic-box {
+        height: 120px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .cosmetic-box {
+        height: 160px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .cosmetic-box {
+        height: 200px;
+    }
+}
+
+@media (min-width: 3100px) {
+    .cosmetic-box {
+        height: 250px;
     }
 }
