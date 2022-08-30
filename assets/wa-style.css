@@ -55,6 +55,10 @@ body {
     padding: 0;
 }
 
+.navbar-brand:hover {
+    background-color: transparent !important;
+}
+
 .navbar-brand span {
     margin: auto .5rem;
 }
@@ -299,6 +303,7 @@ input:focus-visible {
     -moz-transition: transform 1s ease-out;
     -o-transition: transform 1s ease-out;
     transition: transform 1s ease-out;
+    height: 100%;
     width: 100%;
 }
 

@@ -12,7 +12,7 @@
 				get_template_part( 'template-parts/parts/postcard' );
 			}
 		} else {
-			echo '<p class="text-center text-white">Coming Soon!</p>';
+			echo '<p class="fs-1 text-center text-white">Coming Soon!</p>';
 		}
 		?>
 	</div>
