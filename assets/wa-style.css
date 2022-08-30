@@ -129,10 +129,10 @@ input:focus-visible {
 
 .hero {
     background-color: var(--third-bg-color);
-    -webkit-animation: webkit-hero 1.6s 1 linear; 
-    -moz-animation: moz-hero 1.6s 1 linear;
-    -o-animation: o-hero 1.6s 1 linear;
-    animation: hero 1.6s 1 linear;
+    -webkit-animation: webkit-hero 2s 1 linear; 
+    -moz-animation: moz-hero 2s 1 linear;
+    -o-animation: o-hero 2s 1 linear;
+    animation: hero 2s 1 linear;
 }
 
 @keyframes hero {
