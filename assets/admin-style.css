@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 :root {
-    --main-color: #f79f00;
-    --secondary-color: #ce8600;
-    --first-bg-color: #36454f;
-    --second-bg-color: #2c3840;
-    --third-bg-color: #212b31;
-    --text-normal-color: #dedede;
-    --text-muted-color: #6c757d;
+    --color-one: #fc5c65;
+    --color-two: #eb3b5a;
+    --bg-color-one: #36454f;
+    --bg-color-two: #2c3840;
+    --bg-color-three: #212b31;
+    --text-normal: #dedede;
+    --text-muted: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--text-normal-color);
+    background-color: var(--bg-color-two);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--third-bg-color);
+    background-color: var(--color-one);
+    border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--third-bg-color);
+    background-color: var(--color-two);
 }
 
 body {
@@ -32,38 +33,28 @@ body {
 }
 
 .custom-theme-section h2 {
-    background: var(--first-bg-color) !important;
+    background: var(--bg-color-one) !important;
     border-radius: .25rem !important;
-    color: var(--text-normal-color) !important;
+    color: var(--text-normal) !important;
     margin-bottom: 1rem !important;
     padding: .5rem !important;
 }
 
 .custom-theme-container {
-    background: var(--second-bg-color);
+    background-color: #fff;
     border-radius: 0 0 .25rem .25rem;
-    padding: 1rem;
     box-shadow: 0 0 2px rgba(0,0,0,.15);
-}
-
-.custom-theme-container label, .custom-theme-container tr th, .custom-theme-container tr td p {
-    color: var(--text-normal-color) !important;
-}
-
-.custom-theme-container textarea, .custom-theme-container input {
-    background-color: var(--first-bg-color);
-    border: none;
-    color: var(--text-normal-color);
+    padding: 1rem;
 }
 
 .custom-theme-container textarea:focus, .custom-theme-container input:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 1px var(--secondary-color);
+    border-color: var(--color-two);
+    box-shadow: 0 0 0 1px var(--color-two);
 }
 
 .custom-theme-container code {
-    background-color: var(--text-normal-color);
-    color: var(--second-bg-color);
+    background-color: var(--text-normal);
+    color: var(--bg-color-two);
 }
 
 .tabs {
@@ -100,8 +91,8 @@ body {
 }
 
 .tab-links a:hover {
-    background: var(--first-bg-color);
-    color: var(--text-normal-color);
+    background: var(--bg-color-one);
+    color: var(--text-normal);
     text-decoration: none;
 }
 
@@ -111,8 +102,8 @@ body {
 
 .tab-links li.active a,
 .tab-links li.active a:hover {
-    background: var(--first-bg-color);
-    color: var(--text-normal-color);
+    background: var(--bg-color-one);
+    color: var(--text-normal);
 }
 
 .tab-content {
@@ -164,13 +155,13 @@ body {
 }
 
 .theme-github-link a {
-    color: var(--text-normal-color) !important;
+    color: var(--bg-color-three) !important;
     line-height: 2rem;
-    text-decoration: underline .2rem var(--text-normal-color);
+    text-decoration: underline .2rem var(--bg-color-one);
 }
 
 .theme-github-link a:hover {
-    text-decoration: underline .2rem var(--main-color);
+    text-decoration: underline .2rem var(--color-one);
 }
 
 .wa-theme-social {
@@ -180,10 +171,10 @@ body {
 }
 
 .wa-theme-social a {
-    color: var(--text-normal-color) !important;
+    color: var(--bg-color-one) !important;
     margin: 0 .25rem;
 }
 
 .wa-theme-social a:hover {
-    color: var(--main-color) !important;
+    color: var(--color-one) !important;
 }

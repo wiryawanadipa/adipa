@@ -5,8 +5,8 @@
     --bg-color-two: #2c3840;
     --bg-color-three: #212b31;
     --bg-color-two-hover: rgba(33, 43, 49, .75);
-    --text-normal-color: #dedede;
-    --text-muted-color: #6c757d;
+    --text-normal: #dedede;
+    --text-muted: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
     --content-width: 900px;
 }
@@ -74,11 +74,11 @@ body {
 
 .wa-navbar a, .wa-navbar a:focus {
     border-radius: .25rem;
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .wa-navbar a:hover, .wa-navbar a:active {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     background-color: var(--color-two);
 }
 
@@ -113,7 +113,7 @@ body {
 .dropdown-menu button {
     background-color: var(--bg-color-three);
     border: none !important;
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     height: 38px;
     width: 38px;
 }
@@ -225,7 +225,7 @@ input:focus-visible {
 }
 
 .hero-heading-name {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .hero-heading-name h1 {
@@ -233,7 +233,7 @@ input:focus-visible {
 }
 
 .hero-heading-text {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-size: 1.5rem;
     overflow: hidden;
 }
@@ -307,12 +307,12 @@ input:focus-visible {
     width: 100%;
 }
 
-.despro-wrap:hover img, .despro-wrap:hover img {
+.despro-wrap:hover img {
     transform: scale(1.2);
 }
 
 .despro-link-box {
-    background-color: rgba(33, 43, 49, .8);
+    background-color: rgba(33, 43, 49, .4);
     left: 0;
     right: 0;
     top: 0;
@@ -324,7 +324,7 @@ input:focus-visible {
 }
 
 .despro-link-box:hover {
-    background-color: rgba(33, 43, 49, .6);
+    background-color: rgba(33, 43, 49, .8);
 }
 
 .despro-link {
@@ -346,17 +346,17 @@ input:focus-visible {
 }
 
 .despro-link:hover a {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     background-color: var(--color-two);
 }
 
 .home-quote {
     background-color: var(--bg-color-three);
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .home-quote a {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     text-decoration: underline .2rem;
     transition: text-decoration-color .2s;
 }
@@ -423,12 +423,8 @@ input:focus-visible {
 
 .category-name-card {
     background-color: var(--bg-color-three);
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     margin-bottom: 4px;
-}
-
-.postcard-date {
-    font-size: .9rem;
 }
 
 .postcard h2 {
@@ -436,7 +432,7 @@ input:focus-visible {
 }
 
 .postcard p {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .postcard a {
@@ -448,7 +444,7 @@ input:focus-visible {
 }
 
 .postcard a:hover {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     text-decoration: underline .2rem var(--color-one) !important;
 }
 
@@ -486,11 +482,11 @@ a.postcard-tag:hover {
 
 .stretched-link {
     text-decoration: none;
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .pagination {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     background-color: var(--bg-color-two);
     border-radius: .25rem;
     display: inline-block;
@@ -499,7 +495,7 @@ a.postcard-tag:hover {
 }
 
 .pagination:hover {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     background-color: var(--color-two);
 }
 
@@ -508,11 +504,11 @@ a.postcard-tag:hover {
 }
 
 .error-404 {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .wa-post p {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-size: 1.1rem !important;
     line-height: 2.4rem;
     margin-bottom: 2.5rem !important;
@@ -523,7 +519,7 @@ a.postcard-tag:hover {
 }
 
 .post-title-header h1 {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -539,8 +535,8 @@ a.postcard-tag:hover {
 }
 
 .post-title-header p .post-tag-list a {
-    color: var(--text-normal-color);
-    text-decoration: underline .15rem var(--text-normal-color);
+    color: var(--text-normal);
+    text-decoration: underline .15rem var(--text-normal);
     transition: text-decoration-color .2s;
 }
 
@@ -557,7 +553,7 @@ a.postcard-tag:hover {
 }
 
 .wa-post-article {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .wa-post-article-box {
@@ -576,13 +572,13 @@ a.postcard-tag:hover {
 .wa-post-article h6 {
     background: var(--bg-color-three);
     border-radius: 0.25rem;
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     margin: 0 auto 2rem;
     padding: 1rem;
 }
 
 .wa-post-article pre {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-size: 1.1rem !important;
 }
 
@@ -592,12 +588,12 @@ a.postcard-tag:hover {
 }
 
 .wa-post-article ol li, .wa-post-article ul li {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     line-height: 2.4rem;
 }
 
 .wa-post-article a {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-weight: 500;
     text-decoration: underline .2rem var(--color-one);
     transition: text-decoration-color .2s;
@@ -643,7 +639,7 @@ a.postcard-tag:hover {
 }
 
 .wa-post-article blockquote p:not(:first-child):last-child {
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
     font-size: .8rem !important;
     font-style: italic;
     font-weight: 500;
@@ -676,7 +672,7 @@ a.postcard-tag:hover {
 }
 
 .wa-post-article .hcb_wrap .hcb-clipboard.-done::before {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     font-size: 1.1rem !important;
 }
 
@@ -691,11 +687,11 @@ a.postcard-tag:hover {
 /* Footer */
 .wa-footer {
     background-color: var(--bg-color-two);
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 .wa-footer a {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
     text-decoration: none;
 }
 
@@ -735,7 +731,7 @@ a.postcard-tag:hover {
     }
 
     .cosmetic-box {
-        height: 65px;
+        height: 50px;
     }
 
     .wa-post p,
@@ -768,42 +764,48 @@ a.postcard-tag:hover {
 
 @media (min-width: 576px) {
     .cosmetic-box {
-        height: 75px;
+        height: 58px;
     }
 }
 
 @media (min-width: 768px) {
     .cosmetic-box {
-        height: 85px;
+        height: 70px;
     }
 }
 
 @media (min-width: 992px) {
     .cosmetic-box {
-        height: 90px;
+        height: 80px;
     }
 }
 
 @media (min-width: 1200px) {
     .cosmetic-box {
-        height: 120px;
+        height: 95px;
     }
 }
 
 @media (min-width: 1400px) {
     .cosmetic-box {
-        height: 160px;
+        height: 110px;
     }
 }
 
 @media (min-width: 1800px) {
     .cosmetic-box {
-        height: 200px;
+        height: 132px;
     }
 }
 
-@media (min-width: 3100px) {
+@media (min-width: 2200px) {
     .cosmetic-box {
-        height: 250px;
+        height: 160px;
+    }
+}
+
+@media (min-width: 2600px) {
+    .cosmetic-box {
+        height: 260px;
     }
 }

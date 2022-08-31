@@ -21,7 +21,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="home_title" type="text" value="<?php echo get_option('home_title', '[sitename] - [tagline]'); ?>">
+                                <input class="wa-input-title" name="home_title" type="text" value="<?php echo get_option('home_title', 'Home - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[sitename] [tagline]</p>
                             </td>

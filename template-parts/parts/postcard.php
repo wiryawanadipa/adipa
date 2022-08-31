@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-xl-4 border-0 postcard">
+<div class="col-sm-6 col-xl-4 pb-3 pb-sm-0 border-0 postcard">
     <div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
         <?php
         if ( has_post_thumbnail ( $post->ID ) ) {

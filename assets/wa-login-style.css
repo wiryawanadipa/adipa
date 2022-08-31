@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --main-color: #f79f00;
-    --secondary-color: #ce8600;
-    --first-bg-color: #36454f;
-    --second-bg-color: #2c3840;
-    --third-bg-color: #212b31;
-    --text-normal-color: #dedede;
-    --text-muted-color: #6c757d;
+    --color-one: #fc5c65;
+    --color-two: #eb3b5a;
+    --bg-color-one: #36454f;
+    --bg-color-two: #2c3840;
+    --bg-color-three: #212b31;
+    --text-normal: #dedede;
+    --text-muted: #6c757d;
     --font-poppins: 'Poppins', sans-serif;
 }
 
@@ -16,7 +16,7 @@
 }
 
 body.login {
-    background-color: var(--first-bg-color);
+    background-color: var(--bg-color-one);
     font-family: var(--font-poppins) !important;
 }
 
@@ -35,32 +35,32 @@ body.login {
 }
 
 input[type=text]:focus {
-    border-color: var(--secondary-color);
+    border-color: var(--color-two);
 }
 
 #loginform, #lostpasswordform, #registerform {
-    background-color: var(--third-bg-color);
+    background-color: var(--bg-color-three);
     border: 0;
     border-radius: .25rem;
     margin: .5rem 0 !important;
 }
 
 #loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 #user_login, #loginform input, #user_email {
-    background-color: var(--second-bg-color) !important;
-    color: var(--text-normal-color) !important;
+    background-color: var(--bg-color-two) !important;
+    color: var(--text-normal) !important;
     border: 0 !important;
 }
 
 #wp-submit {
-    background-color: var(--secondary-color);
+    background-color: var(--color-two);
 }
 
 #wp-submit:hover {
-    background-color: var(--main-color) !important;
+    background-color: var(--color-one) !important;
 }
 
 .button {
@@ -68,13 +68,13 @@ input[type=text]:focus {
 }
 
 .dashicons-visibility, .dashicons-hidden {
-    color: var(--text-normal-color);
+    color: var(--text-normal);
 }
 
 #login_error, .message, .success {
-    background-color: var(--third-bg-color) !important;
-    border-left-color: var(--main-color) !important;
-    color: var(--text-normal-color) !important;
+    background-color: var(--bg-color-three) !important;
+    border-left-color: var(--color-one) !important;
+    color: var(--text-normal) !important;
     margin: .5rem 0 !important;
 }
 
@@ -85,14 +85,14 @@ input[type=text]:focus {
 }
 
 #nav a, #backtoblog a, .privacy-policy-link {
-    background-color: var(--second-bg-color);
+    background-color: var(--bg-color-two);
     border-radius: .25rem;
-    color: var(--text-normal-color) !important;
+    color: var(--text-normal) !important;
     padding: 1rem;
     text-decoration: none;
 }
 
 #nav a:hover, #backtoblog a:hover, .privacy-policy-link:hover {
-    background: var(--secondary-color);
-    color: var(--text-normal-color);
+    background: var(--color-two);
+    color: var(--text-normal);
 }

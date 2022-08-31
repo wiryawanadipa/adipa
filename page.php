@@ -7,10 +7,6 @@
                 <div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title" style="background: #212b31; min-height: 300px;">
                     <header class="w-100 my-auto py-3 post-title-header">
                         <h1><?php the_title(); ?></h1>
-                        <p>
-                            <i class="fa-solid fa-user"></i><span><?php the_post(); echo get_the_author(); rewind_posts(); ?></span>
-                            <i class="fa-solid fa-calendar-days"></i><span><time><?php echo get_the_date(); ?></time></span>
-                        </p>
                     </header>
                 </div>
             </div>

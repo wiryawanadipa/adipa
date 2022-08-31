@@ -106,6 +106,16 @@ function stop_heartbeat() {
 }
 add_action('init', 'stop_heartbeat', 1);
 
+// Disable author & date arhive page
+function disable_page() {
+    global $wp_query;
+    if ( is_author() || is_date() ) {
+        wp_redirect(get_option('home'), 301); 
+        exit; 
+    }
+}
+add_action('template_redirect', 'disable_page');
+
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     function easy_add_thumbnail($post) {
@@ -385,7 +395,7 @@ add_action('hero_desc', 'add_hero_desc');
 
 function add_home_title() {
 	global $post;
-	$variable = get_option('home_title', '[sitename] - [tagline]');
+	$variable = get_option('home_title', 'Home - [sitename]');
 	$shortcode  = array(
 		'[sitename]',
 		'[tagline]'
