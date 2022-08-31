@@ -14,12 +14,8 @@
             <div class="container px-0 px-md-3 wa-post-article">
                 <div class="wa-post-article-box">
                     <?php
-                    if ( is_page('About') ) {
-                        get_template_part( 'template-parts/pages/about' );
-                    } elseif ( is_page('Contact') ) {
+                    if ( is_page('Contact') ) {
                         get_template_part( 'template-parts/pages/contact' );
-                    } elseif ( is_page('Privacy Policy') ) {
-                        get_template_part( 'template-parts/pages/privacy-policy' );
                     } else {
                         if ( have_posts() ) {
                             while ( have_posts() ) {

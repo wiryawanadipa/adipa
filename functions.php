@@ -27,6 +27,17 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	wp_delete_post(2, true);
 }
 
+//  Add Favicon on login and admin page
+function add_site_favicon() {
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">' . "\n";
+	echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest">' . "\n";
+}
+
+add_action('login_head', 'add_site_favicon');
+add_action('admin_head', 'add_site_favicon');
+
 // Get theme version
 function style_get_version() {
 	$theme_data = wp_get_theme();
