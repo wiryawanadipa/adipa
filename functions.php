@@ -100,6 +100,24 @@ function wa_custom_setting_script() {
 }
 add_action( 'admin_enqueue_scripts', 'wa_custom_setting_script' );
 
+// Disable load HCB styles & scripts if it's not in single post
+function wa_deregister_styles() {
+	global $wp_query;
+	if (!is_single()) {
+		wp_deregister_style('hcb-coloring');
+	}
+}
+add_action( 'wp_print_styles', 'wa_deregister_styles' );
+
+function wa_deregister_script() {
+	global $wp_query;
+	if (!is_single()) {
+		wp_deregister_script('clipboard');
+		wp_deregister_script('hcb-prism');
+	}
+}
+add_action( 'wp_print_scripts', 'wa_deregister_script' );
+
 // Stop wordpress heartbeat
 function stop_heartbeat() {
 	wp_deregister_script('heartbeat');
