@@ -1,3 +1,4 @@
+/* Variable */
 :root {
     --color-one: #fc5c65;
     --color-two: #eb3b5a;
@@ -11,6 +12,7 @@
     --content-width: 900px;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -131,6 +133,7 @@ input:focus-visible {
     background-color: var(--bg-color-one);
 }
 
+/* Diagonal Accent */
 .cosmetic-1 {
     background-color: var(--bg-color-three);
 }
@@ -188,6 +191,7 @@ input:focus-visible {
     background-color: var(--bg-color-three);
 }
 
+/* Hero */
 .hero {
     background-color: var(--bg-color-three);
     -webkit-animation: webkit-hero 2s 1 linear; 
@@ -262,6 +266,7 @@ input:focus-visible {
     }
 }
 
+/* Design & Project Section */
 .despro {
     background-color: var(--bg-color-two);
     -webkit-animation: webkit-despro 2s 1 linear; 
@@ -350,6 +355,7 @@ input:focus-visible {
     background-color: var(--color-two);
 }
 
+/* Quote section */
 .home-quote {
     background-color: var(--bg-color-three);
     color: var(--text-normal);
@@ -391,6 +397,7 @@ input:focus-visible {
     content: "-";
 }
 
+/* Postcard */
 .postcard-inside {
     background-color: var(--bg-color-two);
 }
@@ -485,6 +492,7 @@ a.postcard-tag:hover {
     color: var(--text-normal);
 }
 
+/* Pagination */
 .pagination {
     color: var(--text-normal);
     background-color: var(--bg-color-two);
@@ -507,6 +515,7 @@ a.postcard-tag:hover {
     color: var(--text-normal);
 }
 
+/* Post Section */
 .wa-post p {
     color: var(--text-normal);
     font-size: 1.1rem !important;
@@ -668,6 +677,7 @@ a.postcard-tag:hover {
     margin: 0 auto 2rem !important;
 }
 
+/* For Highlighting Code Block */
 .wa-post-article .hcb_wrap {
     margin: 0rem auto 2rem !important;
     word-wrap: break-word;
@@ -689,7 +699,24 @@ a.postcard-tag:hover {
 }
 
 .wa-post-article .hcb_wrap pre {
-    padding: 2.5rem 1.5rem !important;
+    padding: 2.5rem 1.5rem 1.5rem !important;
+}
+
+.hcb_wrap pre::-webkit-scrollbar {
+    height: 10px !important;
+}
+
+.hcb_wrap pre::-webkit-scrollbar-track {
+    background-color: var(--bg-color-two) !important;
+}
+
+.hcb_wrap pre::-webkit-scrollbar-thumb {
+    background-color: var(--color-one) !important;
+    border-radius: 1rem;
+}
+
+.hcb_wrap pre::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-two) !important;
 }
 
 /* Footer */
@@ -732,8 +759,8 @@ a.postcard-tag:hover {
     text-decoration: underline .1rem var(--color-one) !important;
 }
 
+/* Responsive */
 @media (max-width: 576px) {
-
     .dropdown-menu input {
         min-width: 180px;
     }
@@ -741,7 +768,7 @@ a.postcard-tag:hover {
     .cosmetic-box {
         height: 50px;
     }
-
+    
     .wa-post p,
     .wa-post blockquote p,
     .wa-post-article ol li,
