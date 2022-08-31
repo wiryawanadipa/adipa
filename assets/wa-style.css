@@ -582,6 +582,14 @@ a.postcard-tag:hover {
     font-size: 1.1rem !important;
 }
 
+.wa-post-article p code {
+    background-color: var(--bg-color-two);
+    border-radius: .5rem;
+    color: var(--color-one);
+    font-size: 1rem;
+    padding: .5rem;
+}
+
 .wa-post-article ol, .wa-post-article ul {
     font-size: 1.1rem;
     margin: 0 auto 2.5rem;
