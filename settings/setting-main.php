@@ -19,6 +19,16 @@
 						</label>
 					</td>
 				</tr>
+				<tr>
+					<th>
+						<label>Contact E-Mail</label>
+					</th>
+					<td>
+						<label>
+							<input class="wa-input-social-id" name="wa_mail" type="text" placeholder="Contact E-Mail" value="<?php echo get_option('wa_mail'); ?>">
+						</label>
+					</td>
+				</tr>
 				<!-- Head Code -->
 				<tr>
 					<th>

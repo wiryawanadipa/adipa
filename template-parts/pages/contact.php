@@ -41,7 +41,7 @@ if(isset($_POST['submit'])) {
 	}
 
 	if(!isset($emptyNameError) && !isset($emptyEmailError) && !isset($invalidEmailError) && !isset($emptyCommentError) && !empty($_POST['g-recaptcha-response'])) {
-		$emailTo = 'mail@wiryawanadipa.com';
+		$emailTo = get_option( 'wa_mail' );;
 		$subject = '[wiryawanadipa.com] From '.$name;
 		$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
 		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
