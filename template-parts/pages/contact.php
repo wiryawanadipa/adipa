@@ -86,7 +86,7 @@ if(isset($_POST['submit'])) {
 				</div>
 				<div class="form-group mb-4">
 					<div class="col-12">
-						<div class="g-recaptcha brochure__form__captcha" data-sitekey="6LfPM8QhAAAAAAaSmcFS0UBRPSphbyfCGDJipv2q"></div>
+						<div class="g-recaptcha brochure__form__captcha" data-sitekey="<?php echo get_option( 'wa_recaptcha' ); ?>"></div>
 					</div>
 				</div>
 				<div class="form-group mb-4">
