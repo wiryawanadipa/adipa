@@ -62,9 +62,6 @@ if(isset($_POST['submit'])) {
 			echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyComment . '</div>';
 		}
 	}
-	$name = false;
-	$email = false;
-	
 }
 ?>
 <div class="col-12 py-4">
