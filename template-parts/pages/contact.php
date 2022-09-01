@@ -77,17 +77,17 @@ if(isset($_POST['submit'])) {
 			<fieldset>
 				<div class="form-group mb-4">
 					<div class="col-12">
-						<input id="cf-name" name="contactName" type="text" placeholder="Please enter your full name here." class="form-control" value="<?php if( isset( $_POST['contactName'] ) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" >
+						<input id="cf-name" name="contactName" type="text" placeholder="Please enter your full name here." class="form-control" value="<?php if( isset( $_POST['contactName'] ) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" required>
 					</div>
 				</div>
 				<div class="form-group mb-4">
 					<div class="col-12">
-						<input id="cf-email" name="email" type="email" placeholder="Please enter your e-mail address here." class="form-control" value="<?php if( isset( $_POST['email'] ) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" >
+						<input id="cf-email" name="email" type="email" placeholder="Please enter your e-mail address here." class="form-control" value="<?php if( isset( $_POST['email'] ) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" required>
 					</div>
 				</div>
 				<div class="form-group mb-4">
 					<div class="col-12">                   
-						<textarea class="form-control" id="comments" placeholder="Please enter your message here." name="comments" rows="10" class="form-control" ><?php if( isset( $_POST['comments'] ) ){ echo esc_attr($_POST['comments']);} else { echo '';} ?></textarea>
+						<textarea class="form-control" id="comments" placeholder="Please enter your message here." name="comments" rows="10" class="form-control" required><?php if( isset( $_POST['comments'] ) ){ echo esc_attr($_POST['comments']);} else { echo '';} ?></textarea>
 					</div>
 				</div>
 				<div class="form-group mb-4">
