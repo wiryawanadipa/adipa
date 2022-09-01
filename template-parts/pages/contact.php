@@ -29,7 +29,7 @@ if(isset($_POST['submit'])) {
 	}
 
 	if(!empty($_POST['g-recaptcha-response'])){
-		$secret = '6LfPM8QhAAAAAAaSmcFS0UBRPSphbyfCGDJipv2q';
+		$secret = get_option( 'wa_recaptcha' );
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$captcha = $_POST['g-recaptcha-response'];
 		$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='.$ip);
