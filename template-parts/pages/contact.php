@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_POST['submit'])) {
 	if ($_SESSION['rand'] == $_POST['randcheck']) {
 		if(trim($_POST['contactName']) === '') {
@@ -43,8 +42,9 @@ if(isset($_POST['submit'])) {
 		}
 
 		if(!isset($emptyNameError) && !isset($emptyEmailError) && !isset($invalidEmailError) && !isset($emptyCommentError) && !empty($_POST['g-recaptcha-response'])) {
-			$emailTo = get_option( 'wa_mail' );;
-			$subject = '[wiryawanadipa.com] From '.$name;
+			$emailTo = get_option( 'wa_mail' );
+			$domain = strtoupper($_SERVER['HTTP_HOST']);
+			$subject = '[' . $domain . '] From '.$name;
 			$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
 			$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 			wp_mail($emailTo, $subject, $body, $headers);
@@ -68,7 +68,6 @@ if(isset($_POST['submit'])) {
 		echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
 	}
 }
-
 ?>
 <div class="col-12 py-4">
 	<script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>

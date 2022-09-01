@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -28,5 +29,5 @@
 		?>
 	</head>
 	<body>
-	<?php get_template_part( 'template-parts/parts/topnav' ); ?>
+		<?php get_template_part( 'template-parts/parts/topnav' ); ?>
 		<!-- Main -->
