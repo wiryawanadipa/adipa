@@ -42,7 +42,7 @@ if(isset($_POST['submit'])) {
 
 	if(!isset($emptyNameError) && !isset($emptyEmailError) && !isset($invalidEmailError) && !isset($emptyCommentError) && !empty($_POST['g-recaptcha-response'])) {
 		$emailTo = get_option( 'wa_mail' );;
-		$subject = '[wiryawanadipa.com] From '.$name;
+		$subject = '[' . $_SERVER['HTTP_HOST'] . '] From '.$name;
 		$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
 		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 		wp_mail($emailTo, $subject, $body, $headers);
