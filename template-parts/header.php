@@ -1,4 +1,4 @@
-<?php if (is_page()) { session_start(); } ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">

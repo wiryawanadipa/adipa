@@ -1,3 +1,5 @@
+<?php /* Template Name: Contact Page */ ?>
+<?php session_start(); ?>
 <?php get_template_part( 'template-parts/header' ); ?>
 <main class="container-xl my-3 my-sm-5 main-page">
 	<div class="row wa-post">
@@ -13,14 +15,7 @@
             <!-- Post Article -->
             <div class="container px-0 px-md-3 wa-post-article">
                 <div class="wa-post-article-box">
-                    <?php
-                        if ( have_posts() ) {
-                            while ( have_posts() ) {
-                                the_post();
-                                the_content();
-                            }
-                        }
-                    ?>
+                    <?php get_template_part( 'template-parts/parts/contact-form' ); ?>
                 </div>
             </div>
         </article>
