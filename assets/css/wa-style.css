@@ -339,6 +339,10 @@ body {
     border: 1rem solid var(--bg-color-three);
     border-radius: .5rem;
     overflow: hidden;
+    -webkit-transition: border-color .5s ease-out;
+    -moz-transition: border-color .5s ease-out;
+    -o-transition: border-color .5s ease-out;
+    transition: border-color .5s ease-out;
     -webkit-animation: webkit-desprowrap 1.6s 1 linear; 
     -moz-animation: moz-desprowrap 1.6s 1 linear;
     -o-animation: o-desprowrap 1.6s 1 linear;
@@ -399,7 +403,7 @@ body {
     background-color: var(--color-one);
     border-radius: .5rem;
     padding: .5rem 1rem;
-    box-shadow: 6px 6px var(--bg-color-three);
+    box-shadow: 3px 3px var(--bg-color-three);
     -webkit-transition: background-color 1s ease-out;
     -moz-transition: background-color 1s ease-out;
     -o-transition: background-color 1s ease-out;
@@ -409,10 +413,6 @@ body {
 .despro-link:hover a {
     color: var(--text-normal);
     background-color: var(--color-two);
-}
-
-.despro-link a:active {
-    box-shadow: 3px 3px var(--bg-color-three);
 }
 
 /* Quote section */
@@ -548,7 +548,7 @@ a.postcard-tag:hover {
 .pagination {
     color: var(--text-normal);
     background-color: var(--bg-color-two);
-    box-shadow: 6px 6px var(--bg-color-three);
+    box-shadow: 3px 3px var(--bg-color-three);
     border-radius: .25rem;
     display: inline-block;
     padding: .5rem .75rem;
@@ -558,10 +558,6 @@ a.postcard-tag:hover {
 .pagination:hover {
     color: var(--text-normal);
     background-color: var(--color-two);
-}
-
-.pagination:active {
-    box-shadow: 3px 3px var(--bg-color-three);
 }
 
 .title-decoration::before {
