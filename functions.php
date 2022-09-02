@@ -25,6 +25,21 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
+	$page_title = array( 'Contact', 'About' );
+	foreach( $page_title as $new_page_title ) {
+		$page_check = get_page_by_title( $new_page_title );
+		$new_page = array(
+			'post_type' => 'page',
+			'post_title' => $new_page_title,
+			'post_content' => '',
+			'post_status' => 'publish',
+			'post_author' => 1,
+			'page_template'  => 'page-templates/' . strtolower($new_page_title) . '.php'
+		);
+		if( !isset( $page_check->ID ) ) {
+			$new_page_id = wp_insert_post( $new_page );
+		}
+	}
 }
 
 //  Add Favicon on login and admin page
