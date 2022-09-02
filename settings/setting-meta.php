@@ -21,7 +21,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="home_title" type="text" value="<?php echo get_option('home_title', 'Home - [sitename]'); ?>">
+                                <input class="wa-input" name="home_title" type="text" value="<?php echo get_option('home_title', 'Home - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[sitename] [tagline]</p>
                             </td>
@@ -47,7 +47,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="post_title" type="text" value="<?php echo get_option('post_title', '[title] - [sitename]'); ?>">
+                                <input class="wa-input" name="post_title" type="text" value="<?php echo get_option('post_title', '[title] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[title] [sitename]</p>
                             </td>
@@ -73,7 +73,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="page_title" type="text" value="<?php echo get_option('page_title', '[title] - [sitename]'); ?>">
+                                <input class="wa-input" name="page_title" type="text" value="<?php echo get_option('page_title', '[title] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[title] [sitename]</p>
                             </td>
@@ -99,7 +99,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="cat_title" type="text" value="<?php echo get_option('cat_title', '[catname] - [sitename]'); ?>">
+                                <input class="wa-input" name="cat_title" type="text" value="<?php echo get_option('cat_title', '[catname] - [sitename]'); ?>">
                                 <br>
                                 <p class="description">[catname] [sitename]</p>
                             </td>
@@ -125,7 +125,7 @@
                         <tr>
                             <th>Title</th>
                             <td>
-                                <input class="wa-input-title" name="tag_title" type="text" value="<?php echo get_option('tag_title', '[tagname] - [domain]'); ?>">
+                                <input class="wa-input" name="tag_title" type="text" value="<?php echo get_option('tag_title', '[tagname] - [domain]'); ?>">
                                 <br>
                                 <p class="description">[tagname] [sitename]</p>
                             </td>

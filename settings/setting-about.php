@@ -36,7 +36,7 @@
                 <table class="form-table">
                 <tr>
                     <th>
-                        <label>v1.0.0 (1 September 2022)</label>
+                        <label>v1.0.0 (3 September 2022)</label>
                     </th>
                     <td>
                         <p>- Initial release</p>
