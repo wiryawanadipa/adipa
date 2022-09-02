@@ -95,6 +95,7 @@ body {
 
 .wa-top-menu::before {
     content: "#";
+    font-size: 1rem;
 }
 
 .wa-navbar ul {
@@ -814,6 +815,12 @@ a.postcard-tag:hover {
 @media (min-width: 576px) {
     .cosmetic-box {
         height: 58px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wa-top-menu {
+        padding: 1rem .5rem;
     }
 }
 

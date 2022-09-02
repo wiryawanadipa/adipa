@@ -12,13 +12,13 @@
                         <a class="nav-link fs-5 wa-top-menu" href="<?php bloginfo('url'); ?>">Home</a>
                     </li>
                     <li class="nav-item mx-lg-1">
-                        <a class="nav-link fs-5 px-2 wa-top-menu" href="<?php bloginfo('url'); ?>/about/">About</a>
+                        <a class="nav-link fs-5 wa-top-menu" href="<?php bloginfo('url'); ?>/about/">About</a>
                     </li>
                     <li class="nav-item mx-lg-1">
-                        <a class="nav-link fs-5 px-2 wa-top-menu" href="<?php bloginfo('url'); ?>/contact/">Contact</a>
+                        <a class="nav-link fs-5 wa-top-menu" href="<?php bloginfo('url'); ?>/contact/">Contact</a>
                     </li>
                     <li class="nav-item mx-lg-1 dropdown">
-                        <a class="nav-link dropdown-toggle py-3 py-sm-2 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a class="nav-link dropdown-toggle p-3 p-md-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <form action="<?php bloginfo('url'); ?>" role="search" method="get">
                                 <input type="search" name="s" autocomplete="off" placeholder="Search here..." title="Search" required>
