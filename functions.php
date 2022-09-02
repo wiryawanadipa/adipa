@@ -433,7 +433,7 @@ function add_hero_desc() {
 		'[lorem]'
 	);
 	$function = array(
-		'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, ex doloribus quasi quos aut dicta error, nulla facere velit perspiciatis ut voluptatem. Fugiat possimus esse dolor unde ullam fugit dolores?'
+		'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
