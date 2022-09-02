@@ -93,13 +93,14 @@ body {
     padding: .31rem;
 }
 
-.wa-top-menu::before {
+.wa-brand-name::before, .wa-top-menu::before {
     content: "\A";
     background-color: var(--text-normal);
     border-radius: 6px;
+    display: inline-block;
+    margin-right: .125rem;
     width: 5px;
     height: 5px;
-    display: inline-block;
 }
 
 .wa-navbar ul {
@@ -520,9 +521,10 @@ a.postcard-tag:hover {
     content: "\A";
     background-color: var(--color-one);
     border-radius: 8px;
+    display: inline-block;
+    margin-right: .125rem;
     width: 8px;
     height: 8px;
-    display: inline-block;
 }
 
 .error-404 {
@@ -540,6 +542,11 @@ a.postcard-tag:hover {
 .post-title {
     background: var(--bg-color-three);
     min-height: 300px;
+}
+
+.tag-title::before {
+    content: "#";
+    color: var(--color-one);
 }
 
 .post-title-header {
@@ -696,6 +703,24 @@ a.postcard-tag:hover {
     margin: 0 auto 2rem !important;
 }
 
+.contact-form .form-control:focus {
+    border-color: var(--color-one);
+    box-shadow: 0 0 0 0.25rem rgba(252, 92, 101, .5);
+}
+
+.contact-form .btn-primary {
+    background-color: var(--color-one);
+    border: var(--color-one);
+}
+
+.contact-form .btn-primary:hover {
+    background-color: var(--color-two);
+}
+
+.contact-form .btn-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(252, 92, 101, .5);
+}
+
 /* For Highlighting Code Block */
 .wa-post-article .hcb_wrap {
     margin: 0rem auto 2rem !important;
@@ -791,6 +816,10 @@ a.postcard-tag:hover {
 
     .cosmetic-box {
         height: 50px;
+    }
+
+    .post-title {
+        min-height: 140px;
     }
     
     .wa-post p,
