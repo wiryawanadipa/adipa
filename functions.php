@@ -68,7 +68,7 @@ add_filter( 'login_headertext', 'my_login_logo_url_title' );
 // Custom style on login page
 function wa_login_style() {
 	global $theme_version, $random_number;
-    wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/wa-login-style.css', false, $theme_version . $random_number);
+    wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
 	wp_enqueue_style('wa-login-style');
 }
 add_action( 'login_enqueue_scripts', 'wa_login_style' );
@@ -83,7 +83,7 @@ add_filter('login_errors', 'login_error');
 function wa_style_queue_css() {
 	global $theme_version, $random_number;
 	if (!is_admin()) {
-		wp_register_style('wa-style', get_template_directory_uri() . '/assets/wa-style.css', false, $theme_version . $random_number);
+		wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/wa-style.css', false, $theme_version . $random_number);
 		wp_enqueue_style('wa-style');
 	}
 }
@@ -92,7 +92,7 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
 	global $theme_version, $random_number;
-	wp_register_style( 'wa_custom_admin_css', get_template_directory_uri() . '/assets/admin-style.css', false, $theme_version . $random_number );
+	wp_register_style( 'wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number );
 	wp_enqueue_style( 'wa_custom_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'wa_custom_setting_style' );
@@ -106,14 +106,14 @@ add_action( 'admin_enqueue_scripts', 'fontawesome_icon' );
 // Insert custom script in custom setting
 function wa_custom_setting_script() {
 	global $theme_version, $random_number;
-	wp_register_script( 'wa_custom_admin_js', get_template_directory_uri() . '/assets/admin-script.js', false, $theme_version . $random_number );
+	wp_register_script( 'wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number );
 	wp_enqueue_script( 'wa_custom_admin_js' );
 }
 add_action( 'admin_enqueue_scripts', 'wa_custom_setting_script' );
 
 // Disable load HCB styles & scripts if it's not in single post
 function wa_deregister_styles() {
-	if (!is_single() || !is_admin()) {
+	if (!is_single() && !is_admin()) {
 		wp_deregister_style('hcb-coloring');
 		wp_deregister_style( 'hcb-style' );
 	}
@@ -121,7 +121,7 @@ function wa_deregister_styles() {
 add_action( 'wp_print_styles', 'wa_deregister_styles' );
 
 function wa_deregister_script() {
-	if (!is_single() || !is_admin()) {
+	if (!is_single() && !is_admin()) {
 		wp_deregister_script('clipboard');
 		wp_deregister_script('hcb-prism');
 		wp_deregister_script('hcb-script');
