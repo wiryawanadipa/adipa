@@ -52,6 +52,10 @@ body {
     }
 }
 
+.top-space {
+    background-color: var(--bg-color-two);
+}
+
 /* Navigation Bar */
 .navbar-brand {
     padding: 0;
@@ -63,6 +67,7 @@ body {
 
 .navbar-brand span {
     margin: auto .5rem;
+    vertical-align: middle;
 }
 
 .wa-navbar {
@@ -82,6 +87,19 @@ body {
 .wa-navbar a:hover, .wa-navbar a:active {
     color: var(--text-normal);
     background-color: var(--color-two);
+}
+
+.wa-top-menu {
+    padding: .31rem;
+}
+
+.wa-top-menu::before {
+    content: "\A";
+    border-radius: 4px;
+    background-color: var(--text-normal);
+    width: 4px;
+    height: 4px;
+    display:inline-block;
 }
 
 .wa-navbar ul {
@@ -741,6 +759,11 @@ a.postcard-tag:hover {
 
 .wa-footer .social {
     min-height: 42px;
+}
+
+.wa-footer .social a:hover {
+    padding-bottom: .5rem !important;
+    padding-top: 0 !important;
 }
 
 .wa-footer i {
