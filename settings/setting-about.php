@@ -1,5 +1,5 @@
 <div class="wrap custom-theme-section">
-    <h2>About</h2>
+    <h1>About</h1>
     <div class="tabs">
         <ul class="tab-links">
             <li class="active"><a href="#tab1"><div class="wa-custom-tab-icon"><i class="fa-solid fa-note-sticky"></i></div>Notes</a></li>

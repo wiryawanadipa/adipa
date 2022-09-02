@@ -32,8 +32,8 @@ body {
     font-family: var(--font-poppins) !important;
 }
 
-.custom-theme-section h2 {
-    background: var(--bg-color-one) !important;
+.custom-theme-section h1 {
+    background: var(--color-two) !important;
     border-radius: .25rem !important;
     color: var(--text-normal) !important;
     margin-bottom: 1rem !important;

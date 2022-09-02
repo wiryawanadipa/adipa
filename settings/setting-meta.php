@@ -1,5 +1,5 @@
 <div class="wrap custom-theme-section">
-    <h2>Page Settings</h2>
+    <h1>Page Settings</h1>
     <?php if(isset( $_GET['settings-updated'])) { ?>
         <div style="margin: 10px 0" class="updated">
             <p>Settings updated successfully</p>
