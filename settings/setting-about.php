@@ -36,6 +36,14 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.1 (2 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Fix logo on login page not showing</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.0 (2 September 2022)</label>
                     </th>
                     <td>
