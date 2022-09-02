@@ -79,13 +79,9 @@ body {
 
 .navbar-brand span {
     border-radius: .25rem;
-    margin: auto .5rem;
-    padding: .25rem .675rem;
+    margin-left: .25rem;
+    padding: .25rem 0;
     vertical-align: middle;
-}
-
-.navbar-brand:hover span {
-    background-color: var(--color-two);
 }
 
 .wa-navbar {
@@ -100,6 +96,7 @@ body {
 .wa-navbar a, .wa-navbar a:focus {
     border-radius: .25rem;
     color: var(--text-normal);
+    margin-right: .5rem;
 }
 
 .wa-navbar a:hover, .wa-navbar a:active, .menu-active {
@@ -402,6 +399,7 @@ body {
     background-color: var(--color-one);
     border-radius: .5rem;
     padding: .5rem 1rem;
+    box-shadow: 6px 6px var(--bg-color-three);
     -webkit-transition: background-color 1s ease-out;
     -moz-transition: background-color 1s ease-out;
     -o-transition: background-color 1s ease-out;
@@ -411,6 +409,10 @@ body {
 .despro-link:hover a {
     color: var(--text-normal);
     background-color: var(--color-two);
+}
+
+.despro-link a:active {
+    box-shadow: 3px 3px var(--bg-color-three);
 }
 
 /* Quote section */
@@ -546,6 +548,7 @@ a.postcard-tag:hover {
 .pagination {
     color: var(--text-normal);
     background-color: var(--bg-color-two);
+    box-shadow: 6px 6px var(--bg-color-three);
     border-radius: .25rem;
     display: inline-block;
     padding: .5rem .75rem;
@@ -555,6 +558,10 @@ a.postcard-tag:hover {
 .pagination:hover {
     color: var(--text-normal);
     background-color: var(--color-two);
+}
+
+.pagination:active {
+    box-shadow: 3px 3px var(--bg-color-three);
 }
 
 .title-decoration::before {
@@ -903,6 +910,9 @@ a.postcard-tag:hover {
 @media (max-width: 768px) {
     .wa-top-menu {
         padding: 1rem .5rem;
+    }
+    .nav-item {
+        margin-bottom: .5rem;
     }
 }
 
