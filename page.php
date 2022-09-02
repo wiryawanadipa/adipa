@@ -4,7 +4,7 @@
         <article class="col-xl-12">
             <!-- Post Title -->
             <div class="container px-0 mb-4">
-                <div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title" style="background: #212b31; min-height: 300px;">
+                <div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title">
                     <header class="w-100 my-auto py-3 post-title-header">
                         <h1><?php the_title(); ?></h1>
                     </header>

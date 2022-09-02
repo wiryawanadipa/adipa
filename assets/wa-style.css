@@ -523,6 +523,11 @@ a.postcard-tag:hover {
     margin-bottom: 2.5rem !important;
 }
 
+.post-title {
+    background: var(--bg-color-three);
+    min-height: 300px;
+}
+
 .post-title-header {
     padding: 0 1rem;
 }
