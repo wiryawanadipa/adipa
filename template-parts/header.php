@@ -1,5 +1,4 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
+<?php if (is_page()) { session_start(); } ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -8,6 +7,7 @@
 		<!-- External Assets CDN -->
 		<link rel="preconnect" href="https://cdn.jsdelivr.net">
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+		<link rel="preconnect" href="https://www.google.com">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
