@@ -357,6 +357,10 @@ body {
     }
 }
 
+.despro-wrap:hover {
+    border-color: var(--color-one);
+}
+
 .despro-wrap img {
     -webkit-transition: transform 1s ease-out;
     -moz-transition: transform 1s ease-out;
@@ -398,8 +402,6 @@ body {
     background-color: var(--color-one);
     border-radius: .5rem;
     padding: .5rem 1rem;
-    -webkit-filter: drop-shadow(5px 5px 8px #000);
-    filter: drop-shadow(5px 5px 8px #000);
     -webkit-transition: background-color 1s ease-out;
     -moz-transition: background-color 1s ease-out;
     -o-transition: background-color 1s ease-out;
