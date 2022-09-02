@@ -19,7 +19,7 @@
                     </li>
                     <li class="nav-item mx-md-1 dropdown">
                         <a class="nav-link dropdown-toggle p-3 p-md-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-menu-end wa-search">
                             <form action="<?php bloginfo('url'); ?>" role="search" method="get">
                                 <input type="search" class="check" name="s" autocomplete="off" placeholder="Search here..." title="Search" required>
                                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>

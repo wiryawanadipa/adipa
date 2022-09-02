@@ -131,7 +131,7 @@ body {
 }
 
 .dropdown-menu {
-    border-radius: 0 0 .375rem .375rem !important;
+    border-radius: .375rem;
     padding: .5rem;
     top: 54px !important;
 }
@@ -147,6 +147,10 @@ body {
     padding: .375rem 2.5rem .375rem .375rem;
     min-width: 300px;
     width: 100%;
+}
+
+.wa-search {
+    background-color: var(--bg-color-three) !important;
 }
 
 .dropdown-menu input[type="search"]::-webkit-search-decoration,
