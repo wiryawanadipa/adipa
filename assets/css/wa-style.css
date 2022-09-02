@@ -254,6 +254,10 @@ input:focus-visible {
     font-size: 3rem;
 }
 
+.hero-name {
+    color: var(--color-one);
+}
+
 .hero-heading-text {
     color: var(--text-normal);
     font-size: 1.5rem;
@@ -439,19 +443,6 @@ input:focus-visible {
     transition: 1s;
 }
 
-.category-list-card {
-    top: 4px;
-    right: 4px;
-    z-index: 9997;
-    width: auto !important;
-}
-
-.category-name-card {
-    background-color: var(--bg-color-three);
-    color: var(--text-normal);
-    margin-bottom: 4px;
-}
-
 .postcard h2 {
     line-height: 1;
 }
@@ -551,7 +542,7 @@ a.postcard-tag:hover {
 }
 
 .post-title-header h1 {
-    color: var(--text-normal);
+    color: var(--color-one);
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -604,7 +595,7 @@ a.postcard-tag:hover {
 .wa-post-article h6 {
     background: var(--bg-color-three);
     border-radius: 0.25rem;
-    color: var(--text-normal);
+    color: var(--color-one);
     margin: 0 auto 2rem;
     padding: 1rem;
 }
@@ -779,11 +770,11 @@ a.postcard-tag:hover {
     font-size: .875rem;
 }
 
-.theme-version {
+.theme-version, .privacy-policy {
     transition: text-decoration-color .2s;
 }
 
-.theme-version:hover {
+.theme-version:hover, .privacy-policy:hover {
     text-decoration: underline .1rem var(--color-one) !important;
 }
 

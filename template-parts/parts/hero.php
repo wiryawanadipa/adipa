@@ -8,7 +8,7 @@
 		<div class="row py-4 py-sm-5">
 			<div class="col-lg-8 p-xl-3">
 				<div class="hero-heading-name pb-3 pb-sm-0 text-center text-sm-start">
-					<h1>Hi! I'm Wiryawan Adipa.</h1>
+					<h1>Hi! I'm <span class="hero-name">Wiryawan Adipa</span>.</h1>
 				</div>
 				<div class="hero-heading-text text-center text-sm-start"><?php do_action( 'hero_desc' ); ?></div>
 			</div>
