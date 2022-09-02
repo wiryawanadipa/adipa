@@ -8,7 +8,7 @@
             <div class="container px-0 mb-4">
                 <div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title">
                     <header class="w-100 my-auto py-3 post-title-header">
-                        <h1 class="title-decoration"><?php the_title(); ?></h1>
+                        <h1 class="title-decoration"><?php echo strtolower(get_the_title()); ?></h1>
                     </header>
                 </div>
             </div>

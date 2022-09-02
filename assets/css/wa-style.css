@@ -94,8 +94,12 @@ body {
 }
 
 .wa-top-menu::before {
-    content: "#";
-    font-size: 1rem;
+    content: "\A";
+    background-color: var(--text-normal);
+    border-radius: 6px;
+    width: 5px;
+    height: 5px;
+    display: inline-block;
 }
 
 .wa-navbar ul {
@@ -513,7 +517,12 @@ a.postcard-tag:hover {
 }
 
 .title-decoration::before {
-    content: "#";
+    content: "\A";
+    background-color: var(--color-one);
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
 }
 
 .error-404 {
