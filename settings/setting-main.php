@@ -15,7 +15,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_recaptcha" type="text" placeholder="reCAPTCHA API" value="<?php echo get_option('wa_recaptcha'); ?>">
+							<input class="wa-input" name="wa_recaptcha" type="text" placeholder="reCAPTCHA API" value="<?php echo get_option('wa_recaptcha'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -25,7 +25,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_mail" type="text" placeholder="Contact E-Mail" value="<?php echo get_option('wa_mail'); ?>">
+							<input class="wa-input" name="wa_mail" type="text" placeholder="Contact E-Mail" value="<?php echo get_option('wa_mail'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -63,7 +63,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_facebook" type="text" placeholder="Facebook Link" value="<?php echo get_option('wa_facebook', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -74,7 +74,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_twitter" type="text" placeholder="Twitter Link" value="<?php echo get_option('wa_twitter', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -85,7 +85,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_instagram" type="text" placeholder="Instagram Link" value="<?php echo get_option('wa_instagram', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -96,7 +96,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_linkedin" type="text" placeholder="LinkedIn Link" value="<?php echo get_option('wa_linkedin', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -107,7 +107,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_github" type="text" placeholder="GitHub Link" value="<?php echo get_option('wa_github', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -118,7 +118,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube', 'UCpP1g9Vcl33ucu5mO2vr-5Q'); ?>">
+							<input class="wa-input" name="wa_youtube" type="text" placeholder="YouTube Channel Link" value="<?php echo get_option('wa_youtube', 'UCpP1g9Vcl33ucu5mO2vr-5Q'); ?>">
 						</label>
 					</td>
 				</tr>
@@ -129,7 +129,7 @@
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium', 'wiryawanadipa'); ?>">
+							<input class="wa-input" name="wa_medium" type="text" placeholder="Medium Link" value="<?php echo get_option('wa_medium', 'wiryawanadipa'); ?>">
 						</label>
 					</td>
 				</tr>
