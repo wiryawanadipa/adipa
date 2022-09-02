@@ -2,9 +2,9 @@
 <main class="container-xl py-4 py-xl-5 main-page">
 	<?php
 		if ( is_paged() ) {
-			echo '<h1 class="text-center mb-4 mb-sm-5 text-white tag-title">' . single_tag_title( '', false ) . ' - Page ' . $paged . '</h1>';
+			echo '<h1 class="text-center mb-4 mb-sm-5 text-white title-decoration">' . single_tag_title( '', false ) . ' - Page ' . $paged . '</h1>';
 		} else {
-			echo '<h1 class="text-center mb-4 mb-sm-5 text-white tag-title">' . single_tag_title( '', false ) . '</h1>';
+			echo '<h1 class="text-center mb-4 mb-sm-5 text-white title-decoration">' . single_tag_title( '', false ) . '</h1>';
 		}
 	?>
 	<div class="row mt-4 mb-5 g-2 g-xxl-3">

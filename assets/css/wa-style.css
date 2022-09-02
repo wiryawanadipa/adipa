@@ -94,12 +94,7 @@ body {
 }
 
 .wa-top-menu::before {
-    content: "\A";
-    border-radius: 4px;
-    background-color: var(--text-normal);
-    width: 4px;
-    height: 4px;
-    display:inline-block;
+    content: "#";
 }
 
 .wa-navbar ul {
@@ -516,7 +511,7 @@ a.postcard-tag:hover {
     background-color: var(--color-two);
 }
 
-.tag-title::before {
+.title-decoration::before {
     content: "#";
 }
 
