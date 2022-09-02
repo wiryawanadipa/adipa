@@ -126,9 +126,31 @@ body {
 
 .dropdown-menu input {
     border: none;
-    padding: .375rem;
-    min-width: 240px;
+    padding: .375rem 2.5rem .375rem .375rem;
+    min-width: 300px;
     width: 100%;
+}
+
+.dropdown-menu input[type="search"]::-webkit-search-decoration,
+.dropdown-menu input[type="search"]::-webkit-search-cancel-button,
+.dropdown-menu input[type="search"]::-webkit-search-results-button,
+.dropdown-menu input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+.dropdown-menu input:focus:invalid {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAhQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGGSURBVEiJ3Za7SitRFIa/NdlJqTNipxAJiK1VwEIQtbFQH8DTWIiFlyAi3hpB8IIgCCIIFr6CeQCRw4EDPkRwINhpVCzU7HFZjPfLqHHS+FfDvvzfv2YvNltKHa1uMpHaBHqBGuLRBUi+HFyPmXvzgZiMH1QD+idpUuoQJq+OlD6H+H7Le6p1qmgOwC8HONk2zOQ84npv5sT1MJPzONm2SICJBLR34nT3IM0t2JkcelZ6Ml/ZQNIZUOX28H9lFQQ7W+hRAUlnMGubSF09UuthlkNzLfoEu9uRFchlV1YjFzxLq34hHLv/fl5VxQAgTL2ygTRlANCij50eR09PPtv6ky6SL636FCCuh1kN06tfQP0C0pjGLK2/213fArw+UDs3gZ3OvTn4igGJoZHH5HZqFD09Qc9L2NncYyWJweFIQGIu07Dw4awtg7UEa4svu+XqCv13gLget3/30ePihxZf6qKf6JdfdnEBLqrof+6A5KtmL+RNObgeS5qUovQT57NF2Cvbm/E7NLGNFtoW3jQAAAAASUVORK5CYII=');
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+}
+.dropdown-menu input:required:valid {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAhQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFySURBVEiJ7ZbLLgNhGIaff2ZkUotWUqcdGkG0EtQhFrZWqo1YiMMlsJEgjhVLwsbewgU0ehNYcA0qBF1Mq63GyMRYMInDKJWZxMKznS/P+/1v/vwZEUvEqgxh7mGKCODFGXICkjLMKK/ySYfEFl4TpgwwpdfNXUHAiIRztXzCBJ/kltziPwBFUmj0NrgToMoqa33L7Axu0VXT6WyAKqss9y4S8gfRdI1U7sJ2TvmtfKlngZA/SOYhS/xkE03XbGe/PEHA18TB0D4TreO2m3dUh9B0jZXjNS4LV18uU7IiVVYZax5lum3yndyqZfUozvX9TSkFcst4W9zuQ0bPcp5PMVDfT9DfjkfxEA1EypIDiOFEzCw1EK7tZj48R4VU8RL8kGX9ZKNkLW/59hadps/YPtvFeDJ+1PlHvj2BRV1lLUWjSP6x8GM5lHFNb4vpssQWf/8t+hMBObfkAu4kAUm3AkxIKjLMGGACURz8bQEOFZh9BsVweiTj7OlUAAAAAElFTkSuQmCC');
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+}
+
+.dropdown-menu input:focus-visible {
+    outline-color: transparent;
 }
 
 .dropdown-menu button {
@@ -141,10 +163,6 @@ body {
 
 .dropdown-menu button:hover {
     background-color: var(--color-two);
-}
-
-input:focus-visible {
-    outline-color: var(--color-one);
 }
 
 /* Main */
@@ -268,6 +286,8 @@ input:focus-visible {
 .hero-photo img {
     width: 192px;
     height: 192px;
+    -webkit-filter: drop-shadow(5px 5px 8px #000);
+    filter: drop-shadow(5px 5px 8px #000);
     -webkit-animation: webkit-heroimage .7s 1 linear; 
     -moz-animation: moz-heroimage .7s 1 linear;
     -o-animation: o-heroimage .7s 1 linear;
@@ -367,6 +387,8 @@ input:focus-visible {
     background-color: var(--color-one);
     border-radius: .5rem;
     padding: .5rem 1rem;
+    -webkit-filter: drop-shadow(5px 5px 8px #000);
+    filter: drop-shadow(5px 5px 8px #000);
     -webkit-transition: background-color 1s ease-out;
     -moz-transition: background-color 1s ease-out;
     -o-transition: background-color 1s ease-out;
@@ -394,28 +416,33 @@ input:focus-visible {
     text-decoration: underline .2rem var(--color-one) !important;
 }
 
-.home-quote blockquote p::before {
+.home-quote blockquote span {
+    display: block;
+}
+
+.home-quote blockquote span::before {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: open-quote;
 }
 
-.home-quote blockquote p::after {
+.home-quote blockquote span::after {
     font: 1.8rem/1.8rem Georgia, serif;
     padding: 0 .4rem;
     content: close-quote;
 }
 
-.home-quote blockquote p:first-child {
+.home-quote blockquote span:first-child {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.home-quote blockquote p:not(:first-child):last-child {
+.home-quote blockquote span:not(:first-child):last-child {
     font-size: .8rem !important;
     padding-top: 1.5rem;
 }
 
-.home-quote blockquote p:not(:first-child):last-child::before, .home-quote blockquote p:not(:first-child):last-child::after {
+.home-quote blockquote span:not(:first-child):last-child::before, .home-quote blockquote span:not(:first-child):last-child::after {
     font: 1rem/1rem Georgia, serif;
     content: "-";
 }
@@ -703,9 +730,24 @@ a.postcard-tag:hover {
     margin: 0 auto 2rem !important;
 }
 
+.contact-form .form-control {
+    padding-right: 2.5rem;
+}
+
 .contact-form .form-control:focus {
     border-color: var(--color-one);
     box-shadow: 0 0 0 0.25rem rgba(252, 92, 101, .5);
+}
+
+.contact-form .form-control:focus:invalid {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAhQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGGSURBVEiJ3Za7SitRFIa/NdlJqTNipxAJiK1VwEIQtbFQH8DTWIiFlyAi3hpB8IIgCCIIFr6CeQCRw4EDPkRwINhpVCzU7HFZjPfLqHHS+FfDvvzfv2YvNltKHa1uMpHaBHqBGuLRBUi+HFyPmXvzgZiMH1QD+idpUuoQJq+OlD6H+H7Le6p1qmgOwC8HONk2zOQ84npv5sT1MJPzONm2SICJBLR34nT3IM0t2JkcelZ6Ml/ZQNIZUOX28H9lFQQ7W+hRAUlnMGubSF09UuthlkNzLfoEu9uRFchlV1YjFzxLq34hHLv/fl5VxQAgTL2ygTRlANCij50eR09PPtv6ky6SL636FCCuh1kN06tfQP0C0pjGLK2/213fArw+UDs3gZ3OvTn4igGJoZHH5HZqFD09Qc9L2NncYyWJweFIQGIu07Dw4awtg7UEa4svu+XqCv13gLget3/30ePihxZf6qKf6JdfdnEBLqrof+6A5KtmL+RNObgeS5qUovQT57NF2Cvbm/E7NLGNFtoW3jQAAAAASUVORK5CYII=');
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+}
+.contact-form .form-control:required:valid {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAhQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFySURBVEiJ7ZbLLgNhGIaff2ZkUotWUqcdGkG0EtQhFrZWqo1YiMMlsJEgjhVLwsbewgU0ehNYcA0qBF1Mq63GyMRYMInDKJWZxMKznS/P+/1v/vwZEUvEqgxh7mGKCODFGXICkjLMKK/ySYfEFl4TpgwwpdfNXUHAiIRztXzCBJ/kltziPwBFUmj0NrgToMoqa33L7Axu0VXT6WyAKqss9y4S8gfRdI1U7sJ2TvmtfKlngZA/SOYhS/xkE03XbGe/PEHA18TB0D4TreO2m3dUh9B0jZXjNS4LV18uU7IiVVYZax5lum3yndyqZfUozvX9TSkFcst4W9zuQ0bPcp5PMVDfT9DfjkfxEA1EypIDiOFEzCw1EK7tZj48R4VU8RL8kGX9ZKNkLW/59hadps/YPtvFeDJ+1PlHvj2BRV1lLUWjSP6x8GM5lHFNb4vpssQWf/8t+hMBObfkAu4kAUm3AkxIKjLMGGACURz8bQEOFZh9BsVweiTj7OlUAAAAAElFTkSuQmCC');
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
 }
 
 .contact-form .btn-primary {
