@@ -8,14 +8,14 @@
 	<div class="custom-theme-container">
 		<form method="post" action="options.php">
 			<table class="form-table">
-				<!-- Recaptcha Key -->
+				<!-- reCAPTCHA Key -->
 				<tr>
 					<th>
-						<label>Recaptcha</label>
+						<label>reCAPTCHA</label>
 					</th>
 					<td>
 						<label>
-							<input class="wa-input-social-id" name="wa_recaptcha" type="text" placeholder="Recaptcha API" value="<?php echo get_option('wa_recaptcha'); ?>">
+							<input class="wa-input-social-id" name="wa_recaptcha" type="text" placeholder="reCAPTCHA API" value="<?php echo get_option('wa_recaptcha'); ?>">
 						</label>
 					</td>
 				</tr>
