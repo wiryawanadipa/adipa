@@ -49,7 +49,6 @@ function add_site_favicon() {
 	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">' . "\n";
 	echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest">' . "\n";
 }
-
 add_action('login_head', 'add_site_favicon');
 add_action('admin_head', 'add_site_favicon');
 
