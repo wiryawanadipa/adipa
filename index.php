@@ -20,6 +20,7 @@
 		} else {
 			echo '<p class="fs-1 text-center text-white">Coming Soon!</p>';
 		}
+		wp_reset_postdata();
 		?>
 	</div>
 </main>
