@@ -12,5 +12,5 @@ Info about this theme:
 7. Custom admin page font (Using poppins font)
 8. Custom login page theme color
 9. Classic Editor Theme exclusive
-10. Custom contact page without plugin powered reCaptcha v2
+10. Custom contact page without plugin powered by reCaptcha v2
 11. It's responsive!
