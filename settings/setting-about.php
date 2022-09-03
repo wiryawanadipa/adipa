@@ -36,6 +36,15 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.3 (4 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Add condition if contact form failed to send the message</p>
+                        <p>- Add .tld count for email in contact page from 4 to 6</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.2 (3 September 2022)</label>
                     </th>
                     <td>
