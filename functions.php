@@ -22,9 +22,9 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'comment_previously_approved', 1 );
 	update_option( 'show_avatars', 0 );
 	update_option( 'permalink_structure', '/%postname%/' );
-	wp_insert_term('Blog' , 'category');
-	wp_insert_term('Design Gallery' , 'category');
-	wp_insert_term('Project' , 'category');
+	wp_insert_term( 'Blog' , 'category', array('description' => 'List of all of my published articles, tutorial, study cases & etc.') );
+	wp_insert_term( 'Design Gallery' , 'category', array('description' => 'List of all my design are in this page. Including mock up.') );
+	wp_insert_term( 'Project' , 'category', array('description' => 'List of all my project in the past are in this page') );
 	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
