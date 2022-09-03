@@ -3,17 +3,14 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 	if(isset($_POST['submit'])) {
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
 			if(trim($_POST['contactName']) === '') {
-				$emptyName = 'Please enter your name.';
 				$emptyNameError = true;
 			} else {
 				$name = trim($_POST['contactName']);
 			}
 
 			if(trim($_POST['email']) === '')  {
-				$emptyEmail = 'Please enter your email address.';
 				$emptyEmailError = true;
 			} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,6}$/i", trim($_POST['email']))) {
-				$invalidEmail = 'You entered an invalid email format address. (e.g. yourname@domain.tld).';
 				$invalidEmailError = true;
 			} else {
 				$email = trim($_POST['email']);
@@ -21,7 +18,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 
 			if(trim($_POST['comments']) === '') {
 				$emptyCommentError = true;
-				$emptyComment = 'Please enter a message.';
 			} else {
 				if(function_exists('stripslashes')) {
 					$comments = stripslashes(trim($_POST['comments']));
@@ -42,24 +38,28 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 					$subject = '[' . $domain . '] From '.$name;
 					$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
 					$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-					wp_mail($emailTo, $subject, $body, $headers);
-					$emailSent = true;
-					echo '<div class="p-3 mb-2 bg-success rounded-1">Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours</div>';
+					$mail = wp_mail($emailTo, $subject, $body, $headers);
+					if($mail) {
+						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours.</div>';
+						$emailSent = true;
+					} else {
+						echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Message was not sent. There is a problem with the server right now. Please try again. If the problem still persist you could contact me directly via social media.</div>';
+					}
 				} else {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Invalid captcha.</div>';
 				}
 			} else {
 				if (isset($emptyNameError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyName . '</div>';
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your name.</div>';
 				}
 				if (isset($emptyEmailError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyEmail . '</div>';
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your email address.</div>';
 				}
 				if (isset($invalidEmailError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $invalidEmail . '</div>';
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> You entered an invalid email format address. (e.g. yourname@domain.tld).</div>';
 				}
 				if (isset($emptyCommentError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyComment . '</div>';
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a message.</div>';
 				}
 				if(empty($_POST['g-recaptcha-response'])) {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
@@ -73,7 +73,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 	<div class="col-12 py-4 contact-form">
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<div id="content" role="main">
-			<form action="?" method="post">
+			<form action="" method="post">
 				<fieldset>
 					<div class="row mb-0 mb-md-4">
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
