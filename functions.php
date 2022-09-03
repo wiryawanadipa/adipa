@@ -22,6 +22,9 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	update_option( 'comment_previously_approved', 1 );
 	update_option( 'show_avatars', 0 );
 	update_option( 'permalink_structure', '/%postname%/' );
+	wp_insert_term('Blog' , 'category');
+	wp_insert_term('Design Gallery' , 'category');
+	wp_insert_term('Project' , 'category');
 	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
