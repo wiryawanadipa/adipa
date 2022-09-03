@@ -1,7 +1,7 @@
 <?php
 // Auto theme setting upon activation
 if( isset( $_GET['activated'] ) && is_admin() ) {
-	update_option( 'posts_per_page', 6 );
+	update_option( 'posts_per_page', 12 );
 	update_option( 'thumbnail_size_w', 0 );
 	update_option( 'thumbnail_size_h', 0 );
 	update_option( 'thumbnail_crop', 1 );
@@ -244,7 +244,7 @@ add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Add image size
-add_image_size('bigthumb', 416, 260, true);
+add_image_size('bigthumb', 421, 263, true);
 
 // Add <figure> tag on <img>
 function figure_tag_img ( $content ) {
@@ -321,16 +321,16 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 			$paged = 1;
 		}
 		if ($max_page > 1 || $always_show) {
-			echo $before.'<nav class="blog-pagination text-end" aria-label="Pagination">';
+			echo $before . '<nav class="blog-pagination text-end" aria-label="Pagination">';
 			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
 				if ($i >= 1 && $i <= $max_page) {
 					if($i == $paged) {
 					}
 					elseif ($i < $paged) {
-						echo '<a href="'.get_pagenum_link($i).'" class="pagination me-2" ' . $i . '"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="pagination me-2"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
 					}
 					else {
-						echo '<a href="'.get_pagenum_link($i).'" class="pagination" ' . $i . '">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="pagination">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
 					}
 				}
 			}
