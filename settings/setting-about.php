@@ -36,6 +36,14 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.4 (4 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Update Font Awesome from 6.1.2 to 6.2.0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.3 (4 September 2022)</label>
                     </th>
                     <td>
