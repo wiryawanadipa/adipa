@@ -36,6 +36,16 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.2 (3 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Add page link calling function</p>
+                        <p>- Change how category link called</p>
+                        <p>- Auto create Blog, Design Gallery and Project category upon theme activation</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.1 (2 September 2022)</label>
                     </th>
                     <td>
