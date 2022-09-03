@@ -42,8 +42,8 @@
                         <p>- Add page link calling function</p>
                         <p>- Change how category link called</p>
                         <p>- Auto create Blog, Design Gallery and Project category upon theme activation</p>
-                        <p>- Fix reCaptcha validation in contact page</p>
-                        <p>- Remove reCaptcha API key and now using two key (site key and secret key)</p>
+                        <p>- Fix reCAPTCHA validation in contact page</p>
+                        <p>- Remove reCAPTCHA API key and now using two key (site key and secret key)</p>
                     </td>
                 </tr>
                 <tr>
