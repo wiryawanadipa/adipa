@@ -96,7 +96,6 @@ body {
 .wa-navbar a, .wa-navbar a:focus {
     border-radius: .25rem;
     color: var(--text-normal);
-    margin-right: .5rem;
 }
 
 .wa-navbar a:hover, .wa-navbar a:active, .menu-active {

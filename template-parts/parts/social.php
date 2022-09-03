@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 fs-5 d-flex mb-5 mb-md-0 align-content-center justify-content-center justify-content-md-end flex-wrap social">
+<div class="col-12 col-md-6 fs-5 d-flex mb-4 mb-md-0 align-content-center justify-content-center justify-content-md-end flex-wrap social">
     <?php
     $facebook = trim( get_option( 'wa_facebook' ) );
     $twitter = trim( get_option( 'wa_twitter' ) );
