@@ -856,7 +856,7 @@ a.postcard-tag:hover {
 }
 
 /* Responsive */
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     .dropdown-menu input {
         min-width: 180px;
     }
@@ -903,7 +903,7 @@ a.postcard-tag:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .wa-top-menu {
         padding: 1rem .5rem;
     }

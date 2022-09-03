@@ -159,6 +159,12 @@ function disable_page() {
 }
 add_action('template_redirect', 'disable_page');
 
+// Get page ID by title
+function get_page_id_by_title($title) {
+	$page = get_page_by_title($title);
+	return $page->ID;
+}
+
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     function easy_add_thumbnail($post) {
