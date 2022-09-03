@@ -34,7 +34,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 				$secret = get_option( 'wa_recaptcha_secret_key' );
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
-				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='.$ip);
+				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
 				$valid = json_decode($rsp, true);
 				if($valid["success"] == true) {
 					$emailTo = get_option( 'wa_mail' );
@@ -65,7 +65,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
 				}
 			}
-
 		} elseif ($_SESSION['rand'] != $_POST['randcheck']) {
 			echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
 		}
