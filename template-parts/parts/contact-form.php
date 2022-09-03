@@ -12,7 +12,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			if(trim($_POST['email']) === '')  {
 				$emptyEmail = 'Please enter your email address.';
 				$emptyEmailError = true;
-			} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
+			} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,6}$/i", trim($_POST['email']))) {
 				$invalidEmail = 'You entered an invalid email format address. (e.g. yourname@domain.tld).';
 				$invalidEmailError = true;
 			} else {
