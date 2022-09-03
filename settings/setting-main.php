@@ -11,11 +11,21 @@
 				<!-- reCAPTCHA Key -->
 				<tr>
 					<th>
-						<label>reCAPTCHA</label>
+						<label>reCAPTCHA Site Key</label>
 					</th>
 					<td>
 						<label>
-							<input class="wa-input" name="wa_recaptcha" type="text" placeholder="reCAPTCHA API" value="<?php echo get_option('wa_recaptcha'); ?>">
+							<input class="wa-input" name="wa_recaptcha_site_key" type="text" placeholder="reCAPTCHA site key" value="<?php echo get_option('wa_recaptcha_site_key'); ?>">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>reCAPTCHA Secret Key</label>
+					</th>
+					<td>
+						<label>
+							<input class="wa-input" name="wa_recaptcha_secret_key" type="text" placeholder="reCAPTCHA secret key" value="<?php echo get_option('wa_recaptcha_secret_key'); ?>">
 						</label>
 					</td>
 				</tr>

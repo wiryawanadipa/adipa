@@ -1,5 +1,5 @@
 <?php
-if( null != get_option( 'wa_recaptcha' ) && !empty( get_option( 'wa_recaptcha' ) ) && null != get_option( 'wa_mail' ) && !empty( get_option( 'wa_mail' ) ) ) {
+if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_recaptcha_site_key' ) ) && null != get_option( 'wa_recaptcha_secret_key' ) && !empty( get_option( 'wa_recaptcha_secret_key' ) ) && null != get_option( 'wa_mail' ) && !empty( get_option( 'wa_mail' ) ) ) {
 	if(isset($_POST['submit'])) {
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
 			if(trim($_POST['contactName']) === '') {
@@ -30,27 +30,24 @@ if( null != get_option( 'wa_recaptcha' ) && !empty( get_option( 'wa_recaptcha' )
 				}   
 			}
 
-			if(!empty($_POST['g-recaptcha-response'])){
-				$secret = get_option( 'wa_recaptcha' );
+			if(!isset($emptyNameError) && !isset($emptyEmailError) && !isset($invalidEmailError) && !isset($emptyCommentError) && !empty($_POST['g-recaptcha-response'])) {
+				$secret = get_option( 'wa_recaptcha_secret_key' );
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
 				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='.$ip);
-				$array = json_decode($rsp, TRUE);
-				if($array["success"]) {
+				$valid = json_decode($rsp, true);
+				if($valid["success"] == true) {
+					$emailTo = get_option( 'wa_mail' );
+					$domain = strtoupper($_SERVER['HTTP_HOST']);
+					$subject = '[' . $domain . '] From '.$name;
+					$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
+					$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+					wp_mail($emailTo, $subject, $body, $headers);
+					$emailSent = true;
+					echo '<div class="p-3 mb-2 bg-success rounded-1">Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours</div>';
+				} else {
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Invalid captcha.</div>';
 				}
-			} else {
-				echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
-			}
-
-			if(!isset($emptyNameError) && !isset($emptyEmailError) && !isset($invalidEmailError) && !isset($emptyCommentError) && !empty($_POST['g-recaptcha-response'])) {
-				$emailTo = get_option( 'wa_mail' );
-				$domain = strtoupper($_SERVER['HTTP_HOST']);
-				$subject = '[' . $domain . '] From '.$name;
-				$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Comments:' . $comments;
-				$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-				wp_mail($emailTo, $subject, $body, $headers);
-				$emailSent = true;
-				echo '<div class="p-3 mb-2 bg-success rounded-1">Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours</div>';
 			} else {
 				if (isset($emptyNameError)) {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyName . '</div>';
@@ -64,7 +61,11 @@ if( null != get_option( 'wa_recaptcha' ) && !empty( get_option( 'wa_recaptcha' )
 				if (isset($emptyCommentError)) {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> ' . $emptyComment . '</div>';
 				}
+				if(empty($_POST['g-recaptcha-response'])) {
+					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
+				}
 			}
+
 		} elseif ($_SESSION['rand'] != $_POST['randcheck']) {
 			echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
 		}
@@ -77,20 +78,20 @@ if( null != get_option( 'wa_recaptcha' ) && !empty( get_option( 'wa_recaptcha' )
 				<fieldset>
 					<div class="row mb-0 mb-md-4">
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
-							<input id="cf-name" class="form-control check" name="contactName" type="text" placeholder="Please enter your full name here." value="<?php if( isset( $_POST['contactName'] ) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" required>
+							<input id="cf-name" class="form-control check" name="contactName" type="text" placeholder="Please enter your full name here." value="<?php if( isset( $_POST['contactName'] ) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" >
 						</div>
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
-							<input id="cf-email" class="form-control check" name="email" type="email" placeholder="Please enter your e-mail address here." value="<?php if( isset( $_POST['email'] ) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" required>
+							<input id="cf-email" class="form-control check" name="email" type="email" placeholder="Please enter your e-mail address here." value="<?php if( isset( $_POST['email'] ) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" >
 						</div>
 					</div>
 					<div class="row mb-4">
 						<div class="col-12">                   
-							<textarea class="form-control check" id="comments" placeholder="Please enter your message here." name="comments" rows="10" class="form-control" required><?php if( isset( $_POST['comments'] ) ){ echo esc_attr($_POST['comments']);} else { echo '';} ?></textarea>
+							<textarea class="form-control check" id="comments" placeholder="Please enter your message here." name="comments" rows="10" class="form-control" ><?php if( isset( $_POST['comments'] ) ){ echo esc_attr($_POST['comments']);} else { echo '';} ?></textarea>
 						</div>
 					</div>
 					<div class="row mb-4">
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
-							<div class="g-recaptcha brochure__form__captcha" data-sitekey="<?php echo get_option( 'wa_recaptcha' ); ?>"></div>
+							<div class="g-recaptcha brochure__form__captcha" data-sitekey="<?php echo get_option( 'wa_recaptcha_site_key' ); ?>"></div>
 						</div>
 						<div class="col-12 col-md-6 mb-4 mb-md-0 text-start text-md-end">
 							<?php 
@@ -107,5 +108,5 @@ if( null != get_option( 'wa_recaptcha' ) && !empty( get_option( 'wa_recaptcha' )
 	</div>
 <?php } else { ?>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Failed to create contact form.</div>
-	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please set your reCAPTCHA site key and add your email address in Theme Settings.</div>
+	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please set your reCAPTCHA site key, secret key and add your email address in Theme Settings.</div>
 <?php } ?>

@@ -419,7 +419,8 @@ function register_general_setting() {
 	register_setting( 'main-settings', 'wa_github' );
 	register_setting( 'main-settings', 'wa_youtube' );
 	register_setting( 'main-settings', 'wa_medium' );
-	register_setting( 'main-settings', 'wa_recaptcha' );
+	register_setting( 'main-settings', 'wa_recaptcha_site_key' );
+	register_setting( 'main-settings', 'wa_recaptcha_secret_key' );
 	register_setting( 'main-settings', 'wa_mail' );
 	register_setting( 'home-settings', 'home_title' );
 	register_setting( 'home-settings', 'home_meta_desc' );
