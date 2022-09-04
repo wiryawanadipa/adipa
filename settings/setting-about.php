@@ -65,6 +65,7 @@
                         <p>- Auto create Blog, Design Gallery and Project category upon theme activation</p>
                         <p>- Fix reCAPTCHA validation in contact page</p>
                         <p>- Remove reCAPTCHA API key and now using two key (site key and secret key)</p>
+                        <p>- Change logo, design gallery and project images structure</p>
                     </td>
                 </tr>
                 <tr>
@@ -86,7 +87,7 @@
                 </table>
             </div>
             <div id="tab3" class="tab">
-                <div class="wa-theme-logo"><img style="border-radius:3px;" src="<?php bloginfo('stylesheet_directory'); ?>/assets/wiryawan-adipa-logo-big.png"></div>
+                <div class="wa-theme-logo"><img style="border-radius:3px;" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo/wiryawan-adipa-logo-big.png"></div>
                 <div class="theme-github-link">
                     <a href="https://github.com/wiryawanadipa/adipa" target="_blank">Wiryawan Adipa Wordpress v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a>
                 </div>
