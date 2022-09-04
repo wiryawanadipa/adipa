@@ -41,6 +41,7 @@
                     <td>
                         <p>- Add custom ::selection style</p>
                         <p>- Change copy icon from Highlighting Code Block plugin</p>
+                        <p>- Change input and textarea outline color</p>
                     </td>
                 </tr>
                 <tr>
