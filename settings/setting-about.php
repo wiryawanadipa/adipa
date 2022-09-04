@@ -44,6 +44,7 @@
                         <p>- Add redirection 301 pagination on homepage</p>
                         <p>- Add link rel="cannonical" on homepage, post and page</p>
                         <p>- Add about page template</p>
+                        <p>- Add search form on 404 page and not found search result</p>
                         <p>- Change stop guessing 404 function with strict redirect guessing</p>
                         <p>- Change logo, design gallery and project images structure</p>
                     </td>
