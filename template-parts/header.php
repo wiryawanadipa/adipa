@@ -29,7 +29,7 @@
 		?>
 	</head>
 	<body>
-		<div class="py-2 py-md-4 top-space"></div>
+		<div class="d-none d-md-block py-4 top-space"></div>
 		<?php get_template_part( 'template-parts/parts/topnav' ); ?>
 		<div class="d-none d-md-block py-4 top-space"></div>
 		<!-- Main -->
