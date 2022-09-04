@@ -115,7 +115,7 @@ function wa_custom_setting_style() {
 add_action( 'admin_enqueue_scripts', 'wa_custom_setting_style' );
 
 function fontawesome_icon() {
-	wp_register_style( 'wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' );
+	wp_register_style( 'wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' );
 	wp_enqueue_style( 'wa_fontawesome_icon' );
 }
 add_action( 'admin_enqueue_scripts', 'fontawesome_icon' );
@@ -257,14 +257,11 @@ function figure_tag_img ( $content ) {
 }
 add_filter( 'the_content', 'figure_tag_img', 99 );
 
-// Disable wordpress auto guessing url
-function stop_guessing($url) {
-	if (is_404()) {
-		return false;
-	}
-	return $url;
+// Strict guess for a 404 redirect
+function strict_redirect_guessing() {
+	return true;
 }
-add_filter('redirect_canonical','stop_guessing');
+add_filter( 'strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
 // Clean category list
 function categories_clean($wp_list_categories) {
