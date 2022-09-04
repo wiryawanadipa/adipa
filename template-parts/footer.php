@@ -3,8 +3,7 @@
             <div class="container-xl py-5 wa-footer">
                 <div class="row">
                     <div class="col-12 col-md-6 fs-1 mb-3 mb-md-0 text-center text-md-start">Thanks for visiting!</div>
-                    <!-- Social Links -->
-                    <?php get_template_part( 'template-parts/parts/social' ); ?>
+                    <div class="col-12 col-md-6 fs-5 d-flex mb-4 mb-md-0 align-content-center justify-content-center justify-content-md-end flex-wrap social"><?php get_template_part( 'template-parts/parts/social' ); ?></div>
                     <div class="col-12 col-md-6 mb-1 small-text text-center text-md-start"><i class="fa-solid fa-copyright"></i> <?php echo date( 'Y' ); ?>, <?php echo $_SERVER['HTTP_HOST']; ?></div>
                     <div class="col-12 col-md-6"></div>
                     <div class="col-12 col-md-6 mb-1 small-text text-muted pt-2 pt-md-0 text-center text-md-start"><i class="fa-solid fa-building-shield"></i><a class="small-text text-muted privacy-policy" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'Privacy Policy' ) ) ); ?>"> Privacy Policy</a></div>

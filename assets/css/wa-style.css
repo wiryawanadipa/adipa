@@ -818,6 +818,10 @@ a.postcard-tag:hover {
     background-color: var(--color-two) !important;
 }
 
+.about.social a:hover i {
+    color: var(--color-one);
+}
+
 /* Footer */
 .wa-footer {
     background-color: var(--bg-color-two);
