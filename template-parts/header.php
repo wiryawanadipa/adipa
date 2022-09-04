@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<?php get_template_part( 'template-parts/parts/meta' ); ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- External Assets CDN -->
 		<link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -20,6 +19,7 @@
 		<link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/assets/favicon/site.webmanifest">
 		<!-- wp_head -->
 		<?php wp_head(); ?>
+		<?php get_template_part( 'template-parts/parts/meta' ); ?>
 		<?php
 		$headcode = trim( get_option( 'head_code' ) );
 		if ( null != get_option( 'head_code' ) && !empty ( $headcode ) ) {
