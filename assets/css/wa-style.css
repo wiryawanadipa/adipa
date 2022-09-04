@@ -617,10 +617,6 @@ a.postcard-tag:hover {
 .post-title-header p .post-tag-list a {
     color: var(--text-normal);
     text-decoration: underline .15rem var(--text-normal);
-    -webkit-transition: text-decoration-color .2s;
-    -moz-transition: text-decoration-color .2s;
-    -o-transition: text-decoration-color .2s;
-    transition: text-decoration-color .2s;
 }
 
 .post-tag-list {
@@ -686,15 +682,11 @@ a.postcard-tag:hover {
 .wa-post-article a {
     color: var(--text-normal);
     font-weight: 500;
-    text-decoration: underline .2rem var(--color-one);
-    -webkit-transition: text-decoration-color .2s;
-    -moz-transition: text-decoration-color .2s;
-    -o-transition: text-decoration-color .2s;
-    transition: text-decoration-color .2s;
+    text-decoration: underline .2rem var(--text-normal);
 }
 
 .wa-post-article a:hover {
-    text-decoration: underline .375rem var(--color-one);
+    text-decoration: underline .2rem var(--color-one);
 }
 
 .wa-post-article figure {
