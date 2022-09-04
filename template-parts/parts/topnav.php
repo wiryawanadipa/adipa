@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse mt-1 mt-md-0" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-md-2 mt-3 mt-md-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-md-2 mt-4 mt-md-0">
                     <li class="nav-item mx-md-1">
                         <a class="nav-link fs-5 wa-top-menu<?php if ( is_home() ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php bloginfo('url'); ?>">home</a>
                     </li>
