@@ -147,35 +147,39 @@ body {
     top: 54px !important;
 }
 
-.dropdown-menu form {
+.wa-search {
+    background-color: var(--bg-color-three) !important;
+}
+
+.wa-search form {
     display:flex;
     flex-direction:row;
     width: 100%;
 }
 
-.dropdown-menu input {
+.wa-search input {
     border: none;
     padding: .375rem 2.5rem .375rem .375rem;
     min-width: 300px;
     width: 100%;
 }
 
-.wa-search {
-    background-color: var(--bg-color-three) !important;
+.wa-search input:focus {
+    box-shadow: 0 0 0 .15rem var(--color-two);
 }
 
-.dropdown-menu input[type="search"]::-webkit-search-decoration,
-.dropdown-menu input[type="search"]::-webkit-search-cancel-button,
-.dropdown-menu input[type="search"]::-webkit-search-results-button,
-.dropdown-menu input[type="search"]::-webkit-search-results-decoration {
+.wa-search input[type="search"]::-webkit-search-decoration,
+.wa-search input[type="search"]::-webkit-search-cancel-button,
+.wa-search input[type="search"]::-webkit-search-results-button,
+.wa-search input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
 }
 
-.dropdown-menu input:focus-visible {
+.wa-search input:focus-visible {
     outline-color: transparent;
 }
 
-.dropdown-menu button {
+.wa-search button {
     background-color: var(--color-two);
     border: none !important;
     color: var(--text-normal);
@@ -183,7 +187,7 @@ body {
     width: 38px;
 }
 
-.dropdown-menu button:hover {
+.wa-search button:hover {
     background-color: var(--color-one);
 }
 
