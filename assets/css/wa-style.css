@@ -161,7 +161,7 @@ body {
 }
 
 .dropdown-menu button {
-    background-color: var(--bg-color-three);
+    background-color: var(--color-two);
     border: none !important;
     color: var(--text-normal);
     height: 38px;
@@ -169,7 +169,7 @@ body {
 }
 
 .dropdown-menu button:hover {
-    background-color: var(--color-two);
+    background-color: var(--color-one);
 }
 
 /* Main */
