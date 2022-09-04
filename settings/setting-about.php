@@ -44,6 +44,8 @@
                         <p>- Change stop guessing 404 function with strict redirect guessing</p>
                         <p>- Add redirection 301 pagination on homepage</p>
                         <p>- Add link rel="cannonical" on homepage, post and page</p>
+                        <p>- Change logo, design gallery and project images structure</p>
+                        <p>- Add a little disclaimer on contact page</p>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +67,6 @@
                         <p>- Auto create Blog, Design Gallery and Project category upon theme activation</p>
                         <p>- Fix reCAPTCHA validation in contact page</p>
                         <p>- Remove reCAPTCHA API key and now using two key (site key and secret key)</p>
-                        <p>- Change logo, design gallery and project images structure</p>
                     </td>
                 </tr>
                 <tr>

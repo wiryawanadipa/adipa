@@ -77,7 +77,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 				<fieldset>
 					<div class="row mb-0 mb-md-4">
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
-							<input id="cf-name" class="form-control check" name="contactName" type="text" placeholder="Please enter your full name here." value="<?php if( isset( $_POST['contactName'] ) && !isset($emailSent) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" required>
+							<input id="cf-name" class="form-control check" name="contactName" type="text" placeholder="Please enter your name here." value="<?php if( isset( $_POST['contactName'] ) && !isset($emailSent) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" required>
 						</div>
 						<div class="col-12 col-md-6 mb-4 mb-md-0">
 							<input id="cf-email" class="form-control check" name="email" type="email" placeholder="Please enter your e-mail address here." value="<?php if( isset( $_POST['email'] ) && !isset($emailSent) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" required>
@@ -105,6 +105,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			</form>       
 		</div>
 	</div>
+	<div class="p-3 mb-2 text-muted bg-dark rounded-1">*I WILL NOT use your email address to send you anything other than a response to your message(s) or question(s) (if any).</div>
 <?php } else { ?>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Failed to create contact form.</div>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please set your reCAPTCHA site key, secret key and add your email address in Theme Settings.</div>
