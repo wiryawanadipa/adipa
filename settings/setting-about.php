@@ -40,6 +40,8 @@
                     </th>
                     <td>
                         <p>- Update Font Awesome from 6.1.2 to 6.2.0</p>
+                        <p>- Add attachment.php</p>
+                        <p>- Change stop guessing 404 function with strict redirect guessing</p>
                     </td>
                 </tr>
                 <tr>
