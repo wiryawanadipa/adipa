@@ -45,7 +45,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	}
 }
 
-function breadcrumb() {
+function breadcrumbs() {
 	global $post;
 	$schema_link = 'http://schema.org/ListItem';
 	$home = 'Home';

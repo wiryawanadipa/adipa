@@ -36,6 +36,15 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.5 (5 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Add breadcrumbs on post</p>
+                        <p>- Add sitelink search box</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.4 (4 September 2022)</label>
                     </th>
                     <td>
