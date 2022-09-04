@@ -52,12 +52,12 @@ function breadcrumbs() {
 	$home = 'Home';
 	$delimiter = ' &gt; ';
 	$homeLink = get_bloginfo('url');
-	echo '<ol class="container p-3 py-2 rounded-1 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
+	echo '<ol class="container p-3 py-2 rounded-3 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
 	echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . $homeLink . '">' . '<span itemprop="name">' . $home . '</span>' . '</a><meta itemprop="position" content="1" /></li>' . $delimiter . "\n";
-	$categories = wp_get_post_terms($post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'ASC' ) );
-	if ($categories) {
+	$categories = wp_get_post_terms( $post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'ASC' ) );
+	if ( $categories ) {
 		foreach ( $categories as $cat ) {
-				echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="2" /></li>' . $delimiter . "\n";
+			echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="2" /></li>' . $delimiter . "\n";
 		}
 	}
 	echo '<li>' . get_the_title() . '</li>' . "\n";
