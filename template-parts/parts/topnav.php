@@ -22,9 +22,11 @@
                     </li>
                     <li class="nav-item mx-md-1 dropdown">
                         <a class="nav-link dropdown-toggle p-3 p-md-2" href="#" role="button" data-bs-toggle="dropdown" title="Search Button" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end wa-search">
-                            <form action="<?php bloginfo('url'); ?>" role="search" method="get">
-                                <input type="search" class="check" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" required>
+                        <ul class="dropdown-menu dropdown-menu-end wa-search" itemscope itemtype="https://schema.org/WebSite">
+                        <meta itemprop="url" content="<?php bloginfo('url'); ?>"/>
+                            <form action="<?php bloginfo('url'); ?>" role="search" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                                <meta itemprop="target" content="<?php bloginfo('url'); ?>/?s={s}"/>
+                                <input type="search" class="check" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" itemprop="query-input" type="text" name="s" required>
                                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                         </ul>
