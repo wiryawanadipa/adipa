@@ -105,8 +105,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			</form>       
 		</div>
 	</div>
-	<div class="p-3 mb-2 text-muted bg-dark rounded-1">*I WILL NOT use your email address to send you anything other than a response to your message(s) or question(s) (if any).</div>
-	<div class="p-3 mb-2 text-muted bg-dark rounded-1">*If you're still not comfortable using this contact form, you could contact me directly via social media.</div>
 <?php } else { ?>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Failed to create contact form.</div>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please set your reCAPTCHA site key, secret key and add your email address in Theme Settings.</div>
