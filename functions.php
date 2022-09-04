@@ -45,6 +45,26 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	}
 }
 
+function breadcrumb() {
+	global $post;
+	$schema_link = 'http://schema.org/ListItem';
+	$home = 'Home';
+	$delimiter = ' &gt; ';
+	$homeLink = get_bloginfo('url');
+	echo '<ol class="container p-3 py-2 rounded-1 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
+	echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . $homeLink . '">' . '<span itemprop="name">' . $home . '</span>' . '</a><meta itemprop="position" content="1" /></li>' . $delimiter . "\n";
+	$category = get_the_category();
+	if ($category) {
+		$count = 2;
+		foreach ($category as $cat) {
+			echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $count . '" /></li>' . $delimiter . "\n";
+			$count++;
+		}
+	}
+	echo '<li>' . get_the_title() . '</li>' . "\n";
+	echo '</ol>' . "\n";
+}
+
 //  Add Favicon on login and admin page
 function add_site_favicon() {
     echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n";

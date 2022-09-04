@@ -1,7 +1,8 @@
 <?php get_template_part( 'template-parts/header' ); ?>
-<main class="container-xl my-3 my-sm-5 main-page">
+<main class="container-xl my-3 my-sm-4 main-page">
 	<div class="row wa-post">
         <article class="col-xl-12">
+            <?php breadcrumb(); ?>
             <!-- Post Title -->
             <div class="container px-0 mb-4 mb-md-5">
                 <div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title">

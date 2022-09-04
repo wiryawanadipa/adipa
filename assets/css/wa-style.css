@@ -488,7 +488,7 @@ body {
     transform: scale(1.1);
 }
 
-.postcard h2 {
+.postcard h3 {
     line-height: 1;
 }
 
@@ -583,6 +583,24 @@ a.postcard-tag:hover {
     font-size: 1.1rem !important;
     line-height: 2.4rem;
     margin-bottom: 2.5rem !important;
+}
+
+.breadcrumbs {
+    background-color: var(--bg-color-three);
+    color: var(--text-normal);
+}
+
+ol.breadcrumbs li {
+    display: inline;
+}
+
+ol.breadcrumbs li a {
+    color: var(--text-normal);
+    text-decoration: none;
+}
+
+ol.breadcrumbs li a:hover {
+    text-decoration: underline .2rem var(--color-one);
 }
 
 .post-title {
@@ -683,11 +701,11 @@ a.postcard-tag:hover {
 .wa-post-article a {
     color: var(--text-normal);
     font-weight: 500;
-    text-decoration: underline .2rem var(--text-normal);
+    text-decoration: underline .2rem var(--color-one);
 }
 
 .wa-post-article a:hover {
-    text-decoration: underline .2rem var(--color-one);
+    text-decoration: underline .3rem var(--color-one);
 }
 
 .wa-post-article figure {
