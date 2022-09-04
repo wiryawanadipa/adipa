@@ -52,8 +52,10 @@ function breadcrumbs() {
 	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '">' . '<span itemprop="name">Home</span>' . '</a><meta itemprop="position" content="1" /></li> &gt; ' . "\n";
 	$categories = wp_get_post_terms( $post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'ASC' ) );
 	if ( $categories ) {
+		$catcount = 2;
 		foreach ( $categories as $cat ) {
-			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="2" /></li> &gt; ' . "\n";
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $cat->term_id ) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $catcount . '" /></li> &gt; ' . "\n";
+			$catcount++;
 		}
 	}
 	echo '<li>' . get_the_title() . '</li>' . "\n";
