@@ -45,6 +45,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 	}
 }
 
+// Add breadcrumbs
 function breadcrumbs() {
 	global $post;
 	$schema_link = 'http://schema.org/ListItem';
@@ -55,10 +56,15 @@ function breadcrumbs() {
 	echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . $homeLink . '">' . '<span itemprop="name">' . $home . '</span>' . '</a><meta itemprop="position" content="1" /></li>' . $delimiter . "\n";
 	$category = get_the_category();
 	if ($category) {
-		$count = 2;
-		foreach ($category as $cat) {
-			echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $count . '" /></li>' . $delimiter . "\n";
-			$count++;
+		foreach ( $category as $cat ) {
+			if( !$cat->parent ) {
+				echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="2" /></li>' . $delimiter . "\n";
+			}
+		}
+		foreach ( $category as $cat ) {
+			if( $cat->parent ) {
+				echo '<li itemprop="itemListElement" itemscope itemtype="' . $schema_link . '"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="3" /></li>' . $delimiter . "\n";
+			}
 		}
 	}
 	echo '<li>' . get_the_title() . '</li>' . "\n";
