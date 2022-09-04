@@ -36,6 +36,15 @@
                 <table class="form-table">
                 <tr>
                     <th>
+                        <label>v1.0.6 (6 September 2022)</label>
+                    </th>
+                    <td>
+                        <p>- Add custom ::selection style</p>
+                        <p>- Change copy icon from Highlighting Code Block plugin</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <label>v1.0.5 (5 September 2022)</label>
                     </th>
                     <td>
