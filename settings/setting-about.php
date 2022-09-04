@@ -41,11 +41,11 @@
                     <td>
                         <p>- Update Font Awesome from 6.1.2 to 6.2.0</p>
                         <p>- Add attachment.php</p>
-                        <p>- Change stop guessing 404 function with strict redirect guessing</p>
                         <p>- Add redirection 301 pagination on homepage</p>
                         <p>- Add link rel="cannonical" on homepage, post and page</p>
+                        <p>- Add about page template</p>
+                        <p>- Change stop guessing 404 function with strict redirect guessing</p>
                         <p>- Change logo, design gallery and project images structure</p>
-                        <p>- Add a little disclaimer on contact page</p>
                     </td>
                 </tr>
                 <tr>
