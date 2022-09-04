@@ -40,6 +40,10 @@
     color: var(--text-normal);
 }
 
+input, textarea {
+    caret-color: var(--color-two);
+}
+
 html {
     font-family: var(--font-poppins) !important;
 }
@@ -781,7 +785,11 @@ ol.breadcrumbs li a:hover {
 
 .contact-form .form-control:focus {
     border-color: var(--color-one);
-    box-shadow: 0 0 0 0.25rem rgba(252, 92, 101, .5);
+    box-shadow: 0 0 0 .15rem var(--color-two);
+}
+
+textarea.check:required:valid, textarea.check:required:invalid, textarea.check:focus:invalid {
+    background-position: right .5rem top .5rem;
 }
 
 .contact-form .btn-primary {
@@ -794,7 +802,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .contact-form .btn-primary:focus {
-    box-shadow: 0 0 0 0.25rem rgba(252, 92, 101, .5);
+    box-shadow: 0 0 0 0 var(--color-two);
 }
 
 /* For Highlighting Code Block */
@@ -869,6 +877,10 @@ ol.breadcrumbs li a:hover {
     min-width: 200px;
     max-width: 600px;
     width: 100%;
+}
+
+.search-big form input:focus {
+    box-shadow: 0 0 0 .15rem var(--color-two);
 }
 
 /* Footer */

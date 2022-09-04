@@ -34,8 +34,9 @@ body.login {
 
 }
 
-input[type=text]:focus {
+input:focus {
     border-color: var(--color-two);
+    box-shadow: 0 0 0 .15rem var(--color-two) !important;
 }
 
 #loginform, #lostpasswordform, #registerform {

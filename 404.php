@@ -8,7 +8,7 @@
         </div>
         <div class="col-12 text-center search-big">
             <form action="<?php bloginfo('url'); ?>" role="search" method="get">
-                <input type="search" class="check" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" required>
+                <input type="search" class="check" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" autofocus required>
             </form>
         </div>
 	</div>
