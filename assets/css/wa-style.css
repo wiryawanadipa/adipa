@@ -818,6 +818,10 @@ a.postcard-tag:hover {
     background-color: var(--color-two) !important;
 }
 
+.about.social a {
+    display: inline-block;
+}
+
 .about.social a:hover i {
     color: var(--color-one);
 }
