@@ -58,7 +58,7 @@ function breadcrumbs() {
 			$catcount++;
 		}
 	}
-	echo '<li>' . get_the_title() . '</li>' . "\n";
+	echo '<li aria-current="page">' . get_the_title() . '</li>' . "\n";
 	echo '</ol>' . "\n";
 }
 
