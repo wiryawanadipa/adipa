@@ -39,7 +39,7 @@
 						<label>v1.0.7 (6 September 2022)</label>
 					</th>
 					<td>
-						<p>-Add label for form on contact page</p>
+						<p>- Add label for form on contact page</p>
 						<p>- Add related post based on tags</p>
 						<p>- Change top left anchor text</p>
 					</td>
