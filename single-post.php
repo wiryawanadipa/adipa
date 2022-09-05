@@ -33,11 +33,11 @@
 					echo '<div class="container px-0 px-md-3 wa-post-article">';
 						echo '<div class="wa-post-article-box">';
 							the_content();
+							wa_related_by_tags();
 						echo '</div>';
 					echo '</div>';
 				}
 			}
-			wa_related_by_tags();
 			?>
 		</article>
 	</div>

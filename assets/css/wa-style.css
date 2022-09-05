@@ -769,6 +769,25 @@ ol.breadcrumbs li a:hover {
 	margin: 0 auto 2rem !important;
 }
 
+.wa-related-post {
+	background-color: var(--bg-color-two);
+	border-radius: .5rem;
+}
+
+.wa-related-post h2 {
+	border-radius: .25rem .25rem 0 0;
+	margin-bottom: 1rem;
+}
+
+.wa-related-post a {
+	font-size: 1.125rem;
+	text-decoration: none;
+}
+
+.wa-related-post a:hover {
+	text-decoration: underline .15rem var(--color-one);
+}
+
 .contact-form .form-control {
 	padding-right: 2.5rem;
 }
@@ -955,6 +974,10 @@ textarea.check:required:valid, textarea.check:required:invalid, textarea.check:f
 	.youtube,
 	.wa-post .hcb_wrap {
 		margin: 0 auto 1.5rem !important;
+	}
+
+	.wa-related-post h2 {
+		margin-bottom: .5rem !important;
 	}
 }
 

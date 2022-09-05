@@ -273,17 +273,18 @@ function wa_related_by_tags() {
 		$args=array(
 			'tag__in' => $tags_ids,
 			'post__not_in' => array($post->ID),
-			'posts_per_page'=> 6
+			'posts_per_page'=> 4,
+			'orderby' => 'rand'
 		);
 		$my_query = new wp_query( $args );
 		if( $my_query->have_posts() ) {
-			echo '<div class="atmosphere-related">';
-			echo 'Related Post';
+			echo '<div class="container wa-related-post"><div class="row">';
+			echo '<h2>Related Post</h2>';
 			while( $my_query->have_posts() ) {
 				$my_query->the_post();
-				echo '<div><a class="fs-5" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+				echo '<div class="col-12 px-4 py-2 mb-3 mb-md-4 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
 			}
-			echo '</div>';
+			echo '</div></div>';
 		}
 	}
 	wp_reset_postdata();
