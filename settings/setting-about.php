@@ -36,7 +36,7 @@
 				<table class="form-table">
 				<tr>
 					<th>
-						<label>v1.0.7 (7 September 2022)</label>
+						<label>v1.0.7 (6 September 2022)</label>
 					</th>
 					<td>
 						<p>-Add label for form on contact page</p>
