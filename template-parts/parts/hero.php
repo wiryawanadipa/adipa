@@ -13,7 +13,7 @@
 				<div class="hero-heading-text text-center text-sm-start"><?php do_action( 'hero_desc' ); ?></div>
 			</div>
 			<div class="col-lg-4 d-none d-lg-block position-relative hero-photo">
-				<img class="position-absolute top-50 start-50 translate-middle rounded-circle" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo/wiryawan-adipa-logo-big.png" width="256px" height="256px" alt="Wiryawan Adipa Logo Big">
+				<img class="position-absolute top-50 start-50 translate-middle rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="256px" height="256px" alt="wa logo big">
 			</div>
 		</div>
 	</div>
