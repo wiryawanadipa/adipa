@@ -4,7 +4,7 @@
 		<div class="col-12 text-center my-5 error-404">
 			<h1>404</h1>
 			<i class="fa-solid fa-triangle-exclamation fa-10x mb-3 mt-3"></i>
-			<p class="fs-4">I can't find what you're looking for.</p>
+			<div class="fs-4">I can't find what you're looking for.</div>
 		</div>
 		<div class="col-12 text-center search-big">
 			<form action="<?php bloginfo('url'); ?>" role="search" method="get">
@@ -24,7 +24,7 @@
 				get_template_part( 'template-parts/parts/postcard' );
 			}
 		} else {
-			echo '<p class="fs-1 text-center text-white">Coming Soon!</p>';
+			echo '<div class="fs-1 text-center text-white">Coming Soon!</div>';
 		}
 		wp_reset_postdata();
 		?>

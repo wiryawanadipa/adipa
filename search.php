@@ -36,7 +36,7 @@
 					get_template_part( 'template-parts/parts/postcard' );
 				}
 			} else {
-				echo '<p class="fs-1 text-center text-white">Coming Soon!</p>';
+				echo '<div class="fs-1 text-center text-white">Coming Soon!</div>';
 			}
 			wp_reset_postdata();
 			?>
