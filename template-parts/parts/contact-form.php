@@ -75,16 +75,19 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 		<div id="content" role="main">
 			<form action="" method="post">
 				<fieldset>
-					<div class="row mb-0 mb-md-4">
-						<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<div class="row mb-0 mb-md-3">
+						<div class="col-12 col-md-6 mb-3 mb-md-0">
+							<label class="mb-2">Name</label>
 							<input id="cf-name" class="form-control check" name="contactName" type="text" placeholder="Please enter your name here." value="<?php if( isset( $_POST['contactName'] ) && !isset($emailSent) ){ echo esc_attr($_POST['contactName']);} else { echo '';} ?>" autofocus required>
 						</div>
-						<div class="col-12 col-md-6 mb-4 mb-md-0">
+						<div class="col-12 col-md-6 mb-3 mb-md-0">
+							<label class="mb-2">E-Mail</label>
 							<input id="cf-email" class="form-control check" name="email" type="email" placeholder="Please enter your e-mail address here." value="<?php if( isset( $_POST['email'] ) && !isset($emailSent) ){ echo esc_attr($_POST['email']);} else { echo '';} ?>" required>
 						</div>
 					</div>
-					<div class="row mb-4">
-						<div class="col-12">                   
+					<div class="row mb-3">
+						<div class="col-12">
+							<label class="mb-2">Message</label>
 							<textarea class="form-control check" id="comments" placeholder="Please enter your message here." name="comments" rows="10" class="form-control" required><?php if( isset( $_POST['comments'] ) && !isset($emailSent) ){ echo esc_attr($_POST['comments']);} else { echo '';} ?></textarea>
 						</div>
 					</div>
