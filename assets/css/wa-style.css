@@ -868,6 +868,10 @@ textarea.check:required:valid, textarea.check:required:invalid, textarea.check:f
 	color: var(--color-one);
 }
 
+.search-big {
+	margin-bottom: 4rem;
+}
+
 .search-big input[type="search"]::-webkit-search-decoration,
 .search-big input[type="search"]::-webkit-search-cancel-button,
 .search-big input[type="search"]::-webkit-search-results-button,

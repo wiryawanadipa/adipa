@@ -11,6 +11,23 @@
 				<input type="search" class="check" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" autofocus required>
 			</form>
 		</div>
+		<?php
+		$blog = array(
+			'posts_per_page' => 9,
+			'category_name' => 'Blog',
+			'orderby' => 'rand'
+		);
+		$loop = new WP_Query( $blog );
+		if ( $loop->have_posts() ) {
+			while ( $loop->have_posts() ) {
+				$loop->the_post();
+				get_template_part( 'template-parts/parts/postcard' );
+			}
+		} else {
+			echo '<p class="fs-1 text-center text-white">Coming Soon!</p>';
+		}
+		wp_reset_postdata();
+		?>
 	</div>
 </main>
 <?php get_template_part( 'template-parts/footer' ); ?>
