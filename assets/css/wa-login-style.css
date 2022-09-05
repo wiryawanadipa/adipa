@@ -1,99 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --color-one: #fc5c65;
-    --color-two: #eb3b5a;
-    --bg-color-one: #36454f;
-    --bg-color-two: #2c3840;
-    --bg-color-three: #212b31;
-    --text-normal: #dedede;
-    --text-muted: #6c757d;
-    --font-poppins: 'Poppins', sans-serif;
+	--color-one: #fc5c65;
+	--color-two: #eb3b5a;
+	--bg-color-one: #36454f;
+	--bg-color-two: #2c3840;
+	--bg-color-three: #212b31;
+	--text-normal: #dedede;
+	--text-muted: #6c757d;
+	--font-poppins: 'Poppins', sans-serif;
 }
 
 :focus {
-    box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 body.login {
-    background-color: var(--bg-color-one);
-    font-family: var(--font-poppins) !important;
+	background-color: var(--bg-color-one);
+	font-family: var(--font-poppins) !important;
 }
 
 #login {
-    display: grid;
+	display: grid;
 }
 
 #login h1 a {
-    background-image: url('../img/logo/wiryawan-adipa-logo-medium.png');
-    background-repeat: no-repeat;
-    margin: .5rem auto !important;
-    height: 80px;
-    width: 80px;
-    background-size: 80px;
+	background-image: url('../img/logo/wiryawan-adipa-logo-medium.png');
+	background-repeat: no-repeat;
+	margin: .5rem auto !important;
+	height: 80px;
+	width: 80px;
+	background-size: 80px;
 
 }
 
 input:focus {
-    border-color: var(--color-two);
-    box-shadow: 0 0 0 .15rem var(--color-two) !important;
+	border-color: var(--color-two);
+	box-shadow: 0 0 0 .15rem var(--color-two) !important;
 }
 
 #loginform, #lostpasswordform, #registerform {
-    background-color: var(--bg-color-three);
-    border: 0;
-    border-radius: .25rem;
-    margin: .5rem 0 !important;
+	background-color: var(--bg-color-three);
+	border: 0;
+	border-radius: .25rem;
+	margin: .5rem 0 !important;
 }
 
 #loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
-    color: var(--text-normal);
+	color: var(--text-normal);
 }
 
 #user_login, #loginform input, #user_email {
-    background-color: var(--bg-color-two) !important;
-    color: var(--text-normal) !important;
-    border: 0 !important;
+	background-color: var(--bg-color-two) !important;
+	color: var(--text-normal) !important;
+	border: 0 !important;
 }
 
 #wp-submit {
-    background-color: var(--color-two);
+	background-color: var(--color-two);
 }
 
 #wp-submit:hover {
-    background-color: var(--color-one) !important;
+	background-color: var(--color-one) !important;
 }
 
 .button {
-    border: 0 !important;
+	border: 0 !important;
 }
 
 .dashicons-visibility, .dashicons-hidden {
-    color: var(--text-normal);
+	color: var(--text-normal);
 }
 
 #login_error, .message, .success {
-    background-color: var(--bg-color-three) !important;
-    border-left-color: var(--color-one) !important;
-    color: var(--text-normal) !important;
-    margin: .5rem 0 !important;
+	background-color: var(--bg-color-three) !important;
+	border-left-color: var(--color-one) !important;
+	color: var(--text-normal) !important;
+	margin: .5rem 0 !important;
 }
 
 #nav, #backtoblog, .privacy-policy-page-link {
-    margin: 1.25rem 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
+	margin: 1.25rem 0 !important;
+	padding: 0 !important;
+	text-align: center !important;
 }
 
 #nav a, #backtoblog a, .privacy-policy-link {
-    background-color: var(--bg-color-two);
-    border-radius: .25rem;
-    color: var(--text-normal) !important;
-    padding: 1rem;
-    text-decoration: none;
+	background-color: var(--bg-color-two);
+	border-radius: .25rem;
+	color: var(--text-normal) !important;
+	padding: 1rem;
+	text-decoration: none;
 }
 
 #nav a:hover, #backtoblog a:hover, .privacy-policy-link:hover {
-    background: var(--color-two);
-    color: var(--text-normal);
+	background: var(--color-two);
+	color: var(--text-normal);
 }

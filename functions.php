@@ -64,7 +64,7 @@ function breadcrumbs() {
 
 //  Add Favicon on login and admin page
 function add_site_favicon() {
-    echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n";
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n";
 	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">' . "\n";
 	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">' . "\n";
 	echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest">' . "\n";
@@ -90,19 +90,19 @@ global $random_number;
 
 // Change login looks
 function my_login_logo_url() {
-    return home_url();
+	return home_url();
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 function my_login_logo_url_title() {
-    return 'Wiryawan Adipa';
+	return 'Wiryawan Adipa';
 }
 add_filter( 'login_headertext', 'my_login_logo_url_title' );
 
 // Custom style on login page
 function wa_login_style() {
 	global $theme_version, $random_number;
-    wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
+	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
 	wp_enqueue_style('wa-login-style');
 }
 add_action( 'login_enqueue_scripts', 'wa_login_style' );
@@ -171,11 +171,11 @@ add_action('init', 'stop_heartbeat', 1);
 
 // Disable author & date arhive page
 function disable_page() {
-    global $wp_query;
-    if ( is_author() || is_date() ) {
-        wp_redirect(get_option('home'), 301); 
-        exit; 
-    }
+	global $wp_query;
+	if ( is_author() || is_date() ) {
+		wp_redirect(get_option('home'), 301); 
+		exit; 
+	}
 }
 add_action('template_redirect', 'disable_page');
 
@@ -186,28 +186,28 @@ function get_page_id_by_title($title) {
 }
 
 if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-    function easy_add_thumbnail($post) {
-        $already_has_thumb = has_post_thumbnail();
-        $post_type = get_post_type( $post->ID );
-        $exclude_types = array('');
-        $exclude_types = apply_filters( 'eat_exclude_types', $exclude_types );
-        if ( $already_has_thumb ) {
-            return;
-        }
-        if ( ! in_array( $post_type, $exclude_types ) ) {
-            $attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
-            if ( $attached_image ) {
-                $attachment_values = array_values( $attached_image );
-                add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );
-            }
-        }
-    }
-    add_action('the_post', 'easy_add_thumbnail');
-    add_action('new_to_publish', 'easy_add_thumbnail');
-    add_action('draft_to_publish', 'easy_add_thumbnail');
-    add_action('pending_to_publish', 'easy_add_thumbnail');
-    add_action('future_to_publish', 'easy_add_thumbnail');
+	add_theme_support( 'post-thumbnails' );
+	function easy_add_thumbnail($post) {
+		$already_has_thumb = has_post_thumbnail();
+		$post_type = get_post_type( $post->ID );
+		$exclude_types = array('');
+		$exclude_types = apply_filters( 'eat_exclude_types', $exclude_types );
+		if ( $already_has_thumb ) {
+			return;
+		}
+		if ( ! in_array( $post_type, $exclude_types ) ) {
+			$attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+			if ( $attached_image ) {
+				$attachment_values = array_values( $attached_image );
+				add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );
+			}
+		}
+	}
+	add_action('the_post', 'easy_add_thumbnail');
+	add_action('new_to_publish', 'easy_add_thumbnail');
+	add_action('draft_to_publish', 'easy_add_thumbnail');
+	add_action('pending_to_publish', 'easy_add_thumbnail');
+	add_action('future_to_publish', 'easy_add_thumbnail');
 }
 
 // Remove admin bar
@@ -263,14 +263,40 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 // Add image size
 add_image_size('bigthumb', 421, 263, true);
 
+function wa_related_by_tags() {
+	global $post;
+	$tags = get_the_tags($post->ID);
+	if ($tags) {
+		foreach($tags as $individual_tag) {
+			$tags_ids[] = $individual_tag->term_id;
+		}
+		$args=array(
+			'tag__in' => $tags_ids,
+			'post__not_in' => array($post->ID),
+			'posts_per_page'=> 6
+		);
+		$my_query = new wp_query( $args );
+		if( $my_query->have_posts() ) {
+			echo '<div class="atmosphere-related">';
+			echo 'Related Post';
+			while( $my_query->have_posts() ) {
+				$my_query->the_post();
+				echo '<div><a class="fs-5" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+			}
+			echo '</div>';
+		}
+	}
+	wp_reset_postdata();
+}
+
 // Add <figure> tag on <img>
 function figure_tag_img ( $content ) {
-    $content = preg_replace(
-        '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
-        '<figure>$1</figure>',
-        $content
-    );
-    return $content;
+	$content = preg_replace(
+		'/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
+		'<figure>$1</figure>',
+		$content
+	);
+	return $content;
 }
 add_filter( 'the_content', 'figure_tag_img', 99 );
 
@@ -308,14 +334,14 @@ add_filter('wp_list_pages','pages_clean');
 
 // Limit the excerpt length
 function wp_example_excerpt_length( $length ) {
-    return 20;
+	return 20;
 }
 add_filter( 'excerpt_length', 'wp_example_excerpt_length');
 
 // Remove dots on the_excerpt
 function replace_content( $content) {
-    $content = str_replace(array( '[&hellip;]', '[...]', '...' ), '', $content);
-    return $content;
+	$content = str_replace(array( '[&hellip;]', '[...]', '...' ), '', $content);
+	return $content;
 }
 add_filter('the_excerpt','replace_content');
 
