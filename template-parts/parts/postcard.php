@@ -10,11 +10,19 @@
         ?>
         <div class="p-3 d-flex flex-column">
             <div class="text-muted postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
-            <h3 class="mb-3">
+            <?php if (is_home()) { ?>
+                <h3 class="mb-3">
+            <?php } else { ?>
+                <h2 class="mb-3">
+            <?php } ?>
                 <a class="fs-5 stretched-link" href="<?php the_permalink(); ?>">
                     <?php the_title(); ?>
                 </a>
-            </h3>
+            <?php if (is_home()) { ?>
+                </h3>
+            <?php } else { ?>
+                </h2>
+            <?php } ?>
             <?php
             the_excerpt();
             $posttype = get_post_type();

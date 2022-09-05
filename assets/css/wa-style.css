@@ -503,7 +503,8 @@ body {
     transform: scale(1.1);
 }
 
-.postcard h3 {
+.postcard h2, .postcard h3 {
+    font-size: 2rem;
     line-height: 1;
 }
 
