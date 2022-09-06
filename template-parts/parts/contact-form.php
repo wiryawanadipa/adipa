@@ -9,7 +9,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			} else {
 				$name = trim($_POST['contactName']);
 			}
-
 			if(trim($_POST['email']) === '')  {
 				$emptyEmailError = true;
 			} else if (strlen(trim($_POST['email'])) > 80) {
@@ -19,7 +18,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			} else {
 				$email = trim($_POST['email']);
 			}
-
 			if(trim($_POST['message']) === '') {
 				$emptyMessageError = true;
 			} else if (strlen(trim($_POST['message'])) > 1000) {
@@ -31,7 +29,6 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 					$message = trim($_POST['message']);
 				}   
 			}
-
 			if(!isset($emptyNameError) && strlen(trim($_POST['contactName'])) < 51 && !isset($emptyEmailError) && strlen(trim($_POST['email'])) < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && strlen(trim($_POST['message'])) < 1001 && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option( 'wa_recaptcha_secret_key' );
 				$ip = $_SERVER['REMOTE_ADDR'];
