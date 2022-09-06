@@ -650,7 +650,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article p {
-	margin: 0 auto 2.5rem !important;
+	margin: 2.5rem auto 0 !important;
 }
 
 .wa-post-article h2,
@@ -663,7 +663,7 @@ ol.breadcrumbs li a:hover {
 	border-radius: 0.25rem;
 	color: var(--color-one);
 	line-height: 1.5;
-	margin: 0 auto 2rem;
+	margin: 2rem auto 0;
 	padding: 1rem;
 }
 
@@ -682,7 +682,7 @@ ol.breadcrumbs li a:hover {
 
 .wa-post-article ol, .wa-post-article ul {
 	font-size: 1.1rem;
-	margin: 0 auto 2.5rem;
+	margin: .5rem auto 0;
 }
 
 .wa-post-article ol li, .wa-post-article ul li {
@@ -701,7 +701,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article figure {
-	margin: 0 auto 2.5rem;
+	margin: 2.5rem auto 0;
 }
 
 .wa-post-article figure img {
@@ -712,7 +712,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article blockquote {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
-	margin: 0 auto 2.5rem;
+	margin: 2.5rem auto 0;
 	padding: 1rem;
 	text-align: center;
 }
@@ -750,20 +750,22 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .youtube {
-	margin: 0 auto 2.5rem;
+	margin: 2.5rem auto 0;
 }
 
 .wa-post-article .twitter-tweet {
-	margin: 0 auto 2rem !important;
+	margin: 2.5rem auto 0 !important;
 }
 
 .wa-related-post {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
+	margin: 2.5rem auto 0;
 }
 
 .wa-related-post h2 {
 	border-radius: .25rem .25rem 0 0;
+	margin-top: 0;
 	margin-bottom: 1rem;
 }
 
@@ -800,7 +802,7 @@ ol.breadcrumbs li a:hover {
 
 /* For Highlighting Code Block */
 .wa-post-article .hcb_wrap {
-	margin: 0rem auto 2rem !important;
+	margin: 2.5rem auto 0 !important;
 	word-wrap: break-word;
 }
 
