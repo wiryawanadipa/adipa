@@ -678,7 +678,6 @@ ol.breadcrumbs li a:hover {
 	color: var(--color-one);
 	font-size: 1rem;
 	padding: .5rem;
-	white-space: nowrap;
 }
 
 .wa-post-article ol, .wa-post-article ul {
