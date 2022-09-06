@@ -776,6 +776,10 @@ ol.breadcrumbs li a:hover {
 	text-decoration: underline .15rem var(--color-one);
 }
 
+.contact-form label span {
+	color: var(--color-one);
+}
+
 .contact-form .form-control:focus {
 	border-color: var(--color-one);
 	box-shadow: 0 0 0 .15rem var(--color-two);
