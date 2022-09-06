@@ -70,18 +70,6 @@ body {
 	background-color: var(--bg-color-two);
 }
 
-.check:required:valid {
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAhQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFySURBVEiJ7ZbLLgNhGIaff2ZkUotWUqcdGkG0EtQhFrZWqo1YiMMlsJEgjhVLwsbewgU0ehNYcA0qBF1Mq63GyMRYMInDKJWZxMKznS/P+/1v/vwZEUvEqgxh7mGKCODFGXICkjLMKK/ySYfEFl4TpgwwpdfNXUHAiIRztXzCBJ/kltziPwBFUmj0NrgToMoqa33L7Axu0VXT6WyAKqss9y4S8gfRdI1U7sJ2TvmtfKlngZA/SOYhS/xkE03XbGe/PEHA18TB0D4TreO2m3dUh9B0jZXjNS4LV18uU7IiVVYZax5lum3yndyqZfUozvX9TSkFcst4W9zuQ0bPcp5PMVDfT9DfjkfxEA1EypIDiOFEzCw1EK7tZj48R4VU8RL8kGX9ZKNkLW/59hadps/YPtvFeDJ+1PlHvj2BRV1lLUWjSP6x8GM5lHFNb4vpssQWf/8t+hMBObfkAu4kAUm3AkxIKjLMGGACURz8bQEOFZh9BsVweiTj7OlUAAAAAElFTkSuQmCC');
-	background-repeat: no-repeat;
-	background-position: right .5rem center;
-}
-
-.check:required:invalid, .check:focus:invalid {
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAkVJREFUSImdlj9oU1EUxn/nvhSpNWgLNhiH2qGDTk4ORdCxpnNaiAjJ4FhBSsBJ3ijYONhRSKIYRdLViFu10N266KSLra2WCjZQSO87DknqM//erR883uPe73zfOfdyz32CAzSd9ohPJrD2HAAn7CZ733akWrVRsTJQOJtPARmMplBGOyL3CKSGCSpSLLw5loFm85cRXQauRmXYwhoSLEjx0YdIA83m04iWgZOO4m0cALeltPS8r4Hm8vOgL3sZO0JRmZfyw2qXQWtZ1oHhPsHfQe8hRlAegCb68OpYpuXZ0gZA7G8tujxAHJT7Ui48BdDcYgzkSR/mCB6PgesAppV9isgN1R8hs5+DuVzTbH7myADRmxEBgJw9+jSMR9KNZpqvdNpDuBGtHxLVkFk/KLPq+8YQn0x0HaLeDmHR6ApgjK/1cQMkHciAhgwcKgDQ4LzBWnUzCGUtThVATIMYnreFBi70S5q+O8zoaaGxf9HJwHpbht9fthH2HOhJTnmfaex/wm1Zd7kwsmOkWrUor50yQm3zcYBQE98P2ufghUPIKhPxKSbiUyjvo3PRCrQOWqufr0WEbIjvH4rvH2K0qy13JiOlwlv4pxcFC6hZp3+bzmlu8SMqgpIdIF5H7Z0j2fBM6y541Tl+DCjonJQKK+0BE55t9nGdA+r/IX6A6K2weJcBgJQKK1imgXfHEF9F7RUpFipdeoOiNJufwWgGZRYY65jeRaihWmlvaC84rbX6vmHzV4LGUPO3ZaixRfLMtvh+ZAv4A6xMysk0p7x2AAAAAElFTkSuQmCC');
-	background-repeat: no-repeat;
-	background-position: right .5rem center;
-}
-
 /* Navigation Bar */
 .navbar-brand {
 	padding: 0;
@@ -160,7 +148,7 @@ body {
 
 .wa-search input {
 	border: none;
-	padding: .375rem 2.5rem .375rem .375rem;
+	padding: .375rem;
 	min-width: 300px;
 	width: 100%;
 }
@@ -788,17 +776,9 @@ ol.breadcrumbs li a:hover {
 	text-decoration: underline .15rem var(--color-one);
 }
 
-.contact-form .form-control {
-	padding-right: 2.5rem;
-}
-
 .contact-form .form-control:focus {
 	border-color: var(--color-one);
 	box-shadow: 0 0 0 .15rem var(--color-two);
-}
-
-textarea.check:required:valid, textarea.check:required:invalid, textarea.check:focus:invalid {
-	background-position: right .5rem top .5rem;
 }
 
 .contact-form .btn-primary {
