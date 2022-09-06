@@ -36,6 +36,15 @@
 				<table class="form-table">
 				<tr>
 					<th>
+						<label>v1.0.8 (7 September 2022)</label>
+					</th>
+					<td>
+						<p>- Add character limit to contact page form</p>
+						<p>- Add message character counter</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>v1.0.7 (6 September 2022)</label>
 					</th>
 					<td>
