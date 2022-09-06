@@ -41,6 +41,7 @@
 					<td>
 						<p>- Add character limit to contact page form</p>
 						<p>- Add message character counter</p>
+						<p>- Change email address header</p>
 						<p>- Remove contact page form checkmark</p>
 					</td>
 				</tr>
