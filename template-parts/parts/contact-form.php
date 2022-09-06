@@ -38,9 +38,9 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 				if($valid["success"] == true) {
 					$emailTo = get_option( 'wa_mail' );
 					$domain = strtoupper($_SERVER['HTTP_HOST']);
-					$subject = '[' . $domain . '] From '.$name;
-					$body = 'Name: ' . $name . "\n\n" . 'Email:' . $email . "\n\n" . 'Message:' . $message;
-					$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+					$subject = '[' . $domain . '] From ' . $name;
+					$body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Message: ' . $message;
+					$headers = 'From: ' . $name . ' <wordpress@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n" . 'Reply-To: ' . $email;
 					$mail = wp_mail($emailTo, $subject, $body, $headers);
 					if($mail) {
 						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours.</div>';
