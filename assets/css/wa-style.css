@@ -701,7 +701,10 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article figure {
+	background-color: var(--bg-color-three);
+	border-radius: .25rem;
 	margin: 2.5rem auto 0;
+	padding: 1rem;
 }
 
 .wa-post-article figure img {
