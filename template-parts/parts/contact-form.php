@@ -1,9 +1,9 @@
 <?php
 if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_recaptcha_site_key' ) ) && null != get_option( 'wa_recaptcha_secret_key' ) && !empty( get_option( 'wa_recaptcha_secret_key' ) ) && null != get_option( 'wa_mail' ) && !empty( get_option( 'wa_mail' ) ) ) {
-	$sanitizecontactName = sanitize_text_field($_POST['contactName']);
-	$sanitizeemail = sanitize_text_field($_POST['email']);
-	$sanitizemessage = sanitize_textarea_field($_POST['message']);
 	if(isset($_POST['submit'])) {
+		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
+		$sanitizeemail = sanitize_text_field($_POST['email']);
+		$sanitizemessage = sanitize_textarea_field($_POST['message']);
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
 			if($sanitizecontactName === '') {
 				$emptyNameError = true;

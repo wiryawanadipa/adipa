@@ -36,6 +36,17 @@
 				<table class="form-table">
 				<tr>
 					<th>
+						<label>v1.0.9 (8 September 2022)</label>
+					</th>
+					<td>
+						<p>- Change default Font from Poppins to Rubik</p>
+						<p>- Move Post and Page title inside wa-post-article-box</p>
+						<p>- Change margin in the post</p>
+						<p>- Change font-size</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>v1.0.8 (7 September 2022)</label>
 					</th>
 					<td>
