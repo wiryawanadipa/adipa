@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 :root {
 	--color-one: #fc5c65;
@@ -8,7 +8,7 @@
 	--bg-color-three: #212b31;
 	--text-normal: #dedede;
 	--text-muted: #6c757d;
-	--font-poppins: 'Poppins', sans-serif;
+	--font-rubik: 'Rubik', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +29,7 @@
 }
 
 body {
-	font-family: var(--font-poppins) !important;
+	font-family: var(--font-rubik) !important;
 }
 
 .custom-theme-section h1 {
