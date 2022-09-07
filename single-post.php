@@ -5,9 +5,9 @@
 			<?php breadcrumbs(); ?>
 			<!-- Post Title -->
 			<div class="container px-0 mb-4 mb-md-5">
-				<div class="col-12 d-flex rounded-3 text-white text-center align-items-center post-title">
+				<div class="col-12 d-flex rounded-3 post-title">
 					<header class="w-100 my-auto py-3 post-title-header">
-						<h1><?php the_title(); ?></h1>
+						<h1 class="mb-3"><?php the_title(); ?></h1>
 						<p>
 							<i class="fa-solid fa-calendar-days"></i><span><time><?php echo get_the_date(); ?></time></span>
 							<?php

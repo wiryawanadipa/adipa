@@ -8,7 +8,7 @@
 	--bg-color-two-hover: rgba(33, 43, 49, .75);
 	--text-normal: #dedede;
 	--text-muted: #6c757d;
-	--font-poppins: 'Poppins', sans-serif;
+	--font-rubik: 'Rubik', sans-serif;
 	--content-width: 864px;
 }
 
@@ -45,12 +45,12 @@ input, textarea {
 }
 
 html {
-	font-family: var(--font-poppins) !important;
+	font-family: var(--font-rubik) !important;
 }
 
 body {
 	background-color: var(--bg-color-one);
-	font-family: var(--font-poppins) !important;
+	font-family: var(--font-rubik) !important;
 	-webkit-animation: webkit-mainbody .5s 1 linear; 
 	-moz-animation: moz-mainbody .5s 1 linear;
 	-o-animation: o-mainbody .5s 1 linear;
@@ -571,7 +571,7 @@ a.postcard-tag:hover {
 .wa-post p {
 	color: var(--text-normal);
 	font-size: 1.1rem !important;
-	line-height: 2.4rem;
+	line-height: 2.2rem;
 	margin-bottom: 2.5rem !important;
 }
 
@@ -595,7 +595,6 @@ ol.breadcrumbs li a:hover {
 
 .post-title {
 	background: var(--bg-color-three);
-	min-height: 300px;
 }
 
 .tag-title::before {
@@ -610,7 +609,7 @@ ol.breadcrumbs li a:hover {
 .post-title-header h1 {
 	color: var(--color-one);
 	font-weight: 800;
-	margin-bottom: 1rem;
+	margin-bottom: 0;
 }
 
 .post-title-header p {
@@ -650,7 +649,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article p {
-	margin: 2.5rem auto 0 !important;
+	margin: 2rem auto 0 !important;
 }
 
 .wa-post-article h2,
@@ -664,7 +663,7 @@ ol.breadcrumbs li a:hover {
 	color: var(--color-one);
 	line-height: 1.5;
 	margin: 2rem auto 0;
-	padding: 1rem;
+	padding: .5rem 1rem;
 }
 
 .wa-post-article pre {
@@ -677,7 +676,7 @@ ol.breadcrumbs li a:hover {
 	border-radius: .5rem;
 	color: var(--color-one);
 	font-size: 1rem;
-	padding: .5rem;
+	padding: .25rem .5rem;
 }
 
 .wa-post-article ol, .wa-post-article ul {
@@ -703,7 +702,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article figure {
 	background-color: var(--bg-color-three);
 	border-radius: .25rem;
-	margin: 2.5rem auto 0;
+	margin: 2rem auto 0;
 	padding: 1rem;
 }
 
@@ -715,7 +714,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article blockquote {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
-	margin: 2.5rem auto 0;
+	margin: 2rem auto 0;
 	padding: 1rem;
 	text-align: center;
 }
@@ -723,6 +722,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article blockquote p {
 	line-height: 2rem;
 	margin-bottom: 0 !important;
+	margin-top: 0 !important;
 	max-width: 100%;
 }
 
@@ -753,11 +753,11 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .youtube {
-	margin: 2.5rem auto 0;
+	margin: 2rem auto 0;
 }
 
 .wa-post-article .twitter-tweet {
-	margin: 2.5rem auto 0 !important;
+	margin: 2rem auto 0 !important;
 }
 
 .wa-related-post {
@@ -805,7 +805,7 @@ ol.breadcrumbs li a:hover {
 
 /* For Highlighting Code Block */
 .wa-post-article .hcb_wrap {
-	margin: 2.5rem auto 0 !important;
+	margin: 2rem auto 0 !important;
 	word-wrap: break-word;
 }
 
@@ -830,7 +830,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .hcb_wrap pre {
-	padding: 2.5rem 1.5rem 1.5rem !important;
+	padding: 2rem 1.5rem 1.5rem !important;
 }
 
 .hcb_wrap pre::-webkit-scrollbar {
@@ -941,10 +941,6 @@ ol.breadcrumbs li a:hover {
 
 	.cosmetic-box {
 		height: 50px;
-	}
-
-	.post-title {
-		min-height: 140px;
 	}
 	
 	.wa-post p,
