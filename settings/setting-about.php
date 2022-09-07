@@ -42,6 +42,7 @@
 					<td>
 						<p>- Cleaning up the code</p>
 						<p>- Remove unnecessary div</p>
+						<p>- Remove Homepage animation below 992px</p>
 					</td>
 				</tr>
 				<tr>
