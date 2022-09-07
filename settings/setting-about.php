@@ -43,6 +43,7 @@
 						<p>- Add message character counter</p>
 						<p>- Change email address header</p>
 						<p>- Remove contact page form checkmark</p>
+						<p>- Add sanitize for input on contact page</p>
 					</td>
 				</tr>
 				<tr>
