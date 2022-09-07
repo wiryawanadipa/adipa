@@ -34,6 +34,16 @@
 			</div>
 			<div id="tab2" class="tab">
 				<table class="form-table">
+					
+				<tr>
+					<th>
+						<label>v1.1.0 (8 September 2022)</label>
+					</th>
+					<td>
+						<p>- Cleaning up the code</p>
+						<p>- Remove unnecessary div</p>
+					</td>
+				</tr>
 				<tr>
 					<th>
 						<label>v1.0.9 (8 September 2022)</label>

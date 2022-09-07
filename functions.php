@@ -48,7 +48,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 // Add breadcrumbs
 function breadcrumbs() {
 	global $post;
-	echo '<ol class="container p-3 py-2 rounded-3 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
+	echo '<ol class="px-3 py-1 rounded-3 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
 	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '">' . '<span itemprop="name">Home</span>' . '</a><meta itemprop="position" content="1" /></li> &gt; ' . "\n";
 	$categories = wp_get_post_terms( $post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'ASC' ) );
 	if ( $categories ) {

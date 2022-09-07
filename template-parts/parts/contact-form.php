@@ -81,7 +81,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 		}
 	}
 	?>
-	<div class="col-12 py-4 contact-form">
+	<div class="my-4 contact-form">
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<div id="content" role="main">
 			<form action="" method="post">

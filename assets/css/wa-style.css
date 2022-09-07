@@ -612,17 +612,16 @@ ol.breadcrumbs li a:hover {
 	margin-bottom: 0;
 }
 
-.post-title-header p {
+.post-info {
 	font-size: 1rem !important;
 	line-height: 1.5rem;
-	margin-bottom: 0 !important;
 }
 
-.post-title-header p span {
+.post-info span {
 	margin: 0 0.5rem;
 }
 
-.post-title-header p .post-tag-list a {
+.post-info .post-tag-list a {
 	color: var(--text-normal);
 	text-decoration: underline .15rem var(--text-normal);
 }
@@ -641,9 +640,6 @@ ol.breadcrumbs li a:hover {
 
 .wa-post-article {
 	color: var(--text-normal);
-}
-
-.wa-post-article-box {
 	margin: 0 auto;
 	max-width: var(--content-width);
 }
@@ -764,12 +760,17 @@ ol.breadcrumbs li a:hover {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
 	margin: 2.5rem auto 0;
+	max-width: var(--content-width);
 }
 
 .wa-related-post h2 {
+	background: var(--bg-color-three);
+	border-left: .375rem solid var(--color-one);
 	border-radius: .25rem .25rem 0 0;
+	color: var(--color-one);
 	margin-top: 0;
 	margin-bottom: 1rem;
+	padding: .5rem 1rem;
 }
 
 .wa-related-post a {
@@ -778,6 +779,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-related-post a:hover {
+	color: var(--text-normal);
 	text-decoration: underline .15rem var(--color-one);
 }
 
@@ -967,7 +969,7 @@ ol.breadcrumbs li a:hover {
 	.wa-post-article ul,
 	.youtube,
 	.wa-post .hcb_wrap {
-		margin: 0 auto 1.5rem !important;
+		margin: 1.5rem 0 auto !important;
 	}
 
 	.wa-related-post h2 {
