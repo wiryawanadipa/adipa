@@ -44,6 +44,7 @@
 						<p>- Remove unnecessary div</p>
 						<p>- Remove Homepage animation below 992px</p>
 						<p>- Remove unnecessary function call</p>
+						<p>- Remove unnecessary custom settings</p>
 					</td>
 				</tr>
 				<tr>
