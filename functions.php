@@ -39,8 +39,8 @@ if (isset($_GET['activated']) && is_admin()) {
 			'post_author' => 1,
 			'page_template'  => 'page-templates/' . strtolower($new_page_title) . '.php'
 		);
-		if ( !isset( $page_check->ID ) ) {
-			$new_page_id = wp_insert_post( $new_page );
+		if (!isset($page_check->ID)) {
+			$new_page_id = wp_insert_post($new_page);
 		}
 	}
 }
@@ -50,11 +50,11 @@ function breadcrumbs() {
 	global $post;
 	echo '<ol class="px-3 py-1 rounded-3 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
 	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '">' . '<span itemprop="name">Home</span>' . '</a><meta itemprop="position" content="1" /></li> &gt; ' . "\n";
-	$categories = wp_get_post_terms( $post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC') );
-	if ( $categories ) {
+	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
+	if ($categories) {
 		$catcount = 2;
 		foreach ( $categories as $cat ) {
-			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $cat->term_id ) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $catcount . '" /></li> &gt; ' . "\n";
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $catcount . '" /></li> &gt; ' . "\n";
 			$catcount++;
 		}
 	}
@@ -184,21 +184,28 @@ function get_page_id_by_title($title) {
 	return $page->ID;
 }
 
-if ( function_exists('add_theme_support') ) {
+if (function_exists('add_theme_support')) {
 	add_theme_support('post-thumbnails');
 	function easy_add_thumbnail($post) {
 		$already_has_thumb = has_post_thumbnail();
 		$post_type = get_post_type( $post->ID );
 		$exclude_types = array('');
-		$exclude_types = apply_filters('eat_exclude_types', $exclude_types );
-		if ( $already_has_thumb ) {
+		$exclude_types = apply_filters('eat_exclude_types', $exclude_types);
+		if ($already_has_thumb) {
 			return;
 		}
-		if ( ! in_array( $post_type, $exclude_types ) ) {
-			$attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
-			if ( $attached_image ) {
-				$attachment_values = array_values( $attached_image );
-				add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );
+		if (!in_array($post_type, $exclude_types)) {
+			$childarray = array(
+				'order' => 'ASC',
+				'post_parent' => $post->ID,
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'numberposts' => 1
+			);
+			$attached_image = get_children($childarray);
+			if ($attached_image) {
+				$attachment_values = array_values($attached_image);
+				add_post_meta($post->ID, '_thumbnail_id', $attachment_values[0]->ID, true);
 			}
 		}
 	}
@@ -244,7 +251,7 @@ function smartwp_remove_wp_block_library_css(){
 	wp_dequeue_style('wc-blocks-style');
 	wp_dequeue_style('global-styles');
 } 
-add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
 
 // Disable Wordpress auto generated images
 function disable_media($sizes) {
@@ -276,10 +283,10 @@ function wa_related_by_tags() {
 			'orderby' => 'rand'
 		);
 		$my_query = new wp_query( $args );
-		if ( $my_query->have_posts() ) {
+		if ($my_query->have_posts()) {
 			echo '<div class="container wa-related-post"><div class="row">';
 			echo '<h2>Related Post</h2>';
-			while ( $my_query->have_posts() ) {
+			while ($my_query->have_posts()) {
 				$my_query->the_post();
 				echo '<div class="col-12 px-4 py-2 mb-3 mb-md-4 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
 			}
@@ -290,7 +297,7 @@ function wa_related_by_tags() {
 }
 
 // Add <figure> tag on <img>
-function figure_tag_img ( $content ) {
+function figure_tag_img ($content) {
 	$content = preg_replace(
 		'/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
 		'<figure>$1</figure>',
@@ -298,7 +305,7 @@ function figure_tag_img ( $content ) {
 	);
 	return $content;
 }
-add_filter('the_content', 'figure_tag_img', 99 );
+add_filter('the_content', 'figure_tag_img', 99);
 
 // Strict guess for a 404 redirect
 function strict_redirect_guessing() {
@@ -307,13 +314,13 @@ function strict_redirect_guessing() {
 add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
 // Limit the excerpt length
-function wp_example_excerpt_length( $length ) {
+function wp_example_excerpt_length($length) {
 	return 20;
 }
 add_filter('excerpt_length', 'wp_example_excerpt_length');
 
 // Remove dots on the_excerpt
-function replace_content( $content) {
+function replace_content($content) {
 	$content = str_replace(array('[&hellip;]', '[...]', '...'), '', $content);
 	return $content;
 }
