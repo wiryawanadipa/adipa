@@ -306,32 +306,6 @@ function strict_redirect_guessing() {
 }
 add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
-// Clean category list
-function categories_clean($wp_list_categories) {
-	$pattern = array(
-		'/\<li class="cat-item cat-item[^>]*><a /',
-		'/\<li class="cat-item-none[^>]*>/'
-	);
-	$replace = array(
-		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" ',
-		'<li class="py-3 py-sm-2 px-3 text-white">'
-	);
-	return preg_replace($pattern, $replace, $wp_list_categories);
-}
-add_filter('wp_list_categories','categories_clean');
-
-// Clean page list
-function pages_clean($wp_list_pages) {
-	$pattern = array(
-		'/\<li class="page_item[^>]*><a /'
-	);
-	$replace = array(
-		'<li><a class="dropdown-item py-3 py-sm-2 px-4 px-sm-3" '
-	);
-	return preg_replace($pattern, $replace, $wp_list_pages);
-}
-add_filter('wp_list_pages','pages_clean');
-
 // Limit the excerpt length
 function wp_example_excerpt_length( $length ) {
 	return 20;
@@ -343,7 +317,7 @@ function replace_content( $content) {
 	$content = str_replace(array('[&hellip;]', '[...]', '...'), '', $content);
 	return $content;
 }
-add_filter('the_excerpt','replace_content');
+add_filter('the_excerpt', 'replace_content');
 
 // Page navigation
 function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pages_to_show = 1, $always_show = false) {
