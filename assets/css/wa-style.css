@@ -734,21 +734,21 @@ ol.breadcrumbs li a:hover {
 }
 
 /* For Highlighting Code Block */
-.wa-post-article .hcb_wrap {
+.hcb_wrap {
 	margin: 1.75rem auto 0 !important;
 	word-wrap: break-word;
 }
 
-.hcb_wrap.hcb_wrap code, .hcb_wrap.hcb_wrap span {
+.hcb_wrap code, .hcb_wrap span {
 	font-size: 1rem !important;
 	line-height: 1.375 !important;
 }
 
-.wa-post-article .hcb_wrap pre, .wa-post-article .hcb_wrap code {
+.hcb_wrap pre, .hcb_wrap code {
 	background-color: var(--bg-color-two) !important;
 }
 
-.wa-post-article .hcb_wrap pre {
+.hcb_wrap pre {
 	max-height: 420px;
 	padding: 1rem !important;
 }
