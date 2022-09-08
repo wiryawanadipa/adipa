@@ -29,7 +29,7 @@ if (isset($_GET['activated']) && is_admin()) {
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
 	$page_title = array('Contact', 'About');
-	foreach ( $page_title as $new_page_title ) {
+	foreach ($page_title as $new_page_title) {
 		$page_check = get_page_by_title($new_page_title);
 		$new_page = array(
 			'post_type' => 'page',
@@ -53,7 +53,7 @@ function breadcrumbs() {
 	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
 	if ($categories) {
 		$catcount = 2;
-		foreach ( $categories as $cat ) {
+		foreach ($categories as $cat) {
 			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $catcount . '" /></li> &gt; ' . "\n";
 			$catcount++;
 		}
@@ -126,7 +126,7 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
 	global $theme_version, $random_number;
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number );
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number);
 	wp_enqueue_style('wa_custom_admin_css');
 }
 add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
@@ -140,7 +140,7 @@ add_action('admin_enqueue_scripts', 'fontawesome_icon');
 // Insert custom script in custom setting
 function wa_custom_setting_script() {
 	global $theme_version, $random_number;
-	wp_register_script('wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number );
+	wp_register_script('wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number);
 	wp_enqueue_script('wa_custom_admin_js');
 }
 add_action('admin_enqueue_scripts', 'wa_custom_setting_script');
@@ -171,7 +171,7 @@ add_action('init', 'stop_heartbeat', 1);
 // Disable author & date arhive page
 function disable_page() {
 	global $wp_query;
-	if ( is_author() || is_date() ) {
+	if (is_author() || is_date()) {
 		wp_redirect(get_option('home'), 301); 
 		exit; 
 	}
@@ -188,7 +188,7 @@ if (function_exists('add_theme_support')) {
 	add_theme_support('post-thumbnails');
 	function easy_add_thumbnail($post) {
 		$already_has_thumb = has_post_thumbnail();
-		$post_type = get_post_type( $post->ID );
+		$post_type = get_post_type($post->ID);
 		$exclude_types = array('');
 		$exclude_types = apply_filters('eat_exclude_types', $exclude_types);
 		if ($already_has_thumb) {
@@ -282,7 +282,7 @@ function wa_related_by_tags() {
 			'posts_per_page'=> 4,
 			'orderby' => 'rand'
 		);
-		$my_query = new wp_query( $args );
+		$my_query = new wp_query($args);
 		if ($my_query->have_posts()) {
 			echo '<div class="container wa-related-post"><div class="row">';
 			echo '<h2>Related Post</h2>';
@@ -368,7 +368,7 @@ function add_nofollow($text) {
 add_filter('wp_list_pages', 'add_nofollow');
 
 // Youtube shortcode
-function youtube_link( $atts, $content = null ) {
+function youtube_link($atts, $content = null) {
 	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
 }
 add_shortcode('youtube', 'youtube_link');
@@ -519,7 +519,7 @@ function add_post_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		wp_trim_words( get_the_content(), 40, '')
+		wp_trim_words(get_the_content(), 40, '')
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -547,7 +547,7 @@ function add_page_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		wp_trim_words( get_the_content(), 40, '')
+		wp_trim_words(get_the_content(), 40, '')
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -561,7 +561,7 @@ function add_cat_title() {
 		'[sitename]'
 	);
 	$function = array(
-		ucwords(single_cat_title('', false )),
+		ucwords(single_cat_title('', false)),
 		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
@@ -576,8 +576,8 @@ function add_cat_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		ucwords(single_cat_title('', false )),
-		wp_trim_words( category_description() )
+		ucwords(single_cat_title('', false)),
+		wp_trim_words(category_description())
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -591,7 +591,7 @@ function add_tag_title() {
 		'[sitename]'
 	);
 	$function = array(
-		single_tag_title('', false ),
+		single_tag_title('', false),
 		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
@@ -606,8 +606,8 @@ global $post;
 		'[words]'
 	);
 	$function = array(
-		single_tag_title('', false ),
-		wp_trim_words( tag_description() )
+		single_tag_title('', false),
+		wp_trim_words(tag_description())
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
