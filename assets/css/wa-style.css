@@ -879,6 +879,11 @@ ol.breadcrumbs li a:hover {
 		margin: 1.5rem 0 auto !important;
 	}
 
+	.wa-post-article ol,
+	.wa-post-article ul {
+		margin-top: .5rem;
+	}
+
 	.wa-related-post h2 {
 		margin-bottom: .5rem !important;
 		margin-top: 0 !important;
