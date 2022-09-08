@@ -143,7 +143,10 @@ if ( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_re
 			</form>       
 		</div>
 	</div>
-<?php } else { ?>
+<?php
+} else {
+?>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Failed to create contact form.</div>
 	<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please set your reCAPTCHA site key, secret key and add your email address in Theme Settings.</div>
-<?php }
+<?php
+}

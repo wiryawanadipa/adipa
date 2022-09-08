@@ -631,4 +631,3 @@ global $post;
 	echo str_replace($shortcode, $function, $variable);
 }
 add_action('tag_page_desc', 'add_tag_meta_desc');
-?>
