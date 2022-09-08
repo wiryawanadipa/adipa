@@ -18,8 +18,8 @@
 			'orderby' => 'rand'
 		);
 		$loop = new WP_Query( $blog );
-		if ( $loop->have_posts() ) {
-			while ( $loop->have_posts() ) {
+		if ($loop->have_posts()) {
+			while ($loop->have_posts()) {
 				$loop->the_post();
 				get_template_part( 'template-parts/parts/postcard' );
 			}

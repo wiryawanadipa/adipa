@@ -1,10 +1,10 @@
 <?php get_template_part( 'template-parts/header' ); ?>
 <main class="container-xl py-4 py-xl-5 main-page">
-	<?php if ( have_posts() ) { ?>
+	<?php if (have_posts()) { ?>
 		<h1 class="text-center mb-4 mb-sm-5 text-white">Search results for <em><?php echo get_search_query(); ?></em></h1>
 		<div class="row mt-4 mb-5 g-2 g-xxl-3">
 			<?php
-				while ( have_posts() ) {
+				while (have_posts()) {
 					the_post();
 					get_template_part( 'template-parts/parts/postcard' );
 				}
@@ -30,8 +30,8 @@
 				'orderby' => 'rand'
 			);
 			$loop = new WP_Query( $blog );
-			if ( $loop->have_posts() ) {
-				while ( $loop->have_posts() ) {
+			if ($loop->have_posts()) {
+				while ($loop->have_posts()) {
 					$loop->the_post();
 					get_template_part( 'template-parts/parts/postcard' );
 				}
