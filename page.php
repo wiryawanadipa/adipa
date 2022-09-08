@@ -5,7 +5,7 @@
 			<!-- Post Article -->
 			<div class="wa-post-article">
 				<!-- Post Title -->
-				<div class="rounded-3 text-center post-title">
+				<div class="rounded-3 text-center mb-3 post-title">
 					<header class="py-3 post-title-header">
 						<h1 class="title-decoration"><?php echo strtolower(get_the_title()); ?></h1>
 					</header>
