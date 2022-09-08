@@ -1,4 +1,3 @@
-<!-- Header -->
 <header>
 	<nav class="navbar navbar-xl navbar-dark navbar-expand-md wa-navbar">
 		<div class="container-lg">
