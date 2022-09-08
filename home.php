@@ -1,6 +1,6 @@
-<?php if( !is_paged()) { ?>
+<?php if (!is_paged()) { ?>
 	<?php get_template_part( 'template-parts/header' ); ?>
-	<?php if( !is_paged() ) { ?>
+	<?php if (!is_paged()) { ?>
 		<?php get_template_part( 'template-parts/parts/hero' ); ?>
 		<?php get_template_part( 'template-parts/parts/design-gallery' ); ?>
 	<?php } ?>
@@ -13,8 +13,8 @@
 				'category_name' => 'Blog'
 			);
 			$loop = new WP_Query( $blog );
-			if( $loop->have_posts() ) {
-				while( $loop->have_posts() ) {
+			if ($loop->have_posts()) {
+				while ($loop->have_posts()) {
 					$loop->the_post();
 					get_template_part( 'template-parts/parts/postcard' );
 				}
@@ -26,4 +26,8 @@
 		</div>
 	</main>
 	<?php get_template_part( 'template-parts/footer' ); ?>
-<?php } else { wp_safe_redirect( home_url(), 301 ); exit; }
+<?php
+} else { 
+	wp_safe_redirect(home_url(), 301);
+	exit;
+}

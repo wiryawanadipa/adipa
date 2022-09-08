@@ -26,4 +26,8 @@
 		</div>
 	</main>
 	<?php get_template_part( 'template-parts/footer' ); ?>
-<?php } else { wp_safe_redirect(home_url(), 301); exit; }
+<?php
+} else { 
+	wp_safe_redirect(home_url(), 301);
+	exit;
+}
