@@ -1,6 +1,6 @@
 <div class="wrap custom-theme-section">
 	<h1>General</h1>
-	<?php if( isset( $_GET['settings-updated'] ) ) : ?>
+	<?php if (isset( $_GET['settings-updated'])) : ?>
 		<div style="margin: 10px 0;" class="updated">
 			<p>Settings updated</p>
 		</div>
@@ -144,8 +144,8 @@
 					</td>
 				</tr>
 			</table>
-			<?php settings_fields( 'main-settings' ); ?>
-			<?php do_settings_sections( 'main-settings' ); ?>
+			<?php settings_fields('main-settings'); ?>
+			<?php do_settings_sections('main-settings'); ?>
 			<?php submit_button(); ?>
 		</form>
 	</div>

@@ -1,6 +1,6 @@
 <div class="wrap custom-theme-section">
 	<h1>Page Settings</h1>
-	<?php if(isset( $_GET['settings-updated'])) { ?>
+	<?php if (isset( $_GET['settings-updated'])) { ?>
 		<div style="margin: 10px 0" class="updated">
 			<p>Settings updated successfully</p>
 		</div>
@@ -35,8 +35,8 @@
 							</td>
 						</tr>
 					</table>
-					<?php settings_fields( 'home-settings' ); ?>
-					<?php do_settings_sections( 'home-settings' ); ?>
+					<?php settings_fields('home-settings'); ?>
+					<?php do_settings_sections('home-settings'); ?>
 					<?php submit_button('Save Homepage Settings'); ?>
 				</form>
 			</div>
@@ -61,8 +61,8 @@
 							</td>
 						</tr>
 					</table>
-					<?php settings_fields( 'post-settings' ); ?>
-					<?php do_settings_sections( 'post-settings' ); ?>
+					<?php settings_fields('post-settings'); ?>
+					<?php do_settings_sections('post-settings'); ?>
 					<?php submit_button('Save Post Settings'); ?>
 				</form>
 			</div>
@@ -87,8 +87,8 @@
 							</td>
 						</tr>
 					</table>
-					<?php settings_fields( 'page-settings' ); ?>
-					<?php do_settings_sections( 'page-settings' ); ?>
+					<?php settings_fields('page-settings'); ?>
+					<?php do_settings_sections('page-settings'); ?>
 					<?php submit_button('Save Page Settings'); ?>
 				</form>
 			</div>
@@ -113,8 +113,8 @@
 							</td>
 						</tr>
 					</table>
-					<?php settings_fields( 'cat-settings' ); ?>
-					<?php do_settings_sections( 'cat-settings' ); ?>
+					<?php settings_fields('cat-settings'); ?>
+					<?php do_settings_sections('cat-settings'); ?>
 					<?php submit_button('Save Category Settings'); ?>
 				</form>
 			</div>
@@ -139,8 +139,8 @@
 							</td>
 						</tr>
 					</table>
-					<?php settings_fields( 'tag-settings' ); ?>
-					<?php do_settings_sections( 'tag-settings' ); ?>
+					<?php settings_fields('tag-settings'); ?>
+					<?php do_settings_sections('tag-settings'); ?>
 					<?php submit_button('Save Tag Settings'); ?>
 				</form>
 			</div>

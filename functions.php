@@ -50,7 +50,7 @@ function breadcrumbs() {
 	global $post;
 	echo '<ol class="px-3 py-1 rounded-3 mb-3 breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
 	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '">' . '<span itemprop="name">Home</span>' . '</a><meta itemprop="position" content="1" /></li> &gt; ' . "\n";
-	$categories = wp_get_post_terms( $post->ID, 'category', array( 'orderby' => 'parent', 'order' => 'ASC' ) );
+	$categories = wp_get_post_terms( $post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC') );
 	if ( $categories ) {
 		$catcount = 2;
 		foreach ( $categories as $cat ) {
@@ -92,12 +92,12 @@ global $random_number;
 function my_login_logo_url() {
 	return home_url();
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_filter('login_headerurl', 'my_login_logo_url');
 
 function my_login_logo_url_title() {
 	return 'Wiryawan Adipa';
 }
-add_filter( 'login_headertext', 'my_login_logo_url_title' );
+add_filter('login_headertext', 'my_login_logo_url_title');
 
 // Custom style on login page
 function wa_login_style() {
@@ -105,7 +105,7 @@ function wa_login_style() {
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
 	wp_enqueue_style('wa-login-style');
 }
-add_action( 'login_enqueue_scripts', 'wa_login_style' );
+add_action('login_enqueue_scripts', 'wa_login_style');
 
 // Show fake error in login page (just for fun)
 function login_error() {
@@ -126,33 +126,33 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
 	global $theme_version, $random_number;
-	wp_register_style( 'wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number );
-	wp_enqueue_style( 'wa_custom_admin_css' );
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number );
+	wp_enqueue_style('wa_custom_admin_css');
 }
-add_action( 'admin_enqueue_scripts', 'wa_custom_setting_style' );
+add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
 
 function fontawesome_icon() {
-	wp_register_style( 'wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' );
-	wp_enqueue_style( 'wa_fontawesome_icon' );
+	wp_register_style('wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+	wp_enqueue_style('wa_fontawesome_icon');
 }
-add_action( 'admin_enqueue_scripts', 'fontawesome_icon' );
+add_action('admin_enqueue_scripts', 'fontawesome_icon');
 
 // Insert custom script in custom setting
 function wa_custom_setting_script() {
 	global $theme_version, $random_number;
-	wp_register_script( 'wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number );
-	wp_enqueue_script( 'wa_custom_admin_js' );
+	wp_register_script('wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number );
+	wp_enqueue_script('wa_custom_admin_js');
 }
-add_action( 'admin_enqueue_scripts', 'wa_custom_setting_script' );
+add_action('admin_enqueue_scripts', 'wa_custom_setting_script');
 
 // Disable load HCB styles & scripts if it's not in single post
 function wa_deregister_styles() {
 	if (!is_single() && !is_admin()) {
 		wp_deregister_style('hcb-coloring');
-		wp_deregister_style( 'hcb-style' );
+		wp_deregister_style('hcb-style');
 	}
 }
-add_action( 'wp_print_styles', 'wa_deregister_styles' );
+add_action('wp_print_styles', 'wa_deregister_styles');
 
 function wa_deregister_script() {
 	if (!is_single() && !is_admin()) {
@@ -160,7 +160,7 @@ function wa_deregister_script() {
 		wp_deregister_script('hcb-script');
 	}
 }
-add_action( 'wp_print_scripts', 'wa_deregister_script' );
+add_action('wp_print_scripts', 'wa_deregister_script');
 
 // Stop wordpress heartbeat
 function stop_heartbeat() {
@@ -184,13 +184,13 @@ function get_page_id_by_title($title) {
 	return $page->ID;
 }
 
-if ( function_exists( 'add_theme_support' ) ) {
-	add_theme_support( 'post-thumbnails' );
+if ( function_exists('add_theme_support') ) {
+	add_theme_support('post-thumbnails');
 	function easy_add_thumbnail($post) {
 		$already_has_thumb = has_post_thumbnail();
 		$post_type = get_post_type( $post->ID );
 		$exclude_types = array('');
-		$exclude_types = apply_filters( 'eat_exclude_types', $exclude_types );
+		$exclude_types = apply_filters('eat_exclude_types', $exclude_types );
 		if ( $already_has_thumb ) {
 			return;
 		}
@@ -239,12 +239,12 @@ function remove_oembed() {
 add_action('init', 'remove_oembed', 9999);
 
 function smartwp_remove_wp_block_library_css(){
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-	wp_dequeue_style( 'wc-blocks-style' );
-	wp_dequeue_style( 'global-styles' );
+	wp_dequeue_style('wp-block-library');
+	wp_dequeue_style('wp-block-library-theme');
+	wp_dequeue_style('wc-blocks-style');
+	wp_dequeue_style('global-styles');
 } 
-add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 // Disable Wordpress auto generated images
 function disable_media($sizes) {
@@ -252,12 +252,12 @@ function disable_media($sizes) {
 	unset($sizes['medium']);
 	unset($sizes['medium_large']);
 	unset($sizes['large']);
-	unset( $sizes['1536x1536'] );
-	unset( $sizes['2048x2048'] );
+	unset($sizes['1536x1536']);
+	unset($sizes['2048x2048']);
 	return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'disable_media');
-add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter('big_image_size_threshold', '__return_false');
 
 // Add image size
 add_image_size('bigthumb', 421, 263, true);
@@ -298,13 +298,13 @@ function figure_tag_img ( $content ) {
 	);
 	return $content;
 }
-add_filter( 'the_content', 'figure_tag_img', 99 );
+add_filter('the_content', 'figure_tag_img', 99 );
 
 // Strict guess for a 404 redirect
 function strict_redirect_guessing() {
 	return true;
 }
-add_filter( 'strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
+add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
 // Clean category list
 function categories_clean($wp_list_categories) {
@@ -336,11 +336,11 @@ add_filter('wp_list_pages','pages_clean');
 function wp_example_excerpt_length( $length ) {
 	return 20;
 }
-add_filter( 'excerpt_length', 'wp_example_excerpt_length');
+add_filter('excerpt_length', 'wp_example_excerpt_length');
 
 // Remove dots on the_excerpt
 function replace_content( $content) {
-	$content = str_replace(array( '[&hellip;]', '[...]', '...' ), '', $content);
+	$content = str_replace(array('[&hellip;]', '[...]', '...'), '', $content);
 	return $content;
 }
 add_filter('the_excerpt','replace_content');
@@ -390,7 +390,7 @@ add_filter('wp_list_pages', 'add_nofollow');
 function youtube_link( $atts, $content = null ) {
 	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
 }
-add_shortcode( 'youtube', 'youtube_link' );
+add_shortcode('youtube', 'youtube_link');
 
 // Show Advanced Option in Settings
 function show_options() {
@@ -496,8 +496,8 @@ function add_home_title() {
 		'[tagline]'
 	);
 	$function = array(
-		ucfirst(get_bloginfo( 'name' )),
-		ucfirst(get_bloginfo( 'description' ))
+		ucfirst(get_bloginfo('name')),
+		ucfirst(get_bloginfo('description'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -510,7 +510,7 @@ function add_home_meta_desc() {
 		'[tagline]'
 	);
 	$function = array(
-		ucfirst(get_bloginfo( 'description' ))
+		ucfirst(get_bloginfo('description'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -525,7 +525,7 @@ function add_post_title() {
 	);
 	$function = array(
 		ucwords($post->post_title),
-		ucfirst(get_bloginfo( 'name' ))
+		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -538,7 +538,7 @@ function add_post_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		wp_trim_words( get_the_content(), 40, '' )
+		wp_trim_words( get_the_content(), 40, '')
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -553,7 +553,7 @@ function add_page_title() {
 	);
 	$function = array(
 		ucwords($post->post_title),
-		ucfirst(get_bloginfo( 'name' ))
+		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -566,7 +566,7 @@ function add_page_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		wp_trim_words( get_the_content(), 40, '' )
+		wp_trim_words( get_the_content(), 40, '')
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -580,8 +580,8 @@ function add_cat_title() {
 		'[sitename]'
 	);
 	$function = array(
-		ucwords(single_cat_title( '', false )),
-		ucfirst(get_bloginfo( 'name' ))
+		ucwords(single_cat_title('', false )),
+		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -595,7 +595,7 @@ function add_cat_meta_desc() {
 		'[words]'
 	);
 	$function = array(
-		ucwords(single_cat_title( '', false )),
+		ucwords(single_cat_title('', false )),
 		wp_trim_words( category_description() )
 	);
 	echo str_replace($shortcode, $function, $variable);
@@ -610,8 +610,8 @@ function add_tag_title() {
 		'[sitename]'
 	);
 	$function = array(
-		single_tag_title( '', false ),
-		ucfirst(get_bloginfo( 'name' ))
+		single_tag_title('', false ),
+		ucfirst(get_bloginfo('name'))
 	);
 	echo str_replace($shortcode, $function, $variable);
 }
@@ -625,7 +625,7 @@ global $post;
 		'[words]'
 	);
 	$function = array(
-		single_tag_title( '', false ),
+		single_tag_title('', false ),
 		wp_trim_words( tag_description() )
 	);
 	echo str_replace($shortcode, $function, $variable);
