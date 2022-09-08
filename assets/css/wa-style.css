@@ -741,6 +741,7 @@ ol.breadcrumbs li a:hover {
 
 .wa-post-article .hcb_wrap .hcb-clipboard {
 	background-color: var(--color-one) !important;
+	right: 11px;
 	width: 32px !important;
 	height: 32px !important;
 }
@@ -760,6 +761,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .hcb_wrap pre {
+	max-height: 420px;
 	padding: 1rem !important;
 }
 
