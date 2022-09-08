@@ -418,17 +418,10 @@ function theme_settings_about() {
 }
 
 function register_general_setting() {
-	register_setting('main-settings', 'head_code');
-	register_setting('main-settings', 'footer_code');
-	register_setting('main-settings', 'wa_facebook');
-	register_setting('main-settings', 'wa_twitter');
-	register_setting('main-settings', 'wa_instagram');
-	register_setting('main-settings', 'wa_linkedin');
-	register_setting('main-settings', 'wa_github');
-	register_setting('main-settings', 'wa_youtube');
-	register_setting('main-settings', 'wa_medium');
+	register_setting('main-settings', 'wa_mail');
 	register_setting('main-settings', 'wa_recaptcha_site_key');
 	register_setting('main-settings', 'wa_recaptcha_secret_key');
-	register_setting('main-settings', 'wa_mail');
+	register_setting('main-settings', 'head_code');
+	register_setting('main-settings', 'footer_code');
 }
 add_action('admin_init', 'register_general_setting');
