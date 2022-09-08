@@ -500,13 +500,6 @@ a.postcard-tag:hover {
 }
 
 /* Post Section */
-.wa-post-article p {
-	color: var(--text-normal);
-	font-size: 1.1rem !important;
-	line-height: 2.2rem;
-	margin-bottom: 2.5rem !important;
-}
-
 .breadcrumbs {
 	background-color: var(--bg-color-three);
 	color: var(--text-normal);
@@ -577,7 +570,10 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article p {
-	margin: 2rem auto 0 !important;
+	margin: 1.75rem auto 0 !important;
+	color: var(--text-normal);
+	font-size: 1.1rem !important;
+	line-height: 2.2rem;
 }
 
 .wa-post-article h2,
@@ -590,7 +586,7 @@ ol.breadcrumbs li a:hover {
 	border-radius: 0.25rem;
 	color: var(--color-one);
 	line-height: 1.5;
-	margin: 2rem auto 0;
+	margin: 1.75rem auto 0;
 	padding: .5rem 1rem;
 }
 
@@ -630,7 +626,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article figure {
 	background-color: var(--bg-color-three);
 	border-radius: .25rem;
-	margin: 2rem auto 0;
+	margin: 1.75rem auto 0;
 	padding: 1rem;
 }
 
@@ -642,7 +638,7 @@ ol.breadcrumbs li a:hover {
 .wa-post-article blockquote {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
-	margin: 2rem auto 0;
+	margin: 1.75rem auto 0;
 	padding: 1rem;
 	text-align: center;
 }
@@ -681,11 +677,11 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .youtube {
-	margin: 2rem auto 0;
+	margin: 1.75rem auto 0;
 }
 
 .wa-post-article .twitter-tweet {
-	margin: 2rem auto 0 !important;
+	margin: 1.75rem auto 0 !important;
 }
 
 .wa-related-post {
@@ -739,14 +735,14 @@ ol.breadcrumbs li a:hover {
 
 /* For Highlighting Code Block */
 .wa-post-article .hcb_wrap {
-	margin: 2rem auto 0 !important;
+	margin: 1.75rem auto 0 !important;
 	word-wrap: break-word;
 }
 
 .wa-post-article .hcb_wrap .hcb-clipboard {
 	background-color: var(--color-one) !important;
-	width: 40px !important;
-	height: 40px !important;
+	width: 32px !important;
+	height: 32px !important;
 }
 
 .hcb_wrap.hcb_wrap code, .hcb_wrap.hcb_wrap span {
@@ -764,7 +760,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .wa-post-article .hcb_wrap pre {
-	padding: 2rem 1.5rem 1.5rem !important;
+	padding: 1rem !important;
 }
 
 .hcb_wrap pre::-webkit-scrollbar {
@@ -906,6 +902,7 @@ ol.breadcrumbs li a:hover {
 
 	.wa-related-post h2 {
 		margin-bottom: .5rem !important;
+		margin-top: 0 !important;
 	}
 }
 

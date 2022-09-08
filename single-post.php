@@ -1,5 +1,5 @@
 <?php get_template_part( 'template-parts/header' ); ?>
-<main class="container-xl my-sm-3 main-page">
+<main class="container-xl mt-sm-3 mb-5 main-page">
 	<article class="wa-post-article">
 		<?php breadcrumbs(); ?>
 		<div class="my-3 rounded-3 post-title">
