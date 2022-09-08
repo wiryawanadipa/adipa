@@ -1,18 +1,18 @@
 <?php
-if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_recaptcha_site_key' ) ) && null != get_option( 'wa_recaptcha_secret_key' ) && !empty( get_option( 'wa_recaptcha_secret_key' ) ) && null != get_option( 'wa_mail' ) && !empty( get_option( 'wa_mail' ) ) ) {
-	if(isset($_POST['submit'])) {
+if ( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_recaptcha_site_key' ) ) && null != get_option( 'wa_recaptcha_secret_key' ) && !empty( get_option( 'wa_recaptcha_secret_key' ) ) && null != get_option( 'wa_mail' ) && !empty( get_option( 'wa_mail' ) ) ) {
+	if (isset($_POST['submit'])) {
 		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
 		$sanitizemessage = sanitize_textarea_field($_POST['message']);
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
-			if($sanitizecontactName === '') {
+			if ($sanitizecontactName === '') {
 				$emptyNameError = true;
 			} else if (strlen($sanitizecontactName) > 50) {
 				$longNameError = true;
 			} else {
 				$name = $sanitizecontactName;
 			}
-			if($sanitizeemail === '')  {
+			if ($sanitizeemail === '')  {
 				$emptyEmailError = true;
 			} else if (strlen($sanitizeemail) > 80) {
 				$longEmailError = true;
@@ -21,27 +21,27 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 			} else {
 				$email = $sanitizeemail;
 			}
-			if($sanitizemessage === '') {
+			if ($sanitizemessage === '') {
 				$emptyMessageError = true;
 			} else if (strlen($sanitizemessage) > 1000) {
 				$longMessageError = true;
 			} else {
 				$message = $sanitizemessage;
 			}
-			if(!isset($emptyNameError) && strlen($sanitizecontactName) < 51 && !isset($emptyEmailError) && strlen($sanitizeemail) < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && strlen($sanitizemessage) < 1001 && !empty($_POST['g-recaptcha-response'])) {
+			if (!isset($emptyNameError) && strlen($sanitizecontactName) < 51 && !isset($emptyEmailError) && strlen($sanitizeemail) < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && strlen($sanitizemessage) < 1001 && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option( 'wa_recaptcha_secret_key' );
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
 				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
 				$valid = json_decode($rsp, true);
-				if($valid["success"] == true) {
+				if ($valid["success"] == true) {
 					$emailTo = get_option( 'wa_mail' );
 					$domain = strtoupper($_SERVER['HTTP_HOST']);
 					$subject = '[' . $domain . '] From ' . $name;
 					$body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Message: ' . $message;
 					$headers = 'From: ' . $name . ' <wordpress@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n" . 'Reply-To: ' . $email;
 					$mail = wp_mail($emailTo, $subject, $body, $headers);
-					if($mail) {
+					if ($mail) {
 						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours.</div>';
 						$emailSent = true;
 					} else {
@@ -72,7 +72,7 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 				if (isset($longMessageError)) {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than 1000 characters.</div>';
 				}
-				if(empty($_POST['g-recaptcha-response'])) {
+				if (empty($_POST['g-recaptcha-response'])) {
 					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
 				}
 			}
@@ -89,21 +89,21 @@ if( null != get_option( 'wa_recaptcha_site_key' ) && !empty( get_option( 'wa_rec
 					<div class="row mb-0 mb-md-3">
 						<div class="col-12 col-md-6 mb-3 mb-md-0">
 							<label class="mb-2">Name<span>&#42;</span></label>
-							<input class="form-control" name="contactName" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if( isset( $_POST['contactName'] ) && !isset($emailSent) ) { echo $sanitizecontactName; } else { echo ''; } ?>" autofocus required>
+							<input class="form-control" name="contactName" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if ( isset( $_POST['contactName'] ) && !isset($emailSent) ) { echo $sanitizecontactName; } else { echo ''; } ?>" autofocus required>
 						</div>
 						<div class="col-12 col-md-6 mb-3 mb-md-0">
 							<label class="mb-2">E-Mail<span>&#42;</span></label>
-							<input class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if( isset( $_POST['email'] ) && !isset($emailSent) ) { echo $sanitizeemail; } else { echo ''; } ?>" required>
+							<input class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if ( isset( $_POST['email'] ) && !isset($emailSent) ) { echo $sanitizeemail; } else { echo ''; } ?>" required>
 						</div>
 					</div>
 					<div class="row mb-3">
 						<div class="col-12">
 							<label class="mb-2">Message<span>&#42;</span></label>
-							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="1000" name="message" rows="10" required><?php if( isset( $_POST['message'] ) && !isset($emailSent) ) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="1000" name="message" rows="10" required><?php if ( isset( $_POST['message'] ) && !isset($emailSent) ) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 						</div>
 					</div>
 					<div id="messagecharcounter" class="mb-3 text-end text-light">
-						<span id="typedchar"><?php if( isset( $_POST['message'] ) && !isset($emailSent) ) { echo strlen($sanitizemessage); } else { echo '0'; } ?></span>
+						<span id="typedchar"><?php if ( isset( $_POST['message'] ) && !isset($emailSent) ) { echo strlen($sanitizemessage); } else { echo '0'; } ?></span>
 						<span id="maxchar">/ 1000</span>
 					</div>
 					<script>
