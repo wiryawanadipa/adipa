@@ -1,14 +1,8 @@
 <?php // Home ?>
 <?php if ( is_home() ) { ?>
-	<?php if ( is_paged() ){ ?>
-		<title><?php do_action ( 'homepage_title' ); ?> - Page <?php echo $paged; ?></title>
-		<meta name="description" content="<?php bloginfo('description'); ?> - Page <?php echo $paged; ?>" />
-		<link rel="canonical" href="<?php bloginfo('url'); ?>" />
-	<?php } else { ?>
-		<title><?php do_action ( 'homepage_title' ); ?></title>
-		<meta name="description" content="<?php do_action ( 'homepage_desc' ); ?>" />
-		<link rel="canonical" href="<?php bloginfo('url'); ?>" />
-	<?php } ?>
+	<title><?php do_action ( 'homepage_title' ); ?></title>
+	<meta name="description" content="<?php do_action ( 'homepage_desc' ); ?>" />
+	<link rel="canonical" href="<?php bloginfo('url'); ?>" />
 <?php } ?>
 <?php // Single Post ?>
 <?php if ( is_single() ) { ?>
