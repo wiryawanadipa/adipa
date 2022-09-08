@@ -400,14 +400,6 @@ function theme_settings_panel() {
 	);
 	add_submenu_page(
 		'wa-theme-settings',
-		'Meta',
-		'Meta',
-		'manage_options',
-		'wa-theme-settings-meta',
-		'theme_settings_meta'
-	);
-	add_submenu_page(
-		'wa-theme-settings',
 		'About',
 		'About',
 		'manage_options',
@@ -421,10 +413,6 @@ function theme_settings_general() {
 	include 'settings/setting-main.php';
 }
 
-function theme_settings_meta() {
-	include 'settings/setting-meta.php';
-}
-
 function theme_settings_about() {
 	include 'settings/setting-about.php';
 }
@@ -432,7 +420,6 @@ function theme_settings_about() {
 function register_general_setting() {
 	register_setting('main-settings', 'head_code');
 	register_setting('main-settings', 'footer_code');
-	register_setting('main-settings', 'hero_desc');
 	register_setting('main-settings', 'wa_facebook');
 	register_setting('main-settings', 'wa_twitter');
 	register_setting('main-settings', 'wa_instagram');
@@ -443,172 +430,5 @@ function register_general_setting() {
 	register_setting('main-settings', 'wa_recaptcha_site_key');
 	register_setting('main-settings', 'wa_recaptcha_secret_key');
 	register_setting('main-settings', 'wa_mail');
-	register_setting('home-settings', 'home_title');
-	register_setting('home-settings', 'home_meta_desc');
-	register_setting('post-settings', 'post_title');
-	register_setting('post-settings', 'post_meta_desc');
-	register_setting('page-settings', 'page_title');
-	register_setting('page-settings', 'page_meta_desc');
-	register_setting('cat-settings', 'cat_title');
-	register_setting('cat-settings', 'cat_meta_desc');
-	register_setting('tag-settings', 'tag_title');
-	register_setting('tag-settings', 'tag_meta_desc');
 }
 add_action('admin_init', 'register_general_setting');
-
-function add_hero_desc() {
-	global $post;
-	$variable = get_option('hero_desc', '[lorem]');
-	$shortcode  = array(
-		'[lorem]'
-	);
-	$function = array(
-		'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('hero_desc', 'add_hero_desc');
-
-function add_home_title() {
-	global $post;
-	$variable = get_option('home_title', 'Home - [sitename]');
-	$shortcode  = array(
-		'[sitename]',
-		'[tagline]'
-	);
-	$function = array(
-		ucfirst(get_bloginfo('name')),
-		ucfirst(get_bloginfo('description'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('homepage_title', 'add_home_title');
-
-function add_home_meta_desc() {
-	global $post;
-	$variable = get_option('home_meta_desc', '[tagline]');
-	$shortcode  = array(
-		'[tagline]'
-	);
-	$function = array(
-		ucfirst(get_bloginfo('description'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('homepage_desc', 'add_home_meta_desc');
-
-function add_post_title() {
-	global $post;
-	$variable = get_option('post_title', '[title] - [sitename]');
-	$shortcode  = array(
-		'[title]',
-		'[sitename]'
-	);
-	$function = array(
-		ucwords($post->post_title),
-		ucfirst(get_bloginfo('name'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('single_title', 'add_post_title');
-
-function add_post_meta_desc() {
-	global $post;
-	$variable = get_option('post_meta_desc', '[words]');
-	$shortcode  = array(
-		'[words]'
-	);
-	$function = array(
-		wp_trim_words(get_the_content(), 40, '')
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('post_desc', 'add_post_meta_desc');
-
-function add_page_title() {
-	global $post;
-	$variable = get_option('page_title', '[title] - [sitename]');
-	$shortcode  = array(
-		'[title]',
-		'[sitename]'
-	);
-	$function = array(
-		ucwords($post->post_title),
-		ucfirst(get_bloginfo('name'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('static_page_title', 'add_page_title');
-
-function add_page_meta_desc() {
-	global $post;
-	$variable = get_option('page_meta_desc', '[words]');
-	$shortcode  = array(
-		'[words]'
-	);
-	$function = array(
-		wp_trim_words(get_the_content(), 40, '')
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('static_page_desc', 'add_page_meta_desc');
-
-function add_cat_title() {
-	global $post;
-	$variable = get_option('cat_title', '[catname] - [sitename]');
-	$shortcode  = array(
-		'[catname]',
-		'[sitename]'
-	);
-	$function = array(
-		ucwords(single_cat_title('', false)),
-		ucfirst(get_bloginfo('name'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('cat_page_title', 'add_cat_title');
-
-function add_cat_meta_desc() {
-	global $post;
-	$variable = get_option('cat_meta_desc', '[words]');
-	$shortcode  = array(
-		'[catname]',
-		'[words]'
-	);
-	$function = array(
-		ucwords(single_cat_title('', false)),
-		wp_trim_words(category_description())
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('cat_page_desc', 'add_cat_meta_desc');
-
-function add_tag_title() {
-	global $post;
-	$variable = get_option('tag_title', '[tagname] - [sitename]');
-	$shortcode  = array(
-		'[tagname]',
-		'[sitename]'
-	);
-	$function = array(
-		single_tag_title('', false),
-		ucfirst(get_bloginfo('name'))
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('tag_page_title', 'add_tag_title');
-
-function add_tag_meta_desc() {
-global $post;
-	$variable = get_option('tag_meta_desc', '[words]');
-	$shortcode  = array(
-		'[tagname]',
-		'[words]'
-	);
-	$function = array(
-		single_tag_title('', false),
-		wp_trim_words(tag_description())
-	);
-	echo str_replace($shortcode, $function, $variable);
-}
-add_action('tag_page_desc', 'add_tag_meta_desc');
