@@ -1,10 +1,10 @@
 <div class="col-sm-6 col-xl-4 pb-3 pb-sm-0 border-0 postcard">
 	<div class="row g-0 rounded-1 overflow-hidden flex-md-row h-md-250 position-relative postcard-inside">
 		<?php
-		if ( has_post_thumbnail ( $post->ID ) ) {
-			$image_id = get_post_thumbnail_id( $post->ID );
-			$image_title = get_the_title( $image_id );
-			$image_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'bigthumb' );
+		if (has_post_thumbnail ($post->ID)) {
+			$image_id = get_post_thumbnail_id($post->ID);
+			$image_title = get_the_title($image_id);
+			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'bigthumb');
 			echo '<div class="col-12 postcard-image"><img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" /></div>' . "\n";
 		}
 		?>
@@ -26,16 +26,16 @@
 			<?php
 			the_excerpt();
 			$posttype = get_post_type();
-			if ( $posttype == 'post' ) {
+			if ($posttype == 'post') {
 			?>
 				<ul class="row postcard-tag-list">
 					<?php
 					if (has_tag()) {
 						$tags = get_the_tags();
-						foreach( $tags as $tag ) {
-							$tag_link = get_tag_link( $tag->term_id );
+						foreach($tags as $tag) {
+							$tag_link = get_tag_link($tag->term_id);
 							$name = $tag->name;
-							echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr( $name ) . '</a></li>' . "\n";
+							echo '<li><a class="d-inline-block postcard-tag text-white" href="' . $tag_link . '">' . esc_attr($name) . '</a></li>' . "\n";
 						}
 					}
 					?>
