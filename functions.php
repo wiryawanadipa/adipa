@@ -156,7 +156,6 @@ add_action( 'wp_print_styles', 'wa_deregister_styles' );
 
 function wa_deregister_script() {
 	if (!is_single() && !is_admin()) {
-		wp_deregister_script('clipboard');
 		wp_deregister_script('hcb-prism');
 		wp_deregister_script('hcb-script');
 	}
