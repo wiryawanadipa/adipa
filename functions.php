@@ -1,36 +1,36 @@
 <?php
 // Auto theme setting upon activation
-if( isset( $_GET['activated'] ) && is_admin() ) {
-	update_option( 'posts_per_page', 12 );
-	update_option( 'thumbnail_size_w', 0 );
-	update_option( 'thumbnail_size_h', 0 );
-	update_option( 'thumbnail_crop', 1 );
-	update_option( 'medium_size_w', 0 );
-	update_option( 'medium_size_h', 0 );
-	update_option( 'medium_large_size_w', '0');
-	update_option( 'medium_large_size_h', '0');
-	update_option( 'large_size_w', 0 );
-	update_option( 'large_size_h', 0 );
-	update_option( 'require_name_email', 1 );
-	update_option( 'comment_registration', 1 );
-	update_option( 'default_pingback_flag', 0 );
-	update_option( 'default_comment_status', 'closed' );
-	update_option( 'default_ping_status', 'closed' );
-	update_option( 'comments_notify', 0 );
-	update_option( 'moderation_notify', 0 );
-	update_option( 'comment_moderation', 1 );
-	update_option( 'comment_previously_approved', 1 );
-	update_option( 'show_avatars', 0 );
-	update_option( 'permalink_structure', '/%category%/%postname%/' );
-	wp_insert_term( 'Blog' , 'category', array('description' => 'List of all of my published articles, tutorial, study cases & etc.') );
-	wp_insert_term( 'Design Gallery' , 'category', array('description' => 'List of all my design are in this page. Including mock up.') );
-	wp_insert_term( 'Project' , 'category', array('description' => 'List of all my project in the past are in this page') );
+if (isset($_GET['activated']) && is_admin()) {
+	update_option('posts_per_page', 12);
+	update_option('thumbnail_size_w', 0);
+	update_option('thumbnail_size_h', 0);
+	update_option('thumbnail_crop', 1);
+	update_option('medium_size_w', 0);
+	update_option('medium_size_h', 0);
+	update_option('medium_large_size_w', '0');
+	update_option('medium_large_size_h', '0');
+	update_option('large_size_w', 0);
+	update_option('large_size_h', 0);
+	update_option('require_name_email', 1);
+	update_option('comment_registration', 1);
+	update_option('default_pingback_flag', 0);
+	update_option('default_comment_status', 'closed');
+	update_option('default_ping_status', 'closed');
+	update_option('comments_notify', 0);
+	update_option('moderation_notify', 0);
+	update_option('comment_moderation', 1);
+	update_option('comment_previously_approved', 1);
+	update_option('show_avatars', 0);
+	update_option('permalink_structure', '/%category%/%postname%/');
+	wp_insert_term('Blog', 'category', array('description' => 'List of all of my published articles, tutorial, study cases & etc.'));
+	wp_insert_term('Design Gallery', 'category', array('description' => 'List of all my design are in this page. Including mock up.'));
+	wp_insert_term('Project', 'category', array('description' => 'List of all my project in the past are in this page'));
 	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
-	$page_title = array( 'Contact', 'About' );
-	foreach( $page_title as $new_page_title ) {
-		$page_check = get_page_by_title( $new_page_title );
+	$page_title = array('Contact', 'About');
+	foreach ( $page_title as $new_page_title ) {
+		$page_check = get_page_by_title($new_page_title);
 		$new_page = array(
 			'post_type' => 'page',
 			'post_title' => $new_page_title,
@@ -39,7 +39,7 @@ if( isset( $_GET['activated'] ) && is_admin() ) {
 			'post_author' => 1,
 			'page_template'  => 'page-templates/' . strtolower($new_page_title) . '.php'
 		);
-		if( !isset( $page_check->ID ) ) {
+		if ( !isset( $page_check->ID ) ) {
 			$new_page_id = wp_insert_post( $new_page );
 		}
 	}
@@ -277,10 +277,10 @@ function wa_related_by_tags() {
 			'orderby' => 'rand'
 		);
 		$my_query = new wp_query( $args );
-		if( $my_query->have_posts() ) {
+		if ( $my_query->have_posts() ) {
 			echo '<div class="container wa-related-post"><div class="row">';
 			echo '<h2>Related Post</h2>';
-			while( $my_query->have_posts() ) {
+			while ( $my_query->have_posts() ) {
 				$my_query->the_post();
 				echo '<div class="col-12 px-4 py-2 mb-3 mb-md-4 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
 			}
@@ -365,7 +365,7 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 			echo $before . '<nav class="blog-pagination text-end" aria-label="Pagination">';
 			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
 				if ($i >= 1 && $i <= $max_page) {
-					if($i == $paged) {
+					if ($i == $paged) {
 					}
 					elseif ($i < $paged) {
 						echo '<a href="'.get_pagenum_link($i).'" class="pagination me-2"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
@@ -450,29 +450,29 @@ function theme_settings_about() {
 }
 
 function register_general_setting() {
-	register_setting( 'main-settings', 'head_code' );
-	register_setting( 'main-settings', 'footer_code' );
-	register_setting( 'main-settings', 'hero_desc' );
-	register_setting( 'main-settings', 'wa_facebook' );
-	register_setting( 'main-settings', 'wa_twitter' );
-	register_setting( 'main-settings', 'wa_instagram' );
-	register_setting( 'main-settings', 'wa_linkedin' );
-	register_setting( 'main-settings', 'wa_github' );
-	register_setting( 'main-settings', 'wa_youtube' );
-	register_setting( 'main-settings', 'wa_medium' );
-	register_setting( 'main-settings', 'wa_recaptcha_site_key' );
-	register_setting( 'main-settings', 'wa_recaptcha_secret_key' );
-	register_setting( 'main-settings', 'wa_mail' );
-	register_setting( 'home-settings', 'home_title' );
-	register_setting( 'home-settings', 'home_meta_desc' );
-	register_setting( 'post-settings', 'post_title' );
-	register_setting( 'post-settings', 'post_meta_desc' );
-	register_setting( 'page-settings', 'page_title' );
-	register_setting( 'page-settings', 'page_meta_desc' );
-	register_setting( 'cat-settings', 'cat_title' );
-	register_setting( 'cat-settings', 'cat_meta_desc' );
-	register_setting( 'tag-settings', 'tag_title' );
-	register_setting( 'tag-settings', 'tag_meta_desc' );
+	register_setting('main-settings', 'head_code');
+	register_setting('main-settings', 'footer_code');
+	register_setting('main-settings', 'hero_desc');
+	register_setting('main-settings', 'wa_facebook');
+	register_setting('main-settings', 'wa_twitter');
+	register_setting('main-settings', 'wa_instagram');
+	register_setting('main-settings', 'wa_linkedin');
+	register_setting('main-settings', 'wa_github');
+	register_setting('main-settings', 'wa_youtube');
+	register_setting('main-settings', 'wa_medium');
+	register_setting('main-settings', 'wa_recaptcha_site_key');
+	register_setting('main-settings', 'wa_recaptcha_secret_key');
+	register_setting('main-settings', 'wa_mail');
+	register_setting('home-settings', 'home_title');
+	register_setting('home-settings', 'home_meta_desc');
+	register_setting('post-settings', 'post_title');
+	register_setting('post-settings', 'post_meta_desc');
+	register_setting('page-settings', 'page_title');
+	register_setting('page-settings', 'page_meta_desc');
+	register_setting('cat-settings', 'cat_title');
+	register_setting('cat-settings', 'cat_meta_desc');
+	register_setting('tag-settings', 'tag_title');
+	register_setting('tag-settings', 'tag_meta_desc');
 }
 add_action('admin_init', 'register_general_setting');
 

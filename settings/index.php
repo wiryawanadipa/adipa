@@ -1,1 +1,2 @@
-<?php /* Nothing to do here */ ?>
+<?php
+/* Nothing to do here */
