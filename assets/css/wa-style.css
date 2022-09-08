@@ -744,11 +744,6 @@ ol.breadcrumbs li a:hover {
 	line-height: 1.375 !important;
 }
 
-.wa-post-article .hcb_wrap .hcb-clipboard.-done::before {
-	color: var(--text-normal);
-	font-size: 1.1rem !important;
-}
-
 .wa-post-article .hcb_wrap pre, .wa-post-article .hcb_wrap code {
 	background-color: var(--bg-color-two) !important;
 }
