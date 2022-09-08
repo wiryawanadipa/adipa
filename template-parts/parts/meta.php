@@ -7,7 +7,7 @@
 <?php // Single Post ?>
 <?php if ( is_single() || is_page() ) { ?>
 	<title><?php echo get_the_title(); ?> - <?php echo get_bloginfo('name'); ?></title>
-	<meta name="description" content="<?php echo wp_trim_words(get_the_content(), 20, ''); ?>" />
+	<meta name="description" content="<?php echo wp_trim_words(get_the_content(), 25, ''); ?>" />
 	<link rel="canonical" href="<?php echo wp_get_canonical_url(); ?>" />
 <?php } ?>
 <?php // Category ?>
