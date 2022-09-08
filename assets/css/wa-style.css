@@ -40,6 +40,13 @@
 	color: var(--text-normal);
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+}
+
 input, textarea {
 	caret-color: var(--color-two);
 }
@@ -139,13 +146,6 @@ body {
 
 .wa-search input:focus {
 	box-shadow: 0 0 0 .15rem var(--color-two);
-}
-
-.wa-search input[type="search"]::-webkit-search-decoration,
-.wa-search input[type="search"]::-webkit-search-cancel-button,
-.wa-search input[type="search"]::-webkit-search-results-button,
-.wa-search input[type="search"]::-webkit-search-results-decoration {
-	-webkit-appearance: none;
 }
 
 .wa-search input:focus-visible {
@@ -780,13 +780,6 @@ ol.breadcrumbs li a:hover {
 
 .search-big {
 	margin-bottom: 4rem;
-}
-
-.search-big input[type="search"]::-webkit-search-decoration,
-.search-big input[type="search"]::-webkit-search-cancel-button,
-.search-big input[type="search"]::-webkit-search-results-button,
-.search-big input[type="search"]::-webkit-search-results-decoration {
-	-webkit-appearance: none;
 }
 
 .search-big input:focus-visible {
