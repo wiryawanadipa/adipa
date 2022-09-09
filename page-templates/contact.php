@@ -9,7 +9,6 @@
 			</header>
 		</div>
 		<?php get_template_part( 'template-parts/parts/contact-form' ); ?>
-		<p>If you wish to contact me directly use this contact form. I'll be in touch within 2x24 hours.</p>
 	</article>
 </main>
 <?php

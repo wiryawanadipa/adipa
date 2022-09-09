@@ -42,7 +42,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					$headers = 'From: ' . $name . ' <wordpress@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n" . 'Reply-To: ' . $email;
 					$mail = wp_mail($emailTo, $subject, $body, $headers);
 					if ($mail) {
-						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond to you within 2x24 hours.</div>';
+						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond your message within 2x24 hours.</div>';
 						$emailSent = true;
 					} else {
 						echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Message was not sent. There is a problem with the server right now. Please try again. If the problem still persist you could contact me directly via social media.</div>';
@@ -79,6 +79,9 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 		} elseif ($_SESSION['rand'] != $_POST['randcheck']) {
 			echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
 		}
+	}
+	if (!isset($emailSent)) {
+		echo '<div class="p-3 mb-2 bg-success rounded-1">If you wish to contact me directly use this contact form. I&lsquo;ll be in touch within 2x24 hours.</div>';
 	}
 	?>
 	<div class="my-4 contact-form">
