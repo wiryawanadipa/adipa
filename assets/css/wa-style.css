@@ -351,14 +351,18 @@ body {
 	text-decoration: underline .2rem var(--color-one) !important;
 }
 
-.home-quote blockquote span {
-	display: block;
+.home-quote blockquote {
+	text-align: center;
 }
 
-.home-quote blockquote span::before {
+.home-quote blockquote::before {
 	font: 1.8rem/1.8rem Georgia, serif;
 	padding: 0 .4rem;
 	content: open-quote;
+}
+
+.home-quote blockquote span:first-child:before {
+	content: 'Overdesigned UIs that look better than they function need to die.';
 }
 
 .home-quote blockquote span::after {
@@ -373,6 +377,7 @@ body {
 }
 
 .home-quote blockquote span:not(:first-child):last-child {
+	display: block;
 	font-size: .8rem !important;
 	padding-top: 1.5rem;
 }
