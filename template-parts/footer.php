@@ -4,7 +4,6 @@
 				<div class="row">
 					<div class="col-12 col-md-6 fs-1 mb-3 mb-md-0 text-center text-md-start">Thanks for visiting!</div>
 					<div class="col-12 col-md-6 fs-5 d-flex mb-4 mb-md-0 align-content-center justify-content-center justify-content-md-end flex-wrap social">
-						<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Facebook" class="mx-sm-1 p-1" href="https://www.facebook.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-facebook fa-2x"></i></a>
 						<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Twitter" class="mx-sm-1 p-1" href="https://twitter.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-twitter fa-2x"></i></a>
 						<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Instagram" class="mx-sm-1 p-1" href="https://www.instagram.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-instagram fa-2x"></i></a>
 						<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa LinkedIn" class="mx-sm-1 p-1" href="https://www.linkedin.com/in/wiryawanadipa" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>

@@ -17,7 +17,6 @@
 		?>
 		<div class="fs-3 mt-4 text-center about social">
 			<a title="<?php bloginfo( 'name' ); ?> Mail" class="mx-sm-1 p-1" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'Contact' ) ) ); ?>"><i class="fa-solid fa-envelope fa-2x"></i></a>
-			<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Facebook" class="mx-sm-1 p-1" href="https://www.facebook.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-facebook fa-2x"></i></a>
 			<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Twitter" class="mx-sm-1 p-1" href="https://twitter.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-twitter fa-2x"></i></a>
 			<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Instagram" class="mx-sm-1 p-1" href="https://www.instagram.com/wiryawanadipa" target="_blank"><i class="fa-brands fa-square-instagram fa-2x"></i></a>
 			<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa LinkedIn" class="mx-sm-1 p-1" href="https://www.linkedin.com/in/wiryawanadipa" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
