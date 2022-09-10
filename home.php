@@ -10,7 +10,7 @@
 			<?php
 			$blog = array(
 				'posts_per_page' => 9,
-				'category_name' => 'Blog'
+				'category_name' => 'blog'
 			);
 			$loop = new WP_Query( $blog );
 			if ($loop->have_posts()) {
