@@ -36,6 +36,15 @@
 				<table class="form-table">
 				<tr>
 					<th>
+						<label>v1.1.2 (10 September 2022)</label>
+					</th>
+					<td>
+						<p>- Fix version number</p>
+						<p>- Remove quote link</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>v1.1.1 (10 September 2022)</label>
 					</th>
 					<td>
