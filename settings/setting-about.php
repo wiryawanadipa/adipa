@@ -34,7 +34,15 @@
 			</div>
 			<div id="tab2" class="tab">
 				<table class="form-table">
-					
+				<tr>
+					<th>
+						<label>v1.1.1 (10 September 2022)</label>
+					</th>
+					<td>
+						<p>- Add Open Graph protocol</p>
+						<p>- Update Bootstrap from 5.2.0 to 5.2.1</p>
+					</td>
+				</tr>
 				<tr>
 					<th>
 						<label>v1.1.0 (8 September 2022)</label>
