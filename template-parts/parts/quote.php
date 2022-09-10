@@ -9,7 +9,6 @@
 		<div class="col-12 col-lg-5">
 		<blockquote>
 			<span></span>
-			<span class="text-center text-sm-end fst-italic"><a rel="nofollow noopener noreferrer" title="Buildzoid's Twitter Post Link" href="https://twitter.com/Buildzoid1/status/1556027650036142082" target="_blank">Buildzoid</a>, 2022</span>
 		</blockquote>
 		</div>
 		</div>

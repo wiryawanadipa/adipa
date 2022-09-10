@@ -338,19 +338,6 @@ body {
 	color: var(--text-normal);
 }
 
-.home-quote a {
-	color: var(--text-normal);
-	text-decoration: underline .2rem;
-	-webkit-transition: text-decoration-color .2s;
-	-moz-transition: text-decoration-color .2s;
-	-o-transition: text-decoration-color .2s;
-	transition: text-decoration-color .2s;
-}
-
-.home-quote a:hover {
-	text-decoration: underline .2rem var(--color-one) !important;
-}
-
 .home-quote blockquote {
 	text-align: center;
 }
@@ -361,7 +348,7 @@ body {
 	content: open-quote;
 }
 
-.home-quote blockquote span:first-child:before {
+.home-quote blockquote span:before {
 	content: 'Overdesigned UIs that look better than they function need to die.';
 }
 
@@ -371,20 +358,9 @@ body {
 	content: close-quote;
 }
 
-.home-quote blockquote span:first-child {
+.home-quote blockquote span {
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
-}
-
-.home-quote blockquote span:not(:first-child):last-child {
-	display: block;
-	font-size: .8rem !important;
-	padding-top: 1.5rem;
-}
-
-.home-quote blockquote span:not(:first-child):last-child::before, .home-quote blockquote span:not(:first-child):last-child::after {
-	font: 1rem/1rem Georgia, serif;
-	content: "-";
 }
 
 /* Postcard */
