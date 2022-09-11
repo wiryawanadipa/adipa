@@ -36,6 +36,14 @@
 				<table class="form-table">
 				<tr>
 					<th>
+						<label>v1.1.3 (x September 2022)</label>
+					</th>
+					<td>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>v1.1.2 (10 September 2022)</label>
 					</th>
 					<td>
