@@ -1,8 +1,3 @@
-<div class="cosmetic-2">
-	<div class="cosmetic-box">
-		<div class="cosmetic-main cosmetic-main-2"></div>
-	</div>
-</div>
 <div class="despro py-4 py-md-5">
 	<div class="container-xl">
 		<div class="row py-4 py-md-5">
@@ -27,10 +22,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="cosmetic-3">
-	<div class="cosmetic-box">
-		<div class="cosmetic-main cosmetic-main-3"></div>
 	</div>
 </div>

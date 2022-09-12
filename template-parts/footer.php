@@ -1,5 +1,5 @@
 		<?php get_template_part( 'template-parts/parts/quote' ); ?>
-		<div class="wa-footer">
+		<div class="wa-footer py-5">
 			<div class="container-xl py-5 wa-footer">
 				<div class="row">
 					<div class="col-12 col-md-6 fs-1 mb-3 mb-md-0 text-center text-md-start">Thanks for visiting!</div>
