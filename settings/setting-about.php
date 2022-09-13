@@ -36,6 +36,14 @@
 				<table class="form-table">
 				<tr>
 					<th>
+						<label>v1.2.1 (13 September 2022)</label>
+					</th>
+					<td>
+						<p>- Remove despro get_template_part</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
 						<label>v1.2.0 (13 September 2022)</label>
 					</th>
 					<td>
