@@ -3,8 +3,8 @@
 	<article class="wa-post-article">
 		<?php breadcrumbs(); ?>
 		<div class="my-3 rounded-3 post-title">
-			<header class="py-3 post-title-header">
-				<h1 class="mb-3"><?php the_title(); ?></h1>
+			<header class="post-title-header">
+				<h1><?php the_title(); ?></h1>
 				<div class="post-info">
 					<i class="fa-solid fa-calendar-days"></i><span><time><?php echo get_the_date(); ?></time></span>
 					<?php

@@ -189,10 +189,12 @@ body {
 
 .hero-heading-name {
 	color: var(--text-normal);
+	margin-bottom: .75rem;
 }
 
 .hero-heading-name h1 {
 	font-size: 3rem;
+	margin-bottom: 0;
 }
 
 .hero-name {
@@ -417,13 +419,7 @@ ol.breadcrumbs li a:hover {
 }
 
 .post-title-header {
-	padding: 0 1rem;
-}
-
-.post-title-header h1 {
-	color: var(--color-one);
-	font-weight: 800;
-	margin-bottom: 0;
+	padding: 1rem;
 }
 
 .post-info {
@@ -473,7 +469,6 @@ ol.breadcrumbs li a:hover {
 	background: var(--bg-color-three);
 	border-left: .375rem solid var(--color-one);
 	border-radius: 0.25rem;
-	color: var(--color-one);
 	line-height: 1.5;
 	margin: 1.75rem auto 0;
 	padding: .5rem 1rem;
@@ -558,7 +553,7 @@ ol.breadcrumbs li a:hover {
 	font-size: .8rem !important;
 	font-style: italic;
 	font-weight: 500;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
 	text-align: right;
 }
 
@@ -744,6 +739,18 @@ ol.breadcrumbs li a:hover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
+	}
+
+	.hero-heading-name,
+	.hero-heading-text,
+	.hero-heading-link {
+		margin-bottom: 1.5rem;
+	}
+
+	.hero-heading-link {
+		gap: 1rem;
+		flex-direction: column;
 	}
 	
 	.wa-post-article p,

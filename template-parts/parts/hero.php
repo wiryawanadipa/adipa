@@ -3,13 +3,13 @@
 		<div class="row py-4 py-sm-5">
 			<div class="col-lg-8 p-xl-3">
 				<div class="hero-heading">
-					<div class="hero-heading-name pb-3 pb-sm-0 text-center text-lg-start">
+					<div class="hero-heading-name">
 						<h1>Hi! I'm <span class="hero-name"><?php echo get_bloginfo('name'); ?></span>.</h1>
 					</div>
-					<div class="hero-heading-text text-center text-lg-start">Wordpress Developer - UI & UX Designer - Web Designer</div>
-					<div class="hero-heading-link text-center text-lg-start">
-						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>">Design Gallery</a>
-						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>">Project</a>
+					<div class="hero-heading-text">Wordpress Developer - UI & UX Designer - Web Designer</div>
+					<div class="hero-heading-link">
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>" title="Design Gallery">.design-gallery</a>
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>" title="Project">.project</a>
 					</div>
 				</div>
 			</div>
