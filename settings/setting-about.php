@@ -36,10 +36,11 @@
 				<table class="form-table">
 				<tr>
 					<th>
-						<label>v1.1.3 (x September 2022)</label>
+						<label>v1.2.0 (13 September 2022)</label>
 					</th>
 					<td>
-						<p></p>
+						<p>- Simplify Homepage</p>
+						<p>- Cleaning some code</p>
 					</td>
 				</tr>
 				<tr>
