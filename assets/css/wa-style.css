@@ -670,6 +670,11 @@ span.token.tag {
 	color: var(--color-one);
 }
 
+span.token.keyword,
+span.token.operator {
+	color: var(--color-two);
+}
+
 .wa-post-article div.hcb_wrap pre::-webkit-scrollbar {
 	height: 8px;
 	width: 8px;
