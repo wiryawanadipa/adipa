@@ -1,1 +1,0 @@
-jQuery(document).ready(function(){jQuery(".tabs .tab-links a").on("click",function(e){var a=jQuery(this).attr("href");jQuery(".tabs "+a).fadeIn(400).siblings().hide(),jQuery(this).parent("li").addClass("active").siblings().removeClass("active"),e.preventDefault()})});

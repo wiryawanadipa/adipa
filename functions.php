@@ -139,14 +139,6 @@ function fontawesome_icon() {
 }
 add_action('admin_enqueue_scripts', 'fontawesome_icon');
 
-// Insert custom script in custom setting
-function wa_custom_setting_script() {
-	global $theme_version, $random_number;
-	wp_register_script('wa_custom_admin_js', get_template_directory_uri() . '/assets/js/admin-script.js', false, $theme_version . $random_number);
-	wp_enqueue_script('wa_custom_admin_js');
-}
-add_action('admin_enqueue_scripts', 'wa_custom_setting_script');
-
 // Disable load HCB styles & scripts if it's not in single post
 function wa_deregister_styles() {
 	if (!is_single() && !is_admin()) {
