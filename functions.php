@@ -382,7 +382,7 @@ function theme_settings_panel() {
 		'wa-theme-settings',
 		'theme_settings_general',
 		get_template_directory_uri() . '/assets/favicon/favicon-16x16.png',
-		'2'
+		'61'
 	);
 	add_submenu_page(
 		'wa-theme-settings',
