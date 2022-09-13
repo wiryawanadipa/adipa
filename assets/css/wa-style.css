@@ -376,6 +376,10 @@ a.postcard-tag::before {
 	background-color: var(--color-two);
 }
 
+.title-decoration {
+	margin-bottom: 0;
+}
+
 .title-decoration::before {
 	content: "\A";
 	background-color: var(--color-one);
