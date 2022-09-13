@@ -2,7 +2,6 @@
 	<?php get_template_part( 'template-parts/header' ); ?>
 	<?php if (!is_paged()) { ?>
 		<?php get_template_part( 'template-parts/parts/hero' ); ?>
-		<?php get_template_part( 'template-parts/parts/design-gallery' ); ?>
 	<?php } ?>
 	<main class="container-xl py-4 py-lg-5 main-page">
 		<h2 class="fs-1 text-center mb-4 mb-lg-5 text-white title-decoration">blog</h2>
