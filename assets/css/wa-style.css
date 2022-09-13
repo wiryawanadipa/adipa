@@ -434,6 +434,7 @@ nav ol.breadcrumbs li a:hover {
 
 .post-title-header h1 {
 	font-size: 2rem;
+	font-weight: 900;
 }
 
 .tag-title::before {
@@ -442,7 +443,7 @@ nav ol.breadcrumbs li a:hover {
 }
 
 .post-info {
-	font-size: 1rem;
+	font-size: .9375rem;
 	line-height: 1.5rem;
 }
 
