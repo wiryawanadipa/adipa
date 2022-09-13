@@ -13,5 +13,5 @@ Info about this theme:
 8. Custom login page theme color
 9. Classic Editor Theme exclusive
 10. Custom contact page without plugin powered by reCAPTCHA v2
-11. Less than 400kB
+11. Less than 200kB
 12. It's responsive!
