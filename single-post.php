@@ -2,7 +2,7 @@
 <main class="container-xl mt-sm-3 mb-5 main-page">
 	<article class="wa-post-article">
 		<?php breadcrumbs(); ?>
-		<div class="my-3 rounded-3 post-title">
+		<div class="post-title">
 			<header class="post-title-header">
 				<h1><?php the_title(); ?></h1>
 				<div class="post-info">

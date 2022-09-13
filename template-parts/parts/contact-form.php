@@ -1,5 +1,8 @@
 <?php
 if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key')) && null != get_option('wa_mail') && !empty(get_option('wa_mail'))) {
+	if (!isset($emailSent)) {
+		echo '<div class="p-3 my-2 bg-success rounded-1">If you wish to contact me directly use this contact form. I&lsquo;ll be in touch within 2x24 hours.</div>';
+	}
 	if (isset($_POST['submit'])) {
 		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
@@ -42,46 +45,43 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					$headers = 'From: ' . $name . ' <wordpress@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n" . 'Reply-To: ' . $email;
 					$mail = wp_mail($emailTo, $subject, $body, $headers);
 					if ($mail) {
-						echo '<div class="p-3 mb-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond your message within 2x24 hours.</div>';
+						echo '<div class="p-3 my-2 bg-success rounded-1"><i class="fa-solid fa-envelope"></i> Thank you for contacting me! Your message has been sent. I&lsquo;ll respond your message within 2x24 hours.</div>';
 						$emailSent = true;
 					} else {
-						echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Message was not sent. There is a problem with the server right now. Please try again. If the problem still persist you could contact me directly via social media.</div>';
+						echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Message was not sent. There is a problem with the server right now. Please try again. If the problem still persist you could contact me directly via social media.</div>';
 					}
 				} else {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Invalid captcha.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Invalid captcha.</div>';
 				}
 			} else {
 				if (isset($emptyNameError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your name.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your name.</div>';
 				}
 				if (isset($longNameError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> The name that you filled in the name form is too long. The name form should be no more than 50 characters.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> The name that you filled in the name form is too long. The name form should be no more than 50 characters.</div>';
 				}
 				if (isset($emptyEmailError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your email address.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter your email address.</div>';
 				}
 				if (isset($invalidEmailError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> You entered an invalid email format address. (e.g. yourname@domain.tld).</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> You entered an invalid email format address. (e.g. yourname@domain.tld).</div>';
 				}
 				if (isset($longEmailError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your email address is too long. Use an email address which is no more than 80 characters.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your email address is too long. Use an email address which is no more than 80 characters.</div>';
 				}
 				if (isset($emptyMessageError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a message.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a message.</div>';
 				}
 				if (isset($longMessageError)) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than 1000 characters.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than 1000 characters.</div>';
 				}
 				if (empty($_POST['g-recaptcha-response'])) {
-					echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
 				}
 			}
 		} elseif ($_SESSION['rand'] != $_POST['randcheck']) {
-			echo '<div class="p-3 mb-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
+			echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please fill the form and check the captcha</div>';
 		}
-	}
-	if (!isset($emailSent)) {
-		echo '<div class="p-3 mb-2 bg-success rounded-1">If you wish to contact me directly use this contact form. I&lsquo;ll be in touch within 2x24 hours.</div>';
 	}
 	?>
 	<div class="my-4 contact-form">
