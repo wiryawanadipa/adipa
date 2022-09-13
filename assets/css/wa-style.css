@@ -406,7 +406,7 @@ a.postcard-tag::before {
 /* Post Section */
 nav ol.breadcrumbs {
 	color: var(--text-normal);
-	border-bottom: 1px solid #6c757d;
+	border-bottom: 1px solid rgba(108, 117, 125, .5);
 	font-size: 1rem;
 	margin: 0;
 	padding: 0;
@@ -429,7 +429,7 @@ nav ol.breadcrumbs li a:hover {
 .post-title {
 	margin: .75rem auto 0;
 	padding-bottom: .75rem;
-	border-bottom: 1px solid #6c757d;
+	border-bottom: 1px solid rgba(108, 117, 125, .5);
 }
 
 .post-title-header h1 {
