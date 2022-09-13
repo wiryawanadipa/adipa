@@ -1,12 +1,12 @@
 <header>
 	<nav class="navbar navbar-xl navbar-dark navbar-expand-md wa-navbar">
 		<div class="container-lg">
-			<a class="navbar-brand" href="<?php bloginfo('url'); ?>"<?php if ( is_home() ) { echo ' aria-current="page"'; } ?>><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="40px" height="40px" alt="WA"><span class="fs-4 wa-brand-name"><?php bloginfo( 'name' ); ?></span></a>
+			<a class="wa-brand" href="<?php bloginfo('url'); ?>"<?php if ( is_home() ) { echo ' aria-current="page"'; } ?>><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="40px" height="40px" alt="WA"><span class="fs-4 wa-brand-name"><?php bloginfo( 'name' ); ?></span></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse mt-1 mt-md-0" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-md-0 me-md-2 mt-4 mt-md-0">
+				<ul class="navbar-nav ms-auto mb-2 mb-md-0 mt-4 mt-md-0">
 					<li class="nav-item mx-md-1">
 						<a class="nav-link fs-5 wa-top-menu<?php if ( is_home() ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php bloginfo('url'); ?>">home</a>
 					</li>
@@ -19,7 +19,7 @@
 					<li class="nav-item mx-md-1">
 						<a class="nav-link fs-5 wa-top-menu<?php if ( is_page( 'Contact' ) ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'Contact' ) ) ); ?>">contact</a>
 					</li>
-					<li class="nav-item mx-md-1 dropdown">
+					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle p-3 p-md-2" href="#" role="button" data-bs-toggle="dropdown" title="Search Button" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
 						<ul class="dropdown-menu dropdown-menu-end wa-search" itemscope itemtype="https://schema.org/WebSite">
 						<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>

@@ -2,12 +2,12 @@
 <main class="container-xl py-4 py-xl-5 main-page">
 	<?php
 		if (is_paged()) {
-			echo '<h1 class="text-center mb-4 mb-sm-5 text-white title-decoration">' . strtolower(single_cat_title( '', false )) . ' - Page ' . $paged . '</h1>';
+			echo '<h1 class="text-center mb-4 mb-lg-5 text-white title-decoration">' . strtolower(single_cat_title( '', false )) . ' - Page ' . $paged . '</h1>';
 		} else {
-			echo '<h1 class="text-center mb-4 mb-sm-5 text-white title-decoration">' . strtolower(single_cat_title( '', false )) . '</h1>';
+			echo '<h1 class="text-center mb-4 mb-lg-5 text-white title-decoration">' . strtolower(single_cat_title( '', false )) . '</h1>';
 		}
 	?>
-	<div class="row mt-4 mb-5 g-2 g-xxl-3">
+	<div class="row mb-5 g-3 g-sm-2 g-xl-3">
 		<?php
 		if (have_posts()) {
 			while (have_posts()) {

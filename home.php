@@ -4,9 +4,9 @@
 		<?php get_template_part( 'template-parts/parts/hero' ); ?>
 		<?php get_template_part( 'template-parts/parts/design-gallery' ); ?>
 	<?php } ?>
-	<main class="container-xl py-4 py-xl-5 main-page">
-		<h2 class="fs-1 text-center mb-4 mb-sm-5 text-white title-decoration">blog</h2>
-		<div class="row mb-5 g-2 g-md-3 g-xl-2 g-xxl-3">
+	<main class="container-xl py-4 py-lg-5 main-page">
+		<h2 class="fs-1 text-center mb-4 mb-lg-5 text-white title-decoration">blog</h2>
+		<div class="row mb-5 g-3 g-sm-2 g-xl-3">
 			<?php
 			$blog = array(
 				'posts_per_page' => 9,

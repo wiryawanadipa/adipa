@@ -290,7 +290,7 @@ function wa_related_by_tags() {
 			echo '<h2>Related Post</h2>';
 			while ($my_query->have_posts()) {
 				$my_query->the_post();
-				echo '<div class="col-12 px-4 py-2 mb-3 mb-md-4 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+				echo '<div class="px-4 py-2 mb-2 mb-md-3 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
 			}
 			echo '</div></div>';
 		}

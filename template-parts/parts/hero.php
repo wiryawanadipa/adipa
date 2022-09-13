@@ -7,6 +7,10 @@
 						<h1>Hi! I'm <span class="hero-name"><?php echo get_bloginfo('name'); ?></span>.</h1>
 					</div>
 					<div class="hero-heading-text text-center text-lg-start">Wordpress Developer - UI & UX Designer - Web Designer</div>
+					<div class="hero-heading-link text-center text-lg-start">
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>">Design Gallery</a>
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>">Project</a>
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 d-none d-lg-block">
