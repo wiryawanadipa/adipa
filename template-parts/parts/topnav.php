@@ -8,16 +8,16 @@
 			<div class="collapse navbar-collapse mt-1 mt-md-0" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0 mt-4 mt-md-0">
 					<li class="nav-item mx-md-1">
-						<a class="nav-link fs-5 wa-top-menu<?php if ( is_home() ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php bloginfo('url'); ?>">home</a>
+						<a class="nav-link fs-5 wa-top-menu<?php if(is_home()) { echo ' menu-active" aria-current="page'; } ?>" href="<?php bloginfo('url'); ?>">home</a>
 					</li>
 					<li class="nav-item mx-md-1">
-						<a class="nav-link fs-5 wa-top-menu<?php if ( is_category( 'blog' ) || ( is_single() && has_category( 'blog',$post->ID ) ) ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url( get_category_link( get_cat_ID( 'Blog' ) ) ); ?>">blog</a>
+						<a class="nav-link fs-5 wa-top-menu<?php if(is_category('blog') || (is_single() && has_category('blog',$post->ID))) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>">blog</a>
 					</li>
 					<li class="nav-item mx-md-1">
-						<a class="nav-link fs-5 wa-top-menu<?php if ( is_page( 'about' ) ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'About' ) ) ); ?>">about</a>
+						<a class="nav-link fs-5 wa-top-menu<?php if (is_page('about')) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url(get_page_link(get_page_id_by_title('About'))); ?>">about</a>
 					</li>
 					<li class="nav-item mx-md-1">
-						<a class="nav-link fs-5 wa-top-menu<?php if ( is_page( 'contact' ) ) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'Contact' ) ) ); ?>">contact</a>
+						<a class="nav-link fs-5 wa-top-menu<?php if(is_page('contact')) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url(get_page_link(get_page_id_by_title('Contact'))); ?>">contact</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle p-3 p-md-2" href="#" role="button" data-bs-toggle="dropdown" title="Search Button" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
