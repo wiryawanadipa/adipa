@@ -165,7 +165,7 @@ add_action('init', 'stop_heartbeat', 1);
 // Disable author & date arhive page
 function disable_page() {
 	global $wp_query;
-	if (is_author() || is_date()) {
+	if (is_author() || is_date() || (is_home() && is_paged())) {
 		wp_redirect(get_option('home'), 301); 
 		exit; 
 	}
