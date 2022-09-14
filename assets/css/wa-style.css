@@ -676,13 +676,10 @@ span.token.deleted,
 span.token.important,
 span.token.property,
 span.token.symbol,
-span.token.tag {
-	color: var(--color-one);
-}
-
+span.token.tag,
 span.token.keyword,
 span.token.operator {
-	color: var(--color-two);
+	color: var(--color-one);
 }
 
 .wa-post-article div.hcb_wrap pre::-webkit-scrollbar {
