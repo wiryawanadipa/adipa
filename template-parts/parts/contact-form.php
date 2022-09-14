@@ -92,7 +92,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					<div class="row mb-0 mb-md-3">
 						<div class="col-12 col-md-6 mb-3 mb-md-0">
 							<label class="mb-2">Name<span>&#42;</span></label>
-							<input class="form-control" name="contactName" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['contactName']) && !isset($emailSent)) { echo $sanitizecontactName; } else { echo ''; } ?>" autofocus required>
+							<input class="form-control" name="contactName" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['contactName']) && !isset($emailSent)) { echo $sanitizecontactName; } else { echo ''; } ?>" required>
 						</div>
 						<div class="col-12 col-md-6 mb-3 mb-md-0">
 							<label class="mb-2">E-Mail<span>&#42;</span></label>

@@ -653,6 +653,7 @@ span.post-tag-list a:hover {
 .contact-form .btn-primary {
 	background-color: var(--color-one);
 	border: var(--color-one);
+	border-radius: 50rem;
 }
 
 .contact-form .btn-primary:hover {
@@ -860,6 +861,11 @@ span.token.operator {
 	.wa-related-post h2 {
 		margin-bottom: .5rem;
 		margin-top: 0;
+	}
+
+	.contact-form .btn-primary {
+		padding: 1rem;
+		width: 100%;
 	}
 }
 
