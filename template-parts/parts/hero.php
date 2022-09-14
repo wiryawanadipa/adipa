@@ -8,8 +8,8 @@
 					</div>
 					<div class="hero-heading-text">Wordpress Developer - UI & UX Designer - Web Designer</div>
 					<div class="hero-heading-link">
-						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>" title="Design Gallery">.design-gallery</a>
-						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>" title="Project">.project</a>
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>" title="Design Gallery">design-gallery</a>
+						<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>" title="Project">project</a>
 					</div>
 				</div>
 			</div>

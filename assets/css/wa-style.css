@@ -234,6 +234,16 @@ ul.wa-search button:hover {
 	background-color: var(--color-two);
 }
 
+.hero-heading-link a::before {
+	content: "\A";
+	background-color: var(--text-normal);
+	border-radius: 6px;
+	display: inline-block;
+	margin-right: .125rem;
+	width: 5px;
+	height: 5px;
+}
+
 .hero-photo {
 	display: flex;
 	align-items: center;
