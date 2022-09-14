@@ -15,15 +15,15 @@
 					<div class="col-md-6"></div>
 					<div class="col-md-6 mb-1 small-text text-muted pt-2 pt-md-0 text-center text-md-start"><i class="fa-solid fa-building-shield"></i><a class="small-text text-muted privacy-policy" href="<?php echo esc_url( get_page_link( get_page_id_by_title( 'Privacy Policy' ) ) ); ?>"> Privacy Policy</a></div>
 					<div class="col-md-6"></div>
-					<div class="col-md-6 mb-1 small-text text-muted pt-2 pt-md-0 text-center text-md-start"><i class="fa-brands fa-html5"></i> <a rel="nofollow noopener noreferrer" class="small-text text-muted theme-version" title="Wiryawan Adipa Wordpress Theme GitHub Repository" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa v<?php $theme_version = wp_get_theme(); echo $theme_version->Version; ?></a></div>
+					<div class="col-md-6 mb-1 small-text text-muted pt-2 pt-md-0 text-center text-md-start"><i class="fa-brands fa-html5"></i> <a rel="nofollow noopener noreferrer" class="small-text text-muted theme-version" title="Wiryawan Adipa Wordpress Theme GitHub Repository" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa v<?php echo wp_get_theme()->get( 'Version' ); ?></a></div>
 				</div>
 			</div>
 		</div>
 		<?php wp_footer(); ?>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 		<?php
-		$footercode = trim( get_option( 'footer_code' ) );
-		if ( null != get_option( 'footer_code' ) && !empty ( $footercode ) ) {
+		$footercode = trim(get_option( 'footer_code' ));
+		if (null != get_option( 'footer_code' ) && !empty( $footercode )) {
 			echo '<!-- Extra Code -->' . "\n";
 			echo get_option( 'footer_code' ) . "\n";
 		}
