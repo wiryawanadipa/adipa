@@ -1,5 +1,5 @@
 <?php if (!is_paged()) { ?>
-	<?php get_template_part( 'template-parts/header' ); ?>
+<?php get_template_part( 'template-parts/header' ); ?>
 	<?php if (!is_paged()) { ?>
 		<?php get_template_part( 'template-parts/parts/hero' ); ?>
 	<?php } ?>
