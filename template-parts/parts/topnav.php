@@ -11,7 +11,7 @@
 						<a class="nav-link fs-5 wa-top-menu<?php if(is_home()) { echo ' menu-active" aria-current="page'; } ?>" href="<?php bloginfo('url'); ?>">home</a>
 					</li>
 					<li class="nav-item mx-md-1">
-						<a class="nav-link fs-5 wa-top-menu<?php if(is_category('blog') || (is_single() && has_category('blog',$post->ID))) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>">blog</a>
+						<a class="nav-link fs-5 wa-top-menu<?php if(is_category('blog')) { echo ' menu-active" aria-current="page'; } if(is_single() && has_category('blog',$post->ID)) { echo ' menu-active'; } ?>" href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>">blog</a>
 					</li>
 					<li class="nav-item mx-md-1">
 						<a class="nav-link fs-5 wa-top-menu<?php if (is_page('about')) { echo ' menu-active" aria-current="page'; } ?>" href="<?php echo esc_url(get_page_link(get_page_id_by_title('About'))); ?>">about</a>
