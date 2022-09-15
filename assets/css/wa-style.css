@@ -2,6 +2,7 @@
 :root {
 	--color-one: #fc5c65;
 	--color-two: #eb3b5a;
+	--color-three: #fc757d;
 	--bg-color-one: #36454f;
 	--bg-color-two: #2c3840;
 	--bg-color-three: #212b31;
@@ -404,7 +405,9 @@ a.postcard-tag::before {
 	background-color: var(--color-two);
 }
 
-.title-decoration {
+.post-title-header h1.title-decoration {
+	color: var(--text-normal);
+	font-size: 2.5rem;
 	margin-bottom: 0;
 }
 
@@ -446,12 +449,13 @@ nav ol.breadcrumbs li a:hover {
 }
 
 .post-title {
-	margin: .75rem auto 0;
+	margin: .75rem auto 1.5rem;
 	padding-bottom: .75rem;
 	border-bottom: 1px solid rgba(108, 117, 125, .5);
 }
 
 .post-title-header h1 {
+	color: var(--color-three);
 	font-size: 2rem;
 	font-weight: 900;
 }
@@ -494,9 +498,9 @@ span.post-tag-list a:hover {
 }
 
 .wa-post-article p {
-	margin: 1.75rem auto 0;
+	margin: 0 auto 1.5rem;
 	color: var(--text-normal);
-	font-size: 1.1rem;
+	font-size: 1.125rem;
 	line-height: 2.2rem;
 }
 
@@ -505,19 +509,16 @@ span.post-tag-list a:hover {
 .wa-post-article h4,
 .wa-post-article h5,
 .wa-post-article h6 {
-	background: var(--bg-color-three);
-	border-left: .25rem solid var(--color-one);
-	border-radius: 0.25rem;
+	color: var(--color-three);
 	font-size: 1.75rem;
 	line-height: 1.5;
-	margin: 1.75rem auto 0;
-	padding: .5rem 1rem;
+	margin: 3rem auto .5rem;
 }
 
 .wa-post-article pre {
 	color: var(--text-normal);
-	font-size: 1.1rem;
-	margin: 1.75rem auto 0;
+	font-size: 1.125rem;
+	margin: 0 auto 1.5rem;
 }
 
 .wa-post-article p code,
@@ -531,7 +532,7 @@ span.post-tag-list a:hover {
 
 .wa-post-article ol,
 .wa-post-article ul {
-	font-size: 1.1rem;
+	font-size: 1.125rem;
 	margin: .5rem auto 0;
 }
 
@@ -554,7 +555,7 @@ span.post-tag-list a:hover {
 .wa-post-article figure {
 	background-color: var(--bg-color-three);
 	border-radius: .25rem;
-	margin: 1.75rem auto 0;
+	margin: 0 auto 1.5rem;
 	padding: 1rem;
 }
 
@@ -568,7 +569,7 @@ span.post-tag-list a:hover {
 .wa-post-article blockquote {
 	background-color: var(--bg-color-two);
 	border-radius: .5rem;
-	margin: 1.75rem auto 0;
+	margin: 0 auto 1.5rem;
 	padding: 1rem;
 	text-align: center;
 }
@@ -581,20 +582,20 @@ span.post-tag-list a:hover {
 }
 
 .wa-post-article blockquote p::before {
-	font: 1.8rem/1.8rem Georgia, serif;
+	font: 1.8125rem/1.8125rem Georgia, serif;
 	padding: 0 .4rem;
 	content: open-quote;
 }
 
 .wa-post-article blockquote p::after {
-	font: 1.8rem/1.8rem Georgia, serif;
+	font: 1.8125rem/1.8125rem Georgia, serif;
 	padding: 0 .4rem;
 	content: close-quote;
 }
 
 .wa-post-article blockquote p:not(:first-child):last-child {
 	color: var(--text-muted);
-	font-size: .8rem;
+	font-size: .8125rem;
 	font-style: italic;
 	font-weight: 500;
 	padding-top: 1rem;
@@ -607,12 +608,9 @@ span.post-tag-list a:hover {
 	content: "-";
 }
 
-.wa-post-article .youtube {
-	margin: 1.75rem auto 0;
-}
-
+.wa-post-article .youtube,
 .wa-post-article .twitter-tweet {
-	margin: 1.75rem auto 0;
+	margin: 0 auto 1.5rem;
 }
 
 .wa-related-post {
@@ -667,7 +665,7 @@ span.post-tag-list a:hover {
 
 /* For Highlighting Code Block */
 .wa-post-article div.hcb_wrap {
-	margin: 1.75rem auto 0;
+	margin: 0 auto 1.5rem;
 	word-wrap: break-word;
 }
 
@@ -836,22 +834,18 @@ span.token.operator {
 	.wa-post-article h5,
 	.wa-post-article h6 {
 		font-size: 1.5rem;
-		padding: .25rem .5rem;
-}
+		margin: 2.5rem auto .5rem;
+	}
 
-	.wa-post-article h2,
-	.wa-post-article h3,
-	.wa-post-article h4,
-	.wa-post-article h5,
-	.wa-post-article h6,
 	.wa-post-article p,
 	.wa-post-article blockquote,
 	.wa-post-article figure,
 	.wa-post-article ol,
 	.wa-post-article ul,
-	.youtube,
+	.wa-post-article .youtube,
+	.wa-post-article .twitter-tweet,
 	.wa-post-article div.hcb_wrap {
-		margin: 1.5rem 0 auto;
+		margin: 0 auto 1.375rem;
 	}
 
 	.wa-post-article ol,
