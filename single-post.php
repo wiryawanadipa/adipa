@@ -14,7 +14,7 @@
 						foreach( $tags as $tag ) {
 							$tag_link = get_tag_link( $tag->term_id);
 							$name = $tag->name;
-							echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name ) . '</a></span>' . "\n";
+							echo '<span class="post-tag-list"><a href="' . $tag_link . '">' . esc_attr( $name ) . '</a></span>';
 						}
 					}
 					?>

@@ -48,28 +48,28 @@ if (isset($_GET['activated']) && is_admin()) {
 // Add breadcrumbs
 function breadcrumbs() {
 	global $post;
-	echo '<nav aria-label="breadcrumb">' . "\n";
-	echo '<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">' . "\n";
-	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '">' . '<span itemprop="name">Home</span>' . '</a><meta itemprop="position" content="1" /></li> &gt; ' . "\n";
+	echo '<nav aria-label="breadcrumb">';
+	echo '<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">';
+	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li>';
 	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
 	if ($categories) {
 		$catcount = 2;
 		foreach ($categories as $cat) {
-			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="name">' . $cat->name . '</span>' . '</a><meta itemprop="position" content="' . $catcount . '" /></li> &gt; ' . "\n";
+			echo '<li class="breadcrumb-list" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $catcount . '" /></li>';
 			$catcount++;
 		}
 	}
-	echo '<li aria-current="page">' . get_the_title() . '</li>' . "\n";
-	echo '</ol>' . "\n";
-	echo '</nav>' . "\n";
+	echo '<li class="breadcrumb-list" aria-current="page">' . get_the_title() . '</li>';
+	echo '</ol>';
+	echo '</nav>';
 }
 
 //  Add Favicon on login and admin page
 function add_site_favicon() {
-	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n";
-	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">' . "\n";
-	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">' . "\n";
-	echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest">' . "\n";
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
+	echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest">';
 }
 add_action('login_head', 'add_site_favicon');
 add_action('admin_head', 'add_site_favicon');
