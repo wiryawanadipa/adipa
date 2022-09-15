@@ -253,6 +253,7 @@ ul.wa-search button:hover {
 .hero-photo {
 	display: flex;
 	align-items: center;
+	height: 100%;
 	justify-content: center;
 }
 
