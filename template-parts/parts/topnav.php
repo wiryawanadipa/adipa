@@ -1,7 +1,7 @@
 <header>
 	<nav class="navbar navbar-xl navbar-dark navbar-expand-md wa-navbar">
 		<div class="container-lg">
-			<a class="wa-brand" href="<?php bloginfo('url'); ?>"<?php if ( is_home() ) { echo ' aria-current="page"'; } ?>><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="40px" height="40px" alt="WA"><span class="fs-4 wa-brand-name"><?php bloginfo( 'name' ); ?></span></a>
+			<a class="wa-brand" href="<?php bloginfo('url'); ?>"<?php if ( is_home() ) { echo ' aria-current="page"'; } ?>><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="40px" height="40px" alt="WA"><span class="wa-brand-name"><?php bloginfo( 'name' ); ?></span></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>

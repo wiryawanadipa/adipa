@@ -82,7 +82,8 @@ button.navbar-toggler {
 }
 
 .wa-brand-name {
-	padding: .2rem 0 .2rem .5rem;
+	font-size: 1.5rem;
+	padding: .3125rem 0 .3125rem .5rem;
 	vertical-align: middle;
 }
 
@@ -109,13 +110,13 @@ button.navbar-toggler {
 }
 
 .wa-top-menu {
-	padding: .31rem;
+	padding: .3125rem;
 }
 
 .wa-top-menu::before {
 	content: "\A";
 	background-color: var(--text-normal);
-	border-radius: 6px;
+	border-radius: 1rem;
 	display: inline-block;
 	margin-right: .125rem;
 	width: 5px;
@@ -545,11 +546,11 @@ span.post-tag-list a:hover {
 .wa-post-article a {
 	color: var(--text-normal);
 	font-weight: 500;
-	text-decoration: underline .2rem var(--color-one);
+	text-decoration: underline .1875rem var(--color-one);
 }
 
 .wa-post-article a:hover {
-	text-decoration: underline .3rem var(--color-one);
+	text-decoration: underline .25rem var(--color-one);
 }
 
 .wa-post-article figure {
@@ -583,13 +584,13 @@ span.post-tag-list a:hover {
 
 .wa-post-article blockquote p::before {
 	font: 1.8125rem/1.8125rem Georgia, serif;
-	padding: 0 .4rem;
+	padding: 0 .375rem;
 	content: open-quote;
 }
 
 .wa-post-article blockquote p::after {
 	font: 1.8125rem/1.8125rem Georgia, serif;
-	padding: 0 .4rem;
+	padding: 0 .375rem;
 	content: close-quote;
 }
 
@@ -637,7 +638,7 @@ span.post-tag-list a:hover {
 
 .wa-related-post a:hover {
 	color: var(--text-normal);
-	text-decoration: underline .15rem var(--color-one);
+	text-decoration: underline .125rem var(--color-one);
 }
 
 .contact-form label span {
@@ -646,7 +647,7 @@ span.post-tag-list a:hover {
 
 .contact-form .form-control:focus {
 	border-color: var(--color-one);
-	box-shadow: 0 0 0 .15rem var(--color-two);
+	box-shadow: 0 0 0 .125rem var(--color-two);
 }
 
 .contact-form .btn-primary {
@@ -734,7 +735,7 @@ span.token.operator {
 }
 
 .search-big form input:focus {
-	box-shadow: 0 0 0 .15rem var(--color-two);
+	box-shadow: 0 0 0 .125rem var(--color-two);
 }
 
 /* Footer */
@@ -770,17 +771,9 @@ span.token.operator {
 	font-size: .875rem;
 }
 
-.theme-version,
-.privacy-policy {
-	-webkit-transition: text-decoration-color .2s;
-	-moz-transition: text-decoration-color .2s;
-	-o-transition: text-decoration-color .2s;
-	transition: text-decoration-color .2s;
-}
-
 .theme-version:hover,
 .privacy-policy:hover {
-	text-decoration: underline .1rem var(--color-one) !important;
+	text-decoration: underline .125rem var(--color-one) !important;
 }
 
 /* Responsive */
