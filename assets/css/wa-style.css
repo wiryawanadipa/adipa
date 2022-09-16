@@ -458,7 +458,7 @@ nav ol.breadcrumbs li a {
 }
 
 nav ol.breadcrumbs li a:hover {
-	text-decoration: underline .2rem var(--color-one);
+	text-decoration: underline .125rem var(--color-one);
 }
 
 .post-title {
