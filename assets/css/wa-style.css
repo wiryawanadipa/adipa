@@ -566,10 +566,7 @@ span.post-tag-list a:hover {
 }
 
 .wa-post-article figure {
-	background-color: var(--bg-color-three);
-	border-radius: .25rem;
 	margin: 0 auto 1.5rem;
-	padding: 1rem;
 }
 
 .wa-post-article figure img {
@@ -577,6 +574,9 @@ span.post-tag-list a:hover {
 	height: auto;
 	max-width: 100%;
 	margin: 0 auto;
+	padding: 1rem;
+	background-color: var(--bg-color-three);
+	border-radius: .25rem;
 }
 
 .wa-post-article blockquote {
