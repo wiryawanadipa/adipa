@@ -574,7 +574,7 @@ span.post-tag-list a:hover {
 	height: auto;
 	max-width: 100%;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: .75rem;
 	background-color: var(--bg-color-three);
 	border-radius: .25rem;
 }
@@ -678,6 +678,8 @@ span.post-tag-list a:hover {
 
 /* For Highlighting Code Block */
 .wa-post-article div.hcb_wrap {
+	border: .75rem solid var(--bg-color-three);
+	border-radius: .5rem;
 	margin: 0 auto 1.5rem;
 	word-wrap: break-word;
 }
@@ -685,11 +687,11 @@ span.post-tag-list a:hover {
 .wa-post-article div.hcb_wrap pre,
 .wa-post-article div.hcb_wrap code {
 	background-color: var(--bg-color-two);
+	white-space: pre-wrap;
 }
 
 .wa-post-article div.hcb_wrap pre {
-	max-height: 420px;
-	padding: 1rem;
+	padding: .625rem;
 }
 
 span.token.constant,
@@ -709,7 +711,7 @@ span.token.operator {
 }
 
 .wa-post-article div.hcb_wrap pre::-webkit-scrollbar-track {
-	background-color: var(--bg-color-two);
+	background-color: var(--bg-color-one);
 }
 
 .wa-post-article div.hcb_wrap pre::-webkit-scrollbar-thumb {
