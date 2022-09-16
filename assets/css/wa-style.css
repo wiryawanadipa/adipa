@@ -797,6 +797,8 @@ span.token.operator {
 	.hero {
 		height: 89vh;
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-top: .5rem solid var(--color-one);
 		border-bottom: .5rem solid var(--color-one);
 	}
