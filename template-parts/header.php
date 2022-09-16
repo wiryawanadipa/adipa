@@ -21,10 +21,9 @@
 		<?php
 		$headcode = trim( get_option( 'head_code' ) );
 		if (null != get_option( 'head_code' ) && !empty( $headcode )) {
-			echo '<!-- Extra Code -->' . "\n";
-			echo get_option( 'head_code' ) . "\n";
+			echo get_option( 'head_code' );
 		}
 		?>
 	</head>
 	<body>
-		<?php get_template_part( 'template-parts/parts/topnav' ); ?>
+		<?php get_template_part( 'template-parts/parts/top-menu' ); ?>

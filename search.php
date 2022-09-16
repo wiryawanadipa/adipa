@@ -6,7 +6,7 @@
 			<?php
 				while (have_posts()) {
 					the_post();
-					get_template_part( 'template-parts/parts/postcard' );
+					get_template_part( 'template-parts/parts/post-card' );
 				}
 			?>
 		</div>
@@ -33,7 +33,7 @@
 			if ($loop->have_posts()) {
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					get_template_part( 'template-parts/parts/postcard' );
+					get_template_part( 'template-parts/parts/post-card' );
 				}
 			} else {
 				echo '<div class="fs-1 text-center text-white">Coming Soon!</div>';

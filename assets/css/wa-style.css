@@ -430,14 +430,14 @@ a.postcard-tag::before {
 nav ol.breadcrumbs {
 	color: var(--text-normal);
 	border-bottom: 1px solid rgba(108, 117, 125, .5);
-	font-size: 1rem;
+	font-size: .9375rem;
 	margin: 0;
 	padding: 0 0 .375rem 0;
 }
 
 nav ol.breadcrumbs li {
 	display: inline;
-	font-size: 1rem;
+	font-size: .9375rem;
 	line-height: 1.75rem;
 }
 
@@ -813,7 +813,7 @@ span.token.operator {
 	nav ol.breadcrumbs,
 	nav ol.breadcrumbs li,
 	.post-info {
-		font-size: .875rem;
+		font-size: .8125rem;
 	}
 
 	.wa-post-article p,

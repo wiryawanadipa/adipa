@@ -24,8 +24,7 @@
 		<?php
 		$footercode = trim(get_option( 'footer_code' ));
 		if (null != get_option( 'footer_code' ) && !empty( $footercode )) {
-			echo '<!-- Extra Code -->' . "\n";
-			echo get_option( 'footer_code' ) . "\n";
+			echo get_option( 'footer_code' );
 		}
 		?>
 	</body>

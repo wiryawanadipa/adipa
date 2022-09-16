@@ -12,7 +12,7 @@
 		if (have_posts()) {
 			while (have_posts()) {
 				the_post();
-				get_template_part( 'template-parts/parts/postcard' );
+				get_template_part( 'template-parts/parts/post-card' );
 			}
 		} else {
 			echo '<div class="fs-1 text-center text-white">Coming Soon!</div>';

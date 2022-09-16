@@ -6,7 +6,7 @@
 			<header class="post-title-header">
 				<h1><?php the_title(); ?></h1>
 				<div class="post-info">
-					<i class="fa-solid fa-calendar-days"></i><span><time><?php echo get_the_date(); ?></time></span>
+					<i class="fa-solid fa-calendar-days"></i><span><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time></span>
 					<?php
 					if( has_tag() ) {
 						echo '<i class="fa-solid fa-tag"></i>';
