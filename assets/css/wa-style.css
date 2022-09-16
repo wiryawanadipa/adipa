@@ -438,7 +438,7 @@ nav ol.breadcrumbs {
 nav ol.breadcrumbs li {
 	display: inline;
 	font-size: .9375rem;
-	line-height: 1.75rem;
+	line-height: 1.5rem;
 }
 
 nav ol.breadcrumbs li.breadcrumb-list::before {
@@ -484,7 +484,7 @@ nav ol.breadcrumbs li a:hover {
 
 .post-info .post-tag-list a {
 	color: var(--text-normal);
-	text-decoration: underline .15rem var(--text-normal);
+	text-decoration: underline .125rem var(--text-normal);
 }
 
 span.post-tag-list {
@@ -496,7 +496,7 @@ span.post-tag-list a::before {
 }
 
 span.post-tag-list a:hover {
-	text-decoration: underline .15rem var(--color-one);
+	text-decoration: underline .125rem var(--color-one);
 }
 
 .wa-post-article {
@@ -814,6 +814,10 @@ span.token.operator {
 	nav ol.breadcrumbs li,
 	.post-info {
 		font-size: .8125rem;
+	}
+
+	nav ol.breadcrumbs li {
+		line-height: 1.375rem;
 	}
 
 	.wa-post-article p,
