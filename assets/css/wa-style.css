@@ -189,6 +189,12 @@ ul.wa-search button:hover {
 	border-bottom: 1rem solid var(--color-one);
 }
 
+.hero * {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
 .herobox {
 	border: 1rem solid var(--bg-color-three);
 	border-radius: .5rem;
@@ -199,7 +205,6 @@ ul.wa-search button:hover {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	justify-content: center;
 }
 
 .hero-heading-name {
@@ -226,7 +231,7 @@ ul.wa-search button:hover {
 
 .hero-heading-link {
 	display: flex;
-	gap: .5rem;
+	gap: 1rem;
 	margin-bottom: .75rem;
 }
 
@@ -792,9 +797,6 @@ span.token.operator {
 	.hero {
 		height: 89vh;
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
 		border-top: .5rem solid var(--color-one);
 		border-bottom: .5rem solid var(--color-one);
 	}
