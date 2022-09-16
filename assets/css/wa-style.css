@@ -887,6 +887,10 @@ span.token.operator {
 		margin-bottom: .5rem;
 	}
 
+	.wa-related-post h2{
+		margin-bottom: .5rem;
+	}
+
 	.wa-related-post a {
 		font-size: 1rem;
 	}
