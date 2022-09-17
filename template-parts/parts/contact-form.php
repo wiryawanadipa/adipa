@@ -25,14 +25,15 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			} else {
 				$email = $sanitizeemail;
 			}
+			$maxMessageChar = 1000;
 			if ($sanitizemessage === '') {
 				$emptyMessageError = true;
-			} else if ($countMessage > 1000) {
+			} else if ($countMessage > $maxMessageChar) {
 				$longMessageError = true;
 			} else {
 				$message = $sanitizemessage;
 			}
-			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < 1001 && !empty($_POST['g-recaptcha-response'])) {
+			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar - 1) && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option('wa_recaptcha_secret_key');
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
