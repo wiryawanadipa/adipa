@@ -33,7 +33,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			} else {
 				$message = $sanitizemessage;
 			}
-			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar - 1) && !empty($_POST['g-recaptcha-response'])) {
+			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar + 1) && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option('wa_recaptcha_secret_key');
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
@@ -107,7 +107,20 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="1000" name="message" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 						</div>
 					</div>
-					<div id="messagecharcounter" class="mb-3 text-end text-light">
+					<?php
+					if (isset($_POST['submit'])) {
+						if ($countMessage > $maxMessageChar - 1) {
+							$color = 'text-danger';
+						} elseif ($countMessage < $maxMessageChar && $countMessage > $maxMessageChar * (90 / 100)) {
+							$color = 'text-warning';
+						} else {
+							$color = 'text-light';
+						}
+					} else {
+						$color = 'text-light';
+					}
+					?>
+					<div id="messagecharcounter" class="mb-3 text-end <?php echo $color;  ?>">
 						<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $countMessage; } else { echo '0'; } ?></span>
 						<span id="maxchar">/ 1000</span>
 					</div>
