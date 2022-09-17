@@ -1,5 +1,6 @@
 <?php
 if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key')) && null != get_option('wa_mail') && !empty(get_option('wa_mail'))) {
+	$maxMessageChar = 1000;
 	if (isset($_POST['submit'])) {
 		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
@@ -25,7 +26,6 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			} else {
 				$email = $sanitizeemail;
 			}
-			$maxMessageChar = 1000;
 			if ($sanitizemessage === '') {
 				$emptyMessageError = true;
 			} else if ($countMessage > $maxMessageChar) {
@@ -75,7 +75,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a message.</div>';
 				}
 				if (isset($longMessageError)) {
-					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than 1000 characters.</div>';
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than' . $maxMessageChar . 'characters.</div>';
 				}
 				if (empty($_POST['g-recaptcha-response'])) {
 					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
@@ -104,7 +104,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					<div class="row mb-3">
 						<div class="col-12">
 							<label class="mb-2">Message<span>&#42;</span></label>
-							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="1000" name="message" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" name="message" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 						</div>
 					</div>
 					<?php
@@ -122,13 +122,13 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					?>
 					<div id="messagecharcounter" class="mb-3 text-end <?php echo $color;  ?>">
 						<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $countMessage; } else { echo '0'; } ?></span>
-						<span id="maxchar">/ 1000</span>
+						<span id="maxchar">/ <?php echo $maxMessageChar; ?></span>
 					</div>
 					<script>
 					const messageElement = document.querySelector("#message");
 					const characterCounterElement = document.querySelector("#messagecharcounter");
 					const typedCharElement = document.querySelector("#typedchar");
-					const maxChar = 1000;
+					const maxChar = <?php echo $maxMessageChar; ?>;
 					message.addEventListener("input", event => {
 						const typedChar = message.value.length;
 						if (typedChar > maxChar) {
