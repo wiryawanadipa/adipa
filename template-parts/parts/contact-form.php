@@ -7,17 +7,21 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
 		$sanitizemessage = sanitize_textarea_field($_POST['message']);
+		$countName = mb_strlen($sanitizecontactName);
+		$countEmail = mb_strlen($sanitizeemail);
+		$newLines = substr_count($sanitizemessage, "\n");
+		$countMessage = (mb_strlen($sanitizemessage) - $newLines);
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
 			if ($sanitizecontactName === '') {
 				$emptyNameError = true;
-			} else if (strlen($sanitizecontactName) > 50) {
+			} else if ($countName > 50) {
 				$longNameError = true;
 			} else {
 				$name = $sanitizecontactName;
 			}
 			if ($sanitizeemail === '')  {
 				$emptyEmailError = true;
-			} else if (strlen($sanitizeemail) > 80) {
+			} else if ($countEmail > 80) {
 				$longEmailError = true;
 			} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,6}$/i", $sanitizeemail)) {
 				$invalidEmailError = true;
@@ -26,12 +30,12 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			}
 			if ($sanitizemessage === '') {
 				$emptyMessageError = true;
-			} else if (strlen($sanitizemessage) > 1000) {
+			} else if ($countMessage > 1000) {
 				$longMessageError = true;
 			} else {
 				$message = $sanitizemessage;
 			}
-			if (!isset($emptyNameError) && strlen($sanitizecontactName) < 51 && !isset($emptyEmailError) && strlen($sanitizeemail) < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && strlen($sanitizemessage) < 1001 && !empty($_POST['g-recaptcha-response'])) {
+			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < 1001 && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option('wa_recaptcha_secret_key');
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
@@ -106,7 +110,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 						</div>
 					</div>
 					<div id="messagecharcounter" class="mb-3 text-end text-light">
-						<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo strlen($sanitizemessage); } else { echo '0'; } ?></span>
+						<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $countMessage; } else { echo '0'; } ?></span>
 						<span id="maxchar">/ 1000</span>
 					</div>
 					<script>
@@ -120,11 +124,11 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 							return false;
 						}
 						typedCharElement.textContent = typedChar;
-						if (typedChar > maxChar-1) {
+						if (typedChar > maxChar - 1) {
 							characterCounterElement.classList = "mb-3 text-end text-danger";
-						} else if (typedChar < maxChar && typedChar > maxChar-100) {
+						} else if (typedChar < maxChar && typedChar > maxChar * (90 / 100)) {
 							characterCounterElement.classList = "mb-3 text-end text-warning";
-						} else if (typedChar < maxChar-99) {
+						} else if (typedChar < maxChar - ((maxChar * (10 / 100)) - 1)) {
 							characterCounterElement.classList = "mb-3 text-end text-light";
 						}
 					});
