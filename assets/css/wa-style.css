@@ -309,28 +309,18 @@ ul.wa-search button:hover {
 /* Postcard */
 .postcard {
 	background-color: var(--bg-color-two);
+	border: 4px dotted var(--bg-color-one);
+	border-radius: .5rem;
+	padding: .75rem;
+	position: relative;
 }
 
 .postcard:hover {
 	background-color: var(--bg-color-two-hover);
 }
 
-.postcard-image {
-	overflow: hidden;
-	position: relative;
-}
-.postcard-image img {
-	width: 100%;
-	height: auto;
-	-webkit-transition: transform 1s;
-	-moz-transition: transform 1s;
-	-o-transition: transform 1s;
-	transition: transform 1s;
-	z-index: 9996;
-}
-
-.postcard:hover img {
-	transform: scale(1.1);
+.postcard-date {
+	color: var(--text-muted);
 }
 
 .postcard h2,
@@ -343,20 +333,12 @@ ul.wa-search button:hover {
 	color: var(--text-normal);
 }
 
-.postcard a {
-	-webkit-transition: text-decoration-color .2s;
-	-moz-transition: text-decoration-color .2s;
-	-o-transition: text-decoration-color .2s;
-	transition: text-decoration-color .2s;
-}
-
 .postcard .stretched-link::after {
 	z-index: 9998;
 }
 
 .postcard a:hover {
-	color: var(--text-normal);
-	text-decoration: underline .2rem var(--color-one);
+	color: var(--color-one);
 }
 
 .postcard-tag-list,
@@ -393,7 +375,7 @@ a.postcard-tag::before {
 
 .stretched-link {
 	text-decoration: none;
-	color: var(--text-normal);
+	color: var(--color-three);
 }
 
 /* Pagination */
