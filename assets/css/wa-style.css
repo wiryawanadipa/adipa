@@ -186,8 +186,10 @@ ul.wa-search button:hover {
 /* Hero */
 .hero {
 	background-color: var(--bg-color-three);
-	border-top: 1rem solid var(--color-one);
-	border-bottom: 1rem solid var(--color-one);
+	border-top: 1rem solid;
+	border-bottom: 1rem solid;
+    border-image-source: linear-gradient(to right, #fc5c65, #eb3b5a, #fc434d 10%, #eb3b5a, #fc5c65);
+    border-image-slice: 1;
 }
 
 .hero * {
