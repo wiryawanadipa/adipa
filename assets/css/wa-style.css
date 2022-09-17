@@ -186,10 +186,27 @@ ul.wa-search button:hover {
 /* Hero */
 .hero {
 	background-color: var(--bg-color-three);
-	border-top: 1rem solid;
-	border-bottom: 1rem solid;
-    border-image-source: linear-gradient(to right, #fc5c65, #eb3b5a, #fc434d 10%, #eb3b5a, #fc5c65);
-    border-image-slice: 1;
+}
+
+.hero::before, .hero::after {
+	content: '';
+	display: block;
+	height: 1rem;
+	background: linear-gradient(-45deg, var(--color-one), var(--color-two), var(--color-three));
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .hero * {
@@ -199,8 +216,8 @@ ul.wa-search button:hover {
 }
 
 .herobox {
-	border: 1rem solid var(--bg-color-three);
 	border-radius: .5rem;
+	padding: 12rem 3rem;
 	overflow: hidden;
 }
 
@@ -784,12 +801,29 @@ span.token.operator {
 	}
 
 	.hero {
-		height: 89vh;
+		min-height: 90vh;
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-top: .5rem solid var(--color-one);
-		border-bottom: .5rem solid var(--color-one);
+	}
+	
+	.hero::before, .hero::after {
+		height: .5rem;
+		position: absolute;
+		width: 100%;
+	}
+
+	.hero::before {
+		top: 0;
+	}
+
+	.hero::after {
+		bottom: 0;
+	}
+
+	.herobox {
+		padding: 4rem 1rem;
 	}
 
 	.hero-heading-name,

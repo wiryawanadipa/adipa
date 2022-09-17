@@ -1,6 +1,6 @@
-<div class="hero py-5">
-	<div class="herobox container-xl py-0 py-sm-5">
-		<div class="row py-4 py-sm-5">
+<div class="hero">
+	<div class="herobox container-xl">
+		<div class="row">
 			<div class="col-lg-4 d-none d-lg-block">
 				<div class="hero-photo">
 					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="192px" height="192px" alt="wa logo big">
