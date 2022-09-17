@@ -326,11 +326,13 @@ ul.wa-search button:hover {
 .postcard h2,
 .postcard h3 {
 	font-size: 2rem;
-	line-height: 1;
+	line-height: .9375;
+	margin-bottom: .75rem;
 }
 
 .postcard p {
 	color: var(--text-normal);
+	margin-bottom: .75rem;
 }
 
 .postcard .stretched-link::after {

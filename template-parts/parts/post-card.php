@@ -3,9 +3,9 @@
 		<div class="postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
 		<?php
 		if (is_home()) {
-			echo '<h3 class="mb-3">';
+			echo '<h3>';
 		} else {
-			echo '<h2 class="mb-3">';
+			echo '<h2>';
 		}
 		echo '<a class="fs-5 stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
 		if (is_home()) {
