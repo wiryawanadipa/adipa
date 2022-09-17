@@ -1,8 +1,5 @@
 <?php
 if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key')) && null != get_option('wa_mail') && !empty(get_option('wa_mail'))) {
-	if (!isset($emailSent)) {
-		echo '<div class="p-3 my-2 bg-success rounded-1">If you wish to contact me directly use this contact form. I&lsquo;ll be in touch within 2x24 hours.</div>';
-	}
 	if (isset($_POST['submit'])) {
 		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
