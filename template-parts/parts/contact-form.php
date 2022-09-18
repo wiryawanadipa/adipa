@@ -129,7 +129,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 					const characterCounterElement = document.querySelector("#messagecharcounter");
 					const typedCharElement = document.querySelector("#typedchar");
 					const maxChar = <?php echo $maxMessageChar; ?>;
-					messageElement.addEventListener("input", event => {
+					messageElement.addEventListener("input", (e) => {
 						const typedChar = messageElement.value.length;
 						if (typedChar > maxChar) {
 							return false;
