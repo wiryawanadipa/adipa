@@ -194,7 +194,7 @@ ul.wa-search button:hover {
 	height: 1rem;
 	background: linear-gradient(-45deg, var(--color-one), var(--color-two), var(--color-three));
 	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
+	animation: gradient 8s ease infinite;
 }
 
 @keyframes gradient {
