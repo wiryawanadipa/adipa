@@ -328,7 +328,7 @@ ul.wa-search button:hover {
 /* Postcard */
 .postcard {
 	background-color: var(--bg-color-two);
-	border: 4px dotted var(--bg-color-one);
+	border: 4px double var(--bg-color-one);
 	border-radius: .5rem;
 	padding: .75rem;
 	position: relative;
