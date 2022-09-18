@@ -340,6 +340,7 @@ ul.wa-search button:hover {
 
 .postcard-date {
 	color: var(--text-muted);
+	line-height: 1.125rem;
 }
 
 .postcard h2,
