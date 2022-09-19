@@ -692,7 +692,6 @@ span.post-tag-list a:hover {
 .wa-post-article div.hcb_wrap pre,
 .wa-post-article div.hcb_wrap code {
 	background-color: var(--bg-color-two);
-	white-space: pre-wrap;
 }
 
 .wa-post-article div.hcb_wrap pre {
