@@ -583,11 +583,11 @@ span.post-tag-list a:hover {
 .wa-post-article a {
 	color: var(--text-normal);
 	font-weight: 500;
-	text-decoration: underline .1875rem var(--color-one);
+	text-decoration: underline .1875rem var(--text-normal);
 }
 
 .wa-post-article a:hover {
-	text-decoration: underline .25rem var(--color-one);
+	text-decoration: underline .1875rem var(--color-one);
 }
 
 .wa-post-article figure {
