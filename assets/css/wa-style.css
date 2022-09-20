@@ -343,6 +343,26 @@ ul.wa-search button:hover {
 	line-height: 1.125rem;
 }
 
+.postcard-image {
+	margin-bottom: .75rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.postcard-image img {
+	width: 100%;
+	height: auto;
+	-webkit-transition: transform 1s;
+	-moz-transition: transform 1s;
+	-o-transition: transform 1s;
+	transition: transform 1s;
+	z-index: 9996;
+}
+
+.postcard:hover img {
+	transform: scale(1.1);
+}
+
 .postcard h2,
 .postcard h3 {
 	font-size: 2rem;

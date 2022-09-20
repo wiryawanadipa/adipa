@@ -1,7 +1,13 @@
 <div class="col-sm-6 col-lg-4">
 	<div class="postcard">
-		<div class="postcard-date"><?php echo get_the_date('F j, Y'); ?></div>
 		<?php
+		if (has_post_thumbnail ($post->ID) && is_category( 'design-gallery' ) || is_category( 'project' )) {
+			$image_id = get_post_thumbnail_id($post->ID);
+			$image_title = get_the_title($image_id);
+			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'bigthumb');
+			echo '<div class="postcard-image"><img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" /></div>';
+		}
+		echo '<div class="postcard-date">' . get_the_date('F j, Y') . '</div>';
 		if (is_home()) {
 			echo '<h3>';
 		} else {
