@@ -311,7 +311,7 @@ ul.wa-search button:hover {
 }
 
 .home-quote blockquote span:before {
-	content: 'Overdesigned UIs that look better than they function need to die.';
+	content: 'Overdesigned UI that look better than they function need to die.';
 }
 
 .home-quote blockquote span::after {
