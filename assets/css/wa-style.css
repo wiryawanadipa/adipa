@@ -682,6 +682,10 @@ span.post-tag-list a:hover {
 	color: var(--color-one);
 }
 
+.contact-form .subject {
+	display: none;
+}
+
 .contact-form .form-control:focus {
 	border-color: var(--color-one);
 	box-shadow: 0 0 0 .125rem var(--color-two);

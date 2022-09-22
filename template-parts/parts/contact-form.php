@@ -2,20 +2,21 @@
 if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key')) && null != get_option('wa_mail') && !empty(get_option('wa_mail'))) {
 	$maxMessageChar = 1000;
 	if (isset($_POST['submit'])) {
-		$sanitizecontactName = sanitize_text_field($_POST['contactName']);
+		$sanitizename = sanitize_text_field($_POST['sname']);
 		$sanitizeemail = sanitize_text_field($_POST['email']);
 		$sanitizemessage = sanitize_textarea_field($_POST['message']);
-		$countName = mb_strlen($sanitizecontactName);
+		$sanitizesubject = sanitize_text_field($_POST['subject']);
+		$countName = mb_strlen($sanitizename);
 		$countEmail = mb_strlen($sanitizeemail);
 		$newLines = substr_count($sanitizemessage, "\n");
 		$countMessage = (mb_strlen($sanitizemessage) - $newLines);
 		if ($_SESSION['rand'] == $_POST['randcheck']) {
-			if ($sanitizecontactName === '') {
+			if ($sanitizename === '') {
 				$emptyNameError = true;
 			} else if ($countName > 50) {
 				$longNameError = true;
 			} else {
-				$name = $sanitizecontactName;
+				$name = $sanitizename;
 			}
 			if ($sanitizeemail === '')  {
 				$emptyEmailError = true;
@@ -33,7 +34,10 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			} else {
 				$message = $sanitizemessage;
 			}
-			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar + 1) && !empty($_POST['g-recaptcha-response'])) {
+			if ($sanitizesubject === '')  {
+				$emptySubjectError = true;
+			}
+			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar + 1) && isset($emptySubjectError) && !empty($_POST['g-recaptcha-response'])) {
 				$secret = get_option('wa_recaptcha_secret_key');
 				$ip = $_SERVER['REMOTE_ADDR'];
 				$captcha = $_POST['g-recaptcha-response'];
@@ -77,6 +81,9 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 				if (isset($longMessageError)) {
 					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Your message is too long. Message should be no more than' . $maxMessageChar . 'characters.</div>';
 				}
+				if (!isset($emptySubjectError)) {
+					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> SPAMMER!</div>';
+				}
 				if (empty($_POST['g-recaptcha-response'])) {
 					echo '<div class="p-3 my-2 bg-danger rounded-1"><i class="fa-solid fa-triangle-exclamation"></i> Please check the captcha.</div>';
 				}
@@ -91,20 +98,22 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 		<div id="content" role="main">
 			<form action="" method="post">
 				<fieldset>
-					<div class="row mb-0 mb-md-3">
-						<div class="col-12 col-md-6 mb-3 mb-md-0">
-							<label class="mb-2">Name<span>&#42;</span></label>
-							<input class="form-control" name="contactName" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['contactName']) && !isset($emailSent)) { echo $sanitizecontactName; } else { echo ''; } ?>" required>
-						</div>
-						<div class="col-12 col-md-6 mb-3 mb-md-0">
-							<label class="mb-2">E-Mail<span>&#42;</span></label>
-							<input class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } else { echo ''; } ?>" required>
-						</div>
-					</div>
 					<div class="row mb-3">
-						<div class="col-12">
-							<label class="mb-2">Message<span>&#42;</span></label>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="sname" class="mb-2">Name<span>&#42;</span></label>
+							<input id="sname" class="form-control" name="sname" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } else { echo ''; } ?>" required>
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="email" class="mb-2">E-Mail<span>&#42;</span></label>
+							<input id="email" class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } else { echo ''; } ?>" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label for="message" class="mb-2">Message<span>&#42;</span></label>
 							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" name="message" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+						</div>
+						<div class="col-12 subject">
+							<label class="mb-2">If you see this, leave form field below blank.</label>
+							<input class="form-control" name="subject" type="text" tabindex="-1" autocomplete="off">
 						</div>
 					</div>
 					<?php
