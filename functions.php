@@ -105,9 +105,36 @@ add_filter('login_headertext', 'my_login_logo_url_title');
 function wa_login_style() {
 	global $theme_version, $random_number;
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
+	wp_register_script('wa-login-recaptcha', 'https://www.google.com/recaptcha/api.js', false, NULL);
 	wp_enqueue_style('wa-login-style');
+	wp_enqueue_script('wa-login-recaptcha');
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
+
+// Add reCaptcha on login page
+function add_recaptcha_on_login_page() {
+	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
+}
+add_action('login_form','add_recaptcha_on_login_page');
+
+// Validating reCaptcha on login page
+function captcha_login_check($user, $password) {
+	if (!empty($_POST['g-recaptcha-response'])) {
+		$secret = get_option('wa_recaptcha_secret_key');
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$captcha = $_POST['g-recaptcha-response'];
+		$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
+		$valid = json_decode($rsp, true);
+		if ($valid["success"] == true) {
+			return $user;
+		} else {
+			return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
+		}
+	} else {
+		return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
+	}
+}
+add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
 
 // Show fake error in login page (just for fun)
 function login_error() {
@@ -127,17 +154,12 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
-	global $theme_version, $random_number;
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, $theme_version . $random_number);
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, NULL);
+	wp_register_style('wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css', false, NULL);
 	wp_enqueue_style('wa_custom_admin_css');
-}
-add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
-
-function fontawesome_icon() {
-	wp_register_style('wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
 	wp_enqueue_style('wa_fontawesome_icon');
 }
-add_action('admin_enqueue_scripts', 'fontawesome_icon');
+add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
 
 // Disable load HCB styles & scripts if it's not in single post
 function wa_deregister_styles() {
