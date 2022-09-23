@@ -67,6 +67,7 @@ body {
 /* Navigation Bar */
 button.navbar-toggler {
 	border-radius: 50rem;
+	font-size: 1.125rem;
 }
 
 .wa-brand {
@@ -94,13 +95,15 @@ button.navbar-toggler {
 }
 
 .navbar-toggler:focus {
+	box-shadow: 0 0 0 .125rem;
 	color: var(--color-one);
 }
 
 .wa-navbar a,
 .wa-navbar a:focus {
-	border-radius: .5rem;
+	border-radius: 1.125rem;
 	color: var(--text-normal);
+	transition: none;
 }
 
 .wa-navbar a:hover,
@@ -111,7 +114,7 @@ button.navbar-toggler {
 }
 
 .wa-top-menu {
-	padding: .3125rem;
+	padding: .3125rem .5rem;
 }
 
 .wa-top-menu::before {
@@ -127,6 +130,8 @@ button.navbar-toggler {
 .wa-navbar ul {
 	background-color: var(--bg-color-two);
 	border-color: var(--bg-color-two);
+	gap: .25rem;
+	text-align: center;
 }
 
 .dropdown-item:focus,
@@ -143,6 +148,7 @@ ul.dropdown-menu {
 
 ul.wa-search.show {
 	background-color: var(--bg-color-three);
+	margin-top: .25rem;
 }
 
 ul.wa-search form {
@@ -154,8 +160,9 @@ ul.wa-search form {
 ul.wa-search input {
 	border: none;
 	padding: .375rem;
-	min-width: 300px;
+	min-width: 240px;
 	width: 100%;
+	max-width: calc(100% - 38px);
 }
 
 ul.wa-search input:focus {
@@ -824,6 +831,10 @@ span.token.operator {
 	.dropdown-menu input {
 		min-width: 180px;
 	}
+	
+	ul.wa-search.show {
+		margin-top: .5rem;
+	}
 
 	.hero {
 		min-height: 90vh;
@@ -922,15 +933,11 @@ span.token.operator {
 
 @media (max-width: 767px) {
 	.wa-navbar {
-		padding: 1rem 0;
+		padding: .75rem 0;
 	}
 
 	.wa-top-menu {
-		padding: .75rem .5rem;
-	}
-
-	.nav-item {
-		margin-bottom: .5rem;
+		padding: .5rem;
 	}
 
 	.wa-related-post h2{
