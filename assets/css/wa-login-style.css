@@ -30,6 +30,7 @@ body.login {
 }
 
 #login h1 {
+	display: none;
 	margin-bottom: .25rem;
 }
 
@@ -108,6 +109,10 @@ input#wp-submit {
 	color: var(--text-normal) !important;
 	margin-bottom: .25rem !important;
 	text-align: center;
+}
+
+.login .privacy-policy-page-link {
+	display: none;
 }
 
 #nav, #backtoblog, .privacy-policy-page-link {
