@@ -199,6 +199,7 @@ ul.wa-search button:hover {
 	content: '';
 	display: block;
 	height: 1rem;
+	background: var(--color-one);
 	background: linear-gradient(-45deg, var(--color-one), var(--color-two), var(--color-three));
 	background-size: 400% 400%;
 	animation: gradient 8s ease infinite;
