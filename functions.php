@@ -111,16 +111,17 @@ function wa_login_style() {
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
 
-// Add reCaptcha on login page
+// Add reCaptcha & honeypot on login page
 function add_recaptcha_on_login_page() {
+	echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
 	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
 }
 add_action('login_form','add_recaptcha_on_login_page');
-add_action( 'register_form', 'add_recaptcha_on_login_page' );
+add_action('register_form', 'add_recaptcha_on_login_page');
 
-// Validating reCaptcha on login page
+// Validating reCaptcha & honeypot on login page
 function captcha_login_check($user, $password) {
-	if (!empty($_POST['g-recaptcha-response'])) {
+	if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
 		$secret = get_option('wa_recaptcha_secret_key');
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$captcha = $_POST['g-recaptcha-response'];
@@ -137,11 +138,6 @@ function captcha_login_check($user, $password) {
 }
 add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
 add_action('registration_errors', 'captcha_login_check', 10, 2);
-
-function add_honeypot_on_login_page() {
-	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
-}
-add_action('login_form','add_recaptcha_on_login_page');
 
 // Show fake error in login page (just for fun)
 function login_error() {
