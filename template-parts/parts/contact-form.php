@@ -112,7 +112,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 							<textarea id="message" class="form-control" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" name="message" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 						</div>
 						<div class="col-12 subject">
-							<label class="mb-2">If you see this, leave form field below blank.</label>
+							<label class="mb-2">If you see this, leave this form field blank.</label>
 							<input class="form-control" name="subject" type="text" tabindex="-1" autocomplete="off">
 						</div>
 					</div>
