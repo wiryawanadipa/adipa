@@ -682,8 +682,9 @@ span.post-tag-list a:hover {
 	color: var(--color-one);
 }
 
-.contact-form .subject {
+.contact-form .subject-form {
 	display: none;
+	opacity: 0;
 }
 
 .contact-form .form-control:focus {
