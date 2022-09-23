@@ -25,7 +25,7 @@ body.login {
 
 #login {
 	display: grid;
-	padding: 0;
+	padding: .25rem;
 	width: 350px;
 }
 
