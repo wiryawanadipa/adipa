@@ -26,7 +26,8 @@ body.login {
 #login {
 	display: grid;
 	padding: .25rem 0;
-	width: 350px;
+	max-width: 340px;
+	width: 100%;
 }
 
 #login h1 {
