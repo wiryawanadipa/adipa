@@ -104,39 +104,40 @@ add_filter('login_headertext', 'my_login_logo_url_title');
 function wa_login_style() {
 	global $theme_version, $random_number;
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
-	wp_register_script('wa-login-recaptcha', 'https://www.google.com/recaptcha/api.js', false, NULL);
 	wp_enqueue_style('wa-login-style');
-	wp_enqueue_script('wa-login-recaptcha');
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
 
-// Add reCaptcha & honeypot on login page
-function add_recaptcha_on_login_page() {
-	echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
-	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
-}
-add_action('login_form','add_recaptcha_on_login_page');
-add_action('register_form', 'add_recaptcha_on_login_page');
+if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key'))) {
+	// Add reCaptcha & honeypot on login page
+	function add_recaptcha_on_login_page() {
+		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
+		echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
+		echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
+	}
+	add_action('login_form','add_recaptcha_on_login_page');
+	add_action('register_form', 'add_recaptcha_on_login_page');
 
-// Validating reCaptcha & honeypot on login page
-function captcha_login_check($user, $password) {
-	if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
-		$secret = get_option('wa_recaptcha_secret_key');
-		$ip = $_SERVER['REMOTE_ADDR'];
-		$captcha = $_POST['g-recaptcha-response'];
-		$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
-		$valid = json_decode($rsp, true);
-		if ($valid["success"] == true) {
-			return $user;
+	// Validating reCaptcha & honeypot on login page
+	function captcha_login_check($user, $password) {
+		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
+			$secret = get_option('wa_recaptcha_secret_key');
+			$ip = $_SERVER['REMOTE_ADDR'];
+			$captcha = $_POST['g-recaptcha-response'];
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
+			$valid = json_decode($rsp, true);
+			if ($valid["success"] == true) {
+				return $user;
+			} else {
+				return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
+			}
 		} else {
 			return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
 		}
-	} else {
-		return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
 	}
+	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
+	add_action('registration_errors', 'captcha_login_check', 10, 2);
 }
-add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
-add_action('registration_errors', 'captcha_login_check', 10, 2);
 
 // Show fake error in login page (just for fun)
 function login_error() {
