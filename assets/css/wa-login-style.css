@@ -16,12 +16,16 @@
 }
 
 body.login {
+    align-items: center;
 	background-color: var(--bg-color-one);
+    display: flex;
 	font-family: var(--font-rubik) !important;
+	justify-content: center;
 }
 
 #login {
 	display: grid;
+	padding: 0;
 	width: 350px;
 }
 
@@ -46,7 +50,8 @@ input:focus {
 	background-color: var(--bg-color-three);
 	border: 0;
 	border-radius: .25rem;
-	margin: .5rem 0 !important;
+	margin: 0 0 .25rem !important;
+	padding: 24px !important;
 }
 
 #loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
@@ -83,11 +88,11 @@ input:focus {
 	background-color: var(--bg-color-three) !important;
 	border-left-color: var(--color-one) !important;
 	color: var(--text-normal) !important;
-	margin: .5rem 0 !important;
+	margin: .25rem 0 !important;
 }
 
 #nav, #backtoblog, .privacy-policy-page-link {
-	margin: 1.25rem 0 !important;
+	margin: .25rem 0 !important;
 	padding: 0 !important;
 	text-align: center !important;
 }
@@ -96,7 +101,8 @@ input:focus {
 	background-color: var(--bg-color-two);
 	border-radius: .25rem;
 	color: var(--text-normal) !important;
-	padding: 1rem;
+	display: inline-block;
+	padding: .75rem;
 	text-decoration: none;
 }
 
