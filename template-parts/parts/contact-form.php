@@ -93,28 +93,26 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 		}
 	}
 	?>
-	<div class="my-4 contact-form">
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<div id="content" role="main">
-			<form action="" method="post">
-				<fieldset>
-					<div class="row mb-3">
-						<div class="col-12 col-md-6 mb-3">
-							<label for="sname" class="mb-2">Name<span>&#42;</span></label>
-							<input id="sname" class="form-control" name="sname" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } else { echo ''; } ?>" required>
-						</div>
-						<div class="col-12 col-md-6 mb-3">
-							<label for="email" class="mb-2">E-Mail<span>&#42;</span></label>
-							<input id="email" class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } else { echo ''; } ?>" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label for="message" class="mb-2">Message<span>&#42;</span></label>
-							<textarea id="message" class="form-control" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
-						</div>
-						<div class="col-12 subject-form">
-							<label class="mb-2">If you see this, leave this form field blank.</label>
-							<input class="form-control" name="subject" type="text" tabindex="-1" autocomplete="off">
-						</div>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<form action="" method="post" class="pb-5 contact-form">
+		<fieldset>
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6 mb-3">
+						<label for="sname" class="mb-2">Name<span>&#42;</span></label>
+						<input id="sname" class="form-control" name="sname" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } else { echo ''; } ?>" required>
+					</div>
+					<div class="col-12 col-md-6 mb-3">
+						<label for="email" class="mb-2">E-Mail<span>&#42;</span></label>
+						<input id="email" class="form-control" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } else { echo ''; } ?>" required>
+					</div>
+					<div class="col-12 mb-3">
+						<label for="message" class="mb-2">Message<span>&#42;</span></label>
+						<textarea id="message" class="form-control" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="6" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+					</div>
+					<div class="col-12 subject-form">
+						<label class="mb-2">If you see this, leave this form field blank.</label>
+						<input class="form-control" name="subject" type="text" tabindex="-1" autocomplete="off">
 					</div>
 					<?php
 					if (isset($_POST['submit'])) {
@@ -153,23 +151,21 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 						}
 					});
 					</script>
-					<div class="row mb-4">
-						<div class="col-12 col-md-6 mb-4 mb-md-0">
-							<div class="g-recaptcha brochure__form__captcha" data-sitekey="<?php echo get_option('wa_recaptcha_site_key'); ?>"></div>
-						</div>
-						<div class="col-12 col-md-6 mb-4 mb-md-0 text-start text-md-end">
-							<?php 
-							$rand = rand();
-							$_SESSION['rand'] = $rand;
-							?>
-							<input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
-							<button type="submit"  name="submit" value="Send" class="btn btn-primary">Send Message</button>
-						</div>
+					<div class="col-12 col-md-6 mb-4 mb-md-0">
+						<div class="g-recaptcha brochure__form__captcha" data-sitekey="<?php echo get_option('wa_recaptcha_site_key'); ?>"></div>
 					</div>
-				</fieldset>
-			</form>       
-		</div>
-	</div>
+					<div class="col-12 col-md-6 mb-4 mb-md-0 text-start text-md-end">
+						<?php 
+						$rand = rand();
+						$_SESSION['rand'] = $rand;
+						?>
+						<input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
+						<button type="submit"  name="submit" value="Send" class="btn btn-primary">Send Message</button>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
 <?php
 } else {
 ?>
