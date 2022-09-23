@@ -96,8 +96,8 @@ input:focus {
 	margin-bottom: 1rem;
 }
 
-#wp-submit {
-	background-color: var(--color-two);
+input#wp-submit {
+	background-color: var(--color-two) !important;
 }
 
 #wp-submit:hover {
