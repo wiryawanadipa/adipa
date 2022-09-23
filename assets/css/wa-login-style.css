@@ -3,6 +3,7 @@
 :root {
 	--color-one: #fc5c65;
 	--color-two: #eb3b5a;
+	--color-three: #fc757d;
 	--bg-color-one: #36454f;
 	--bg-color-two: #2c3840;
 	--bg-color-three: #212b31;
@@ -17,10 +18,25 @@
 
 body.login {
     align-items: center;
-	background-color: var(--bg-color-one);
+	background: rgb(63, 94, 251);
+	background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+	background-size: 400% 400%;
     display: flex;
 	font-family: var(--font-rubik) !important;
 	justify-content: center;
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #login {
@@ -30,7 +46,9 @@ body.login {
 }
 
 #login h1 {
-	background-color: var(--bg-color-three);
+	backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.65);
 	border-radius: .25rem;
 	margin-bottom: .25rem;
 }
@@ -53,7 +71,9 @@ input:focus {
 }
 
 #loginform, #lostpasswordform, #registerform {
-	background-color: var(--bg-color-three);
+	backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.65);
 	border: 0;
 	border-radius: .25rem;
 	margin: 0 0 .25rem !important;
@@ -65,7 +85,9 @@ input:focus {
 }
 
 #user_login, #loginform input, #user_email {
-	background-color: var(--bg-color-one) !important;
+	backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(77, 92, 120, 0.65) !important;
 	color: var(--text-normal) !important;
 	border: 0 !important;
 }
@@ -91,7 +113,9 @@ input:focus {
 }
 
 #login_error, .message, .success {
-	background-color: var(--color-two) !important;
+	backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(235, 59, 90, 0.65) !important;
 	border-left: none !important;
 	border-radius: .25rem;
 	color: var(--text-normal) !important;
@@ -100,13 +124,16 @@ input:focus {
 }
 
 #nav, #backtoblog, .privacy-policy-page-link {
+	color: transparent;
 	margin: .25rem 0 !important;
 	padding: 0 !important;
 	text-align: center !important;
 }
 
 #nav a, #backtoblog a, .privacy-policy-link {
-	background-color: var(--bg-color-two);
+	backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.65);
 	border-radius: .25rem;
 	color: var(--text-normal) !important;
 	display: inline-block;
