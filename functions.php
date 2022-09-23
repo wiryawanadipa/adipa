@@ -116,6 +116,7 @@ function add_recaptcha_on_login_page() {
 	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
 }
 add_action('login_form','add_recaptcha_on_login_page');
+add_action( 'register_form', 'add_recaptcha_on_login_page' );
 
 // Validating reCaptcha on login page
 function captcha_login_check($user, $password) {
@@ -135,6 +136,12 @@ function captcha_login_check($user, $password) {
 	}
 }
 add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
+add_action('registration_errors', 'captcha_login_check', 10, 2);
+
+function add_honeypot_on_login_page() {
+	echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
+}
+add_action('login_form','add_recaptcha_on_login_page');
 
 // Show fake error in login page (just for fun)
 function login_error() {
