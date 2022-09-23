@@ -66,6 +66,8 @@ input:focus {
 
 #loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
 	color: var(--text-normal);
+	font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 #user_login, #loginform input, #user_email {
