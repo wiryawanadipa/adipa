@@ -76,22 +76,6 @@ function add_site_favicon() {
 add_action('login_head', 'add_site_favicon');
 add_action('admin_head', 'add_site_favicon');
 
-// Get theme version
-function style_get_version() {
-	$theme_data = wp_get_theme();
-	return $theme_data->Version;
-}
-$theme_version = style_get_version();
-global $theme_version;
-
-// Get random number
-function style_get_random() {
-	$randomizr = '.' . rand(100,9999);
-	return $randomizr;
-}
-$random_number = style_get_random();
-global $random_number;
-
 // Change login looks
 function my_login_logo_url() {
 	return home_url();
@@ -105,8 +89,7 @@ add_filter('login_headertext', 'my_login_logo_url_title');
 
 // Custom style on login page
 function wa_login_style() {
-	global $theme_version, $random_number;
-	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, $theme_version . $random_number);
+	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, wp_get_theme()->get( 'Version' ) . '.' . rand(100,9999));
 	wp_enqueue_style('wa-login-style');
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
@@ -124,10 +107,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 	// Validating reCaptcha & honeypot on login page
 	function captcha_login_check($user, $password) {
 		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
-			$secret = get_option('wa_recaptcha_secret_key');
-			$ip = $_SERVER['REMOTE_ADDR'];
-			$captcha = $_POST['g-recaptcha-response'];
-			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
 				return $user;
@@ -150,9 +130,8 @@ add_filter('login_errors', 'login_error');
 
 // Include custom stylesheet on head
 function wa_style_queue_css() {
-	global $theme_version, $random_number;
 	if (!is_admin()) {
-		wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/wa-style.css', false, $theme_version . $random_number);
+		wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/wa-style.css', false, wp_get_theme()->get( 'Version' ) . '.' . rand(100,9999));
 		wp_enqueue_style('wa-style');
 	}
 }
