@@ -71,7 +71,11 @@ input:focus {
     margin-bottom: 0.5rem !important;
 }
 
-#user_login, #loginform input, #user_email {
+#reg_passmail, #resetpassform .description {
+	margin-bottom: 1rem !important;
+}
+
+#user_login, #loginform input, #user_email, #pass1 {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(77, 92, 120, 0.65) !important;
@@ -79,8 +83,22 @@ input:focus {
 	border: 0 !important;
 }
 
+.login #pass-strength-result {
+	border-radius: 50rem;
+	margin-top: .5rem;
+}
+
 .g-recaptcha {
 	margin-bottom: 1rem;
+}
+
+br.clear {
+	display: none;
+}
+
+#registerform .submit, .submit.reset-pass-submit {
+	justify-content: space-between;
+	width: 100%;
 }
 
 input[type=checkbox]:checked::before {
@@ -96,8 +114,12 @@ input#wp-submit {
 	background-color: var(--color-one) !important;
 }
 
-.button {
+.submit .button {
+	background-color: var(--color-two) !important;
 	border: 0 !important;
+	border-radius: 50rem !important;
+	color: var(--text-normal) !important;
+	margin-bottom: 0 !important;
 }
 
 .dashicons-visibility, .dashicons-hidden {
@@ -114,6 +136,10 @@ input#wp-submit {
 	font-size: .875rem;
 	margin-bottom: .5rem !important;
 	text-align: center;
+}
+
+#login_error a, .message a, .success a {
+	color: var(--text-normal);
 }
 
 .login .privacy-policy-page-link {
