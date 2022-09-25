@@ -75,7 +75,7 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, NULL);
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/wa-admin-style.css', false, NULL);
 	wp_register_style('wa_fontawesome_icon', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css', false, NULL);
 	wp_enqueue_style('wa_custom_admin_css');
 	wp_enqueue_style('wa_fontawesome_icon');
