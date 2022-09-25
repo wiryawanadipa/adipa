@@ -64,70 +64,6 @@ function breadcrumbs() {
 	echo '</nav>';
 }
 
-//  Add Favicon on login and admin page
-function add_site_favicon() {
-	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
-	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
-	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
-	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">';
-}
-add_action('login_head', 'add_site_favicon');
-add_action('admin_head', 'add_site_favicon');
-
-// Change login looks
-function my_login_logo_url() {
-	return home_url();
-}
-add_filter('login_headerurl', 'my_login_logo_url');
-
-function my_login_logo_url_title() {
-	return 'Wiryawan Adipa';
-}
-add_filter('login_headertext', 'my_login_logo_url_title');
-
-// Custom style on login page
-function wa_login_style() {
-	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, wp_get_theme()->get( 'Version' ) . '.' . rand(100,9999));
-	wp_enqueue_style('wa-login-style');
-}
-add_action('login_enqueue_scripts', 'wa_login_style');
-
-if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key'))) {
-	// Add reCaptcha & honeypot on login page
-	function add_recaptcha_on_login_page() {
-		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
-		echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
-		echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
-	}
-	add_action('login_form','add_recaptcha_on_login_page');
-	add_action('register_form', 'add_recaptcha_on_login_page');
-
-	// Validating reCaptcha & honeypot on login page
-	function captcha_login_check($user, $password) {
-		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
-			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
-			$valid = json_decode($rsp, true);
-			if ($valid["success"] == true) {
-				return $user;
-			} else {
-				return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
-			}
-		} else {
-			return new WP_Error('Captcha Invalid', __('<center>Captcha Invalid! Please check the captcha!</center>'));
-		}
-	}
-	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
-	add_action('registration_errors', 'captcha_login_check', 10, 2);
-}
-
-// Show fake error in login page (just for fun)
-function login_error() {
-	return '<center>Your IP is blocked</center>';
-}
-add_filter('login_errors', 'login_error');
-
 // Include custom stylesheet on head
 function wa_style_queue_css() {
 	if (!is_admin()) {
@@ -162,6 +98,101 @@ function wa_deregister_script() {
 	}
 }
 add_action('wp_print_scripts', 'wa_deregister_script');
+
+// Custom style on login page
+function wa_login_style() {
+	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/wa-login-style.css', false, wp_get_theme()->get( 'Version' ) . '.' . rand(100,9999));
+	wp_enqueue_style('wa-login-style');
+}
+add_action('login_enqueue_scripts', 'wa_login_style');
+
+//  Add Favicon on login and admin page
+function add_third_party_resource() {
+	echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">';
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
+}
+add_action('login_head', 'add_third_party_resource');
+add_action('admin_head', 'add_third_party_resource');
+
+// Change login looks
+function my_login_logo_url() {
+	return home_url();
+}
+add_filter('login_headerurl', 'my_login_logo_url');
+
+function my_login_logo_url_title() {
+	return 'Wiryawan Adipa';
+}
+add_filter('login_headertext', 'my_login_logo_url_title');
+
+if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key'))) {
+	// Add reCaptcha & honeypot on login, registration and lost password page
+	function recaptcha_honeypot() {
+		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
+		echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
+		echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
+	}
+	add_action('login_form','recaptcha_honeypot');
+	add_action('register_form', 'recaptcha_honeypot');
+	add_action('lostpassword_form', 'recaptcha_honeypot');
+
+	function extra_div() {
+		echo '<div style="width: 1px;"></div>';
+	}
+	add_action('lostpassword_form', 'extra_div');
+
+	// Validating reCaptcha & honeypot on login page
+	function captcha_login_check($user, $password) {
+		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$valid = json_decode($rsp, true);
+			if ($valid["success"] == true) {
+				return $user;
+			} else {
+				return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+			}
+		} else {
+			return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+		}
+	}
+	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
+
+	// Validating reCaptcha & honeypot on registration page
+	function captcha_registration_check($errors, $user_login, $user_email) {
+		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$valid = json_decode($rsp, true);
+			if ($valid["success"] == true) {
+				return $errors;
+			} else {
+				return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+			}
+		} else {
+			return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+		}
+	}
+	add_action('registration_errors', 'captcha_registration_check', 10, 3);
+
+	// Validating reCaptcha & honeypot on lost password page
+	function captcha_lostpassword_check($errors) {
+		if (!empty($_POST['g-recaptcha-response']) && empty($_POST['captcha'])) {
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$valid = json_decode($rsp, true);
+			if ($valid["success"] == true) {
+				
+			} else {
+				$errors->add('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+			}
+		} else {
+			$errors->add('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
+		}
+	}
+	add_action( 'lostpassword_post', 'captcha_lostpassword_check', 10, 1 );
+}
 
 // Stop wordpress heartbeat
 function stop_heartbeat() {

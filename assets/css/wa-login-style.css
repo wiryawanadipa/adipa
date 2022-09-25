@@ -52,22 +52,23 @@ input:focus {
 	box-shadow: 0 0 0 .15rem var(--color-two) !important;
 }
 
-#loginform, #lostpasswordform, #registerform {
+#loginform, #lostpasswordform, #registerform, #resetpassform {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.65);
 	border: 0;
 	border-radius: 1rem;
 	display: flex;
-    flex-direction: column;
-	margin: 0 0 .25rem !important;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 0 .5rem !important;
 	padding: 1.125rem !important;
 }
 
-#loginform label, #lostpasswordform label, #registerform label, #reg_passmail {
+#loginform label, #lostpasswordform label, #registerform label, #reg_passmail, #resetpassform label, #resetpassform .description {
 	color: var(--text-normal);
 	font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem !important;
 }
 
 #user_login, #loginform input, #user_email {
@@ -79,9 +80,11 @@ input:focus {
 }
 
 .g-recaptcha {
-	display: flex;
-	justify-content: center;
 	margin-bottom: 1rem;
+}
+
+input[type=checkbox]:checked::before {
+	content:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23fc757d%27%2F%3E%3C%2Fsvg%3E");
 }
 
 input#wp-submit {
@@ -108,7 +111,8 @@ input#wp-submit {
 	border-left: none !important;
 	border-radius: 1rem;
 	color: var(--text-normal) !important;
-	margin-bottom: .25rem !important;
+	font-size: .875rem;
+	margin-bottom: .5rem !important;
 	text-align: center;
 }
 
@@ -118,7 +122,7 @@ input#wp-submit {
 
 #nav, #backtoblog, .privacy-policy-page-link {
 	color: transparent;
-	margin: .25rem 0 !important;
+	margin: 0 0 .5rem !important;
 	padding: 0 !important;
 	text-align: center !important;
 }
@@ -130,7 +134,7 @@ input#wp-submit {
 	border-radius: 50rem;
 	color: var(--text-normal) !important;
 	display: inline-block;
-	padding: .75rem;
+	padding: .75rem 1rem;
 	text-decoration: none;
 }
 
