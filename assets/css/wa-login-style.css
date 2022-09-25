@@ -16,7 +16,7 @@
 
 body.login {
     align-items: center;
-	background: rgb(63, 94, 251);
+	background: var(--bg-color-one);
 	background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(147, 83, 96, 1) 100%);
     display: flex;
 	font-family: var(--font-rubik) !important;
