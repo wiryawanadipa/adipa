@@ -100,6 +100,20 @@ body.login {
 	margin-bottom: 1rem;
 }
 
+#loginform .forgetmenot {
+	align-items: center;
+	display: flex;
+	gap: .5rem;
+}
+
+#loginform .forgetmenot input {
+	margin: 0;
+}
+
+#loginform .forgetmenot label {
+	margin-bottom: 0 !important;
+}
+
 br.clear {
 	display: none;
 }
