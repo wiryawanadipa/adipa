@@ -32,7 +32,6 @@ body.login {
 
 #login h1 {
 	display: none;
-	margin-bottom: .25rem;
 }
 
 input:focus {
