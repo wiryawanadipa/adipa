@@ -91,7 +91,7 @@ button.navbar-toggler {
 
 .wa-navbar {
 	padding: 4rem 0;
-	background-color: var(--bg-color-two);
+	background-color: var(--bg-color-three);
 }
 
 .navbar-toggler:focus {
@@ -128,7 +128,7 @@ button.navbar-toggler {
 }
 
 .wa-navbar ul {
-	background-color: var(--bg-color-two);
+	background-color: var(--bg-color-three);
 	border-color: var(--bg-color-two);
 	gap: .25rem;
 	text-align: center;
@@ -185,36 +185,9 @@ ul.wa-search button:hover {
 	background-color: var(--color-one);
 }
 
-/* Main */
-.main-page {
-	background-color: var(--bg-color-one);
-}
-
 /* Hero */
 .hero {
 	background-color: var(--bg-color-three);
-}
-
-.hero::before, .hero::after {
-	content: '';
-	display: block;
-	height: 1rem;
-	background: var(--color-one);
-	background: linear-gradient(-45deg, var(--color-one), var(--color-two), var(--color-three));
-	background-size: 400% 400%;
-	animation: gradient 8s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 .hero * {
