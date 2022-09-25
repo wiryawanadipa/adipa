@@ -38,10 +38,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 				$emptySubjectError = true;
 			}
 			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar + 1) && isset($emptySubjectError) && !empty($_POST['g-recaptcha-response'])) {
-				$secret = get_option('wa_recaptcha_secret_key');
-				$ip = $_SERVER['REMOTE_ADDR'];
-				$captcha = $_POST['g-recaptcha-response'];
-				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captcha .'&remoteip='. $ip);
+				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
 				$valid = json_decode($rsp, true);
 				if ($valid["success"] == true) {
 					$emailTo = get_option('wa_mail');
