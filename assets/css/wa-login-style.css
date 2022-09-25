@@ -34,12 +34,10 @@ body.login {
 	display: none;
 }
 
-input:focus {
-	border-color: var(--color-two);
-	box-shadow: 0 0 0 .15rem var(--color-two) !important;
-}
-
-#loginform, #lostpasswordform, #registerform, #resetpassform {
+#loginform,
+#registerform,
+#lostpasswordform,
+#resetpassform {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.65);
@@ -52,22 +50,45 @@ input:focus {
 	padding: 1.125rem !important;
 }
 
-#loginform label, #lostpasswordform label, #registerform label, #reg_passmail, #resetpassform label, #resetpassform .description {
+#loginform label,
+#registerform label,
+#reg_passmail,
+#lostpasswordform label,
+#resetpassform label,
+#resetpassform .description {
 	color: var(--text-normal);
 	font-size: 1rem;
     margin-bottom: 0.5rem !important;
 }
 
-#reg_passmail, #resetpassform .description {
+#reg_passmail,
+#resetpassform .description {
 	margin-bottom: 1rem !important;
 }
 
-#user_login, #loginform input, #user_email, #pass1 {
+#user_login,
+#user_pass,
+#rememberme,
+#user_email,
+#pass1 {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(77, 92, 120, 0.65) !important;
 	color: var(--text-normal) !important;
 	border: 0 !important;
+}
+
+#user_login:focus,
+#user_pass:focus,
+#rememberme:focus,
+#user_email:focus,
+#pass1:focus {
+	border-color: var(--color-two);
+	box-shadow: 0 0 0 .125rem var(--color-two) !important;
+}
+
+.dashicons {
+	color: var(--text-normal);
 }
 
 .login #pass-strength-result {
@@ -92,28 +113,25 @@ input[type=checkbox]:checked::before {
 	content:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23fc757d%27%2F%3E%3C%2Fsvg%3E");
 }
 
-input#wp-submit {
-	background-color: var(--color-two) !important;
+#wp-submit, .submit .button {
+	background-color: var(--color-two);
+	border: none;
 	border-radius: 50rem;
-}
-
-#wp-submit:hover {
-	background-color: var(--color-one) !important;
-}
-
-.submit .button {
-	background-color: var(--color-two) !important;
-	border: 0 !important;
-	border-radius: 50rem !important;
-	color: var(--text-normal) !important;
+	color: #ffffff !important;
 	margin-bottom: 0 !important;
 }
 
-.dashicons-visibility, .dashicons-hidden {
-	color: var(--text-normal);
+#wp-submit:hover, .submit .button:hover {
+	background-color: var(--color-one);
 }
 
-#login_error, .message, .success {
+#wp-submit:focus, .submit .button:focus {
+	background-color: var(--color-two);
+}
+
+#login_error,
+.message,
+.success {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(235, 59, 90, 0.65) !important;
@@ -125,22 +143,26 @@ input#wp-submit {
 	text-align: center;
 }
 
-#login_error a, .message a, .success a {
+#login_error a,
+.message a,
+.success a {
 	color: var(--text-normal);
 }
 
-.login .privacy-policy-page-link {
+.privacy-policy-page-link {
 	display: none;
 }
 
-#nav, #backtoblog, .privacy-policy-page-link {
+#nav,
+#backtoblog {
 	color: transparent;
 	margin: 0 0 .5rem !important;
 	padding: 0 !important;
 	text-align: center !important;
 }
 
-#nav a, #backtoblog a, .privacy-policy-link {
+#nav a,
+#backtoblog a {
 	backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.65);
@@ -151,7 +173,8 @@ input#wp-submit {
 	text-decoration: none;
 }
 
-#nav a:hover, #backtoblog a:hover, .privacy-policy-link:hover {
+#nav a:hover,
+#backtoblog a:hover {
 	background: var(--color-two);
 	color: var(--text-normal);
 }
