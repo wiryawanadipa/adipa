@@ -936,13 +936,13 @@ span.token.operator {
 	justify-content: center;
 }
 
-.social-link {
+.social-page {
 	display: flex;
 	font-size: 1.25rem;
 	gap: .75rem;
 }
 
-.social-link a:hover {
+.social-page a:hover {
 	color: var(--color-a-1);
 }
 
