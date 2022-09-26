@@ -201,7 +201,6 @@ body {
 
 #main-menu {
 	align-items: center;
-	background-color: var(--color-d);
 	flex-basis: 100%;
 	overflow: hidden;
 	margin-top: .5rem;
@@ -539,6 +538,7 @@ body {
 
 .pagination a {
 	background-color: var(--color-b);
+	color: var(--color-h);
 	padding: .75rem;
 }
 
@@ -863,7 +863,6 @@ span.token.operator {
 	}
 
 	#main-menu {
-		background-color: unset;
 		flex-basis: auto;
 		margin-top: 0;
 		max-height: 100%;
