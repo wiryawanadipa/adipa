@@ -756,7 +756,7 @@ body {
 }
 
 .article-content figure {
-	margin: 1.375 auto;
+	margin: 1.375rem auto;
 }
 
 .article-content figure img {
@@ -1045,7 +1045,7 @@ span.token.operator {
 	}
 
 	.article-content figure {
-		margin: 1.5 auto;
+		margin: 1.5rem auto;
 	}
 
 	.article-content .youtube,
