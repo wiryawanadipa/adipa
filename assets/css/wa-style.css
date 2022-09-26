@@ -433,14 +433,15 @@ body {
 	text-align: center;
 }
 
-.group-list-heading {
+.category-list-heading,
+.tag-list-heading {
 	font-size: 3rem;
 	margin-bottom: 3rem;
 	text-align: center;
 }
 
 .content-list-heading::before,
-.group-list-heading::before {
+.category-list-heading::before {
 	content: "\A";
 	background-color: var(--color-a);
 	border-radius: 1rem;
@@ -448,6 +449,11 @@ body {
     margin-right: 0.125rem;
     width: 9px;
     height: 9px;
+}
+
+.tag-list-heading::before {
+	content: "#";
+	color: var(--color-a);
 }
 
 .content-list-box {
