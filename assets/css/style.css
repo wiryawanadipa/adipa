@@ -694,7 +694,7 @@ body {
 }
 
 .article-content {
-	display: flow-root;
+	margin-bottom: 1.5rem;
 }
 
 .article-content p {
