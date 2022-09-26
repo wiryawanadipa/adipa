@@ -427,12 +427,7 @@ body {
 	font-size: 3rem;
 }
 
-.content-list-heading {
-	font-size: 3rem;
-	margin-bottom: 6rem;
-	text-align: center;
-}
-
+.content-list-heading,
 .category-list-heading,
 .tag-list-heading {
 	font-size: 3rem;
