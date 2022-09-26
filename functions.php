@@ -48,8 +48,8 @@ if (isset($_GET['activated']) && is_admin()) {
 // Add breadcrumbs
 function breadcrumbs() {
 	global $post;
-	echo '<nav aria-label="breadcrumb">';
-	echo '<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">';
+	echo '<nav class="breadcrumbs" aria-label="breadcrumb">';
+	echo '<ol itemscope itemtype="http://schema.org/BreadcrumbList">';
 	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li>';
 	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
 	if ($categories) {
@@ -316,13 +316,13 @@ function wa_related_by_tags() {
 		);
 		$my_query = new wp_query($args);
 		if ($my_query->have_posts()) {
-			echo '<div class="container wa-related-post"><div class="row">';
+			echo '<div class="related-article">';
 			echo '<h2>Related Post</h2>';
 			while ($my_query->have_posts()) {
 				$my_query->the_post();
-				echo '<div class="px-3 px-md-4 py-2 mb-2 mb-md-3 position-relative"><a class="stretched-link" href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+				echo '<div class="related-article-link"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
 			}
-			echo '</div></div>';
+			echo '</div>';
 		}
 	}
 	wp_reset_postdata();
@@ -401,7 +401,7 @@ add_filter('wp_list_pages', 'add_nofollow');
 
 // Youtube shortcode
 function youtube_link($atts, $content = null) {
-	return '<div class="ratio ratio-16x9 youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
 }
 add_shortcode('youtube', 'youtube_link');
 
