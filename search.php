@@ -3,6 +3,12 @@
 	<?php if (have_posts()) { ?>
 		<div class="content-list search-content-list">
 			<h1>Search results for <em><?php echo get_search_query(); ?></em></h1>
+			<div class="search-box">
+				<form action="<?php bloginfo('url'); ?>" role="search" method="get">
+					<input type="search" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" autofocus required>
+					<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</form>
+			</div>
 			<div class="content-list-box">
 				<?php
 				while (have_posts()) {
