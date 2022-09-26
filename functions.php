@@ -374,16 +374,16 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 			$paged = 1;
 		}
 		if ($max_page > 1 || $always_show) {
-			echo $before . '<nav class="blog-pagination text-end" aria-label="Pagination">';
+			echo $before . '<nav class="pagination" aria-label="Pagination">';
 			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
 				if ($i >= 1 && $i <= $max_page) {
 					if ($i == $paged) {
 					}
 					elseif ($i < $paged) {
-						echo '<a href="'.get_pagenum_link($i).'" class="pagination me-2"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="new-post"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
 					}
 					else {
-						echo '<a href="'.get_pagenum_link($i).'" class="pagination">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
+						echo '<a href="'.get_pagenum_link($i).'" class="older-post">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
 					}
 				}
 			}
@@ -430,14 +430,6 @@ function theme_settings_panel() {
 		'wa-theme-settings',
 		'theme_settings_general'
 	);
-	add_submenu_page(
-		'wa-theme-settings',
-		'About',
-		'About',
-		'manage_options',
-		'wa-theme-settings-about',
-		'theme_settings_about'
-	);
 }
 add_action('admin_menu', 'theme_settings_panel');
 
@@ -445,15 +437,9 @@ function theme_settings_general() {
 	include 'settings/setting-main.php';
 }
 
-function theme_settings_about() {
-	include 'settings/setting-about.php';
-}
-
 function register_general_setting() {
 	register_setting('main-settings', 'wa_mail');
 	register_setting('main-settings', 'wa_recaptcha_site_key');
 	register_setting('main-settings', 'wa_recaptcha_secret_key');
-	register_setting('main-settings', 'head_code');
-	register_setting('main-settings', 'footer_code');
 }
 add_action('admin_init', 'register_general_setting');
