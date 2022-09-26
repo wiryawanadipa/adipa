@@ -714,7 +714,7 @@ body {
 }
 
 .article-content pre {
-	font-size: 1;
+	font-size: 1rem;
 	margin: 0 auto 1.375rem;
 }
 
@@ -1029,7 +1029,7 @@ span.token.operator {
 	}
 
 	.article-content pre {
-		font-size: 1.125;
+		font-size: 1.125rem;
 		margin: 0 auto 1.5rem;
 	}
 
