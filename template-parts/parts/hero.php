@@ -16,7 +16,7 @@
 			<form action="<?php bloginfo('url'); ?>" role="search" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
 				<meta itemprop="target" content="<?php bloginfo('url'); ?>/?s={s}"/>
 				<input type="search" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" itemprop="query-input" type="text" name="s" required>
-				<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+				<button type="submit" aria-label="Search Button"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</form>
 		</div>
 	</div>

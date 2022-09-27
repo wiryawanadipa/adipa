@@ -155,7 +155,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 						$_SESSION['rand'] = $rand;
 						?>
 						<input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
-						<button type="submit" name="submit" value="Send" class="btn btn-primary">Send Message</button>
+						<button type="submit" aria-label="Submit Button" name="submit" value="Send" class="btn btn-primary">Send Message</button>
 					</div>
 				</div>
 			</div>

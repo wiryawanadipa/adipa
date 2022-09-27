@@ -545,6 +545,13 @@ body {
 	gap: .5rem;
 }
 
+.coming-soon {
+	font-size: 2rem;
+	padding: 4rem 0;
+	text-align: center;
+	width: 100%;
+}
+
 .postcard {
 	width: 100%;
 }

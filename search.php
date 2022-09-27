@@ -48,7 +48,7 @@
 						get_template_part( 'template-parts/parts/post-card' );
 					}
 				} else {
-					echo '<div>Coming Soon!</div>';
+					echo '<div class="coming-soon">Coming Soon!</div>';
 				}
 				wp_reset_postdata();
 				?>
