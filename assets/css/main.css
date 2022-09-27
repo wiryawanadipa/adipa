@@ -201,6 +201,7 @@ svg {
 
 .logo-name {
 	align-items: center;
+	font-weight: 500;
 	white-space: nowrap;
 }
 
@@ -452,6 +453,7 @@ svg {
 .category-list-heading,
 .tag-list-heading {
 	font-size: 2rem;
+	font-weight: 500;
 	padding-bottom: 3rem;
 	text-align: center;
 }
@@ -486,6 +488,7 @@ svg {
 	background-color: var(--color-b-2);
 	border-radius: .5rem;
 	font-size: 1.75rem;
+	font-weight: 500;
 	padding: 3rem 0;
 	text-align: center;
 }
@@ -605,15 +608,16 @@ svg {
 	-webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+	line-height: 1.75rem;
 	font-size: 1.375rem;
 	font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.postcard-box:hover h2 a,
-.postcard-box:hover h3 a {
-	text-decoration: 1px underline var(--color-c-1);
+.postcard-box h2 a:hover,
+.postcard-box h3 a:hover {
+	text-decoration: .125rem underline var(--color-c-1);
 }
 
 .postcard-box h2 a::after,
@@ -1045,7 +1049,7 @@ span.token.operator {
 	}
 
 	#main-menu ul li a {
-		padding: .625rem;
+		padding: .625rem .75rem;
 	}
 
 	.page-heading h1 {
@@ -1162,6 +1166,9 @@ span.token.operator {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+	#main-menu ul li a:hover {
+		border-radius: 5rem;
+	}
 	.herobox {
 		padding: 2rem;
 	}
