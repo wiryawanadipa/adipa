@@ -17,7 +17,7 @@
 		<div class="content-list-box">
 			<?php
 			$blog = array(
-				'posts_per_page' => 9,
+				'posts_per_page' => 12,
 				'category_name' => 'Blog',
 				'orderby' => 'rand'
 			);
