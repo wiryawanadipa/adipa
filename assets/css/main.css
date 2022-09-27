@@ -589,7 +589,7 @@ svg {
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
-	padding: .75rem;
+	padding: 1rem;
 	position: relative;
 }
 
