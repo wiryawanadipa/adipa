@@ -128,18 +128,18 @@ meter {
 
 /* Chrome, Firefox, Opera, Safari 10.1+ */
 ::placeholder {
-	color: var(--color-c-3);
+	color: var(--color-b-1);
 	opacity: 1;
 }
 
 /* Internet Explorer 10-11 */
 :-ms-input-placeholder {
-	color: var(--color-c-3);
+	color: var(--color-b-1);
 }
 
 /* Microsoft Edge */
 ::-ms-input-placeholder {
-	color: var(--color-c-3);
+	color: var(--color-b-1);
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -366,7 +366,7 @@ svg {
 }
 
 .search-box form input {
-	background-color: var(--color-c-2);
+	background-color: var(--color-c-1);
 	border-radius: 5rem 0 0 5rem;
 	color: var(--color-b-3);
 	padding: 16px;
