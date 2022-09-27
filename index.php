@@ -1,6 +1,6 @@
 <?php get_template_part( 'template-parts/header' ); ?>
 <?php get_template_part( 'template-parts/parts/hero' ); ?>
-<main class="home-content-list">
+<main>
 	<div class="content-list">
 		<h2 class="content-list-heading">blog</h2>
 		<div class="content-list-box">

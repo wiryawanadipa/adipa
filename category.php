@@ -1,5 +1,5 @@
 <?php get_template_part( 'template-parts/header' ); ?>
-<main class="group-content-list">
+<main>
 	<div class="content-list">
 		<?php
 			if (is_paged()) {
