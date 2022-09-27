@@ -347,7 +347,7 @@ add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
 // Limit the excerpt length
 function wp_example_excerpt_length($length) {
-	return 20;
+	return 25;
 }
 add_filter('excerpt_length', 'wp_example_excerpt_length');
 
