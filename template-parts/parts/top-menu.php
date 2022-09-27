@@ -3,7 +3,11 @@
 		<div class="top-menu">
 			<a class="logo" href="<?php bloginfo('url'); ?>" <?php if ( is_home() ) { echo 'aria-current="page" '; } ?>><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="40px" height="40px" alt="Wiryawan Adipa Logo"><span class="logo-name"><?php bloginfo( 'name' ); ?></span></a>
 			<div id="menu-icon" onclick="mobileMenu()">
-				<div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+				<div class="hamburger">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
 			</div>
 			<div id="main-menu" class="standby">
 				<ul>

@@ -264,9 +264,17 @@ svg {
 .hamburger {
 	align-items: center;
     display: flex;
+	flex-direction: column;
+	gap: .2rem;
 	height: 44px;
     justify-content: center;
 	width: 44px;
+}
+
+.bar {
+	background-color: var(--color-c-1);
+	height: 4px;
+	width: 20px;
 }
 
 /* Hero */
