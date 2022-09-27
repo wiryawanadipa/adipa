@@ -273,6 +273,7 @@ svg {
 
 .bar {
 	background-color: var(--color-c-1);
+	border-radius: 5rem;
 	height: 4px;
 	width: 20px;
 }
