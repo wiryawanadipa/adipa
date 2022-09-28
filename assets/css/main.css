@@ -48,11 +48,6 @@ meter {
     appearance: revert;
 }
 
-/* reset default text opacity of input placeholder */
-::placeholder {
-    color: unset;
-}
-
 /*
 	fix the feature of 'hidden' attribute.
 	display:revert; revert to element instead of attribute
@@ -114,7 +109,6 @@ meter {
 	--content-w: 864px;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
 	height: 10px;
 	width: 10px;
@@ -143,27 +137,13 @@ meter {
 	color: var(--color-c-2);
 }
 
-/* Chrome, Firefox, Opera, Safari 10.1+ */
 ::placeholder {
 	color: var(--color-b-1);
-	opacity: 1;
+	opacity: .8;
 }
 
-/* Internet Explorer 10-11 */
-:-ms-input-placeholder {
-	color: var(--color-b-1);
-}
-
-/* Microsoft Edge */
 ::-ms-input-placeholder {
 	color: var(--color-b-1);
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-	-webkit-appearance: none;
 }
 
 input,
