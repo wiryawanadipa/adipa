@@ -12,8 +12,8 @@
 			<div id="main-menu" class="standby">
 				<ul>
 					<li><a <?php if(is_category( 'blog' )) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_category_link(get_cat_ID( 'Blog' ))); ?>">blog</a></li>
-					<li><a <?php if (is_page( 'about' )) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_id_by_title( 'About' ))); ?>">about</a></li>
-					<li><a <?php if(is_page( 'contact' )) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_id_by_title( 'Contact' ))); ?>">contact</a></li>
+					<li><a <?php if (is_page( 'about' )) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title( 'About' )->ID)); ?>">about</a></li>
+					<li><a <?php if(is_page( 'contact' )) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title( 'Contact' )->ID)); ?>">contact</a></li>
 				</ul>
 			</div>
 			<script>
