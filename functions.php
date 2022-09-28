@@ -387,13 +387,6 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 	}
 }
 
-// NoFollow on Pages
-function add_nofollow($text) {
-	$list = str_replace('<a ', '<a rel="nofollow" ', $text);
-	return $list;
-}
-add_filter('wp_list_pages', 'add_nofollow');
-
 // Youtube shortcode
 function youtube_link($atts, $content = null) {
 	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
