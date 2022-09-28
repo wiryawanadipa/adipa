@@ -566,8 +566,14 @@ svg {
 	text-align: center;
 }
 
+.content-list-heading,
+.category-list-heading {
+	text-transform: lowercase;
+}
+
 .page-heading {
 	margin-bottom: 1.5rem;
+	text-transform: lowercase;
 }
 
 .page-heading h1 {

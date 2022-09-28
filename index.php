@@ -2,7 +2,7 @@
 <?php get_template_part( 'template-parts/parts/hero' ); ?>
 <main class="homepage-content">
 	<div class="content-list">
-		<h2 class="content-list-heading">blog</h2>
+		<h2 class="content-list-heading">Blog</h2>
 		<div class="content-list-box">
 			<?php
 			$blog = array(

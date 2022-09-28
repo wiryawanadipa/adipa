@@ -4,7 +4,7 @@
 <main>
 	<article class="article">
 		<header class="page-heading">
-			<h1><?php echo strtolower( get_the_title() ); ?></h1>
+			<h1><?php echo get_the_title(); ?></h1>
 		</header>
 		<?php get_template_part( 'template-parts/parts/contact-form' ); ?>
 	</article>

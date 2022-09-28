@@ -2,7 +2,7 @@
 <main>
 	<article class="article">
 		<header class="page-heading">
-			<h1><?php echo strtolower( get_the_title() ); ?></h1>
+			<h1><?php echo get_the_title(); ?></h1>
 		</header>
 		<div class="article-content">
 			<?php
