@@ -106,9 +106,6 @@ add_action('login_enqueue_scripts', 'wa_login_style');
 
 //  Add Favicon on login and admin page
 function add_third_party_resource() {
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
-	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">';
 	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
 	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
 	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
