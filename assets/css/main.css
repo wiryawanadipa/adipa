@@ -507,7 +507,7 @@ svg {
 }
 
 .danger {
-	background-color: #dc3545;
+	background-color: var(--color-a-2);
 }
 
 .contact-form {
