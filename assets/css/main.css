@@ -315,7 +315,7 @@ svg {
 	margin: auto;
 	position: absolute;
 	right: 0;
-	transition: width .25s ease-out;
+	transition: width .15s ease-out;
 	width: 0%;
 }
 
