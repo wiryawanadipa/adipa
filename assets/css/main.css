@@ -295,20 +295,38 @@ svg {
 .logo {
 	align-items: center;
 	display: flex;
-	gap: .5rem;
-}
-
-.logo img {
-	border-radius: 50rem;
-	box-shadow: 0 0 1px 0 #eb3b5a inset, 0 0 1px 0 #eb3b5a;
-	height: 40px;
-	width: 40px;
 }
 
 .logo-name {
 	align-items: center;
 	font-weight: 400;
+	line-height: 1.875rem;
+	position: relative;
 	white-space: nowrap;
+}
+
+.logo-name::after {
+	content: "\A";
+	background-color: var(--color-a-1);
+	border-radius: 5rem;
+	display: block;
+	height: .25rem;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	transition: width .25s ease-out;
+	width: 0%;
+}
+
+.logo-name:hover::after {
+	width: 100%;
+}
+
+.name-part {
+	color: var(--color-a-1);
+	font-size: 2rem;
+	font-weight: 600;
 }
 
 #main-menu {
@@ -1102,16 +1120,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	.navigation {
 		padding: 1rem;
 	}
-
-	.logo:hover {
-		background-color: var(--color-a-2);
-		border-radius: 5rem;
-	}
-
-	.logo-name {
-		padding-right: .75rem;
-	}
-
+	
 	#menu-icon {
 		display: none;
 	}
@@ -1152,7 +1161,6 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	#main-menu ul li a:hover::after {
-		content: "\A";
 		width: 100%;
 	}
 
