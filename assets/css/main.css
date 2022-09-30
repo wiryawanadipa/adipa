@@ -880,7 +880,7 @@ svg {
 	background-color: var(--color-b-2);
 	border-radius: .25rem;
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	padding: .25rem .5rem;
+	padding: .125rem .25rem;
 }
 
 .article-content :is(ol, ul) {
@@ -904,12 +904,13 @@ svg {
 .article-content a {
 	background-image: linear-gradient(to top, var(--color-a-1), var(--color-a-1) 0.125rem, rgba(0, 0, 0, 0) 0.125rem, rgba(0, 0, 0, 0));
 	padding: 0 .25rem;
-	transition: .1s;
+	transition: background-color .1s ease-out;
 	white-space: pre-wrap;
 }
 
 .article-content a:hover {
-	background-color: var(--color-a-1);
+	background-color: var(--color-a-2);
+	background-image: none;
 	border-radius: .25rem;
 	color: var(--color-c-2);
 }
