@@ -904,6 +904,7 @@ svg {
 .article-content a {
 	background-image: linear-gradient(to top, var(--color-a-1), var(--color-a-1) 0.125rem, rgba(0, 0, 0, 0) 0.125rem, rgba(0, 0, 0, 0));
 	padding: 0 .25rem;
+	transition: .15s;
 	white-space: pre-wrap;
 }
 
