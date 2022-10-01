@@ -902,17 +902,11 @@ svg {
 }
 
 .article-content a {
-	background-image: linear-gradient(to top, var(--color-a-1), var(--color-a-1) 0.125rem, rgba(0, 0, 0, 0) 0.125rem, rgba(0, 0, 0, 0));
-	padding: 0 .25rem;
-	transition: background-color .1s ease-out;
-	white-space: pre-wrap;
+	color: var(--color-a-3);
 }
 
 .article-content a:hover {
-	background-color: var(--color-a-2);
-	background-image: none;
-	border-radius: .25rem;
-	color: var(--color-c-2);
+	text-decoration: underline .125rem var(--color-a-3);
 }
 
 .article-content figure {
