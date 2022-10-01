@@ -827,8 +827,8 @@ svg {
 }
 
 .article-title h1 {
-	color: var(--color-a-3);
 	font-size: 1.5rem;
+	font-weight: 500;
 	line-height: 1.2;
 	margin-bottom: .5rem
 }
@@ -864,14 +864,14 @@ svg {
 }
 
 .article-content :is(h2, h3, h4, h5, h6) {
-	color: var(--color-a-3);
 	font-size: 1.5rem;
+	font-weight: 500;
 	line-height: 1.5;
 	margin: 2.5rem auto .5rem;
 }
 
 .article-content pre {
-	font-size: 1rem;
+	line-height: 2.2rem;
 	margin: 0 auto 1.375rem;
 }
 
@@ -1201,7 +1201,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	.article-content :is(h2, h3, h4, h5, h6) {
 		font-size: 1.75rem;
-		margin: 3rem auto .5rem;
+		margin: 3rem auto 1rem;
 	}
 
 	.article-content pre {
