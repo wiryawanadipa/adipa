@@ -315,6 +315,12 @@ function wa_related_by_tags() {
 	wp_reset_postdata();
 }
 
+// Add loading attribute
+function strip_entire_image_class($html) {
+    return preg_replace('/ class="(.*)"/', 'loading="lazy"', $html);
+}
+add_filter('get_image_tag', 'strip_entire_image_class', 0, 4);
+
 // Add <figure> tag on <img>
 function figure_tag_img ($content) {
 	$content = preg_replace(
