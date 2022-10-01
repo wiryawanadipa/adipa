@@ -26,7 +26,7 @@
 						mainMenuElement.classList = 'hidden';
 						setTimeout(function() {
 							mainMenuElement.classList = 'standby';
-						}, 500);
+						}, 200);
 					}
 				});
 			</script>
