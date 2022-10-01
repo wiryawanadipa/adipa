@@ -2,7 +2,7 @@
 	<nav class="navigation">
 		<div class="top-menu">
 			<a class="logo" href="<?php bloginfo('url'); ?>" <?php if ( is_home() ) { echo 'aria-current="page" '; } ?>><span class="logo-name"><span class="name-part">W</span>iryawan <span class="name-part">A</span>dipa</span></a>
-			<div id="menu-icon" onclick="mobileMenu()">
+			<div id="menu-icon">
 				<div class="hamburger">
 					<div class="bar"></div>
 					<div class="bar"></div>
@@ -24,6 +24,9 @@
 						mainMenuElement.classList = "show";
 					} else {
 						mainMenuElement.classList = 'hidden';
+						setTimeout(function() {
+							mainMenuElement.classList = 'standby';
+						}, 500);
 					}
 				});
 			</script>
