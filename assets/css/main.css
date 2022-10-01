@@ -319,7 +319,7 @@ svg {
 	width: 0%;
 }
 
-.logo-name:hover::after {
+.logo:hover .logo-name::after {
 	width: 100%;
 }
 
