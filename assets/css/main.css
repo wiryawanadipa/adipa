@@ -372,8 +372,12 @@ svg {
 }
 
 #main-menu ul li a:hover {
-	background-color: var(--color-a-2);
+	background-color: var(--color-a-1);
 	color: var(--color-c-2);
+}
+
+#main-menu ul li a:hover::before {
+	background-color: var(--color-c-2);
 }
 
 #menu-icon {
