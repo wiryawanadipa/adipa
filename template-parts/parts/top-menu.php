@@ -26,7 +26,7 @@
 						mainMenuElement.classList = 'hidden';
 						setTimeout(e => {
 							mainMenuElement.classList = 'standby';
-						}, 200);
+						}, 150);
 					}
 				});
 			</script>
