@@ -20,11 +20,11 @@
 				const menuIconElement = document.getElementById("menu-icon");
 				const mainMenuElement = document.getElementById("main-menu");
 				menuIconElement.addEventListener("click", e => {
-					if (mainMenuElement.classList == 'standby' || mainMenuElement.classList == 'hidden') {
-						mainMenuElement.classList = "show";
+					if (mainMenuElement.classList != 'show') {
+						mainMenuElement.classList = 'show';
 					} else {
 						mainMenuElement.classList = 'hidden';
-						setTimeout(function() {
+						setTimeout(e => {
 							mainMenuElement.classList = 'standby';
 						}, 200);
 					}
