@@ -19,7 +19,7 @@
 			<script>
 				const menuIconElement = document.getElementById("menu-icon");
 				const mainMenuElement = document.getElementById("main-menu");
-				menuIconElement.addEventListener("click", (e) => {
+				menuIconElement.addEventListener("click", e => {
 					if (mainMenuElement.classList == 'standby' || mainMenuElement.classList == 'hidden') {
 						mainMenuElement.classList = "show";
 					} else {
