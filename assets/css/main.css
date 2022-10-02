@@ -213,6 +213,7 @@ meter {
 	--color-b-3: #212b31;
 	--color-c-1: #dedede;
 	--color-c-2: #ffffff;
+	--color-c-3: #ffc107;
 	--max-w: 1320px;
 	--content-w: 864px;
 }
@@ -430,7 +431,7 @@ svg {
 	width: 128px;
 	height: 128px;
 	border-radius: 50rem;
-	box-shadow: 0 0 1px 0 #eb3b5a inset, 0 0 1px 0 #eb3b5a;
+	box-shadow: 0 0 1px 0 var(--color-a-2) inset, 0 0 1px 0 var(--color-a-2);
 	-webkit-filter: drop-shadow(5px 5px 8px #000);
 	filter: drop-shadow(5px 5px 8px #000);
 }
@@ -659,6 +660,18 @@ svg {
 	text-align: end;
 }
 
+.text-light {
+	color: var(--color-c-1);
+}
+
+.text-warning {
+	color: var(--color-c-3);
+}
+
+.text-danger {
+	color: var(--color-a-2);
+}
+
 .bottom-form {
 	display: flex;
 	flex-direction: column;
@@ -775,7 +788,7 @@ svg {
 }
 
 .postcard-box ul li a:hover {
-	background-color: #eb3b5a;
+	background-color: var(--color-a-2);
 	color: var(--color-c-2);
 }
 
@@ -1115,10 +1128,6 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	#main-menu.show {
 		background-color: transparent;
-	}
-
-	#main-menu.hidden {
-		max-height: 100%;
 	}
 
 	#main-menu ul {
