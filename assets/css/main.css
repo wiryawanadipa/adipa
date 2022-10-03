@@ -730,6 +730,11 @@ svg {
 	font-size: .9375rem;
 }
 
+.postcard-image img {
+	height: 100%;
+	width: 100%;
+}
+
 .postcard-box :is(h2, h3) {
 	color: var(--color-a-3);
     display: -webkit-box;
