@@ -482,6 +482,7 @@ svg {
 
 .search-box form {
 	display: flex;
+	justify-content: center;
 }
 
 .search-box form input {
