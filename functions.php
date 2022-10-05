@@ -141,7 +141,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 	// Validating reCaptcha & honeypot on login page
 	function captcha_login_check($user, $password) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
-			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
 				return $user;
@@ -157,7 +157,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 	// Validating reCaptcha & honeypot on registration page
 	function captcha_registration_check($errors, $user_login, $user_email) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
-			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
 				return $errors;
@@ -173,7 +173,7 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 	// Validating reCaptcha & honeypot on lost password page
 	function captcha_lostpassword_check($errors) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
-			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
+			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
 				
