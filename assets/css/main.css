@@ -1188,7 +1188,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	.postcard {
-		width: calc(50% - .375rem);
+		width: calc((100% / 2) - ((1 / 2) * .75rem));
 	}
 
 	.breadcrumbs {
@@ -1304,7 +1304,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.postcard {
-		width: calc(33.33333333% - .5rem);
+		width: calc((100% / 3) - ((2 / 3) * .75rem));
 	}
 }
 
