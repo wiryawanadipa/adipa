@@ -904,6 +904,8 @@ svg {
 	border-radius: .25rem;
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	padding: .125rem .25rem;
+	overflow-wrap: break-word;
+	white-space: break-spaces;
 }
 
 .article-content :is(ol, ul) {
