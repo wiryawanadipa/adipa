@@ -122,6 +122,7 @@ function my_login_logo_url_title() {
 }
 add_filter('login_headertext', 'my_login_logo_url_title');
 
+// reCaptcha
 if (
 	null != get_option('wa_recaptcha_site_key')
 	&& !empty(get_option('wa_recaptcha_site_key'))
