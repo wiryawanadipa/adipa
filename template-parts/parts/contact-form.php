@@ -1,5 +1,12 @@
 <?php
-if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key')) && null != get_option('wa_mail') && !empty(get_option('wa_mail'))) {
+if (
+	null != get_option('wa_recaptcha_site_key')
+	&& !empty(get_option('wa_recaptcha_site_key'))
+	&& null != get_option('wa_recaptcha_secret_key')
+	&& !empty(get_option('wa_recaptcha_secret_key'))
+	&& null != get_option('wa_mail')
+	&& !empty(get_option('wa_mail'))
+) {
 	$maxMessageChar = 1000;
 	if (isset($_POST['submit'])) {
 		$sanitizename = sanitize_text_field($_POST['sname']);
@@ -37,7 +44,17 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 			if ($sanitizesubject === '')  {
 				$emptySubjectError = true;
 			}
-			if (!isset($emptyNameError) && $countName < 51 && !isset($emptyEmailError) && $countEmail < 81 && !isset($invalidEmailError) && !isset($emptyMessageError) && $countMessage < ($maxMessageChar + 1) && isset($emptySubjectError) && !empty($_POST['g-recaptcha-response'])) {
+			if (
+				!isset($emptyNameError)
+				&& $countName < 51
+				&& !isset($emptyEmailError)
+				&& $countEmail < 81
+				&& !isset($invalidEmailError)
+				&& !isset($emptyMessageError)
+				&& $countMessage < ($maxMessageChar + 1)
+				&& isset($emptySubjectError)
+				&& !empty($_POST['g-recaptcha-response'])
+			) {
 				$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip='. $_SERVER['REMOTE_ADDR']);
 				$valid = json_decode($rsp, true);
 				if ($valid["success"] == true) {
