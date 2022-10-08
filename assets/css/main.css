@@ -539,6 +539,10 @@ svg {
 	text-align: center;
 }
 
+.search-content-list h1 span {
+	color: var(--color-a-1);
+}
+
 .not-found {
 	display: flex;
 	flex-direction: column;
@@ -729,6 +733,7 @@ svg {
 .postcard-date {
 	color: var(--color-c-1);
 	font-size: .9375rem;
+	font-weight: 300;
 }
 
 .postcard-image img {
@@ -763,6 +768,7 @@ svg {
 
 .postcard-box p {
 	display: -webkit-box;
+	font-weight: 300;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	line-height: 1.75rem;
@@ -786,6 +792,7 @@ svg {
 	border-radius: 5rem;
 	display: inline-block;
 	font-size: .875rem;
+	font-weight: 300;
 	padding: .375rem .5rem;
 }
 
@@ -829,7 +836,7 @@ svg {
 .breadcrumbs {
 	border-bottom: 1px solid rgba(108, 117, 125, .5);
 	font-size: .8125rem;
-	padding-bottom: .375rem;
+	padding-bottom: .5rem;
 }
 
 .breadcrumbs ol li {
@@ -841,6 +848,10 @@ svg {
 	content: "\2022";
     display: inline;
     margin: 0 0.25rem;
+}
+
+.breadcrumbs ol li a:hover {
+	text-decoration: 0.125rem underline var(--color-a-3);
 }
 
 .article-title {
@@ -859,6 +870,7 @@ svg {
 .article-info {
 	display: flex;
 	font-size: .8125rem;
+	font-weight: 300;
 	gap: 1rem;
     line-height: 1.5rem;
 }
@@ -882,6 +894,7 @@ svg {
 }
 
 .article-content p {
+	font-weight: 300;
 	margin: 0 auto 1.375rem;
 	line-height: 2.2rem;
 }
@@ -894,6 +907,7 @@ svg {
 }
 
 .article-content pre {
+	font-weight: 300;
 	line-height: 2.2rem;
 	margin: 0 auto 1.375rem;
 }
@@ -903,6 +917,7 @@ svg {
 	background-color: var(--color-b-2);
 	border-radius: .25rem;
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-weight: 300;
 	padding: .125rem .25rem;
 	overflow-wrap: break-word;
 	white-space: break-spaces;
@@ -923,11 +938,13 @@ svg {
 
 .article-content :is(ol, ul) li {
 	display: list-item;
+	font-weight: 300;
 	line-height: 1.75rem;
 }
 
 .article-content a {
 	color: var(--color-a-3);
+	font-weight: 300;
 }
 
 .article-content a:hover {
@@ -971,6 +988,7 @@ svg {
 }
 
 .article-content blockquote p {
+	font-weight: 300;
 	line-height: 2rem;
 	margin-bottom: 0;
 	margin-top: 0;
@@ -1089,7 +1107,8 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	color: var(--color-c-1);
 	display: flex;
 	flex-direction: column;
-	font-size: .9375rem;
+	font-size: .875rem;
+	font-weight: 300;
 	gap: 1rem;
 }
 
@@ -1194,7 +1213,8 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	.breadcrumbs {
-		font-size: .9375rem;
+		font-size: .875rem;
+		font-weight: 300;
 	}
 
 	.breadcrumbs ol li {
@@ -1206,7 +1226,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	.article-info {
-		font-size: .9375rem;
+		font-size: .875rem;
 	}
 
 	.article-content p {
@@ -1260,7 +1280,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	.footer-left {
-		gap: .25rem;
+		gap: .5rem;
 	}
 
 	.footer-left div {

@@ -2,7 +2,7 @@
 <main>
 	<?php if (have_posts()) { ?>
 		<div class="content-list search-content-list">
-			<h1>Search results for <em><?php echo get_search_query(); ?></em></h1>
+			<h1>Search results for <span><?php echo get_search_query(); ?></span></h1>
 			<div class="search-box">
 				<form action="<?php bloginfo('url'); ?>" role="search" method="get">
 					<input type="search" name="s" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" required>
