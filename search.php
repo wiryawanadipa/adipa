@@ -1,4 +1,4 @@
-<?php get_template_part( 'template-parts/header' ); ?>
+<?php get_template_part('template-parts/header'); ?>
 <main>
 	<?php if (have_posts()) { ?>
 		<div class="content-list search-content-list">
@@ -13,7 +13,7 @@
 				<?php
 				while (have_posts()) {
 					the_post();
-					get_template_part( 'template-parts/parts/post-card' );
+					get_template_part('template-parts/parts/post-card');
 				}
 				pagenavi();
 				?>
@@ -41,11 +41,11 @@
 					'category_name' => 'Blog',
 					'orderby' => 'rand'
 				);
-				$loop = new WP_Query( $blog );
+				$loop = new WP_Query($blog);
 				if ($loop->have_posts()) {
 					while ($loop->have_posts()) {
 						$loop->the_post();
-						get_template_part( 'template-parts/parts/post-card' );
+						get_template_part('template-parts/parts/post-card');
 					}
 				} else {
 					echo '<div class="coming-soon">Coming Soon!</div>';
@@ -57,4 +57,4 @@
 	<?php } ?>
 </main>
 <?php
-get_template_part( 'template-parts/footer' );
+get_template_part('template-parts/footer');

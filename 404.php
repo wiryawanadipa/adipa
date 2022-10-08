@@ -1,4 +1,4 @@
-<?php get_template_part( 'template-parts/header' ); ?>
+<?php get_template_part('template-parts/header'); ?>
 <main>
 	<div class="content-list">
 		<div class="not-found">
@@ -25,7 +25,7 @@
 			if ($loop->have_posts()) {
 				while ($loop->have_posts()) {
 					$loop->the_post();
-					get_template_part( 'template-parts/parts/post-card' );
+					get_template_part('template-parts/parts/post-card');
 				}
 			} else {
 				echo '<div class="coming-soon">Coming Soon!</div>';
@@ -36,4 +36,4 @@
 	</div>
 </main>
 <?php
-get_template_part( 'template-parts/footer' );
+get_template_part('template-parts/footer');

@@ -1,7 +1,11 @@
 <div class="postcard">
 	<div class="postcard-box">
 		<?php
-		if (has_post_thumbnail ($post->ID) && is_category( 'design-gallery' ) || is_category( 'project' )) {
+		if (
+			has_post_thumbnail($post->ID)
+			&& is_category('design-gallery')
+			|| is_category('project')
+		) {
 			$image_id = get_post_thumbnail_id($post->ID);
 			$image_title = get_the_title($image_id);
 			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'bigthumb');

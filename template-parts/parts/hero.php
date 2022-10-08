@@ -8,8 +8,8 @@
 		</div>
 		<div class="hero-heading-text">WordPress Developer - UI & UX Designer - Web Designer</div>
 		<div class="hero-heading-link">
-			<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Design Gallery' ) ) ); ?>" title="Design Gallery">Design Gallery</a>
-			<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Project' ) ) ); ?>" title="Project">Project</a>
+			<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery">Design Gallery</a>
+			<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project">Project</a>
 		</div>
 		<div class="search-box" itemscope itemtype="https://schema.org/WebSite">
 		<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>

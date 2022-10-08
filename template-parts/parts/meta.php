@@ -1,5 +1,5 @@
 <?php // Home ?>
-<?php if ( is_home() ) { ?>
+<?php if (is_home()) { ?>
 	<title>Home - <?php echo get_bloginfo('name'); ?></title>
 	<meta name="description" content="<?php echo get_bloginfo('description'); ?>" />
 	<link rel="canonical" href="<?php echo get_bloginfo('url'); ?>" />
@@ -18,7 +18,7 @@
 	<meta name="twitter:site" content="@wiryawanadipa" />
 <?php } ?>
 <?php // Single Post and Page ?>
-<?php if ( is_single() || is_page() ) { ?>
+<?php if (is_single() || is_page()) { ?>
 	<title><?php echo get_the_title(); ?> - <?php echo get_bloginfo('name'); ?></title>
 	<meta name="description" content="<?php echo wp_trim_words(get_the_content(), 25, ''); ?>" />
 	<meta name="author" content="Wiryawan Adipa">
@@ -49,9 +49,9 @@
 	<?php } ?>
 <?php } ?>
 <?php // Category ?>
-<?php if ( is_category() ) { ?>
+<?php if (is_category()) { ?>
 	<?php global $wp; $current_url = home_url( add_query_arg( array(), $wp->request ) ); ?>
-	<?php if ( is_paged() ){ ?>
+	<?php if (is_paged()) { ?>
 		<title><?php echo single_cat_title('', false); ?> - Page <?php echo $paged; ?> - <?php echo get_bloginfo('name'); ?></title>
 		<meta name="description" content="<?php echo wp_trim_words(category_description()); ?> - Page <?php echo $paged; ?>" />
 	<?php } else { ?>
@@ -72,9 +72,9 @@
 	<meta name="twitter:image" content="<?php bloginfo('stylesheet_directory'); ?>/screenshot.png">
 <?php } ?>
 <?php // Tag ?>
-<?php if ( is_tag() ) { ?>
+<?php if (is_tag()) { ?>
 	<?php global $wp; $current_url = home_url( add_query_arg( array(), $wp->request ) ); ?>
-	<?php if ( is_paged() ){ ?>
+	<?php if (is_paged()) { ?>
 		<title>#<?php echo single_tag_title('', false); ?> - <?php echo get_bloginfo('name'); ?> - Page <?php echo $paged; ?></title>
 		<meta name="description" content="<?php echo wp_trim_words(tag_description()); ?> - Page <?php echo $paged; ?>" />
 	<?php } else { ?>
@@ -95,11 +95,11 @@
 	<meta name="twitter:image" content="<?php bloginfo('stylesheet_directory'); ?>/screenshot.png">
 <?php } ?>
 <?php // Search ?>
-<?php if ( is_search() ) { ?>
+<?php if (is_search()) { ?>
 	<title>Search Result for <?php ucwords(the_search_query()); ?> - <?php echo get_bloginfo('name'); ?></title>
 	<meta name="description" content="Search result for <?php ucwords(the_search_query()); ?> on <?php echo get_bloginfo('name'); ?>" />
 <?php } ?>
 <?php // 404 ?>
-<?php if ( is_404() ) { ?>
+<?php if (is_404()) { ?>
 	<title>Error 404 Page not Found - <?php echo get_bloginfo('name'); ?></title>
 <?php }
