@@ -1,6 +1,9 @@
 <?php
 // Auto theme setting upon activation
-if (isset($_GET['activated']) && is_admin()) {
+if (
+	isset($_GET['activated'])
+	&& is_admin()
+) {
 	update_option('posts_per_page', 12);
 	update_option('thumbnail_size_w', 0);
 	update_option('thumbnail_size_h', 0);
@@ -80,7 +83,10 @@ add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
 
 // Disable load HCB styles & scripts if it's not in single post
 function wa_deregister_styles() {
-	if (!is_single() && !is_admin()) {
+	if (
+		!is_single()
+		&& !is_admin()
+	) {
 		wp_deregister_style('hcb-coloring');
 		wp_deregister_style('hcb-style');
 	}
@@ -88,7 +94,10 @@ function wa_deregister_styles() {
 add_action('wp_print_styles', 'wa_deregister_styles');
 
 function wa_deregister_script() {
-	if (!is_single() && !is_admin()) {
+	if (
+		!is_single()
+		&& !is_admin()
+	) {
 		wp_deregister_script('hcb-prism');
 		wp_deregister_script('hcb-script');
 	}
@@ -122,7 +131,12 @@ function my_login_logo_url_title() {
 }
 add_filter('login_headertext', 'my_login_logo_url_title');
 
-if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptcha_site_key')) && null != get_option('wa_recaptcha_secret_key') && !empty(get_option('wa_recaptcha_secret_key'))) {
+if (
+	null != get_option('wa_recaptcha_site_key')
+	&& !empty(get_option('wa_recaptcha_site_key'))
+	&& null != get_option('wa_recaptcha_secret_key')
+	&& !empty(get_option('wa_recaptcha_secret_key'))
+) {
 	// Add reCaptcha & honeypot on login, registration and lost password page
 	function recaptcha_honeypot() {
 		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
@@ -140,7 +154,10 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 
 	// Validating reCaptcha & honeypot on login page
 	function captcha_login_check($user, $password) {
-		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
+		if (
+			!empty($_POST['g-recaptcha-response'])
+			&& $_POST['captcha'] === ''
+		) {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
@@ -156,7 +173,10 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 
 	// Validating reCaptcha & honeypot on registration page
 	function captcha_registration_check($errors, $user_login, $user_email) {
-		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
+		if (
+			!empty($_POST['g-recaptcha-response'])
+			&& $_POST['captcha'] === ''
+		) {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
@@ -172,7 +192,10 @@ if (null != get_option('wa_recaptcha_site_key') && !empty(get_option('wa_recaptc
 
 	// Validating reCaptcha & honeypot on lost password page
 	function captcha_lostpassword_check($errors) {
-		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
+		if (
+			!empty($_POST['g-recaptcha-response'])
+			&& $_POST['captcha'] === ''
+		) {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
 			$valid = json_decode($rsp, true);
 			if ($valid["success"] == true) {
@@ -196,7 +219,12 @@ add_action('init', 'stop_heartbeat', 1);
 // Disable author & date arhive page
 function disable_page() {
 	global $wp_query;
-	if (is_author() || is_date() || (is_home() && is_paged())) {
+	if (
+		is_author()
+		|| is_date()
+		|| (is_home()
+		&& is_paged())
+	) {
 		wp_redirect(get_option('home'), 301); 
 		exit; 
 	}
@@ -355,7 +383,10 @@ add_filter('the_excerpt', 'replace_content');
 function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pages_to_show = 1, $always_show = false) {
 	global $request, $wpdb, $posts_per_page, $paged;
 	if (!is_single()) {
-		if (!is_category() && !is_tag()) {
+		if (
+			!is_category()
+			&& !is_tag()
+		) {
 			preg_match('#FROM\s(.*)\sORDER BY#siU', $request, $matches);
 		} else {
 			preg_match('#FROM\s(.*)\sGROUP BY#siU', $request, $matches);
@@ -366,7 +397,10 @@ function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pa
 		if (empty($paged)) {
 			$paged = 1;
 		}
-		if ($max_page > 1 || $always_show) {
+		if (
+			$max_page > 1
+			|| $always_show
+		) {
 			echo $before . '<nav class="pagination" aria-label="Pagination">';
 			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
 				if ($i >= 1 && $i <= $max_page) {
