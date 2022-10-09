@@ -362,6 +362,7 @@ function replace_content($content) {
 }
 add_filter('the_excerpt', 'replace_content');
 
+// Custom Pagination
 function custom_pagination($pages = '', $range = 2) {  
 	$showitems = ($range * 2)+1;  
 	global $paged;
