@@ -379,7 +379,7 @@ function custom_pagination($pages = '', $range = 2) {
 	if (1 != $pages) {
 		echo '<nav class="pagination" aria-label="Pagination">';
 		if (
-			$paged > 2
+			$paged > $range
 			&& $paged > $range+1
 			&& $showitems < $pages
 		) {
