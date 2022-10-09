@@ -722,11 +722,11 @@ svg {
 
 .postcard-box {
 	background-color: var(--color-b-2);
-	border-radius: .5rem;
+	border-radius: .375rem;
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
-	padding: 1rem;
+	padding: .875rem;
 	position: relative;
 }
 
@@ -878,6 +878,7 @@ svg {
 .info-date, .info-tag-list {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	gap: .375rem;
 }
 
