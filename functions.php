@@ -362,37 +362,60 @@ function replace_content($content) {
 }
 add_filter('the_excerpt', 'replace_content');
 
-// Page navigation
-function pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', $pages_to_show = 1, $always_show = false) {
-	global $request, $wpdb, $posts_per_page, $paged;
-	if (!is_single()) {
-		if (!is_category() && !is_tag()) {
-			preg_match('#FROM\s(.*)\sORDER BY#siU', $request, $matches);
-		} else {
-			preg_match('#FROM\s(.*)\sGROUP BY#siU', $request, $matches);
+function custom_pagination($pages = '', $range = 2) {  
+	$showitems = ($range * 2)+1;  
+	global $paged;
+	if (empty($paged)) {
+		$paged = 1;
+	}
+	if ($pages == '') {
+		global $wp_query;
+		$pages = $wp_query->max_num_pages;
+		if (!$pages) {
+			$pages = 1;
 		}
-		$fromwhere = $matches[1];
-		$numposts = $wpdb->get_var("SELECT COUNT(DISTINCT ID) FROM $fromwhere");
-		$max_page = ceil($numposts / $posts_per_page);
-		if (empty($paged)) {
-			$paged = 1;
+	}   
+	if (1 != $pages) {
+		echo '<nav class="pagination" aria-label="Pagination">';
+		if (
+			$paged > 2
+			&& $paged > $range+1
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link(1) . '">&laquo;</a>';
 		}
-		if ($max_page > 1 || $always_show) {
-			echo $before . '<nav class="pagination" aria-label="Pagination">';
-			for ($i = $paged - $pages_to_show; $i <= $paged + $pages_to_show; $i++) {
-				if ($i >= 1 && $i <= $max_page) {
-					if ($i == $paged) {
-					}
-					elseif ($i < $paged) {
-						echo '<a href="'.get_pagenum_link($i).'" class="new-post"><i class="fa-solid fa-chevron-left"></i> Newer Post</a>';
-					}
-					else {
-						echo '<a href="'.get_pagenum_link($i).'" class="older-post">Older Post <i class="fa-solid fa-chevron-right"></i></a>';
-					}
+		if (
+			$paged > 1
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link($paged - 1) . '">&lsaquo;</a>';
+		}
+		for ($i=1; $i <= $pages; $i++) {
+			if (
+				1 != $pages
+				&& ( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )
+			) {
+				if ($paged == $i) {
+					echo '<span class="current">' . $i . '</span>';
+				} else {
+					echo '<a href="' . get_pagenum_link($i) . '" class="inactive">' . $i . '</a>';
 				}
 			}
-			echo '</nav>' . $after;
 		}
+		if (
+			$paged < $pages
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link($paged + 1) . '">&rsaquo;</a>';
+		}
+		if (
+			$paged < $pages-1
+			&&  $paged+$range-1 < $pages
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link($pages) . '">&raquo;</a>';
+		}
+		echo '</nav>' . "\n";
 	}
 }
 

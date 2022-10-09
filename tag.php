@@ -15,10 +15,10 @@
 					the_post();
 					get_template_part('template-parts/parts/post-card');
 				}
+				custom_pagination();
 			} else {
 				echo '<div class="coming-soon">Coming Soon!</div>';
 			}
-			pagenavi();
 			?>
 		</div>
 	</div>

@@ -15,7 +15,7 @@
 					the_post();
 					get_template_part('template-parts/parts/post-card');
 				}
-				pagenavi();
+				custom_pagination();
 				?>
 			</div>
 		</div>
