@@ -364,7 +364,7 @@ add_filter('the_excerpt', 'replace_content');
 
 // Custom Pagination
 function custom_pagination($pages = '', $range = 2) {  
-	$showitems = ($range * 2)+1;  
+	$showitems = ($range*2)+1;  
 	global $paged;
 	if (empty($paged)) {
 		$paged = 1;
@@ -379,19 +379,19 @@ function custom_pagination($pages = '', $range = 2) {
 	if (1 != $pages) {
 		echo '<nav class="pagination" aria-label="Pagination">';
 		if (
-			$paged > $range
-			&& $paged > $range+1
-			&& $showitems < $pages
-		) {
-			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1" class="nav-arrow">&laquo;</a>';
-		}
-		if (
 			$paged > 1
 			&& $showitems < $pages
 		) {
 			echo '<a href="' . get_pagenum_link($paged - 1) . '" title="Go to Page ' . ($paged-1) . '" aria-label="Go to Page ' . ($paged-1) . '" class="nav-arrow">&lsaquo;</a>';
 		}
-		if ($paged-$range > 1) {
+		if (
+			$paged > $range
+			&& $paged > $range+1
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1">1</a>';
+		}
+		if ($paged-$range-1 > 1) {
 			echo '<span class="dot">...</span>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
@@ -406,21 +406,21 @@ function custom_pagination($pages = '', $range = 2) {
 				}
 			}
 		}
-		if ($paged+$range < $pages) {
+		if ($paged+$range+1 < $pages) {
 			echo '<span class="dot">...</span>';
+		}
+		if (
+			$paged < $pages-$range
+			&&  $paged+$range-1 < $pages
+			&& $showitems < $pages
+		) {
+			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to Page ' . $pages . '" aria-label="Go to Page ' . $pages . '">' . $pages . '</a>';
 		}
 		if (
 			$paged < $pages
 			&& $showitems < $pages
 		) {
 			echo '<a href="' . get_pagenum_link($paged + 1) . '" title="Go to Page ' . ($paged+1) . '" aria-label="Go to Page ' . ($paged+1) . '" class="nav-arrow">&rsaquo;</a>';
-		}
-		if (
-			$paged < $pages-1
-			&&  $paged+$range-1 < $pages
-			&& $showitems < $pages
-		) {
-			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to Page ' . $pages . '" aria-label="Go to Page ' . $pages . '" class="nav-arrow">&raquo;</a>';
 		}
 		echo '</nav>' . "\n";
 	}
