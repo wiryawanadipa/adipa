@@ -383,7 +383,7 @@ function custom_pagination($pages = '', $range = 2) {
 			&& $paged > $range+1
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link(1) . '" title="Go back to Page 1" aria-label="Go back to Page 1" class="nav-arrow">&laquo;</a>';
+			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1" class="nav-arrow">&laquo;</a>';
 		}
 		if (
 			$paged > 1
