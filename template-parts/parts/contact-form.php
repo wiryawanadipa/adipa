@@ -81,27 +81,35 @@ if (
 				if (isset($emptyNameError)) {
 					echo '<div class="info danger">Please enter your name.</div>';
 				}
+
 				if (isset($longNameError)) {
 					echo '<div class="info danger">The name that you filled in the name form is too long. The name form should be no more than 50 characters.</div>';
 				}
+
 				if (isset($emptyEmailError)) {
 					echo '<div class="info danger"> Please enter your email address.</div>';
 				}
+
 				if (isset($invalidEmailError)) {
 					echo '<div class="info danger">You entered an invalid email format address. (e.g. yourname@domain.tld).</div>';
 				}
+
 				if (isset($longEmailError)) {
 					echo '<div class="info danger">Your email address is too long. Use an email address which is no more than 80 characters.</div>';
 				}
+
 				if (isset($emptyMessageError)) {
 					echo '<div class="info danger">Please enter a message.</div>';
 				}
+
 				if (isset($longMessageError)) {
 					echo '<div class="info danger">Your message is too long. Message should be no more than' . $maxMessageChar . 'characters.</div>';
 				}
+
 				if (!isset($emptySubjectError)) {
 					echo '<div class="info danger">SPAMMER!</div>';
 				}
+
 				if (empty($_POST['g-recaptcha-response'])) {
 					echo '<div class="info danger">Please check the captcha.</div>';
 				}
@@ -125,7 +133,7 @@ if (
 				</div>
 				<div class="contact-form-input">
 					<label for="message">Message<span>&#42;</span></label>
-					<textarea id="message" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="11"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+					<textarea id="message" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="11" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 				</div>
 				<div class="hidden-form">
 					<label>If you see this, leave this form field blank.</label>
