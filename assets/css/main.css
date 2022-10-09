@@ -655,6 +655,7 @@ svg {
 	border-radius: .375rem;
 	color: var(--color-b-3);
 	padding: .75rem;
+	overflow-wrap: break-word;
 }
 
 .hidden-form {
