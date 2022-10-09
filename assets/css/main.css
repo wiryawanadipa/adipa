@@ -835,15 +835,15 @@ svg {
 }
 
 .pagination .dot {
-	padding: .5rem 0;
+	padding: .5rem;
 }
 
 .pagination .nav-arrow {
+	aspect-ratio: 1/1;
 	background-color: var(--color-b-3);
 	border-radius: 5rem;
-	height: 35px;
+	height: 100%;
 	text-align: center;
-	width: 35px;
 }
 
 .article {
