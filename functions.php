@@ -392,7 +392,7 @@ function custom_pagination($pages = '', $range = 2) {
 			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1">1</a>';
 		}
 		if ($paged-$range-1 > 1) {
-			echo '<span class="dot">...</span>';
+			echo '<span class="dot">&hellip;</span>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
 			if (
@@ -407,7 +407,7 @@ function custom_pagination($pages = '', $range = 2) {
 			}
 		}
 		if ($paged+$range+1 < $pages) {
-			echo '<span class="dot">...</span>';
+			echo '<span class="dot">&hellip;</span>';
 		}
 		if (
 			$paged < $pages-$range
