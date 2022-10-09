@@ -1,5 +1,5 @@
 <?php /* Template Name: About Page */ ?>
-<?php get_template_part( 'template-parts/header' ); ?>
+<?php get_template_part('template-parts/header'); ?>
 <main>
 	<article class="article">
 		<header class="page-heading">
@@ -18,4 +18,4 @@
 	</article>
 </main>
 <?php
-get_template_part( 'template-parts/footer' );
+get_template_part('template-parts/footer');
