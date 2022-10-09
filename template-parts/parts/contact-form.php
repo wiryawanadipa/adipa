@@ -25,6 +25,7 @@ if (
 			} else {
 				$name = $sanitizename;
 			}
+
 			if ($sanitizeemail === '')  {
 				$emptyEmailError = true;
 			} else if ($countEmail > 80) {
@@ -34,6 +35,7 @@ if (
 			} else {
 				$email = $sanitizeemail;
 			}
+
 			if ($sanitizemessage === '') {
 				$emptyMessageError = true;
 			} else if ($countMessage > $maxMessageChar) {
@@ -41,17 +43,19 @@ if (
 			} else {
 				$message = $sanitizemessage;
 			}
+
 			if ($sanitizesubject === '')  {
 				$emptySubjectError = true;
 			}
+
 			if (
 				!isset($emptyNameError)
-				&& $countName < 51
+				&& !isset($longNameError)
 				&& !isset($emptyEmailError)
-				&& $countEmail < 81
+				&& !isset($longEmailError)
 				&& !isset($invalidEmailError)
 				&& !isset($emptyMessageError)
-				&& $countMessage < ($maxMessageChar + 1)
+				&& !isset($longMessageError)
 				&& isset($emptySubjectError)
 				&& !empty($_POST['g-recaptcha-response'])
 			) {
@@ -121,7 +125,7 @@ if (
 				</div>
 				<div class="contact-form-input">
 					<label for="message">Message<span>&#42;</span></label>
-					<textarea id="message" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="11" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
+					<textarea id="message" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="11"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
 				</div>
 				<div class="hidden-form">
 					<label>If you see this, leave this form field blank.</label>
