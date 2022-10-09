@@ -812,7 +812,7 @@ svg {
 	flex-wrap: wrap;
 	gap: .5rem;
 	justify-content: center;
-	padding: .75rem 0;
+	padding-top: 3rem;
 	width: 100%;
 }
 
@@ -835,7 +835,7 @@ svg {
 }
 
 .pagination .dot {
-	padding: .5rem;
+	padding: .5rem .25rem;
 }
 
 .pagination .nav-arrow {
