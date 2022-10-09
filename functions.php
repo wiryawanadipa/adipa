@@ -383,13 +383,16 @@ function custom_pagination($pages = '', $range = 2) {
 			&& $paged > $range+1
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link(1) . '">&laquo;</a>';
+			echo '<a href="' . get_pagenum_link(1) . '" title="Go back to Page 1" aria-label="Go back to Page 1" class="nav-arrow">&laquo;</a>';
 		}
 		if (
 			$paged > 1
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($paged - 1) . '">&lsaquo;</a>';
+			echo '<a href="' . get_pagenum_link($paged - 1) . '" title="Go to Page ' . ($paged-1) . '" aria-label="Go to Page ' . ($paged-1) . '" class="nav-arrow">&lsaquo;</a>';
+		}
+		if ($paged-$range > 1) {
+			echo '<span class="dot">...</span>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
 			if (
@@ -399,22 +402,25 @@ function custom_pagination($pages = '', $range = 2) {
 				if ($paged == $i) {
 					echo '<span class="current">' . $i . '</span>';
 				} else {
-					echo '<a href="' . get_pagenum_link($i) . '" class="inactive">' . $i . '</a>';
+					echo '<a href="' . get_pagenum_link($i) . '" title="Go to Page ' . $i . '" aria-label="Go to Page ' . $i . '">' . $i . '</a>';
 				}
 			}
+		}
+		if ($paged+$range < $pages) {
+			echo '<span class="dot">...</span>';
 		}
 		if (
 			$paged < $pages
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($paged + 1) . '">&rsaquo;</a>';
+			echo '<a href="' . get_pagenum_link($paged + 1) . '" title="Go to Page ' . ($paged+1) . '" aria-label="Go to Page ' . ($paged+1) . '" class="nav-arrow">&rsaquo;</a>';
 		}
 		if (
 			$paged < $pages-1
 			&&  $paged+$range-1 < $pages
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($pages) . '">&raquo;</a>';
+			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to Page ' . $pages . '" aria-label="Go to Page ' . $pages . '" class="nav-arrow">&raquo;</a>';
 		}
 		echo '</nav>' . "\n";
 	}

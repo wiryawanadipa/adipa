@@ -809,22 +809,41 @@ svg {
 .pagination {
 	display: flex;
 	flex-direction: row;
-	gap: 1.5rem;
-	justify-content: end;
+	flex-wrap: wrap;
+	gap: .5rem;
+	justify-content: center;
 	padding: .75rem 0;
 	width: 100%;
 }
 
-.pagination a {
-	background-color: var(--color-a-2);
-	border-radius: 5rem;
+.pagination :is(.current, a, .dot) {
+	border-radius: .25rem;
 	color: var(--color-c-2);
-	padding: .75rem;
+	padding: .5rem .75rem;
+}
+
+.pagination .current {
+	background-color: var(--color-a-2);
+}
+
+.pagination a {
+	background-color: var(--color-b-2);
 }
 
 .pagination a:hover {
-	background-color: var(--color-a-4);
-	color: var(--color-c-2);
+	background-color: var(--color-a-2);
+}
+
+.pagination .dot {
+	padding: .5rem 0;
+}
+
+.pagination .nav-arrow {
+	background-color: var(--color-b-3);
+	border-radius: 5rem;
+	height: 35px;
+	text-align: center;
+	width: 35px;
 }
 
 .article {
