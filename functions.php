@@ -361,6 +361,7 @@ function replace_content($content) {
 	return $content;
 }
 add_filter('the_excerpt', 'replace_content');
+add_filter('get_the_excerpt', 'replace_content');
 
 // Custom Pagination
 function custom_pagination($pages = '', $range = 2) {  
