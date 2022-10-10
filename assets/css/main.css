@@ -427,7 +427,7 @@ svg {
 	display: none;
 }
 
-.hero-photo img {
+.hero-photo svg {
 	width: 128px;
 	height: 128px;
 	border-radius: 50rem;
@@ -1326,7 +1326,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		padding: 2rem;
 	}
 
-	.hero-photo img {
+	.hero-photo svg {
 		height: 192px;
 		width: 192px;
 	}
