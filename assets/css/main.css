@@ -1196,6 +1196,10 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		background-color: transparent;
 	}
 
+	#main-menu ul li a:hover::before {
+		background-color: var(--color-a-1);
+	}
+
 	#main-menu ul li a::after {
 		content: "\A";
 		background-color: var(--color-a-1);
