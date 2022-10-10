@@ -808,6 +808,7 @@ svg {
 
 .pagination {
 	display: flex;
+	font-size: 1.125rem;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: .5rem;
@@ -839,11 +840,13 @@ svg {
 }
 
 .pagination .nav-arrow {
+	align-items: center;
 	background-color: var(--color-b-3);
 	border-radius: 5rem;
+	display: flex;
 	height: 35px;
+	justify-content: center;
 	width: 35px;
-	text-align: center;
 }
 
 .article {
@@ -917,7 +920,7 @@ svg {
 .article-content p {
 	font-weight: 300;
 	margin: 0 auto 1.375rem;
-	line-height: 2.2rem;
+	line-height: 2rem;
 }
 
 .article-content :is(h2, h3, h4, h5, h6) {
