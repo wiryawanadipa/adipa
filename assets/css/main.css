@@ -282,7 +282,7 @@ svg {
 
 .navigation {
 	font-size: 1.4375rem;
-	padding: .75rem;
+	padding: .5rem;
 	margin: 0 auto;
 	max-width: var(--max-w);
 }
