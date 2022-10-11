@@ -19,14 +19,21 @@
 			<script>
 				const menuIconElement = document.getElementById("menu-icon");
 				const mainMenuElement = document.getElementById("main-menu");
-				menuIconElement.addEventListener("click", e => {
-					if (mainMenuElement.classList != 'show') {
-						mainMenuElement.classList = 'show';
-					} else {
-						mainMenuElement.classList = 'hidden';
-						setTimeout(e => {
-							mainMenuElement.classList = 'standby';
-						}, 150);
+				function closeMenu() {
+					mainMenuElement.classList = "hidden";
+					setTimeout(e => {
+						mainMenuElement.classList = "standby";
+					}, 150);
+				}
+				document.addEventListener("click", function(event) {
+					const isClickInside = menuIconElement.contains(event.target);
+					const isClickMenu = mainMenuElement.contains(event.target);
+					if ((isClickInside || isClickMenu) && mainMenuElement.classList != "show") {
+						mainMenuElement.classList = "show";
+					} else if (isClickInside && !isClickMenu && mainMenuElement.classList == "show") {
+						closeMenu();
+					} else if (!isClickInside && !isClickMenu &&mainMenuElement.classList != "standby") {
+						closeMenu();
 					}
 				});
 			</script>
