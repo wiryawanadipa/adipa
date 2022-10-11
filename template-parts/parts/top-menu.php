@@ -26,13 +26,26 @@
 					}, 150);
 				}
 				document.addEventListener("click", function(event) {
-					const isClickInside = menuIconElement.contains(event.target);
+					const isMenuShow = mainMenuElement.classList.contains("show");
+					const isClickIcon = menuIconElement.contains(event.target);
 					const isClickMenu = mainMenuElement.contains(event.target);
-					if ((isClickInside || isClickMenu) && mainMenuElement.classList != "show") {
+					if (
+						!isMenuShow
+						&& isClickIcon
+						|| isClickMenu
+					) {
 						mainMenuElement.classList = "show";
-					} else if (isClickInside && !isClickMenu && mainMenuElement.classList == "show") {
+					} else if (
+						isMenuShow
+						&& isClickIcon
+						&& !isClickMenu
+					) {
 						closeMenu();
-					} else if (!isClickInside && !isClickMenu &&mainMenuElement.classList != "standby") {
+					} else if (
+						isMenuShow
+						&& !isClickIcon
+						&& !isClickMenu
+					) {
 						closeMenu();
 					}
 				});
