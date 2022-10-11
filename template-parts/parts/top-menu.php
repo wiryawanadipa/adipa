@@ -29,23 +29,11 @@
 					const isMenuShow = mainMenuElement.classList.contains("show");
 					const isClickIcon = menuIconElement.contains(event.target);
 					const isClickMenu = mainMenuElement.contains(event.target);
-					if (
-						!isMenuShow
-						&& isClickIcon
-						|| isClickMenu
-					) {
+					if (!isMenuShow && isClickIcon || isClickMenu) {
 						mainMenuElement.classList = "show";
-					} else if (
-						isMenuShow
-						&& isClickIcon
-						&& !isClickMenu
-					) {
+					} else if (isMenuShow && isClickIcon && !isClickMenu) {
 						closeMenu();
-					} else if (
-						isMenuShow
-						&& !isClickIcon
-						&& !isClickMenu
-					) {
+					} else if (isMenuShow && !isClickIcon && !isClickMenu) {
 						closeMenu();
 					}
 				});
