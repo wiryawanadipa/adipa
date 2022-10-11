@@ -394,6 +394,7 @@ function custom_pagination($pages = '', $range = 3) {
 		}
 		if (
 			$paged-$range-1 > 1
+			&& $pages >= $showitems
 			&& $pages != $showitems
 		) {
 			echo '<span class="dot">&hellip;</span>';
@@ -412,6 +413,7 @@ function custom_pagination($pages = '', $range = 3) {
 		}
 		if (
 			$paged+$range+1 < $pages
+			&& $pages >= $showitems
 			&& $pages != $showitems
 		) {
 			echo '<span class="dot">&hellip;</span>';
