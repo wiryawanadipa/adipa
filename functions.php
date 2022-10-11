@@ -392,7 +392,10 @@ function custom_pagination($pages = '', $range = 3) {
 		) {
 			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1">1</a>';
 		}
-		if ($paged-$range-1 > 1) {
+		if (
+			$paged-$range-1 > 1
+			&& $pages != $showitems
+		) {
 			echo '<span class="dot">&hellip;</span>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
@@ -407,7 +410,10 @@ function custom_pagination($pages = '', $range = 3) {
 				}
 			}
 		}
-		if ($paged+$range+1 < $pages) {
+		if (
+			$paged+$range+1 < $pages
+			&& $pages != $showitems
+		) {
 			echo '<span class="dot">&hellip;</span>';
 		}
 		if (
