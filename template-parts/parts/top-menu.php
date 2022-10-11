@@ -19,12 +19,6 @@
 			<script>
 				const menuIconElement = document.getElementById("menu-icon");
 				const mainMenuElement = document.getElementById("main-menu");
-				function closeMenu() {
-					mainMenuElement.classList = "hidden";
-					setTimeout(e => {
-						mainMenuElement.classList = "standby";
-					}, 150);
-				}
 				document.addEventListener("click", function(event) {
 					const isMenuShow = mainMenuElement.classList.contains("show");
 					const isClickIcon = menuIconElement.contains(event.target);
@@ -32,7 +26,10 @@
 					if (!isMenuShow && isClickIcon || isClickMenu) {
 						mainMenuElement.classList = "show";
 					} else if (isMenuShow && !isClickMenu) {
-						closeMenu();
+						mainMenuElement.classList = "hidden";
+						setTimeout(e => {
+							mainMenuElement.classList = "standby";
+						}, 150);
 					}
 				});
 			</script>
