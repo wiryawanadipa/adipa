@@ -31,9 +31,7 @@
 					const isClickMenu = mainMenuElement.contains(event.target);
 					if (!isMenuShow && isClickIcon || isClickMenu) {
 						mainMenuElement.classList = "show";
-					} else if (isMenuShow && isClickIcon && !isClickMenu) {
-						closeMenu();
-					} else if (isMenuShow && !isClickIcon && !isClickMenu) {
+					} else if (isMenuShow && (isClickIcon || !isClickIcon) && !isClickMenu) {
 						closeMenu();
 					}
 				});
