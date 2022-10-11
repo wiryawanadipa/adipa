@@ -523,6 +523,8 @@ svg {
 }
 
 .content-list {
+	display: grid;
+	gap: 3rem;
 	margin: 0 auto;
 	max-width: var(--max-w);
 	padding: 3rem .75rem;
@@ -577,7 +579,6 @@ svg {
 [class*="list-heading"] {
 	font-size: 2rem;
 	font-weight: 500;
-	padding-bottom: 3rem;
 	text-align: center;
 }
 
@@ -706,16 +707,16 @@ svg {
 }
 
 .content-list-box {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
 	gap: .5rem;
+	grid-template-columns: repeat(1, 1fr);
 }
 
 .coming-soon {
 	font-size: 2rem;
+	grid-column: span 3;
 	padding: 4rem 0;
 	text-align: center;
-	width: 100%;
 }
 
 .postcard {
@@ -814,7 +815,6 @@ svg {
 	flex-wrap: wrap;
 	gap: .5rem;
 	justify-content: center;
-	padding-top: 3rem;
 	width: 100%;
 }
 
@@ -1350,8 +1350,8 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		font-size: 3rem;
 	}
 
-	.postcard {
-		width: calc((100% / 2) - ((1 / 2) * .75rem));
+	.content-list-box {
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.footer-box {
@@ -1361,8 +1361,8 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.postcard {
-		width: calc((100% / 3) - ((2 / 3) * .75rem));
+	.content-list-box {
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 

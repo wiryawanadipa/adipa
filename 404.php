@@ -14,6 +14,7 @@
 				</form>
 			</div>
 		</div>
+		<h2 class="random-post-list-heading">My Blog Posts You Might Like</h2>
 		<div class="content-list-box">
 			<?php
 			$blog = array(
@@ -32,7 +33,7 @@
 			}
 			wp_reset_postdata();
 			?>
-		<div class="content-list-box">
+		</div>
 	</div>
 </main>
 <?php

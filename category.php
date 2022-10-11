@@ -2,25 +2,25 @@
 <main>
 	<div class="content-list">
 		<?php
-			if (is_paged()) {
-				echo '<h1 class="category-list-heading">' . single_cat_title('', false) . ' - Page ' . $paged . '</h1>';
-			} else {
-				echo '<h1 class="category-list-heading">' . single_cat_title('', false) . '</h1>';
+		if (is_paged()) {
+			echo '<h1 class="category-list-heading">' . single_cat_title('', false) . ' - Page ' . $paged . '</h1>';
+		} else {
+			echo '<h1 class="category-list-heading">' . single_cat_title('', false) . '</h1>';
+		}
+		if (have_posts()) {
+			echo '<div class="content-list-box">';
+			while (have_posts()) {
+				the_post();
+				get_template_part('template-parts/parts/post-card');
 			}
+			echo '</div>';
+			custom_pagination();
+		} else {
+			echo '<div class="content-list-box">';
+			echo '<div class="coming-soon">Coming Soon!</div>';
+			echo '</div>';
+		}
 		?>
-		<div class="content-list-box">
-			<?php
-			if (have_posts()) {
-				while (have_posts()) {
-					the_post();
-					get_template_part('template-parts/parts/post-card');
-				}
-				custom_pagination();
-			} else {
-				echo '<div class="coming-soon">Coming Soon!</div>';
-			}
-			?>
-		</div>
 	</div>
 </main>
 <?php
