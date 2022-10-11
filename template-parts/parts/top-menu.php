@@ -17,18 +17,18 @@
 				</ul>
 			</div>
 			<script>
-				const menuIconElement = document.getElementById("menu-icon");
-				const mainMenuElement = document.getElementById("main-menu");
+				const menuIcon = document.getElementById("menu-icon");
+				const menuBox = document.getElementById("main-menu");
 				document.addEventListener("click", function(event) {
-					const hasMenuShow = mainMenuElement.classList.contains("show");
-					const isClickIcon = menuIconElement.contains(event.target);
-					const isClickMenu = mainMenuElement.contains(event.target);
+					const hasMenuShow = menuBox.classList.contains("show");
+					const isClickIcon = menuIcon.contains(event.target);
+					const isClickMenu = menuBox.contains(event.target);
 					if (!hasMenuShow && isClickIcon || isClickMenu) {
-						mainMenuElement.classList = "show";
+						menuBox.classList = "show";
 					} else if (hasMenuShow && !isClickMenu) {
-						mainMenuElement.classList = "hidden";
+						menuBox.classList = "hidden";
 						setTimeout(e => {
-							mainMenuElement.classList = "standby";
+							menuBox.classList = "standby";
 						}, 150);
 					}
 				});
