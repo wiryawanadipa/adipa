@@ -20,12 +20,12 @@
 				const menuIconElement = document.getElementById("menu-icon");
 				const mainMenuElement = document.getElementById("main-menu");
 				document.addEventListener("click", function(event) {
-					const isMenuShow = mainMenuElement.classList.contains("show");
+					const hasMenuShow = mainMenuElement.classList.contains("show");
 					const isClickIcon = menuIconElement.contains(event.target);
 					const isClickMenu = mainMenuElement.contains(event.target);
-					if (!isMenuShow && isClickIcon || isClickMenu) {
+					if (!hasMenuShow && isClickIcon || isClickMenu) {
 						mainMenuElement.classList = "show";
-					} else if (isMenuShow && !isClickMenu) {
+					} else if (hasMenuShow && !isClickMenu) {
 						mainMenuElement.classList = "hidden";
 						setTimeout(e => {
 							mainMenuElement.classList = "standby";
