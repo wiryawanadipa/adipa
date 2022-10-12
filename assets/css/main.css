@@ -1362,7 +1362,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.herobox {
-		padding: 8rem 2rem;
+		padding: 6rem 2rem;
 	}
 
 	.content-list-box {
@@ -1374,5 +1374,9 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 @media (min-width: 1400px) {
 	.navigation {
 		padding: 4rem 1rem;
+	}
+
+	.herobox {
+		padding: 8rem 2rem;
 	}
 }
