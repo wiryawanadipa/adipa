@@ -1330,7 +1330,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	}
 
 	.herobox {
-		padding: 2rem;
+		padding: 4rem 1rem;
 	}
 
 	.hero-photo svg {
@@ -1367,7 +1367,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+@media (min-width: 1300px) {
 	.navigation {
 		padding: 4rem 1rem;
 	}
