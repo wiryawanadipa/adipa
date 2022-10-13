@@ -1188,7 +1188,6 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	#main-menu ul {
 		flex-direction: row;
-		gap: .5rem;
 		width: auto;
 	}
 
