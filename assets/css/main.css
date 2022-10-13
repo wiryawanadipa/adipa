@@ -333,6 +333,7 @@ svg {
 
 #main-menu {
 	align-items: center;
+	background-color: var(--color-b-1);
 	flex-basis: 100%;
 	overflow: hidden;
 	max-height: 0;
@@ -344,7 +345,6 @@ svg {
 }
 
 #main-menu.show {
-	background-color: var(--color-b-1);
 	max-height: 200px;
 	transition: max-height .15s ease-in;
 }
@@ -383,23 +383,24 @@ svg {
 }
 
 #menu-icon {
-	background-color: var(--color-b-1);
+	align-items: center;
 	cursor: pointer;
 	display: block;
 }
 
-#menu-icon:active {
-	background-color: var(--color-a-2);
-}
-
 .hamburger {
 	align-items: center;
+	background-color: var(--color-b-1);
     display: flex;
 	flex-direction: column;
 	gap: .2rem;
 	height: 44px;
     justify-content: center;
 	width: 44px;
+}
+
+.hamburger:active {
+	background-color: var(--color-a-2);
 }
 
 .bar {
@@ -1176,16 +1177,13 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	#main-menu {
 		flex-basis: auto;
+		background-color: transparent;
 		max-height: 100%;
 	}
 
 	#main-menu.hidden {
 		max-height: unset;
 		transition: none;
-	}
-
-	#main-menu.show {
-		background-color: transparent;
 	}
 
 	#main-menu ul {
