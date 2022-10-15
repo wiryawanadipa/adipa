@@ -461,19 +461,51 @@ svg {
 	flex-direction: column;
 	gap: 1rem;
 	text-align: center;
+	z-index: 1;
 }
 
 .hero-heading-link a {
-	background-color: var(--color-b-1);
+	background-color: var(--color-b-2);
 	border-radius: 5rem;
 	font-size: 1.5rem;
+	overflow: hidden;
 	padding: .75rem 1rem;
+	position: relative;
 	white-space: nowrap;
 }
 
 .hero-heading-link a:hover {
-	background-color: var(--color-a-2);
+	background-color: transparent;
 	color: var(--color-c-2);
+	transition: background-color .2s;
+}
+
+.hero-heading-link a:after {
+	background: var(--color-a-2);
+	content: "";
+	height: 0;
+	left: 50%;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transition: height .4s;
+	width: 100%;
+	z-index: -1;
+}
+
+.hero-heading-link a:last-child:after {
+	transition: height .8s;
+}
+
+.hero-heading-link a:hover:after {
+	height: 400%;
+	opacity: 1;
+	transition: height .4s;
+}
+
+.hero-heading-link a:hover:last-child:after {
+	transition: height .8s;
 }
 
 .search-box {
@@ -740,9 +772,21 @@ svg {
 	font-weight: 300;
 }
 
+.postcard-image {
+	display: flex;
+	margin-bottom: .25rem;
+	overflow: hidden;
+}
+
 .postcard-image img {
 	height: 100%;
+	transition: transform .25s;
 	width: 100%;
+}
+
+.postcard-box:hover img {
+	transform: scale(1.1);
+	transition: transform .25s;
 }
 
 .postcard-box :is(h2, h3) {
