@@ -481,7 +481,7 @@ svg {
 	transition: background-color .1s;
 }
 
-.hero-heading-link a:after {
+.hero-heading-link a::after {
 	background: var(--color-a-2);
 	content: "";
 	height: 0;
@@ -495,11 +495,12 @@ svg {
 	z-index: -1;
 }
 
-.hero-heading-link a:hover:after {
+.hero-heading-link a:hover::after {
 	height: 400%;
 	opacity: 1;
 	transition: height .5s, opacity .1s;
 }
+
 .search-box {
 	margin: 1rem auto;
 	max-width: 500px;
