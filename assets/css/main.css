@@ -490,25 +490,16 @@ svg {
 	position: absolute;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%) rotate(45deg);
-	transition: height .4s, opacity 1s;
+	transition: height .5s, opacity 1s;
 	width: 100%;
 	z-index: -1;
-}
-
-.hero-heading-link a:last-child:after {
-	transition: height .8s, opacity 1s;
 }
 
 .hero-heading-link a:hover:after {
 	height: 400%;
 	opacity: 1;
-	transition: height .4s, opacity .1s;
+	transition: height .5s, opacity .1s;
 }
-
-.hero-heading-link a:hover:last-child:after {
-	transition: height .8s, opacity .1s;
-}
-
 .search-box {
 	margin: 1rem auto;
 	max-width: 500px;
