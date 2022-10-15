@@ -260,6 +260,10 @@ textarea {
 	caret-color: var(--color-a-2);
 }
 
+strong {
+	font-weight: 700;
+}
+
 html {
 	font-family: 'Rubik', sans-serif;
 	scrollbar-color: var(--color-a-1) var(--color-b-2);
