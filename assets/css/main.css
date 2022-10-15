@@ -260,8 +260,9 @@ textarea {
 	caret-color: var(--color-a-2);
 }
 
-strong {
-	font-weight: 700;
+strong,
+strong * {
+    font-weight: 600 !important;
 }
 
 html {
