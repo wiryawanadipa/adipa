@@ -839,7 +839,7 @@ svg {
 
 .postcard-box ul li a {
 	background-color: var(--color-b-1);
-	border-radius: 5rem;
+	border-radius: .25rem;
 	display: inline-block;
 	font-size: .875rem;
 	font-weight: 300;
