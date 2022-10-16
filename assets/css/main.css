@@ -1,51 +1,55 @@
 /* CSS Reset */
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
+	all: unset;
+	display: revert;
 }
 
 /* Preferred box-sizing value */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
-    cursor: revert;
+a,
+button {
+	cursor: revert;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-    list-style: none;
+ol,
+ul,
+menu {
+	list-style: none;
 }
 
 /* For images to not be able to exceed their container */
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 /* removes spacing between cells in tables */
 table {
-    border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
-    -webkit-user-select: auto;
+input,
+textarea {
+	-webkit-user-select: auto;
 	user-select: auto;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
 textarea {
-    white-space: revert;
+	white-space: revert;
 }
 
 /* minimum style to allow to style meter element */
 meter {
-    -webkit-appearance: revert;
-    appearance: revert;
+	-webkit-appearance: revert;
+	appearance: revert;
 }
 
 /*
@@ -53,7 +57,7 @@ meter {
 	display:revert; revert to element instead of attribute
 */
 :where([hidden]) {
-    display: none;
+	display: none;
 }
 
 /*
@@ -62,18 +66,18 @@ meter {
 	- webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element
 */
 :where([contenteditable]:not([contenteditable="false"])) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
 	line-break: normal;
-    -webkit-line-break: after-white-space;
+	-webkit-line-break: after-white-space;
 	user-select: auto;
-    -webkit-user-select: auto;
+	-webkit-user-select: auto;
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 :where([draggable="true"]) {
-    -webkit-user-drag: element;
+	-webkit-user-drag: element;
 }
 
 @font-face {
@@ -262,7 +266,7 @@ textarea {
 
 strong,
 strong * {
-    font-weight: 600 !important;
+	font-weight: 600 !important;
 }
 
 html {
@@ -372,10 +376,10 @@ svg {
 	content: "\A";
 	background-color: var(--color-a-1);
 	border-radius: 1rem;
-    display: inline-block;
-    margin-right: 0.125rem;
-    width: 5px;
-    height: 5px;
+	display: inline-block;
+	margin-right: 0.125rem;
+	width: 5px;
+	height: 5px;
 }
 
 #main-menu ul li a:hover {
@@ -396,11 +400,11 @@ svg {
 .hamburger {
 	align-items: center;
 	background-color: var(--color-b-1);
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	gap: .2rem;
 	height: 44px;
-    justify-content: center;
+	justify-content: center;
 	width: 44px;
 }
 
@@ -526,13 +530,13 @@ svg {
 }
 
 .search-box form button {
-    align-items: center;
+	align-items: center;
 	background-color: var(--color-a-2);
 	border-radius: 0 5rem 5rem 0;
 	cursor: pointer;
 	display: flex;
 	height: 51px;
-    justify-content: center;
+	justify-content: center;
 	width: 51px;
 }
 
@@ -638,10 +642,10 @@ svg {
 	content: "\A";
 	background-color: var(--color-a-1);
 	border-radius: 1rem;
-    display: inline-block;
-    margin-right: 0.125rem;
-    width: 9px;
-    height: 9px;
+	display: inline-block;
+	margin-right: 0.125rem;
+	width: 9px;
+	height: 9px;
 }
 
 .tag-list-heading::before {
@@ -658,7 +662,7 @@ svg {
 	padding: 1rem;
 }
 
-.success{
+.success {
 	background-color: #198754;
 }
 
@@ -789,13 +793,13 @@ svg {
 
 .postcard-box :is(h2, h3) {
 	color: var(--color-a-3);
-    display: -webkit-box;
+	display: -webkit-box;
 	-webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+	-webkit-box-orient: vertical;
 	line-height: 1.75rem;
 	font-size: 1.375rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .postcard-box :is(h2, h3) a:hover {
@@ -803,13 +807,13 @@ svg {
 }
 
 .postcard-box :is(h2, h3) a::after {
-    content: "";
-    bottom: 0;
-    left: 0;
+	content: "";
+	bottom: 0;
+	left: 0;
 	position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
+	right: 0;
+	top: 0;
+	z-index: 1;
 }
 
 .postcard-box p {
@@ -895,9 +899,9 @@ svg {
 
 .article {
 	margin: 0 auto;
-    max-width: var(--content-w);
-    padding: .75rem;
-    width: 100%;
+	max-width: var(--content-w);
+	padding: .75rem;
+	width: 100%;
 }
 
 .breadcrumbs {
@@ -913,8 +917,8 @@ svg {
 
 .breadcrumbs ol li.breadcrumb-list::before {
 	content: "\2022";
-    display: inline;
-    margin: 0 0.25rem;
+	display: inline;
+	margin: 0 0.25rem;
 }
 
 .breadcrumbs ol li a:hover {
@@ -922,7 +926,7 @@ svg {
 }
 
 .article-title {
-    border-bottom: 1px solid rgba(108, 117, 125, .5);
+	border-bottom: 1px solid rgba(108, 117, 125, .5);
 	margin: .75rem auto 1.5rem;
 	padding-bottom: 0.75rem;
 }
@@ -939,10 +943,11 @@ svg {
 	font-size: .8125rem;
 	font-weight: 300;
 	gap: 1rem;
-    line-height: 1.5rem;
+	line-height: 1.5rem;
 }
 
-.info-date, .info-tag-list {
+.info-date,
+.info-tag-list {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -950,7 +955,7 @@ svg {
 }
 
 .article-tag a::before {
-    content: "#";
+	content: "#";
 }
 
 .article-tag a:hover {
@@ -1039,14 +1044,14 @@ svg {
 }
 
 .article-content .youtube {
-    aspect-ratio: 16 / 9;
-    position: relative;
-    width: 100%;
+	aspect-ratio: 16 / 9;
+	position: relative;
+	width: 100%;
 }
 
 .article-content .youtube * {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .article-content blockquote {
@@ -1167,9 +1172,9 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	display: flex;
 	flex-direction: column-reverse;
 	gap: 3rem;
-    padding: 2rem .75rem;
-    margin: 0 auto;
-    max-width: var(--max-w);
+	padding: 2rem .75rem;
+	margin: 0 auto;
+	max-width: var(--max-w);
 }
 
 .footer-left {
@@ -1212,7 +1217,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	.navigation {
 		padding: 1rem;
 	}
-	
+
 	#menu-icon {
 		display: none;
 	}
