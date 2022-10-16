@@ -6,7 +6,7 @@
 		<div class="hero-heading-name">
 			<h1>Hi! I'm <span class="hero-name">Wiryawan Adipa</span>.</h1>
 		</div>
-		<div class="hero-heading-text">Front-End Web Dev - UX Designer - WordPress Dev</div>
+		<div class="hero-heading-text">Front-End Web Dev &bull; UX Designer &bull; WordPress Dev</div>
 		<div class="hero-heading-link">
 			<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery">Design Gallery</a>
 			<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project">Project</a>
