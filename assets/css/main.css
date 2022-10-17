@@ -662,7 +662,6 @@ svg {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
-	padding-bottom: 3rem;
 }
 
 .contact-form-input {
