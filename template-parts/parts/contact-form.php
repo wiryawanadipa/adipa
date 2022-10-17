@@ -153,8 +153,7 @@ if (
 				}
 				?>
 				<div id="messagecharcounter" class="<?php echo $color; ?>">
-					<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $countMessage; } else { echo '0'; } ?></span>
-					<span id="maxchar">/ <?php echo $maxMessageChar; ?></span>
+					<span id="typedchar"><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $countMessage; } else { echo '0'; } ?> / <?php echo $maxMessageChar; ?></span>
 				</div>
 				<script>
 				const messageElement = document.querySelector("#message");
@@ -166,7 +165,7 @@ if (
 					if (typedChar > maxChar) {
 						return false;
 					}
-					typedCharElement.textContent = typedChar;
+					typedCharElement.textContent = typedChar + " / " + maxChar;
 					if (typedChar > maxChar - 1) {
 						characterCounterElement.classList = "text-danger";
 					} else if (typedChar < maxChar && typedChar > maxChar * (90 / 100)) {
