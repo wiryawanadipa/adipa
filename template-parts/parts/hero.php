@@ -7,8 +7,8 @@
 	</div>
 	<div class="hero-heading-text">Front-End Web Dev &bull; UX Designer &bull; WordPress Dev</div>
 	<div class="hero-heading-link">
-		<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery">Design Gallery</a>
-		<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project">Project</a>
+		<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page">Design Gallery</a>
+		<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label">Project</a>
 	</div>
 	<div class="search-box" itemscope itemtype="https://schema.org/WebSite">
 	<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>
