@@ -383,14 +383,14 @@ function custom_pagination($pages = '', $range = 3) {
 			$paged > 1
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($paged - 1) . '" title="Go to Page ' . ($paged-1) . '" aria-label="Go to Page ' . ($paged-1) . '" class="nav-arrow">&lsaquo;</a>';
+			echo '<a href="' . get_pagenum_link($paged - 1) . '" title="Go to the previous page" aria-label="Go to the previous page" class="nav-arrow">&lsaquo;</a>';
 		}
 		if (
 			$paged > $range
 			&& $paged > $range+1
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link(1) . '" title="Go to Page 1" aria-label="Go to Page 1">1</a>';
+			echo '<a href="' . get_pagenum_link(1) . '" title="Go to the page 1" aria-label="Go to the page 1">1</a>';
 		}
 		if (
 			$paged-$range-1 > 1
@@ -407,7 +407,7 @@ function custom_pagination($pages = '', $range = 3) {
 				if ($paged == $i) {
 					echo '<span class="current">' . $i . '</span>';
 				} else {
-					echo '<a href="' . get_pagenum_link($i) . '" title="Go to Page ' . $i . '" aria-label="Go to Page ' . $i . '">' . $i . '</a>';
+					echo '<a href="' . get_pagenum_link($i) . '" title="Go to the page ' . $i . '" aria-label="Go to the page ' . $i . '">' . $i . '</a>';
 				}
 			}
 		}
@@ -423,13 +423,13 @@ function custom_pagination($pages = '', $range = 3) {
 			&&  $paged+$range-1 < $pages
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to Page ' . $pages . '" aria-label="Go to Page ' . $pages . '">' . $pages . '</a>';
+			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to the page ' . $pages . '" aria-label="Go to the page ' . $pages . '">' . $pages . '</a>';
 		}
 		if (
 			$paged < $pages
 			&& $showitems < $pages
 		) {
-			echo '<a href="' . get_pagenum_link($paged + 1) . '" title="Go to Page ' . ($paged+1) . '" aria-label="Go to Page ' . ($paged+1) . '" class="nav-arrow">&rsaquo;</a>';
+			echo '<a href="' . get_pagenum_link($paged + 1) . '" title="Go to the next page" aria-label="Go to the next page" class="nav-arrow">&rsaquo;</a>';
 		}
 		echo '</nav>' . "\n";
 	}
