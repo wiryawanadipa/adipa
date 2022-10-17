@@ -275,7 +275,7 @@ html {
 }
 
 body {
-	background-color: var(--color-b-1);
+	background-color: var(--color-b-3);
 	color: var(--color-c-1);
 	font-size: 100%;
 }
@@ -285,10 +285,6 @@ svg {
 }
 
 /* Header */
-.header {
-	background-color: var(--color-b-3);
-}
-
 .navigation {
 	font-size: 1.4375rem;
 	padding: .5rem;
@@ -421,10 +417,6 @@ svg {
 
 /* Hero */
 .hero {
-	background-color: var(--color-b-3);
-}
-
-.herobox {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -549,10 +541,6 @@ svg {
 }
 
 /* Main Content */
-.homepage-content {
-	background-color: var(--color-b-3);
-}
-
 .group-content-list {
 	padding: 3rem 0;
 }
@@ -889,7 +877,6 @@ svg {
 
 .pagination .nav-arrow {
 	align-items: center;
-	background-color: var(--color-b-3);
 	border-radius: 5rem;
 	display: flex;
 	height: 35px;
@@ -898,6 +885,7 @@ svg {
 }
 
 .article {
+	background-color: var(--color-b-1);
 	margin: 0 auto;
 	max-width: var(--content-w);
 	padding: .75rem;
@@ -1139,7 +1127,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	margin: 2rem 0 4rem;
+	margin-top: 2rem;
 	padding-bottom: 1.5rem;
 }
 
@@ -1164,10 +1152,6 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 }
 
 /* Footer */
-.footer {
-	background-color: var(--color-b-2);
-}
-
 .footer-box {
 	display: flex;
 	flex-direction: column-reverse;
@@ -1215,7 +1199,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 	.navigation {
-		padding: 1rem;
+		padding: .75rem;
 	}
 
 	#menu-icon {
@@ -1373,7 +1357,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		border-radius: 5rem;
 	}
 
-	.herobox {
+	.hero {
 		padding: 4rem 1rem;
 	}
 
@@ -1398,6 +1382,10 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		grid-template-columns: repeat(2, 1fr);
 	}
 
+	.article {
+		padding: 1rem;
+	}
+
 	.footer-box {
 		padding: 4rem 1rem;
 	}
@@ -1405,12 +1393,20 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.herobox {
+	.navigation {
+		padding: 2rem 1rem;
+	}
+
+	.hero {
 		padding: 6rem 2rem;
 	}
 
 	.content-list-box {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.article {
+		border-radius: .375rem;
 	}
 }
 
@@ -1420,7 +1416,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 		padding: 4rem 1rem;
 	}
 
-	.herobox {
+	.hero {
 		padding: 8rem 2rem;
 	}
 }

@@ -1,4 +1,4 @@
-<header class="header">
+<header>
 	<nav class="navigation">
 		<div class="top-menu">
 			<a class="logo" href="<?php bloginfo('url'); ?>"<?php if (is_home()) { echo ' aria-current="page"'; } ?>><span class="logo-name"><span class="name-part">W</span>iryawan <span class="name-part">A</span>dipa</span></a>
