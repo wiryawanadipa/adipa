@@ -662,6 +662,7 @@ svg {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
+	padding-bottom: 3rem;
 }
 
 .contact-form-input {
@@ -1379,6 +1380,10 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	.content-list-box {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.contact-form {
+		padding-bottom: 1rem;
 	}
 
 	.article {
