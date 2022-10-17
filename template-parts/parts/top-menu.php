@@ -9,7 +9,7 @@
 					<div class="bar"></div>
 				</div>
 			</div>
-			<div id="main-menu" class="standby">
+			<div id="main-menu">
 				<ul>
 					<li><a <?php if (is_category('blog')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page">blog</a></li>
 					<li><a <?php if (is_page('about')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page">about</a></li>
@@ -27,9 +27,6 @@
 						menuBox.classList = "show";
 					} else if (hasMenuShow && !isClickMenu) {
 						menuBox.classList = "hidden";
-						setTimeout(e => {
-							menuBox.classList = "standby";
-						}, 150);
 					}
 				});
 			</script>
