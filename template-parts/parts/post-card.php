@@ -17,7 +17,7 @@
 		} else {
 			echo '<h2>';
 		}
-		echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+		echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '" aria-label="' . get_the_title() . '">' . get_the_title() . '</a>';
 		if (is_home()) {
 			echo '</h3>';
 		} else {
@@ -30,7 +30,7 @@
 			foreach ($tags as $tag) {
 				$tag_link = get_tag_link($tag->term_id);
 				$name = $tag->name;
-				echo '<li><a href="' . $tag_link . '">' . esc_attr($name) . '</a></li>';
+				echo '<li><a href="' . $tag_link . '" title="' . esc_attr($name) . '" aria-label="' . esc_attr($name) . '">' . esc_attr($name) . '</a></li>';
 			}
 			echo '</ul>';
 		}
