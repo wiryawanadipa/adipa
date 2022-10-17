@@ -17,7 +17,7 @@
 		} else {
 			echo '<h2>';
 		}
-		echo '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
+		echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
 		if (is_home()) {
 			echo '</h3>';
 		} else {
