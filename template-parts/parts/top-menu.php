@@ -2,14 +2,14 @@
 	<nav class="navigation">
 		<div class="top-menu">
 			<a class="logo" href="<?php bloginfo('url'); ?>"<?php if (is_home()) { echo ' aria-current="page"'; } ?> title="Wiryawan Adipa Homepage" aria-label="Wiryawan Adipa Homepage"><span class="logo-name"><span class="name-part">W</span>iryawan <span class="name-part">A</span>dipa</span></a>
-			<div id="menu-icon" title="Main Menu" aria-label="Main Menu">
+			<div id="menu-icon" title="Main Menu" aria-haspopup="true" aria-controls="main-menu">
 				<div class="hamburger">
 					<div class="bar"></div>
 					<div class="bar"></div>
 					<div class="bar"></div>
 				</div>
 			</div>
-			<div id="main-menu">
+			<div id="main-menu" aria-labelledby="menu-icon">
 				<ul>
 					<li><a <?php if (is_category('blog')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page">blog</a></li>
 					<li><a <?php if (is_page('about')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page">about</a></li>
