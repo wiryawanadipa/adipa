@@ -271,6 +271,7 @@ strong * {
 
 html {
 	font-family: 'Rubik', sans-serif;
+	scroll-behavior: smooth;
 	scrollbar-color: var(--color-a-1) var(--color-b-2);
 }
 
