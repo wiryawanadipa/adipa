@@ -666,16 +666,16 @@ svg {
 	padding-bottom: 3rem;
 }
 
-.contact-form label span {
-	color: var(--color-a-1);
-}
-
 .contact-form :is(input, textarea) {
 	background-color: var(--color-c-2);
 	border-radius: .375rem;
 	color: var(--color-b-3);
 	padding: .75rem;
 	overflow-wrap: break-word;
+}
+
+.contact-form input {
+	max-width: 400px;
 }
 
 .hidden-form {
