@@ -66,7 +66,7 @@ function breadcrumbs() {
 
 // Include custom stylesheet on head
 function wa_style_queue_css() {
-	wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/main.css', false, NULL);
+	wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/main.css', false, date('Ymd'));
 	wp_enqueue_style('wa-style');
 }
 add_action('wp_enqueue_scripts', 'wa_style_queue_css');

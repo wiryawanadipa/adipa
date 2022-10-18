@@ -7,7 +7,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/assets/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('stylesheet_directory'); ?>/assets/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('stylesheet_directory'); ?>/assets/favicon/favicon-16x16.png">
-		<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/css/main.css'; ?>" as="style">
+		<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/css/main.css?ver=' . date('Ymd'); ?>" as="style">
 		<meta name="theme-color" content="#eb3b5a" />
 		<?php wp_head(); ?>
 		<?php get_template_part('template-parts/parts/meta'); ?>

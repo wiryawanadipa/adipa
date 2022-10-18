@@ -251,7 +251,7 @@ meter {
 }
 
 ::placeholder {
-	color: var(--color-b-1);
+	color: var(--color-b-2);
 	opacity: .8;
 }
 
@@ -665,17 +665,11 @@ svg {
 	padding-bottom: 3rem;
 }
 
-.contact-form-input {
-	display: flex;
-	flex-direction: column;
-	gap: .75rem;
-}
-
-.contact-form-input label span {
+.contact-form label span {
 	color: var(--color-a-1);
 }
 
-.contact-form-input :is(input, textarea) {
+.contact-form :is(input, textarea) {
 	background-color: var(--color-c-2);
 	border-radius: .375rem;
 	color: var(--color-b-3);

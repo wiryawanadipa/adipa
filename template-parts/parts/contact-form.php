@@ -123,18 +123,9 @@ if (
 	<form action="" method="post">
 		<fieldset>
 			<div class="contact-form">
-				<div class="contact-form-input">
-					<label for="sname">Name<span>&#42;</span></label>
-					<input id="sname" name="sname" type="text" placeholder="Please enter your name here." maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } else { echo ''; } ?>" required>
-				</div>
-				<div class="contact-form-input">
-					<label for="email">E-Mail<span>&#42;</span></label>
-					<input id="email" name="email" type="email" placeholder="Please enter your e-mail address here." maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } else { echo ''; } ?>" required>
-				</div>
-				<div class="contact-form-input">
-					<label for="message">Message<span>&#42;</span></label>
-					<textarea id="message" name="message" placeholder="Please enter your message here." maxlength="<?php echo $maxMessageChar; ?>" rows="11" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } else { echo ''; } ?></textarea>
-				</div>
+				<input id="sname" name="sname" type="text" placeholder="Name" maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } ?>" required>
+				<input id="email" name="email" type="email" placeholder="E-Mail" maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } ?>" required>
+				<textarea id="message" name="message" placeholder="Message" maxlength="<?php echo $maxMessageChar; ?>" rows="11" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } ?></textarea>
 				<div class="hidden-form">
 					<label>If you see this, leave this form field blank.</label>
 					<input name="subject" type="text" tabindex="-1" autocomplete="off">
