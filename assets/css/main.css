@@ -674,8 +674,14 @@ svg {
 	overflow-wrap: break-word;
 }
 
-.contact-form input {
-	max-width: 400px;
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.contact-info input {
+	width: 100%;
 }
 
 .hidden-form {
@@ -1264,6 +1270,10 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 
 	.content-list-box {
 		gap: .75rem;
+	}
+
+	.contact-info {
+		flex-direction: row;
 	}
 
 	.breadcrumbs {

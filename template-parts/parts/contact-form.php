@@ -123,8 +123,10 @@ if (
 	<form action="" method="post">
 		<fieldset>
 			<div class="contact-form">
-				<input id="sname" name="sname" type="text" placeholder="Name" maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } ?>" required>
-				<input id="email" name="email" type="email" placeholder="E-Mail" maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } ?>" required>
+				<div class="contact-info">
+					<input id="sname" name="sname" type="text" placeholder="Name" maxlength="50" value="<?php if (isset($_POST['sname']) && !isset($emailSent)) { echo $sanitizename; } ?>" required>
+					<input id="email" name="email" type="email" placeholder="E-Mail" maxlength="80" value="<?php if (isset($_POST['email']) && !isset($emailSent)) { echo $sanitizeemail; } ?>" required>
+				</div>
 				<textarea id="message" name="message" placeholder="Message" maxlength="<?php echo $maxMessageChar; ?>" rows="11" required><?php if (isset($_POST['message']) && !isset($emailSent)) { echo $sanitizemessage; } ?></textarea>
 				<div class="hidden-form">
 					<label>If you see this, leave this form field blank.</label>
