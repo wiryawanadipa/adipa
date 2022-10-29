@@ -73,7 +73,7 @@ add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 // Insert custom style in custom setting
 function wa_custom_setting_style() {
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, NULL);
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
 	wp_enqueue_style('wa_custom_admin_css');
 }
 add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
@@ -97,7 +97,7 @@ add_action('wp_print_scripts', 'wa_deregister_script');
 
 // Custom style on login page
 function wa_login_style() {
-	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, NULL);
+	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
 	wp_enqueue_style('wa-login-style');
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
