@@ -98,7 +98,9 @@ add_action('wp_print_scripts', 'wa_deregister_script');
 // Custom style on login page
 function wa_login_style() {
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, NULL);
+	wp_register_style('wa-particle-style', get_template_directory_uri() . '/assets/css/particle.css', false, NULL);
 	wp_enqueue_style('wa-login-style');
+	wp_enqueue_style('wa-particle-style');
 }
 add_action('login_enqueue_scripts', 'wa_login_style');
 
@@ -110,6 +112,13 @@ function add_third_party_resource() {
 }
 add_action('login_head', 'add_third_party_resource');
 add_action('admin_head', 'add_third_party_resource');
+
+function action_login_init( $array ) {
+	echo '<div id="particles-js"></div>';
+	echo '<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>';
+	echo '<script src="' . get_template_directory_uri() . '/assets/js/custom-particle.js"></script>';
+}
+add_action( 'login_init', 'action_login_init', 10, 1 ); 
 
 // Change login looks
 function my_login_logo_url() {
