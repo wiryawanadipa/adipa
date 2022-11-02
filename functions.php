@@ -95,6 +95,14 @@ function wa_deregister_script() {
 }
 add_action('wp_print_scripts', 'wa_deregister_script');
 
+function wa_custom_font() {
+	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n\r";
+	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n\r";
+	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">' . "\n\r";
+}
+add_action('login_head', 'wa_custom_font');
+
+
 // Custom style on login page
 function wa_login_style() {
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
@@ -111,11 +119,11 @@ function add_third_party_resource() {
 add_action('login_head', 'add_third_party_resource');
 add_action('admin_head', 'add_third_party_resource');
 
-function action_login_init( $array ) {
+function wa_particle_background() {
 	echo '<div id="particles-js"></div>';
 	echo '<script src="' . get_template_directory_uri() . '/assets/js/particles.min.js"></script>';
 }
-add_action( 'login_init', 'action_login_init', 10, 1 ); 
+add_action('login_init', 'wa_particle_background', 10, 1);
 
 // Change login looks
 function my_login_logo_url() {
