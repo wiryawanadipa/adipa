@@ -1,5 +1,7 @@
 <?php
-// Auto theme setting upon activation
+/**
+	* Default Theme Settings
+*/
 if (isset($_GET['activated']) && is_admin()) {
 	update_option('posts_per_page', 12);
 	update_option('thumbnail_size_w', 0);
@@ -32,12 +34,12 @@ if (isset($_GET['activated']) && is_admin()) {
 	foreach ($page_title as $new_page_title) {
 		$page_check = get_page_by_title($new_page_title);
 		$new_page = array(
-			'post_type' => 'page',
-			'post_title' => $new_page_title,
-			'post_content' => '',
-			'post_status' => 'publish',
-			'post_author' => 1,
-			'page_template'  => 'page-templates/' . strtolower($new_page_title) . '.php'
+			'post_type'			=> 'page',
+			'post_title'		=> $new_page_title,
+			'post_content'	=> '',
+			'post_status'		=> 'publish',
+			'post_author'		=> 1,
+			'page_template'	=> 'page-templates/' . strtolower($new_page_title) . '.php'
 		);
 		if (!isset($page_check->ID)) {
 			$new_page_id = wp_insert_post($new_page);
@@ -45,7 +47,61 @@ if (isset($_GET['activated']) && is_admin()) {
 	}
 }
 
-// Add breadcrumbs
+/**
+	* Custom Font
+*/
+add_action('login_head', 'wa_custom_font');
+add_action('admin_head', 'wa_custom_font');
+
+function wa_custom_font() {
+	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n\r";
+	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n\r";
+	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">' . "\n\r";
+}
+
+
+/**
+	* Main CSS Style
+*/
+add_action('wp_enqueue_scripts', 'wa_style_queue_css');
+function wa_style_queue_css() {
+	wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/main.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
+	wp_enqueue_style('wa-style');
+}
+
+/**
+	* Admin CSS Style
+*/
+add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
+function wa_custom_setting_style() {
+	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
+	wp_enqueue_style('wa_custom_admin_css');
+}
+
+/**
+	* Disable calling Highlighting Code Block plugin CSS & JS
+	* Enable only in single post & admin page
+*/
+add_action('wp_print_styles', 'wa_deregister_styles');
+add_action('wp_print_scripts', 'wa_deregister_script');
+
+function wa_deregister_styles() {
+	if (!is_single() && !is_admin()) {
+		wp_deregister_style('hcb-coloring');
+		wp_deregister_style('hcb-style');
+	}
+}
+
+function wa_deregister_script() {
+	if (!is_single() && !is_admin()) {
+		wp_deregister_script('hcb-prism');
+		wp_deregister_script('hcb-script');
+	}
+}
+
+/**
+	* Breadcrumbs
+*/
 function breadcrumbs() {
 	global $post;
 	echo '<nav class="breadcrumbs" aria-label="breadcrumb">';
@@ -63,44 +119,6 @@ function breadcrumbs() {
 	echo '</ol>';
 	echo '</nav>';
 }
-
-// Include custom stylesheet on head
-function wa_style_queue_css() {
-	wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/main.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
-	wp_enqueue_style('wa-style');
-}
-add_action('wp_enqueue_scripts', 'wa_style_queue_css');
-
-// Insert custom style in custom setting
-function wa_custom_setting_style() {
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
-	wp_enqueue_style('wa_custom_admin_css');
-}
-add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
-
-// Disable load HCB styles & scripts if it's not in single post
-function wa_deregister_styles() {
-	if (!is_single() && !is_admin()) {
-		wp_deregister_style('hcb-coloring');
-		wp_deregister_style('hcb-style');
-	}
-}
-add_action('wp_print_styles', 'wa_deregister_styles');
-
-function wa_deregister_script() {
-	if (!is_single() && !is_admin()) {
-		wp_deregister_script('hcb-prism');
-		wp_deregister_script('hcb-script');
-	}
-}
-add_action('wp_print_scripts', 'wa_deregister_script');
-
-function wa_custom_font() {
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n\r";
-	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n\r";
-	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">' . "\n\r";
-}
-add_action('login_head', 'wa_custom_font');
 
 // Custom style on login page
 function wa_login_style() {
