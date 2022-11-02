@@ -47,8 +47,12 @@ if (isset($_GET['activated']) && is_admin()) {
 	}
 }
 
+
+
 /**
 	* Custom Font
+	*
+	* https://fonts.google.com/specimen/Rubik
 */
 add_action('login_head', 'wa_custom_font');
 add_action('admin_head', 'wa_custom_font');
@@ -58,6 +62,8 @@ function wa_custom_font() {
 	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n\r";
 	echo '<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">' . "\n\r";
 }
+
+
 
 /**
 	* Main CSS Style
@@ -69,6 +75,8 @@ function wa_style_queue_css() {
 	wp_enqueue_style('wa-style');
 }
 
+
+
 /**
 	* Admin CSS Style
 */
@@ -78,6 +86,8 @@ function wa_custom_setting_style() {
 	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
 	wp_enqueue_style('wa_custom_admin_css');
 }
+
+
 
 /**
 	* Login CSS Style
@@ -89,9 +99,27 @@ function wa_login_style() {
 	wp_enqueue_style('wa-login-style');
 }
 
+
+
+/**
+	* Login page particle background
+	*
+	* https://vincentgarreau.com/particles.js/
+*/
+add_action('login_init', 'wa_particle_background', 10, 1);
+
+function wa_particle_background() {
+	echo '<div id="particles-js"></div>';
+	echo '<script src="' . get_template_directory_uri() . '/assets/js/particles.min.js"></script>';
+}
+
+
+
 /**
 	* Disable calling Highlighting Code Block plugin CSS & JS
 	* Enable only in single post & admin page
+	*
+	* https://wordpress.org/plugins/highlighting-code-block/
 */
 add_action('wp_print_styles', 'wa_deregister_styles');
 add_action('wp_print_scripts', 'wa_deregister_script');
@@ -110,8 +138,12 @@ function wa_deregister_script() {
 	}
 }
 
+
+
 /**
 	* Breadcrumbs
+	*
+	* https://schema.org/BreadcrumbList
 */
 function breadcrumbs() {
 	global $post;
@@ -131,55 +163,82 @@ function breadcrumbs() {
 	echo '</nav>';
 }
 
-//  Add Favicon on login and admin page
+
+
+/**
+	* Favicon for admin & login page
+*/
+add_action('login_head', 'add_third_party_resource');
+add_action('admin_head', 'add_third_party_resource');
+
 function add_third_party_resource() {
 	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
 	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
 	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
 }
-add_action('login_head', 'add_third_party_resource');
-add_action('admin_head', 'add_third_party_resource');
 
-function wa_particle_background() {
-	echo '<div id="particles-js"></div>';
-	echo '<script src="' . get_template_directory_uri() . '/assets/js/particles.min.js"></script>';
-}
-add_action('login_init', 'wa_particle_background', 10, 1);
 
-// Change login looks
-function my_login_logo_url() {
-	return home_url();
-}
-add_filter('login_headerurl', 'my_login_logo_url');
+/**
+	* Change header title
+*/
+add_filter('login_headertext', 'my_login_logo_url_title');
 
 function my_login_logo_url_title() {
 	return 'Wiryawan Adipa';
 }
-add_filter('login_headertext', 'my_login_logo_url_title');
 
-// reCaptcha
+
+
+/**
+	* Change header URL
+*/
+add_filter('login_headerurl', 'my_login_logo_url');
+
+function my_login_logo_url() {
+	return home_url();
+}
+
+
+/**
+	* Add Google reCaptcha & honeypot on login, registration, and lost password page
+	*
+	* https://developers.google.com/recaptcha/docs/display
+	* https://developers.google.com/recaptcha/docs/verify
+*/
 if (
 	null != get_option('wa_recaptcha_site_key')
 	&& !empty(get_option('wa_recaptcha_site_key'))
 	&& null != get_option('wa_recaptcha_secret_key')
 	&& !empty(get_option('wa_recaptcha_secret_key'))
 ) {
-	// Add reCaptcha & honeypot on login, registration and lost password page
+	/**
+		* Add Google reCaptcha & honeypot element
+	*/
+	add_action('login_form','recaptcha_honeypot');
+	add_action('register_form', 'recaptcha_honeypot');
+	add_action('lostpassword_form', 'recaptcha_honeypot');
+
 	function recaptcha_honeypot() {
 		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
 		echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
 		echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
 	}
-	add_action('login_form','recaptcha_honeypot');
-	add_action('register_form', 'recaptcha_honeypot');
-	add_action('lostpassword_form', 'recaptcha_honeypot');
+	
+	/**
+		* Add extra element to lost password
+		* Function: Fixing UI position
+	*/
+	add_action('lostpassword_form', 'wa_extra_element');
 
-	function extra_div() {
+	function wa_extra_element() {
 		echo '<div style="width: 1px;"></div>';
 	}
-	add_action('lostpassword_form', 'extra_div');
 
-	// Validating reCaptcha & honeypot on login page
+	/**
+		* Validating reCaptcha & honeypot on login page
+		*/
+	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
+
 	function captcha_login_check($user, $password) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
@@ -193,9 +252,12 @@ if (
 			return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
 		}
 	}
-	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
 
-	// Validating reCaptcha & honeypot on registration page
+	/**
+		* Validating reCaptcha & honeypot on registration page
+	*/
+	add_action('registration_errors', 'captcha_registration_check', 10, 3);
+
 	function captcha_registration_check($errors, $user_login, $user_email) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
@@ -209,9 +271,12 @@ if (
 			return new WP_Error('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
 		}
 	}
-	add_action('registration_errors', 'captcha_registration_check', 10, 3);
 
-	// Validating reCaptcha & honeypot on lost password page
+	/**
+		* Validating reCaptcha & honeypot on lost password page
+	*/
+	add_action( 'lostpassword_post', 'captcha_lostpassword_check', 10, 1 );
+
 	function captcha_lostpassword_check($errors) {
 		if (!empty($_POST['g-recaptcha-response']) && $_POST['captcha'] === '') {
 			$rsp = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . get_option('wa_recaptcha_secret_key') . '&response=' . $_POST['g-recaptcha-response'] .'&remoteip=' . $_SERVER['REMOTE_ADDR']);
@@ -225,16 +290,26 @@ if (
 			$errors->add('Captcha Invalid', __('Captcha Invalid! Please check the captcha!'));
 		}
 	}
-	add_action( 'lostpassword_post', 'captcha_lostpassword_check', 10, 1 );
 }
 
-// Stop wordpress heartbeat
+
+
+/**
+	* Disable WordPress heartbeat
+*/
+add_action('init', 'stop_heartbeat', 1);
+
 function stop_heartbeat() {
 	wp_deregister_script('heartbeat');
 }
-add_action('init', 'stop_heartbeat', 1);
 
-// Disable author & date arhive page
+
+
+/**
+	* Redirect author & date archive page to homepage
+*/
+add_action('template_redirect', 'disable_page');
+
 function disable_page() {
 	global $wp_query;
 	if (
@@ -247,10 +322,20 @@ function disable_page() {
 		exit; 
 	}
 }
-add_action('template_redirect', 'disable_page');
 
+
+
+/**
+	* Auto insert featured image
+*/
 if (function_exists('add_theme_support')) {
 	add_theme_support('post-thumbnails');
+	add_action('the_post', 'easy_add_thumbnail');
+	add_action('new_to_publish', 'easy_add_thumbnail');
+	add_action('draft_to_publish', 'easy_add_thumbnail');
+	add_action('pending_to_publish', 'easy_add_thumbnail');
+	add_action('future_to_publish', 'easy_add_thumbnail');
+
 	function easy_add_thumbnail($post) {
 		$already_has_thumb = has_post_thumbnail();
 		$post_type = get_post_type($post->ID);
@@ -274,17 +359,20 @@ if (function_exists('add_theme_support')) {
 			}
 		}
 	}
-	add_action('the_post', 'easy_add_thumbnail');
-	add_action('new_to_publish', 'easy_add_thumbnail');
-	add_action('draft_to_publish', 'easy_add_thumbnail');
-	add_action('pending_to_publish', 'easy_add_thumbnail');
-	add_action('future_to_publish', 'easy_add_thumbnail');
 }
 
-// Remove admin bar
+
+
+/**
+	* Remove admin bar on front-end
+*/
 add_filter('show_admin_bar', '__return_false');
 
-// Remove unnecessary HTML tag
+
+
+/**
+	* Remove unnecessary WordPress HTML tag
+*/
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'rsd_link');
@@ -299,6 +387,8 @@ remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
+add_action('init', 'remove_oembed', 9999);
+
 function remove_oembed() {
 	global $wp;
 	$wp->public_query_vars = array_diff($wp->public_query_vars, array('embed'));
@@ -308,7 +398,8 @@ function remove_oembed() {
 	remove_action('wp_head', 'wp_oembed_add_discovery_links');
 	remove_action('wp_head', 'wp_oembed_add_host_js');
 }
-add_action('init', 'remove_oembed', 9999);
+
+add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
 
 function smartwp_remove_wp_block_library_css(){
 	wp_dequeue_style('wp-block-library');
@@ -316,9 +407,15 @@ function smartwp_remove_wp_block_library_css(){
 	wp_dequeue_style('wc-blocks-style');
 	wp_dequeue_style('global-styles');
 } 
-add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
 
-// Disable Wordpress auto generated images
+
+
+/**
+	* Disable WordPress auto generating various image sizes
+*/
+add_filter('intermediate_image_sizes_advanced', 'disable_media');
+add_filter('big_image_size_threshold', '__return_false');
+
 function disable_media($sizes) {
 	unset($sizes['thumbnail']);
 	unset($sizes['medium']);
@@ -328,12 +425,19 @@ function disable_media($sizes) {
 	unset($sizes['2048x2048']);
 	return $sizes;
 }
-add_filter('intermediate_image_sizes_advanced', 'disable_media');
-add_filter('big_image_size_threshold', '__return_false');
 
-// Add image size
+
+
+/**
+	* Add custom image size for thumbnail
+*/
 add_image_size('bigthumb', 421, 263, true);
 
+
+
+/**
+	* Related post by tags
+*/
 function wa_related_by_tags() {
 	global $post;
 	$tags = get_the_tags($post->ID);
@@ -361,13 +465,13 @@ function wa_related_by_tags() {
 	wp_reset_postdata();
 }
 
-// Add loading attribute
-function strip_entire_image_class($html) {
-    return preg_replace('/ class="(.*)"/', 'loading="lazy"', $html);
-}
-add_filter('get_image_tag', 'strip_entire_image_class', 0, 4);
 
-// Add <figure> tag on <img>
+
+/**
+	* Add <figure> tag on <img>
+*/
+add_filter('the_content', 'figure_tag_img', 99);
+
 function figure_tag_img ($content) {
 	$content = preg_replace(
 		'/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
@@ -376,29 +480,56 @@ function figure_tag_img ($content) {
 	);
 	return $content;
 }
-add_filter('the_content', 'figure_tag_img', 99);
 
-// Strict guess for a 404 redirect
+
+
+/**
+	* Replace img class attribute with loading="lazy" attribute
+*/
+add_filter('get_image_tag', 'strip_entire_image_class', 0, 4);
+
+function strip_entire_image_class($html) {
+    return preg_replace('/ class="(.*)"/', 'loading="lazy"', $html);
+}
+
+
+
+/**
+	* Strict guess for a 404 redirect
+*/
+add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
+
 function strict_redirect_guessing() {
 	return true;
 }
-add_filter('strict_redirect_guess_404_permalink', 'strict_redirect_guessing');
 
-// Limit the excerpt length
+
+
+/**
+	* Limit the excerpt length
+*/
+add_filter('excerpt_length', 'wp_example_excerpt_length');
+
 function wp_example_excerpt_length($length) {
 	return 25;
 }
-add_filter('excerpt_length', 'wp_example_excerpt_length');
 
-// Remove dots on the_excerpt
+/**
+	* Remove dots on the_excerpt
+*/
+add_filter('the_excerpt', 'replace_content');
+add_filter('get_the_excerpt', 'replace_content');
+
 function replace_content($content) {
 	$content = str_replace(array('[&hellip;]', '[...]', '...'), '', $content);
 	return $content;
 }
-add_filter('the_excerpt', 'replace_content');
-add_filter('get_the_excerpt', 'replace_content');
 
-// Custom Pagination
+
+
+/**
+	* Custom pagination
+*/
 function custom_pagination($pages = '', $range = 3) {  
 	$showitems = ($range*2)+1;  
 	global $paged;
@@ -470,19 +601,35 @@ function custom_pagination($pages = '', $range = 3) {
 	}
 }
 
-// Youtube shortcode
+
+
+/**
+	* Custom shortcode for YouTube link
+*/
+add_shortcode('youtube', 'youtube_link');
+
 function youtube_link($atts, $content = null) {
 	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
 }
-add_shortcode('youtube', 'youtube_link');
 
-// Show Advanced Option in Settings
+
+
+/**
+	* Show all settings on admin menu
+*/
+add_action('admin_menu', 'show_options');
+
 function show_options() {
 	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
 }
-add_action('admin_menu', 'show_options');
 
-// Custom theme settings
+
+
+/**
+	* Custom theme settings
+	*/
+add_action('admin_menu', 'theme_settings_panel');
+
 function theme_settings_panel() {
 	add_menu_page(
 		'Wiryawan Adipa Theme Settings',
@@ -502,15 +649,15 @@ function theme_settings_panel() {
 		'theme_settings_general'
 	);
 }
-add_action('admin_menu', 'theme_settings_panel');
 
 function theme_settings_general() {
 	include 'settings/setting-main.php';
 }
+
+add_action('admin_init', 'register_general_setting');
 
 function register_general_setting() {
 	register_setting('main-settings', 'wa_mail');
 	register_setting('main-settings', 'wa_recaptcha_site_key');
 	register_setting('main-settings', 'wa_recaptcha_secret_key');
 }
-add_action('admin_init', 'register_general_setting');
