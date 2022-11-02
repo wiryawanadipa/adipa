@@ -489,7 +489,7 @@ function figure_tag_img ($content) {
 add_filter('get_image_tag', 'strip_entire_image_class', 0, 4);
 
 function strip_entire_image_class($html) {
-    return preg_replace('/ class="(.*)"/', 'loading="lazy"', $html);
+	return preg_replace('/ class="(.*)"/', 'loading="lazy"', $html);
 }
 
 
@@ -530,8 +530,8 @@ function replace_content($content) {
 /**
 	* Custom pagination
 */
-function custom_pagination($pages = '', $range = 3) {  
-	$showitems = ($range*2)+1;  
+function custom_pagination($pages = '', $range = 3) {
+	$showitems = ($range*2)+1;
 	global $paged;
 	if (empty($paged)) {
 		$paged = 1;
@@ -542,7 +542,7 @@ function custom_pagination($pages = '', $range = 3) {
 		if (!$pages) {
 			$pages = 1;
 		}
-	}   
+	}
 	if (1 != $pages) {
 		echo '<nav class="pagination" aria-label="Pagination">';
 		if (
@@ -586,7 +586,7 @@ function custom_pagination($pages = '', $range = 3) {
 		}
 		if (
 			$paged < $pages-$range
-			&&  $paged+$range-1 < $pages
+			&& $paged+$range-1 < $pages
 			&& $showitems < $pages
 		) {
 			echo '<a href="' . get_pagenum_link($pages) . '" title="Go to the page ' . $pages . '" aria-label="Go to the page ' . $pages . '">' . $pages . '</a>';
@@ -627,7 +627,7 @@ function show_options() {
 
 /**
 	* Custom theme settings
-	*/
+*/
 add_action('admin_menu', 'theme_settings_panel');
 
 function theme_settings_panel() {
