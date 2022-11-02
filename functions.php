@@ -102,7 +102,6 @@ function wa_custom_font() {
 }
 add_action('login_head', 'wa_custom_font');
 
-
 // Custom style on login page
 function wa_login_style() {
 	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
