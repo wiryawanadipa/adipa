@@ -346,7 +346,7 @@ if (
 
 	/**
 		* Validating reCaptcha & honeypot on login page
-		*/
+	*/
 	add_action('wp_authenticate_user', 'captcha_login_check', 10, 2);
 
 	function captcha_login_check($user, $password) {
