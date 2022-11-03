@@ -106,7 +106,7 @@ function wa_login_style() {
 	*
 	* https://vincentgarreau.com/particles.js/
 */
-add_action('login_init', 'wa_particle_background', 10, 1);
+add_action('login_header', 'wa_particle_background');
 
 function wa_particle_background() {
 	echo '<div id="particles-js"></div>';
@@ -175,6 +175,15 @@ function add_third_party_resource() {
 	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
 	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
 	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
+}
+
+/**
+	* Change login page title
+*/
+add_filter('login_title', 'my_login_title');
+
+function my_login_title() {
+	return 'Login - Wiryawan Adipa';
 }
 
 

@@ -21,6 +21,10 @@
 	background-color: #a318b6;
 }
 
+.clear {
+	display: none;
+}
+
 body.login {
 	align-items: center;
 	display: flex;
