@@ -331,7 +331,7 @@ if (
 	function recaptcha_honeypot() {
 		echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
 		echo '<input style="display: none;" name="captcha" placeholder="1+1=" type="text" tabindex="-1" autocomplete="off">';
-		echo '<div class="g-recaptcha brochure__form__captcha" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
+		echo '<div class="g-recaptcha brochure__form__captcha" data-theme="dark" data-sitekey="' . get_option('wa_recaptcha_site_key') . '"></div>';
 	}
 	
 	/**
