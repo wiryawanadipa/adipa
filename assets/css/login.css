@@ -1,13 +1,13 @@
 :root {
-	--color-a-1: #fc5c65;
-	--color-a-2: #eb3b5a;
-	--color-a-3: #fc757d;
-	--color-a-4: #e92447;
-	--color-b-1: #36454f;
-	--color-b-2: #2c3840;
-	--color-b-3: #212b31;
-	--color-c-1: #dedede;
-	--color-c-2: #ffffff;
+	--color-1: #a318b6;
+	--color-2: #8f159f;
+	--color-3: #7b1289;
+	--color-4: #660f72;
+	--color-5: #36454f;
+	--color-6: #2c3840;
+	--color-7: #212b31;
+	--color-8: #dedede;
+	--color-9: #f0f0f0;
 }
 
 :focus {
@@ -18,7 +18,7 @@
 	position:absolute;
 	width: 100%;
 	height: 100%;
-	background-color: #a318b6;
+	background-color: var(--color-7);
 }
 
 canvas {
@@ -71,7 +71,7 @@ body.login {
 #lostpasswordform label,
 #resetpassform label,
 #resetpassform .description {
-	color: var(--color-c-1);
+	color: var(--color-8);
 	font-size: 1rem;
 	margin-bottom: .5rem !important;
 }
@@ -84,7 +84,7 @@ body.login {
 	backdrop-filter: blur(16px) saturate(180%);
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(77, 92, 120, 0.65) !important;
-	color: var(--color-c-1) !important;
+	color: var(--color-8) !important;
 	border: 0 !important;
 	margin: 0;
 }
@@ -94,12 +94,12 @@ body.login {
 #rememberme:focus,
 #user_email:focus,
 #pass1:focus {
-	border-color: var(--color-a-2);
-	box-shadow: 0 0 0 .125rem var(--color-a-2) !important;
+	border-color: var(--color-2);
+	box-shadow: 0 0 0 .125rem var(--color-2) !important;
 }
 
 .dashicons {
-	color: var(--color-c-1);
+	color: var(--color-8);
 }
 
 .login #pass-strength-result {
@@ -137,30 +137,30 @@ input[type=checkbox]:checked::before {
 
 #wp-submit,
 .submit .button {
-	background-color: var(--color-a-2);
+	background-color: var(--color-1);
 	border: none;
 	border-radius: 50rem;
-	color: var(--color-c-2);
+	color: var(--color-9);
 	margin-bottom: 0;
 }
 
 #wp-submit:hover,
 .submit .button:hover {
-	background-color: var(--color-a-1);
+	background-color: var(--color-2);
 }
 
 #wp-submit:focus,
 .submit .button:focus {
-	background-color: var(--color-a-2);
+	background-color: var(--color-2);
 }
 
 #login :is(#login_error, .message, .success) {
 	backdrop-filter: blur(16px) saturate(180%);
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
-	background-color: rgba(235, 59, 90, 0.65) !important;
+	background-color: rgba(163, 24, 182, 0.65) !important;
 	border-left: none !important;
-	border-radius: 1rem;
-	color: var(--color-c-1);
+	border-radius: .5rem;
+	color: var(--color-8);
 	font-size: .875rem;
 	margin: 0;
 	text-align: center;
@@ -169,7 +169,7 @@ input[type=checkbox]:checked::before {
 #login_error a,
 .message a,
 .success a {
-	color: var(--color-c-1);
+	color: var(--color-8);
 }
 
 .privacy-policy-page-link {
@@ -190,7 +190,7 @@ input[type=checkbox]:checked::before {
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(17, 25, 40, 0.65);
 	border-radius: 50rem;
-	color: var(--color-c-1) !important;
+	color: var(--color-8) !important;
 	display: inline-block;
 	padding: .75rem 1rem;
 	text-decoration: none;
@@ -198,6 +198,6 @@ input[type=checkbox]:checked::before {
 
 #nav a:hover,
 #backtoblog a:hover {
-	background: var(--color-a-2);
-	color: var(--color-c-1);
+	background: var(--color-2);
+	color: var(--color-8);
 }
