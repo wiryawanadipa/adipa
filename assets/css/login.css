@@ -21,6 +21,10 @@
 	background-color: #a318b6;
 }
 
+canvas {
+	display: block;
+}
+
 .clear {
 	display: none;
 }
