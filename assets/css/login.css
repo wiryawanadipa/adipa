@@ -89,11 +89,7 @@ body.login {
 	margin: 0;
 }
 
-#user_login:focus,
-#user_pass:focus,
-#rememberme:focus,
-#user_email:focus,
-#pass1:focus {
+:is(#user_login, #user_pass, #rememberme, #user_email, #pass1):focus {
 	border-color: var(--color-2);
 	box-shadow: 0 0 0 .125rem var(--color-2) !important;
 }
@@ -144,14 +140,12 @@ input[type=checkbox]:checked::before {
 	margin-bottom: 0;
 }
 
-#wp-submit:hover,
-.submit .button:hover {
+:is(#wp-submit, .submit .button):hover {
 	background-color: var(--color-2);
 }
 
-#wp-submit:focus,
-.submit .button:focus {
-	background-color: var(--color-2);
+:is(#wp-submit, .submit .button):focus {
+	background-color: var(--color-3);
 }
 
 #login :is(#login_error, .message, .success) {
@@ -166,9 +160,7 @@ input[type=checkbox]:checked::before {
 	text-align: center;
 }
 
-#login_error a,
-.message a,
-.success a {
+:is(#login_error, .message, .success) a {
 	color: var(--color-8);
 }
 
@@ -184,8 +176,7 @@ input[type=checkbox]:checked::before {
 	text-align: center !important;
 }
 
-#nav a,
-#backtoblog a {
+:is(#nav, #backtoblog) a {
 	backdrop-filter: blur(16px) saturate(180%);
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(17, 25, 40, 0.65);
@@ -196,8 +187,7 @@ input[type=checkbox]:checked::before {
 	text-decoration: none;
 }
 
-#nav a:hover,
-#backtoblog a:hover {
+:is(#nav, #backtoblog) a:hover {
 	background: var(--color-2);
 	color: var(--color-8);
 }
