@@ -50,7 +50,10 @@
 <?php } ?>
 <?php // Category ?>
 <?php if (is_category()) { ?>
-	<?php global $wp; $current_url = home_url( add_query_arg( array(), $wp->request ) ); ?>
+	<?php
+	global $wp;
+	$current_url = home_url(add_query_arg(array(), $wp->request));
+	?>
 	<?php if (is_paged()) { ?>
 		<title><?php echo single_cat_title('', false); ?> - Page <?php echo $paged; ?> - <?php echo get_bloginfo('name'); ?></title>
 		<meta name="description" content="<?php echo wp_trim_words(category_description()); ?> - Page <?php echo $paged; ?>" />
@@ -73,7 +76,10 @@
 <?php } ?>
 <?php // Tag ?>
 <?php if (is_tag()) { ?>
-	<?php global $wp; $current_url = home_url( add_query_arg( array(), $wp->request ) ); ?>
+	<?php
+	global $wp;
+	$current_url = home_url(add_query_arg(array(), $wp->request));
+	?>
 	<?php if (is_paged()) { ?>
 		<title>#<?php echo single_tag_title('', false); ?> - <?php echo get_bloginfo('name'); ?> - Page <?php echo $paged; ?></title>
 		<meta name="description" content="<?php echo wp_trim_words(tag_description()); ?> - Page <?php echo $paged; ?>" />
