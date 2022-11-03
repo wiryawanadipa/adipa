@@ -1,31 +1,31 @@
 :root {
-	--color-a-1: #fc5c65;
-	--color-a-2: #eb3b5a;
-	--color-a-3: #fc757d;
-	--color-a-4: #e92447;
-	--color-b-1: #36454f;
-	--color-b-2: #2c3840;
-	--color-b-3: #212b31;
-	--color-c-1: #dedede;
-	--color-c-2: #ffffff;
+	--color-1: #a318b6;
+	--color-2: #8f159f;
+	--color-3: #7b1289;
+	--color-4: #660f72;
+	--color-5: #36454f;
+	--color-6: #2c3840;
+	--color-7: #212b31;
+	--color-8: #dedede;
+	--color-9: #f0f0f0;
 }
 
 ::-webkit-scrollbar {
-	height: 10px;
-	width: 10px;
+	height: 12px;
+	width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--color-b-2);
+	background-color: var(--color-7);
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--color-a-1);
+	background-color: var(--color-1);
 	border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--color-a-2);
+	background-color: var(--color-2);
 }
 
 body {
@@ -39,6 +39,6 @@ body {
 }
 
 .wa-input[type=text]:focus {
-	border-color: var(--color-a-2);
-	box-shadow: 0 0 0 1px var(--color-a-2);
+	border-color: var(--color-2);
+	box-shadow: 0 0 0 1px var(--color-2);
 }
