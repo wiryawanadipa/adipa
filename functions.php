@@ -50,6 +50,130 @@ if (isset($_GET['activated']) && is_admin()) {
 
 
 /**
+	* Disable WordPress auto generating various image sizes
+*/
+add_filter('intermediate_image_sizes_advanced', 'disable_media');
+add_filter('big_image_size_threshold', '__return_false');
+
+function disable_media($sizes) {
+	unset($sizes['thumbnail']);
+	unset($sizes['medium']);
+	unset($sizes['medium_large']);
+	unset($sizes['large']);
+	unset($sizes['1536x1536']);
+	unset($sizes['2048x2048']);
+	return $sizes;
+}
+
+
+
+/**
+	* Add custom image size for thumbnail
+*/
+add_image_size('bigthumb', 421, 263, true);
+
+
+
+/**
+	* Auto insert featured image
+*/
+if (function_exists('add_theme_support')) {
+	add_theme_support('post-thumbnails');
+	add_action('the_post', 'easy_add_thumbnail');
+	add_action('new_to_publish', 'easy_add_thumbnail');
+	add_action('draft_to_publish', 'easy_add_thumbnail');
+	add_action('pending_to_publish', 'easy_add_thumbnail');
+	add_action('future_to_publish', 'easy_add_thumbnail');
+
+	function easy_add_thumbnail($post) {
+		$already_has_thumb = has_post_thumbnail();
+		$post_type = get_post_type($post->ID);
+		$exclude_types = array('');
+		$exclude_types = apply_filters('eat_exclude_types', $exclude_types);
+		if ($already_has_thumb) {
+			return;
+		}
+		if (!in_array($post_type, $exclude_types)) {
+			$childarray = array(
+				'order' => 'ASC',
+				'post_parent' => $post->ID,
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'numberposts' => 1
+			);
+			$attached_image = get_children($childarray);
+			if ($attached_image) {
+				$attachment_values = array_values($attached_image);
+				add_post_meta($post->ID, '_thumbnail_id', $attachment_values[0]->ID, true);
+			}
+		}
+	}
+}
+
+
+
+/**
+	* Custom shortcode for YouTube link
+*/
+add_shortcode('youtube', 'youtube_link');
+
+function youtube_link($atts, $content = null) {
+	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+}
+
+
+
+/**
+	* Show all settings on admin menu
+*/
+add_action('admin_menu', 'show_options');
+
+function show_options() {
+	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
+}
+
+
+
+/**
+	* Custom theme settings
+*/
+add_action('admin_menu', 'theme_settings_panel');
+
+function theme_settings_panel() {
+	add_menu_page(
+		'Wiryawan Adipa Theme Settings',
+		'Theme Settings',
+		'manage_options',
+		'wa-theme-settings',
+		'theme_settings_general',
+		get_template_directory_uri() . '/assets/favicon/favicon-16x16.png',
+		'61'
+	);
+	add_submenu_page(
+		'wa-theme-settings',
+		'General',
+		'General',
+		'manage_options',
+		'wa-theme-settings',
+		'theme_settings_general'
+	);
+}
+
+function theme_settings_general() {
+	include 'settings/setting-main.php';
+}
+
+add_action('admin_init', 'register_general_setting');
+
+function register_general_setting() {
+	register_setting('main-settings', 'wa_mail');
+	register_setting('main-settings', 'wa_recaptcha_site_key');
+	register_setting('main-settings', 'wa_recaptcha_secret_key');
+}
+
+
+
+/**
 	* Custom Font
 	*
 	* https://fonts.google.com/specimen/Rubik
@@ -66,13 +190,27 @@ function wa_custom_font() {
 
 
 /**
-	* Main CSS Style
+	* Favicon for admin & login page
+*/
+add_action('login_head', 'wa_custom_icon');
+add_action('admin_head', 'wa_custom_icon');
+
+function wa_custom_icon() {
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">' . "\n\r";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">' . "\n\r";
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">' . "\n\r";
+}
+
+
+
+/**
+	* Front-End CSS Style
 */
 add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 function wa_style_queue_css() {
-	wp_register_style('wa-style', get_template_directory_uri() . '/assets/css/main.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
-	wp_enqueue_style('wa-style');
+	wp_register_style('wa-main-style', get_template_directory_uri() . '/assets/css/main.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
+	wp_enqueue_style('wa-main-style');
 }
 
 
@@ -83,8 +221,8 @@ function wa_style_queue_css() {
 add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
 
 function wa_custom_setting_style() {
-	wp_register_style('wa_custom_admin_css', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
-	wp_enqueue_style('wa_custom_admin_css');
+	wp_register_style('wa-admin-style', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get( 'Version' ) . '.' . date('YmdHis'));
+	wp_enqueue_style('wa-admin-style');
 }
 
 
@@ -139,43 +277,6 @@ function wa_deregister_script() {
 }
 
 
-
-/**
-	* Breadcrumbs
-	*
-	* https://schema.org/BreadcrumbList
-*/
-function breadcrumbs() {
-	global $post;
-	echo '<nav class="breadcrumbs" aria-label="breadcrumb">';
-	echo '<ol itemscope itemtype="http://schema.org/BreadcrumbList">';
-	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li>';
-	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
-	if ($categories) {
-		$catcount = 2;
-		foreach ($categories as $cat) {
-			echo '<li class="breadcrumb-list" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $catcount . '" /></li>';
-			$catcount++;
-		}
-	}
-	echo '<li class="breadcrumb-list" aria-current="page">' . get_the_title() . '</li>';
-	echo '</ol>';
-	echo '</nav>';
-}
-
-
-
-/**
-	* Favicon for admin & login page
-*/
-add_action('login_head', 'add_third_party_resource');
-add_action('admin_head', 'add_third_party_resource');
-
-function add_third_party_resource() {
-	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png">';
-	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-32x32.png">';
-	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-16x16.png">';
-}
 
 /**
 	* Change login page title
@@ -315,6 +416,31 @@ function stop_heartbeat() {
 
 
 /**
+	* Breadcrumbs
+	*
+	* https://schema.org/BreadcrumbList
+*/
+function breadcrumbs() {
+	global $post;
+	echo '<nav class="breadcrumbs" aria-label="breadcrumb">';
+	echo '<ol itemscope itemtype="http://schema.org/BreadcrumbList">';
+	echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_bloginfo('url') . '"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li>';
+	$categories = wp_get_post_terms($post->ID, 'category', array('orderby' => 'parent', 'order' => 'ASC'));
+	if ($categories) {
+		$catcount = 2;
+		foreach ($categories as $cat) {
+			echo '<li class="breadcrumb-list" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $catcount . '" /></li>';
+			$catcount++;
+		}
+	}
+	echo '<li class="breadcrumb-list" aria-current="page">' . get_the_title() . '</li>';
+	echo '</ol>';
+	echo '</nav>';
+}
+
+
+
+/**
 	* Redirect author & date archive page to homepage
 */
 add_action('template_redirect', 'disable_page');
@@ -329,44 +455,6 @@ function disable_page() {
 	) {
 		wp_redirect(get_option('home'), 301); 
 		exit; 
-	}
-}
-
-
-
-/**
-	* Auto insert featured image
-*/
-if (function_exists('add_theme_support')) {
-	add_theme_support('post-thumbnails');
-	add_action('the_post', 'easy_add_thumbnail');
-	add_action('new_to_publish', 'easy_add_thumbnail');
-	add_action('draft_to_publish', 'easy_add_thumbnail');
-	add_action('pending_to_publish', 'easy_add_thumbnail');
-	add_action('future_to_publish', 'easy_add_thumbnail');
-
-	function easy_add_thumbnail($post) {
-		$already_has_thumb = has_post_thumbnail();
-		$post_type = get_post_type($post->ID);
-		$exclude_types = array('');
-		$exclude_types = apply_filters('eat_exclude_types', $exclude_types);
-		if ($already_has_thumb) {
-			return;
-		}
-		if (!in_array($post_type, $exclude_types)) {
-			$childarray = array(
-				'order' => 'ASC',
-				'post_parent' => $post->ID,
-				'post_type' => 'attachment',
-				'post_mime_type' => 'image',
-				'numberposts' => 1
-			);
-			$attached_image = get_children($childarray);
-			if ($attached_image) {
-				$attachment_values = array_values($attached_image);
-				add_post_meta($post->ID, '_thumbnail_id', $attachment_values[0]->ID, true);
-			}
-		}
 	}
 }
 
@@ -415,32 +503,7 @@ function smartwp_remove_wp_block_library_css(){
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-blocks-style');
 	wp_dequeue_style('global-styles');
-} 
-
-
-
-/**
-	* Disable WordPress auto generating various image sizes
-*/
-add_filter('intermediate_image_sizes_advanced', 'disable_media');
-add_filter('big_image_size_threshold', '__return_false');
-
-function disable_media($sizes) {
-	unset($sizes['thumbnail']);
-	unset($sizes['medium']);
-	unset($sizes['medium_large']);
-	unset($sizes['large']);
-	unset($sizes['1536x1536']);
-	unset($sizes['2048x2048']);
-	return $sizes;
 }
-
-
-
-/**
-	* Add custom image size for thumbnail
-*/
-add_image_size('bigthumb', 421, 263, true);
 
 
 
@@ -522,6 +585,8 @@ add_filter('excerpt_length', 'wp_example_excerpt_length');
 function wp_example_excerpt_length($length) {
 	return 25;
 }
+
+
 
 /**
 	* Remove dots on the_excerpt
@@ -608,65 +673,4 @@ function custom_pagination($pages = '', $range = 3) {
 		}
 		echo '</nav>' . "\n";
 	}
-}
-
-
-
-/**
-	* Custom shortcode for YouTube link
-*/
-add_shortcode('youtube', 'youtube_link');
-
-function youtube_link($atts, $content = null) {
-	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
-}
-
-
-
-/**
-	* Show all settings on admin menu
-*/
-add_action('admin_menu', 'show_options');
-
-function show_options() {
-	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
-}
-
-
-
-/**
-	* Custom theme settings
-*/
-add_action('admin_menu', 'theme_settings_panel');
-
-function theme_settings_panel() {
-	add_menu_page(
-		'Wiryawan Adipa Theme Settings',
-		'Theme Settings',
-		'manage_options',
-		'wa-theme-settings',
-		'theme_settings_general',
-		get_template_directory_uri() . '/assets/favicon/favicon-16x16.png',
-		'61'
-	);
-	add_submenu_page(
-		'wa-theme-settings',
-		'General',
-		'General',
-		'manage_options',
-		'wa-theme-settings',
-		'theme_settings_general'
-	);
-}
-
-function theme_settings_general() {
-	include 'settings/setting-main.php';
-}
-
-add_action('admin_init', 'register_general_setting');
-
-function register_general_setting() {
-	register_setting('main-settings', 'wa_mail');
-	register_setting('main-settings', 'wa_recaptcha_site_key');
-	register_setting('main-settings', 'wa_recaptcha_secret_key');
 }
