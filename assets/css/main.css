@@ -42,7 +42,7 @@ html:focus-within {
 body {
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+	line-height: 1.25;
 }
 
 /* A elements that don't have a class get default styles */
@@ -92,11 +92,122 @@ select {
 	--color-7: #212b31;
 	--color-8: #dedede;
 	--color-9: #f0f0f0;
-	--a: 400px;
+	--width-box: 900px;
+	--width-content: 800px;
+}
+
+::-webkit-scrollbar {
+	height: 12px;
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--color-7);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-1);
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-4);
+}
+
+::-moz-selection {
+	background-color: var(--color-5);
+	color: var(--color-9);
+}
+
+::selection {
+	background-color: var(--color-5);
+	color: var(--color-9);
 }
 
 html {
 	font-family: 'Roboto', sans-serif;
 	font-size: 100%;
-	overflow: hidden;
+	scrollbar-color: var(--color-1) var(--color-2);
+}
+
+body {
+	background-color: var(--color-9);
+	color: var(--color-5);
+}
+
+/**
+	* Front page
+*/
+.homepage {
+	display: flex;
+	min-height: 100vh;
+}
+
+.hero {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	justify-content: center;
+	margin: auto;
+	max-width: var(--width-content);
+}
+
+.hero-photo {
+	display: flex;
+}
+
+.hero-main-content {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.hero h1 {
+	font-family: 'Audiowide', cursive;
+	font-size: clamp(1.875rem, 4vw, 4rem);
+	letter-spacing: .1rem;
+}
+
+.hero-heading-text {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+.hero-heading-link {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.hero-heading-link a {
+	background: var(--color-5);
+	border-radius: .25rem;
+	color: var(--color-9);
+	font-size: clamp(1.125rem, 2vw, 1.5rem);
+	padding: .5rem .75rem;
+}
+
+.hero-heading-link a:hover {
+	background-color: var(--color-2);
+}
+
+.hero-social {
+	display: flex;
+	gap: 1rem;
+}
+
+.hero-social a {
+	color: var(--color-5);
+}
+
+.hero-social a:hover {
+	color: var(--color-2);
+}
+
+.hero-social a i {
+	font-size: clamp(2rem, 4vw, 3rem);
 }
