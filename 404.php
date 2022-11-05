@@ -1,4 +1,5 @@
 <?php get_template_part('template-parts/header'); ?>
+<?php get_template_part('template-parts/parts/top-menu'); ?>
 <main>
 	<div class="content-list">
 		<div class="not-found">

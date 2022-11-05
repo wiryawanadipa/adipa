@@ -1,6 +1,7 @@
 <?php /* Template Name: Contact Page */ ?>
 <?php session_start(); ?>
 <?php get_template_part('template-parts/header'); ?>
+<?php get_template_part('template-parts/parts/top-menu'); ?>
 <main>
 	<article class="article">
 		<header class="page-heading">

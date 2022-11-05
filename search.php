@@ -1,4 +1,5 @@
 <?php get_template_part('template-parts/header'); ?>
+<?php get_template_part('template-parts/parts/top-menu'); ?>
 <main>
 	<?php if (have_posts()) { ?>
 		<div class="content-list search-content-list">
