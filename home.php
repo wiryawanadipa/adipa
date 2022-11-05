@@ -41,7 +41,9 @@
 					</form>
 				</div>
 				<div class="hero-footer">
-
+					<div><i class="fa-solid fa-copyright"></i> <?php echo date('Y'); ?>, <?php echo $_SERVER['HTTP_HOST']; ?></div>
+					<div><i class="fa-solid fa-scale-balanced"></i> <a href="<?php echo esc_url(get_page_link(get_page_by_title('Privacy Policy')->ID)); ?>" title="Privacy Policy" aria-label="Privacy Policy">Privacy Policy</a></div>
+					<div><i class="fa-brands fa-square-github"></i> <a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Wordpress Theme GitHub Repository" aria-label="Wiryawan Adipa Wordpress Theme GitHub Repository" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa</a></div>
 				</div>
 			</div>
 		</div>
