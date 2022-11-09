@@ -132,7 +132,11 @@ html {
 }
 
 body {
-	background-color: var(--color-07);
+	background-color: #2c3840;
+	opacity: 1;
+	background-image:  repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
+	background-position: 0 0, 4px 4px;
+	background-size: 8px 8px;
 	color: var(--color-09);
 }
 
@@ -205,7 +209,7 @@ body {
 .hero-heading-link {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1.5rem;
+	gap: 1rem;
 	justify-content: center;
 }
 
