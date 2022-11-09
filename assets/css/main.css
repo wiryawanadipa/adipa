@@ -83,15 +83,15 @@ select {
 }
 
 :root {
-	--color-1: #a318b6;
-	--color-2: #8f159f;
-	--color-3: #7b1289;
-	--color-4: #660f72;
-	--color-5: #36454f;
-	--color-6: #2c3840;
-	--color-7: #212b31;
-	--color-8: #f0f0f0;
-	--color-9: #e7e7e7;
+	--color-01: #a318b6;
+	--color-02: #8f159f;
+	--color-03: #7b1289;
+	--color-04: #660f72;
+	--color-05: #36454f;
+	--color-06: #2c3840;
+	--color-07: #212b31;
+	--color-08: #f0f0f0;
+	--color-09: #e7e7e7;
 	--color-10: #8f8f8f;
 	--width-box: 900px;
 	--width-content: 800px;
@@ -103,37 +103,41 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--color-7);
+	background-color: var(--color-07);
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--color-1);
+	background-color: var(--color-01);
 	border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--color-4);
+	background-color: var(--color-04);
 }
 
 ::-moz-selection {
-	background-color: var(--color-5);
-	color: var(--color-9);
+	background-color: var(--color-05);
+	-webkit-text-stroke: var(--color-09);
+	-webkit-text-fill-color: var(--color-09);
+	color: var(--color-09);
 }
 
 ::selection {
-	background-color: var(--color-5);
-	color: var(--color-9);
+	background-color: var(--color-05);
+	-webkit-text-stroke: var(--color-09);
+	-webkit-text-fill-color: var(--color-09);
+	color: var(--color-09);
 }
 
 html {
 	font-family: 'Roboto', sans-serif;
 	font-size: 100%;
-	scrollbar-color: var(--color-1) var(--color-2);
+	scrollbar-color: var(--color-01) var(--color-02);
 }
 
 body {
-	background-color: var(--color-9);
-	color: var(--color-5);
+	background-color: var(--color-09);
+	color: var(--color-05);
 }
 
 /**
@@ -160,12 +164,13 @@ body {
 }
 
 .hero h1 {
-	background: -webkit-linear-gradient(var(--color-1), var(--color-4));
+	background: var(--color-03);
+	background: linear-gradient(var(--color-01), var(--color-04));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-stroke: transparent;
 	-webkit-text-fill-color: transparent;
-	color: var(--color-3);
+	color: var(--color-03);
 	font-family: 'Audiowide', cursive;
 	font-size: clamp(1.875rem, 4vw, 4rem);
 	letter-spacing: .1rem;
@@ -178,6 +183,37 @@ body {
 	text-align: center;
 }
 
+.hero-social {
+	display: flex;
+	gap: 1rem;
+}
+
+.hero-social a {
+	color: var(--color-05);
+}
+
+.hero-social a:is(:focus, :hover) {
+	background: var(--color-03);
+	background: linear-gradient(var(--color-01), var(--color-04));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-stroke: transparent;
+	-webkit-text-fill-color: transparent;
+	outline: none;
+}
+
+.hero-social a:active {
+	background: var(--color-03);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-stroke: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.hero-social a i {
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+
 .hero-heading-link {
 	display: flex;
 	flex-wrap: wrap;
@@ -186,34 +222,21 @@ body {
 }
 
 .hero-heading-link a {
-	background: var(--color-5);
+	background: var(--color-05);
 	border-radius: .25rem;
-	color: var(--color-8);
+	color: var(--color-08);
 	font-size: clamp(1.125rem, 2vw, 1.5rem);
 	padding: .5rem .75rem;
 }
 
 .hero-heading-link a:is(:focus, :hover) {
-	background-color: var(--color-3);
+	background: var(--color-03);
+	background: linear-gradient(0deg, var(--color-04) 0%, var(--color-01) 100%);
 	outline: none;
 }
 
-.hero-social {
-	display: flex;
-	gap: 1rem;
-}
-
-.hero-social a {
-	color: var(--color-5);
-}
-
-.hero-social a:is(:focus, :hover) {
-	color: var(--color-2);
-	outline: none;
-}
-
-.hero-social a i {
-	font-size: clamp(2rem, 4vw, 3rem);
+.hero-heading-link a:active {
+	background: var(--color-03);
 }
 
 .search-box {
@@ -227,7 +250,7 @@ body {
 }
 
 .search-box form input {
-	border: 2px solid var(--color-5);
+	border: 2px solid var(--color-05);
 	border-radius: 5rem 0 0 5rem;
 	outline: none;
 	padding: 16px;
@@ -235,12 +258,13 @@ body {
 }
 
 .search-box form input:focus {
-	border-color: var(--color-2);
+	border-color: var(--color-02);
 }
 
 .search-box form button {
 	align-items: center;
-	background-color: var(--color-3);
+	background: var(--color-03);
+	background: linear-gradient(0deg, var(--color-04) 0%, var(--color-01) 100%);
 	border: none;
 	border-radius: 0 5rem 5rem 0;
 	cursor: pointer;
@@ -251,12 +275,16 @@ body {
 }
 
 .search-box form button:is(:focus, :hover) {
-	background-color: var(--color-1);
+	background: linear-gradient(0deg, var(--color-01) 0%, var(--color-04) 100%);
 	outline: none;
 }
 
+.search-box form button:active {
+	background: var(--color-03);
+}
+
 .search-box form button i {
-	color: var(--color-9);
+	color: var(--color-09);
 	margin-left: -4px;
 }
 
@@ -274,5 +302,5 @@ body {
 }
 
 .hero-footer a:hover {
-	text-decoration: underline;
+	color: var(--color-04);
 }
