@@ -503,6 +503,7 @@ function smartwp_remove_wp_block_library_css(){
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-blocks-style');
 	wp_dequeue_style('global-styles');
+	wp_dequeue_style('classic-theme-styles');
 }
 
 
