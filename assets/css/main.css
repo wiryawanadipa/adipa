@@ -92,6 +92,7 @@ select {
 	--color-7: #212b31;
 	--color-8: #f0f0f0;
 	--color-9: #e7e7e7;
+	--color-10: #8f8f8f;
 	--width-box: 900px;
 	--width-content: 800px;
 }
@@ -159,6 +160,11 @@ body {
 }
 
 .hero h1 {
+	background: -webkit-linear-gradient(var(--color-1), var(--color-4));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-stroke: transparent;
+	-webkit-text-fill-color: transparent;
 	color: var(--color-3);
 	font-family: 'Audiowide', cursive;
 	font-size: clamp(1.875rem, 4vw, 4rem);
@@ -255,6 +261,7 @@ body {
 }
 
 .hero-footer {
+	color: var(--color-10);
 	display: flex;
 	flex-wrap: wrap;
 	font-size: .875rem;
@@ -263,7 +270,7 @@ body {
 }
 
 .hero-footer a {
-	color: var(--color-5);
+	color: var(--color-10);
 }
 
 .hero-footer a:hover {
