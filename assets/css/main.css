@@ -83,15 +83,15 @@ select {
 }
 
 :root {
-	--color-01: #a318b6;
-	--color-02: #8f159f;
-	--color-03: #7b1289;
-	--color-04: #660f72;
+	--color-01: #fc757d;
+	--color-02: #fc5c65;
+	--color-03: #eb3b5a;
+	--color-04: #e92447;
 	--color-05: #36454f;
 	--color-06: #2c3840;
 	--color-07: #212b31;
 	--color-08: #f0f0f0;
-	--color-09: #e7e7e7;
+	--color-09: #d0d0d0;
 	--color-10: #8f8f8f;
 	--width-box: 900px;
 	--width-content: 800px;
@@ -116,16 +116,12 @@ select {
 }
 
 ::-moz-selection {
-	background-color: var(--color-05);
-	-webkit-text-stroke: var(--color-09);
-	-webkit-text-fill-color: var(--color-09);
+	background-color: var(--color-02);
 	color: var(--color-09);
 }
 
 ::selection {
-	background-color: var(--color-05);
-	-webkit-text-stroke: var(--color-09);
-	-webkit-text-fill-color: var(--color-09);
+	background-color: var(--color-02);
 	color: var(--color-09);
 }
 
@@ -136,8 +132,8 @@ html {
 }
 
 body {
-	background-color: var(--color-09);
-	color: var(--color-05);
+	background-color: var(--color-07);
+	color: var(--color-09);
 }
 
 /**
@@ -167,17 +163,11 @@ body {
 	border-radius: 50rem;
 	box-shadow: 0 0 1px 0 var(--color-03) inset, 0 0 1px 0 var(--color-03);
 	-webkit-filter: drop-shadow(2px 2px 4px var(--color-07));
-	filter: drop-shadow(2px 2px 4px var(--color-07));
+	filter: drop-shadow(2px 2px 4px #0f0f0f);
 }
 
 .hero h1 {
-	background: var(--color-03);
-	background: linear-gradient(var(--color-01), var(--color-04));
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-stroke: transparent;
-	-webkit-text-fill-color: transparent;
-	color: var(--color-03);
+	color: var(--color-02);
 	font-family: 'Audiowide', cursive;
 	font-size: clamp(1.875rem, 4vw, 4rem);
 	letter-spacing: .1rem;
@@ -196,25 +186,16 @@ body {
 }
 
 .hero-social a {
-	color: var(--color-05);
+	color: var(--color-09);
 }
 
 .hero-social a:is(:focus, :hover) {
-	background: var(--color-03);
-	background: linear-gradient(var(--color-01), var(--color-04));
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-stroke: transparent;
-	-webkit-text-fill-color: transparent;
+	color: var(--color-02);
 	outline: none;
 }
 
 .hero-social a:active {
-	background: var(--color-03);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-stroke: transparent;
-	-webkit-text-fill-color: transparent;
+	color: var(--color-03);
 }
 
 .hero-social a i {
@@ -230,7 +211,7 @@ body {
 
 .hero-heading-link a {
 	background: var(--color-05);
-	border-radius: .25rem;
+	border-radius: .5rem;
 	color: var(--color-08);
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: clamp(1.125rem, 2vw, 1.5rem);
@@ -239,12 +220,11 @@ body {
 
 .hero-heading-link a:is(:focus, :hover) {
 	background: var(--color-03);
-	background: linear-gradient(0deg, var(--color-04) 0%, var(--color-01) 100%);
 	outline: none;
 }
 
 .hero-heading-link a:active {
-	background: var(--color-03);
+	background: var(--color-04);
 }
 
 .search-box {
@@ -271,8 +251,7 @@ body {
 
 .search-box form button {
 	align-items: center;
-	background: var(--color-03);
-	background: linear-gradient(0deg, var(--color-04) 0%, var(--color-01) 100%);
+	background: var(--color-05);
 	border: none;
 	border-radius: 0 5rem 5rem 0;
 	cursor: pointer;
@@ -283,12 +262,12 @@ body {
 }
 
 .search-box form button:is(:focus, :hover) {
-	background: linear-gradient(0deg, var(--color-01) 0%, var(--color-04) 100%);
+	background: var(--color-03);
 	outline: none;
 }
 
 .search-box form button:active {
-	background: var(--color-03);
+	background: var(--color-04);
 }
 
 .search-box form button i {
@@ -310,5 +289,5 @@ body {
 }
 
 .hero-footer a:hover {
-	color: var(--color-04);
+	color: var(--color-01);
 }
