@@ -92,7 +92,7 @@ select {
 	--color-07: #212b31;
 	--color-08: #f0f0f0;
 	--color-09: #d0d0d0;
-	--color-10: #8f8f8f;
+	--color-10: #7f7f7f;
 	--width-box: 900px;
 	--width-content: 800px;
 }
@@ -117,12 +117,12 @@ select {
 
 ::-moz-selection {
 	background-color: var(--color-02);
-	color: var(--color-09);
+	color: var(--color-08);
 }
 
 ::selection {
 	background-color: var(--color-02);
-	color: var(--color-09);
+	color: var(--color-08);
 }
 
 html {
@@ -173,7 +173,7 @@ body {
 	color: var(--color-02);
 	filter: drop-shadow(2px 2px 4px #0f0f0f);
 	font-family: 'Audiowide', cursive;
-	font-size: clamp(2rem, 4vw, 4rem);
+	font-size: clamp(2.5rem, 4vw, 4rem);
 	letter-spacing: .1rem;
 	text-align: center;
 }
@@ -252,7 +252,7 @@ body {
 }
 
 .hero-heading-link i {
-	font-size: clamp(.875rem, 2vw, 1rem);
+	font-size: clamp(.75rem, 2vw, .875rem);
 }
 
 .search-box {
@@ -267,11 +267,11 @@ body {
 }
 
 .search-box form input {
-	border: 2px solid var(--color-05);
+	border: 4px solid var(--color-05);
 	border-radius: 5rem 0 0 5rem;
 	outline: none;
-	padding: 12px;
-	width: calc(100% - 48px);
+	padding: 12px 16px;
+	width: calc(100% - 52px);
 }
 
 .search-box form input:focus {
@@ -285,9 +285,9 @@ body {
 	border-radius: 0 5rem 5rem 0;
 	cursor: pointer;
 	display: flex;
-	height: 48px;
+	height: 52px;
 	justify-content: center;
-	width: 48px;
+	width: 52px;
 }
 
 .search-box form button:is(:focus, :hover) {
@@ -330,5 +330,14 @@ body {
 	.hero-photo svg {
 		height: 144px;
 		width: 144px;
+	}
+
+	.hero-social a {
+		height: 42px;
+		width: 42px;
+	}
+
+	.hero-social a i {
+		font-size: 1.5rem;
 	}
 }
