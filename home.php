@@ -2,33 +2,33 @@
 		<div class="homepage">
 			<div class="hero">
 				<div class="hero-photo">
-					<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="192" height="192" version="1.1" viewBox="0 0 50.8 50.8"><g stroke-width=".265"><path d="M50.8 25.4a25.4 25.4 0 0 1-25.4 25.4A25.4 25.4 0 0 1 0 25.4 25.4 25.4 0 0 1 25.4 0a25.4 25.4 0 0 1 25.4 25.4Z" fill="#eb3b5a"/><path d="M8.649 33.401a77.15 77.15 0 0 1-.457-1.98l-.686-2.795-.762-3.2-2.057-4.905 5.055-3.855 3.606 17.475H8.827zm3.988-8 1.905-4.999 5.207-3.74 4.165 17.476H19.57l-.203-.838-.533-2.21-.762-3.225a250.435 250.435 0 0 1-.915-3.836h-.153l-.861 3.836-.28 1.295c-.085.355-.17.694-.254 1.016a40.535 40.535 0 0 1-.203.915l-.508 2.213-.205.837h-.28zm10.26-.153 1.525-5.38 5.055-3.205-2.082 8.762-.763 3.2a98.959 98.959 0 0 0-.66 2.795l-.483 1.98-.178.738h-.305zm11.43-8.585h.433l2.007 6.96-2.921 10.515h-5.08zm5.716 14.376H35.8l1.067-3.912H38.9l-2.997-7.97 4.648-2.494 5.562 17.475h-5.181z" fill="#fff"/></g></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" version="1.1" viewBox="0 0 24 24"><path d="M24 12a12 12 0 0 1-12 12A12 12 0 0 1 0 12 12 12 0 0 1 12 0a12 12 0 0 1 12 12Z" fill="#eb3b5a"/><path d="m12.727 8.455-1.171 6.562q-.04.195-.177.337-.136.142-.33.18-.2.035-.382-.043-.176-.079-.278-.246l-2.325-3.818-2.328 3.818q-.084.142-.23.22-.142.078-.308.078-.23 0-.405-.146-.176-.146-.215-.381L3.397 8.453h1.289l.84 4.624 2.001-3.193q.083-.141.225-.22.146-.077.312-.077t.308.078q.142.078.235.22l1.992 3.194.84-4.624zm7.595 7.002h-1.27v-1.719H14.59v1.72h-1.27v-3.502q0-.767.264-1.41.264-.646.732-1.11.47-.464 1.109-.722.64-.26 1.396-.26h2.862q.132 0 .249.05.117.048.205.136.087.09.137.207.048.117.048.25zm-5.732-2.989h4.463V9.724H16.82q-.058 0-.249.02-.185.015-.435.083-.243.068-.517.21-.273.141-.503.39-.23.25-.38.625-.147.372-.147.904z" fill="#f0f0f0"/></svg>
 				</div>
 				<h1>WIRYAWAN ADIPA</h1>
 				<div class="hero-heading-text">Front-End Web Dev &bull; UX Designer &bull; WordPress Dev</div>
 				<div class="hero-social">
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Twitter" aria-label="Wiryawan Adipa Twitter" href="https://twitter.com/wiryawanadipa" target="_blank">
-						<i class="fa-brands fa-square-twitter"></i>
+						<i class="fa-brands fa-twitter"></i>
 					</a>
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Instagram" aria-label="Wiryawan Adipa Instagram" href="https://www.instagram.com/wiryawanadipa" target="_blank">
-						<i class="fa-brands fa-square-instagram"></i>
+						<i class="fa-brands fa-instagram"></i>
 					</a>
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa LinkedIn" aria-label="Wiryawan Adipa LinkedIn" href="https://www.linkedin.com/in/wiryawanadipa" target="_blank">
-						<i class="fa-brands fa-linkedin"></i>
+						<i class="fa-brands fa-linkedin-in"></i>
 					</a>
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa GitHub" aria-label="Wiryawan Adipa GitHub" href="https://github.com/wiryawanadipa" target="_blank">
-						<i class="fa-brands fa-square-github"></i>
+						<i class="fa-brands fa-github-alt"></i>
 					</a>
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Dribbble" aria-label="Wiryawan Adipa GitHub" href="https://dribbble.com/wiryawanadipa" target="_blank">
-						<i class="fa-brands fa-square-dribbble"></i>
+						<i class="fa-brands fa-dribbble"></i>
 					</a>
 				</div>
 				<div class="hero-heading-link">
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page">Blog</a>
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page">Design Gallery</a>
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label">Project</a>
-					<a href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page">About</a>
-					<a href="<?php echo esc_url(get_page_link(get_page_by_title('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page">Contact</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page"><i class="fa-solid fa-newspaper"></i>Blog</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page"><i class="fa-solid fa-palette"></i>Design Gallery</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label"><i class="fa-solid fa-briefcase"></i>Project</a>
+					<a href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page"><i class="fa-solid fa-user"></i>About</a>
+					<a href="<?php echo esc_url(get_page_link(get_page_by_title('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page"><i class="fa-solid fa-envelope"></i>Contact</a>
 				</div>
 				<div class="search-box" itemscope itemtype="https://schema.org/WebSite">
 					<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>
@@ -41,7 +41,7 @@
 				<div class="hero-footer">
 					<div><i class="fa-solid fa-copyright"></i> <?php echo date('Y'); ?> - <?php echo $_SERVER['HTTP_HOST']; ?></div>
 					<div><i class="fa-solid fa-scale-balanced"></i> <a href="<?php echo esc_url(get_page_link(get_page_by_title('Privacy Policy')->ID)); ?>" title="Privacy Policy" aria-label="Privacy Policy">Privacy Policy</a></div>
-					<div><i class="fa-brands fa-square-github"></i> <a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Wordpress Theme GitHub Repository" aria-label="Wiryawan Adipa Wordpress Theme GitHub Repository" href="https://github.com/wiryawanadipa/adipa" target="_blank">Theme by Wiryawan Adipa</a></div>
+					<div><i class="fa-brands fa-github-alt"></i> <a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Wordpress Theme GitHub Repository" aria-label="Wiryawan Adipa Wordpress Theme GitHub Repository" href="https://github.com/wiryawanadipa/adipa" target="_blank">Wiryawan Adipa <?php echo wp_get_theme()->get('Version') ?></a></div>
 				</div>
 			</div>
 		</div>
