@@ -2,7 +2,7 @@
 <?php get_template_part('template-parts/header'); ?>
 <?php get_template_part('template-parts/parts/top-menu'); ?>
 <main>
-	<article class="article">
+	<article class="article article-page">
 		<header class="page-heading">
 			<h1><?php echo get_the_title(); ?></h1>
 		</header>
