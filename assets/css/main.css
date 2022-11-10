@@ -349,6 +349,7 @@ body {
 
 .name-part {
 	color: var(--color-02);
+	font-weight: bold;
 }
 
 #menu-icon {
