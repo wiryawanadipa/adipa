@@ -240,20 +240,6 @@ function wa_login_style() {
 
 
 /**
-	* Login page particle background
-	*
-	* https://vincentgarreau.com/particles.js/
-*/
-add_action('login_header', 'wa_particle_background');
-
-function wa_particle_background() {
-	echo '<div id="particles-js"></div>';
-	echo '<script src="' . get_template_directory_uri() . '/assets/js/particles.min.js"></script>';
-}
-
-
-
-/**
 	* Disable calling Highlighting Code Block plugin CSS & JS
 	* Enable only in single post & admin page
 	*
