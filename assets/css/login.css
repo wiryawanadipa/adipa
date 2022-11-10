@@ -146,10 +146,10 @@ input[type=checkbox]:checked::before {
 #login :is(#login_error, .message, .success) {
 	backdrop-filter: blur(16px) saturate(180%);
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
-	background-color: rgba(163, 24, 182, 0.65) !important;
+	background-color: rgba(235, 59, 90, 0.8) !important;
 	border-left: none !important;
 	border-radius: .5rem;
-	color: var(--color-8);
+	color: var(--color-08);
 	font-size: .875rem;
 	margin: 0;
 	text-align: center;
@@ -183,6 +183,6 @@ input[type=checkbox]:checked::before {
 }
 
 :is(#nav, #backtoblog) a:hover {
-	background: var(--color-02);
+	background: var(--color-03);
 	color: var(--color-08);
 }
