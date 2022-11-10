@@ -4,9 +4,9 @@
 	<div class="content-list">
 		<?php
 		if (is_paged()) {
-			echo '<h1 class="category-list-heading">' . single_cat_title('', false) . ' - Page ' . $paged . '</h1>';
+			echo '<h1>' . single_cat_title('', false) . ' - Page ' . $paged . '</h1>';
 		} else {
-			echo '<h1 class="category-list-heading">' . single_cat_title('', false) . '</h1>';
+			echo '<h1>' . single_cat_title('', false) . '</h1>';
 		}
 		if (have_posts()) {
 			echo '<div class="content-list-box">';
