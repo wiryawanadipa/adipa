@@ -34,7 +34,7 @@
 					<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>
 					<form action="<?php bloginfo('url'); ?>" role="search" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
 						<meta itemprop="target" content="<?php bloginfo('url'); ?>/?s={s}"/>
-						<input type="search" autocomplete="off" placeholder="Search here..." title="Search" aria-label="Search" itemprop="query-input" name="s" required>
+						<input type="search" autocomplete="off" placeholder="Search" title="Search" aria-label="Search" itemprop="query-input" name="s" required>
 						<button type="submit" aria-label="Search Button"><i class="fa-solid fa-magnifying-glass"></i></button>
 					</form>
 				</div>
