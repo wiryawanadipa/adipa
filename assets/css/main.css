@@ -119,11 +119,13 @@ select {
 ::-moz-selection {
 	background-color: var(--color-02);
 	color: var(--color-08);
+  -webkit-text-fill-color: var(--color-08);
 }
 
 ::selection {
 	background-color: var(--color-02);
 	color: var(--color-08);
+  -webkit-text-fill-color: var(--color-08);
 }
 
 html {
@@ -136,8 +138,8 @@ body {
 	background-color: var(--color-07);
 	background-image: repeating-linear-gradient(45deg, var(--color-07) 25%, transparent 25%, transparent 75%, var(--color-07) 75%, var(--color-07)),
 										repeating-linear-gradient(45deg, var(--color-07) 25%, var(--color-06) 25%, var(--color-06) 75%, var(--color-07) 75%, var(--color-07));
-	background-position: 0 0, 4px 4px;
-	background-size: 8px 8px;
+	background-position: 0 0, 2px 2px;
+	background-size: 4px 4px;
 	color: var(--color-09);
 }
 
@@ -171,6 +173,10 @@ body {
 }
 
 .hero h1 {
+	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 	color: var(--color-02);
 	filter: drop-shadow(2px 2px 4px #0f0f0f);
 	font-family: 'Audiowide', cursive;
@@ -204,12 +210,14 @@ body {
 
 .hero-social a:is(:focus, :hover) {
 	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	outline: none;
 }
 
 .hero-social a:active {
 	background-color: var(--color-04);
+	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
@@ -241,13 +249,15 @@ body {
 }
 
 .hero-heading-link a:is(:focus, :hover) {
-	background: var(--color-03);
+	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	outline: none;
 }
 
 .hero-heading-link a:active {
-	background: var(--color-04);
+	background-color: var(--color-04);
+	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
@@ -292,12 +302,14 @@ body {
 }
 
 .search-box form button:is(:focus, :hover) {
-	background: var(--color-03);
+	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	outline: none;
 }
 
 .search-box form button:active {
-	background: var(--color-04);
+	background-color: var(--color-04);
+	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
 .search-box form button i {
@@ -348,6 +360,10 @@ body {
 }
 
 .name-part {
+	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 	color: var(--color-02);
 	font-weight: bold;
 }
@@ -370,18 +386,24 @@ body {
 	color: var(--color-09);
 	display: block;
 	font-size: 1.25rem;
+	font-weight: 700;
 	letter-spacing: .05rem;
 	padding: .25rem .5rem;
 }
 
 #main-menu ul li a:hover {
+	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 	color: var(--color-02);
 }
 
 /**
-	* Content Listing
+	* Content List
 */
 .content-list {
+	background-color: var(--color-08);
 	background-image: repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
 										repeating-linear-gradient(45deg, #fff 25%, #f0f0f0 25%, #f0f0f0 75%, #fff 75%, #fff);
 	background-position: 0 0, 2px 2px;
@@ -393,11 +415,10 @@ body {
 }
 
 .content-list h1 {
-	background-color: var(--color-07);
-	background-image: repeating-linear-gradient(45deg, var(--color-07) 25%, transparent 25%, transparent 75%, var(--color-07) 75%, var(--color-07)), repeating-linear-gradient(45deg, var(--color-07) 25%, var(--color-06) 25%, var(--color-06) 75%, var(--color-07) 75%, var(--color-07));
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
+	background-color: var(--color-02);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	border-radius: 0.25rem;
+	color: var(--color-08);
 	font-size: 3rem;
 	margin-bottom: 2rem;
 	padding: 2rem 1rem;
@@ -420,7 +441,7 @@ body {
 	color: var(--color-05);
 	display: flex;
 	flex-direction: column;
-	gap: .75rem;
+	gap: .5rem;
 }
 
 .postcard-date {
@@ -443,7 +464,7 @@ body {
 .postcard-box ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: .5rem;
 }
 
 .postcard-box ul li a {
@@ -456,6 +477,7 @@ body {
 
 .postcard-box ul li a:hover {
 	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 }
 /* 
@@ -502,18 +524,15 @@ body {
 }
 
 .page-heading {
-	background-color: var(--color-07);
-	background-image: repeating-linear-gradient(45deg, var(--color-07) 25%, transparent 25%, transparent 75%, var(--color-07) 75%, var(--color-07)),
-										repeating-linear-gradient(45deg, var(--color-07) 25%, var(--color-06) 25%, var(--color-06) 75%, var(--color-07) 75%, var(--color-07));
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
+	background-color: var(--color-02);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	border-radius: .25rem;
 	margin-bottom: 2rem;
 	padding: 2rem 1rem;
 }
 
 .page-heading h1 {
-	color: var(--color-09);
+	color: var(--color-08);
 	font-size: 3rem;
 	text-align: center;
 }
@@ -793,11 +812,13 @@ fieldset {
 }
 
 .form-submit button:hover {
-	background-color: var(--color-04);
+	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
 .form-submit button:active {
-	background-color: var(--color-02);
+	background-color: var(--color-04);
+	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
 /**
@@ -851,6 +872,7 @@ fieldset {
 
 .social-page a:hover {
 	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 }
 
