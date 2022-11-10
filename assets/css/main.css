@@ -217,7 +217,7 @@ body {
 
 .hero-social a:active {
 	background-color: var(--color-04);
-	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
@@ -257,7 +257,7 @@ body {
 
 .hero-heading-link a:active {
 	background-color: var(--color-04);
-	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
@@ -309,7 +309,7 @@ body {
 
 .search-box form button:active {
 	background-color: var(--color-04);
-	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
 .search-box form button i {
@@ -448,6 +448,10 @@ body {
 	color: var(--color-10);
 }
 
+.postcard-box h2 {	
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 .postcard-box h2 a {
 	color: var(--color-04);
 }
@@ -479,6 +483,35 @@ body {
 	background-color: var(--color-03);
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
+}
+
+
+/**
+	* Pagination
+*/
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+.pagination :is(span, a) {
+	background-color: var(--color-06);
+	border-radius: .25rem;
+	color: var(--color-08);
+	padding: .5rem .875rem;
+}
+
+.pagination :is(.current, a:hover) {
+	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+}
+
+.pagination a:active {
+	background-color: var(--color-03);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 /* 
 .postcard-box {
@@ -676,7 +709,7 @@ body {
 }
 
 .article-content blockquote p:not(:first-child):last-child {
-	color: var(--color-c-1);
+	color: var(--color-10);
 	font-size: .8125rem;
 	font-style: italic;
 	padding-top: 1rem;
@@ -749,9 +782,9 @@ fieldset {
 
 .contact-form :is(input, textarea) {
 	background-color: #ffffff;
-	border: .125rem solid var(--color-10);
+	border: .125rem solid var(--color-09);
 	border-radius: 0.25rem;
-	color: var(--color-b-3);
+	color: var(--color-05);
 	padding: 0.625rem;
 	overflow-wrap: break-word;
 }
@@ -818,7 +851,7 @@ fieldset {
 
 .form-submit button:active {
 	background-color: var(--color-04);
-	background-image: linear-gradient(315deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
 /**
@@ -876,8 +909,11 @@ fieldset {
 	color: var(--color-08);
 }
 
-
-
+.social-page a:active {
+	background-color: var(--color-04);
+	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	color: var(--color-08);
+}
 
 
 
