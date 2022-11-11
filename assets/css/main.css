@@ -1208,6 +1208,10 @@ fieldset {
 }
 
 @media (max-width: 400px) {
+	.navigation {
+		padding: .5rem;
+	}
+
 	.content-list {
 		padding: 1rem;
 	}
