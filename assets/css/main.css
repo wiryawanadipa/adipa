@@ -271,10 +271,19 @@ body {
 	width: 100%;
 }
 
+.search-page-type {
+	margin-bottom: 2rem;
+	max-width: 100%;
+}
+
 .search-box form {
 	display: flex;
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 	justify-content: center;
+}
+
+.search-page-type form {
+	filter: none;
 }
 
 .search-box form input {
@@ -875,8 +884,35 @@ fieldset {
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
-.search-form {
+.not-found-info {
 	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.not-found-info i {
+	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	color: var(--color-02);
+	margin-bottom: 2rem;
+}
+
+.not-found-info p {
+	color: var(--color-05);
+	font-size: 2rem;
+	line-height: 2rem;
+}
+
+.random-post-list-heading {
+	background-color: var(--color-03);
+	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+	border-radius: .25rem;
+	color: var(--color-08);
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	padding: 2rem 1rem;
+	text-align: center;
 }
 
 /**
