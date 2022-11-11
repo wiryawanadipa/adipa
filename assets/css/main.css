@@ -597,6 +597,7 @@ body {
 
 .breadcrumbs {
 	border-bottom: 1px solid rgba(127, 127, 127, .5);
+	color: var(--color-10);
 	font-size: .875rem;
 	padding-bottom: .5rem;
 }
@@ -624,6 +625,7 @@ body {
 }
 
 .article-info {
+	color: var(--color-10);
 	display: flex;
 	font-size: .875rem;
 	gap: 1rem;
