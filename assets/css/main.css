@@ -626,7 +626,6 @@ body {
 .article-info {
 	display: flex;
 	font-size: .875rem;
-	font-weight: 300;
 	gap: 1rem;
 }
 
