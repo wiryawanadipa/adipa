@@ -795,6 +795,11 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 /**
 	* Related Article
 */
+.related-article {
+	margin-bottom: 1.25rem;
+	margin-top: 4rem;
+}
+
 .related-article h2 {
 	background-color: var(--color-02);
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
