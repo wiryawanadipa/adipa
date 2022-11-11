@@ -915,6 +915,25 @@ fieldset {
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
+.info {
+	border-radius: .25rem;
+	color: var(--color-08);
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+
+.success {
+	background-color: #198754;
+}
+
+.danger {
+	background-color: var(--color-04);
+}
+
+/**
+	* 404 and Not Found
+*/
+
 .not-found {
 	margin-bottom: 3rem;
 }
