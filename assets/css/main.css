@@ -272,7 +272,6 @@ body {
 }
 
 .search-page-type {
-	margin-bottom: 2rem;
 	max-width: 100%;
 }
 
@@ -884,6 +883,10 @@ fieldset {
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
+.not-found {
+	margin-bottom: 3rem;
+}
+
 .not-found-info {
 	margin-bottom: 2rem;
 	text-align: center;
@@ -932,10 +935,15 @@ fieldset {
 
 .footer-left {
 	display: flex;
+	color: var(--color-10);
 	flex-direction: column;
 	font-size: .875rem;
 	gap: .5rem;
 	justify-content: center;
+}
+
+.footer-left a {
+	color: var(--color-10);
 }
 
 .footer-left a:hover {
@@ -975,8 +983,6 @@ fieldset {
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 }
-
-
 
 @media (max-width: 1400px) {
 	.hero-photo svg {
