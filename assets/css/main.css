@@ -473,16 +473,21 @@ body {
 	gap: .5rem;
 }
 
+.postcard-image img {
+	margin: 0 auto;
+}
+
 .postcard-date {
 	color: var(--color-10);
 }
 
 .postcard-box h2 {	
 	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 2rem;
 }
 
 .postcard-box h2 a {
-	color: var(--color-04);
+	color: var(--color-03);
 }
 
 .postcard-box h2 a:hover {
@@ -501,7 +506,7 @@ body {
 }
 
 .postcard-box ul li a {
-	background-color: var(--color-10);
+	background-color: var(--color-05);
 	border-radius: .25rem;
 	color: var(--color-08);
 	display: block;
@@ -542,19 +547,6 @@ body {
 	background-color: var(--color-03);
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
-/* 
-.postcard-box {
-	position: relative;
-}
-
-.postcard-box h2 a:after {
-	bottom: 0;
-	content: "\A";
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-} */
 
 /**
 	* Main Article
@@ -942,6 +934,10 @@ fieldset {
 	justify-content: center;
 }
 
+.footer-left i {
+	width: 18px;
+}
+
 .footer-left a {
 	color: var(--color-10);
 }
@@ -954,6 +950,7 @@ fieldset {
 	align-items: center;
 	display: flex;
 	gap: .5rem;
+	text-align: center;
 }
 
 .social-page {
@@ -1019,12 +1016,6 @@ fieldset {
 	.hero-heading-link a {
 		gap: .5rem;
 	}
-
-	/* header {
-		position: absolute;
-		top: 0;
-		z-index: 2;
-	} */
 
 	.navigation {
 		padding: .75rem;
@@ -1112,6 +1103,10 @@ fieldset {
 
 	#main-menu ul li a::after {
 		display: none;
+	}
+
+	.article {
+		border-radius: 0;
 	}
 
 	.contact-form {
