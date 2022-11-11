@@ -514,10 +514,12 @@ function wa_related_by_tags() {
 		if ($my_query->have_posts()) {
 			echo '<div class="related-article">';
 			echo '<h2>Related Post</h2>';
+			echo '<ul>';
 			while ($my_query->have_posts()) {
 				$my_query->the_post();
-				echo '<div class="related-article-link"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+				echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 			}
+			echo '</ul>';
 			echo '</div>';
 		}
 	}
