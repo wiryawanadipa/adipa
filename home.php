@@ -6,7 +6,7 @@
 				</div>
 				<h1>WIRYAWAN ADIPA</h1>
 				<div class="hero-heading-text">Front-End Web &bull; UI/UX &bull; WordPress</div>
-				<div class="hero-social">
+				<div class="my-social">
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Twitter" aria-label="Wiryawan Adipa Twitter" href="https://twitter.com/wiryawanadipa" target="_blank">
 						<i class="fa-brands fa-twitter"></i>
 					</a>

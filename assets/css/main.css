@@ -191,12 +191,12 @@ body {
 	text-align: center;
 }
 
-.hero-social {
+.my-social {
 	display: flex;
 	gap: 1rem;
 }
 
-.hero-social a {
+.my-social a {
 	align-items: center;
 	background-color: var(--color-05);
 	border-radius: .5rem;
@@ -208,21 +208,21 @@ body {
 	width: 48px;
 }
 
-.hero-social a:is(:focus, :hover) {
+.my-social a:is(:focus, :hover) {
 	background-color: var(--color-03);
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	outline: none;
 }
 
-.hero-social a:active {
+.my-social a:active {
 	background-color: var(--color-04);
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
 	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
 
-.hero-social a i {
+.my-social a i {
 	display: block;
 	font-size: 1.75rem;
 }
@@ -1063,12 +1063,12 @@ fieldset {
 		padding: 2rem 1rem;
 	}
 
-	.hero-social a {
+	.my-social a {
 		height: 42px;
 		width: 42px;
 	}
 
-	.hero-social a i {
+	.my-social a i {
 		font-size: 1.5rem;
 	}
 
