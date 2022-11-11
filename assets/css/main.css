@@ -812,14 +812,17 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 }
 
 .related-article ul {
-	padding-left: 2rem;
+	padding: 0 1rem;
 }
 
 .related-article ul li {
+	border-bottom: .125rem dotted var(--color-09);
 	font-size: 1.25rem;
 	line-height: 2rem;
-	list-style: disc;
-	margin-bottom: 1.25rem;
+	list-style: decimal;
+	list-style-position: inside;
+	margin-bottom: .625rem;
+	padding-bottom: .625rem;
 }
 
 /**
