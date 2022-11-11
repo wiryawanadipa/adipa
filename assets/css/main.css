@@ -437,6 +437,7 @@ body {
 										repeating-linear-gradient(45deg, #fff 25%, #f0f0f0 25%, #f0f0f0 75%, #fff 75%, #fff);
 	background-position: 0 0, 2px 2px;
 	background-size: 4px 4px;
+	border-radius: .25rem;
 	filter: drop-shadow(4px 4px 4px #0f0f0f);
 	margin: 0 auto;
 	max-width: var(--width-content);
