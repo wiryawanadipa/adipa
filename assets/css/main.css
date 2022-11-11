@@ -473,6 +473,10 @@ body {
 	gap: .5rem;
 }
 
+.postcard-image {
+	margin-bottom: 1.5rem;
+}
+
 .postcard-image img {
 	margin: 0 auto;
 }
