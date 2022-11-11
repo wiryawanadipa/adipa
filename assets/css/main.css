@@ -461,6 +461,13 @@ body {
 	padding-bottom: 2rem;
 }
 
+.coming-soon {
+	color: var(--color-05);
+	font-size: 2rem;
+	margin: 5rem 0;
+	text-align: center;
+}
+
 .postcard {
 	border-bottom: 1px solid rgba(127, 127, 127, .5);
 	padding-bottom: 1.5rem;
