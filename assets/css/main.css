@@ -389,20 +389,19 @@ body {
 
 .logo::after {
 	background: linear-gradient(90deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-	bottom: 0;
 	content: "\A";
 	display: block;
 	height: .25rem;
-	left: 0;
-	margin: 0 auto;
-	right: 0;
-	transition: width .25s;
-	width: 0%;
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
 .logo:hover::after {
-	transition: width .25s;
-	width: 100%;
+	transform: scaleX(1);
+	transform-origin: bottom left;
+	transition: transform .25s;
 }
 
 .name-part {
@@ -442,14 +441,16 @@ body {
 	content: "\A";
 	display: block;
 	height: .25rem;
-	margin: 0 auto;
-	transition: width .15s;
-	width: 0%;
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
 #main-menu ul li a:hover::after {
-	transition: width .15s;
-	width: 100%;
+	transform: scaleX(1);
+	transform-origin: bottom left;
+	transition: transform .25s;
 }
 
 /**
