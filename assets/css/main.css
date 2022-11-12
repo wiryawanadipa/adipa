@@ -90,8 +90,8 @@ select {
 	--color-05: #36454f;
 	--color-06: #2c3840;
 	--color-07: #212b31;
-	--color-08: #f0f0f0;
-	--color-09: #d0d0d0;
+	--color-08: #f7f7f7;
+	--color-09: #dadada;
 	--color-10: #7f7f7f;
 	--color-11: #3f3f3f;
 	--color-12: #c96510;
@@ -169,7 +169,7 @@ body {
 .hero-photo svg {
 	border-radius: 50rem;
 	box-shadow: 0 0 1px 0 var(--color-03) inset, 0 0 1px 0 var(--color-03);
-	filter: drop-shadow(2px 2px 4px #0f0f0f);
+	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
 
 .hero h1 {
@@ -178,7 +178,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 	color: var(--color-02);
-	filter: drop-shadow(2px 2px 4px #0f0f0f);
+	filter: drop-shadow(1px 1px 2px #0f0f0f);
 	font-family: 'Audiowide', cursive;
 	font-size: clamp(2.5rem, 3.5vw, 4rem);
 	letter-spacing: .1rem;
@@ -202,7 +202,7 @@ body {
 	border-radius: .5rem;
 	color: var(--color-09);
 	display: flex;
-	filter: drop-shadow(2px 2px 4px #0f0f0f);
+	filter: drop-shadow(1px 1px 2px #0f0f0f);
 	height: 48px;
 	justify-content: center;
 	width: 48px;
@@ -219,7 +219,7 @@ body {
 	background-color: var(--color-04);
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
-	filter: drop-shadow(2px 2px 2px #0f0f0f);
+	filter: drop-shadow(1px 1px 1px #0f0f0f);
 }
 
 .my-social a i {
@@ -238,7 +238,7 @@ body {
 	background: var(--color-05);
 	border-radius: .5rem;
 	color: var(--color-09);
-	filter: drop-shadow(2px 2px 4px #0f0f0f);
+	filter: drop-shadow(1px 1px 2px #0f0f0f);
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: clamp(1.125rem, 2vw, 1.5rem);
 	padding: .375rem .675rem;
@@ -259,7 +259,7 @@ body {
 	background-color: var(--color-04);
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: var(--color-08);
-	filter: drop-shadow(2px 2px 2px #0f0f0f);
+	filter: drop-shadow(1px 1px 1px #0f0f0f);
 }
 
 .hero-heading-link i {
@@ -277,7 +277,7 @@ body {
 
 .search-box form {
 	display: flex;
-	filter: drop-shadow(2px 2px 2px #0f0f0f);
+	filter: drop-shadow(1px 1px 1px #0f0f0f);
 	justify-content: center;
 }
 
@@ -495,7 +495,7 @@ body {
 
 .postcard-box h2 {	
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 2rem;
+	font-size: 1.875rem;
 }
 
 .postcard-box h2 a {
