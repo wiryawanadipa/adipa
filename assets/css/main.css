@@ -1,11 +1,33 @@
-/* Box sizing rules */
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Reset
+*  2.0 - Variables
+*  3.0 - Browser Styling
+*  4.0 - Global
+*  5.0 - Homepage
+*  6.0 - Header
+*  7.0 - Main Content
+*     7.1 - Content List
+*     7.2 - Pagination
+*     7.3 - Main Article
+*     7.4 - Highlighting Code Block Plugin Custom Styles
+*     7.5 - Related Article
+*     7.6 - Contact Page
+*     7.7 - 404 and Not Found
+*  8.0 - Footer
+*  9.0 - Responsive
+*/
+
+/**
+	* 1.0 - Reset
+*/
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -19,7 +41,6 @@ dd {
 	margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul,
 ol {
 	list-style: none;
@@ -28,37 +49,31 @@ ol {
 	padding-inline-start: 0;
 }
 
-/* Remove list styles on li */
 li {
 	list-style: none;
 }
 
-/* Set core root defaults */
 html:focus-within {
 	scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
 body {
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
 	line-height: 1.25;
 }
 
-/* A elements that don't have a class get default styles */
 a {
 	text-decoration: none;
 	text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
 img,
 picture {
 	max-width: 100%;
 	display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -66,7 +81,6 @@ select {
 	font: inherit;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within {
 		scroll-behavior: auto;
@@ -82,6 +96,9 @@ select {
 	}
 }
 
+/**
+	* 2.0 - Variables
+*/
 :root {
 	--color-01: #fc757d;
 	--color-02: #fc5c65;
@@ -99,6 +116,9 @@ select {
 	--width-content: 800px;
 }
 
+/**
+	* 3.0 - Browser Styling
+*/
 ::-webkit-scrollbar {
 	height: 12px;
 	width: 12px;
@@ -128,6 +148,10 @@ select {
   -webkit-text-fill-color: var(--color-08);
 }
 
+
+/**
+	* 4.0 Global
+*/
 html {
 	font-family: 'Roboto', sans-serif;
 	font-size: 100%;
@@ -144,7 +168,7 @@ body {
 }
 
 /**
-	* Homepage
+	* 5.0 - Homepage
 */
 .homepage {
 	display: flex;
@@ -343,7 +367,7 @@ body {
 }
 
 /**
-	* Top Menu
+	* 6.0 - Header
 */
 .navigation {
 	margin: 0 auto;
@@ -429,7 +453,11 @@ body {
 }
 
 /**
-	* Content List
+	* 7.0 - Main Content
+*/
+
+/**
+	* 7.1 - Content List
 */
 .content-list {
 	background-color: var(--color-08);
@@ -534,7 +562,7 @@ body {
 
 
 /**
-	* Pagination
+	* 7.2 - Pagination
 */
 .pagination {
 	display: flex;
@@ -562,7 +590,7 @@ body {
 }
 
 /**
-	* Main Article
+	* 7.3 - Main Article
 */
 .article {
 	background-color: var(--color-08);
@@ -758,7 +786,7 @@ body {
 }
 
 /**
-	* For Highlighting Code Block
+	* 7.4 - Highlighting Code Block Plugin Custom Styles
 */
 .article-content div.hcb_wrap {
 	border-radius: .5rem;
@@ -802,7 +830,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 }
 
 /**
-	* Related Article
+	* 7.5 - Related Article
 */
 .related-article {
 	margin-bottom: 1.25rem;
@@ -835,7 +863,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 }
 
 /**
-	* Contact Page
+	* 7.6 - Contact Page
 */
 fieldset {
 	border: 0;
@@ -940,7 +968,7 @@ fieldset {
 }
 
 /**
-	* 404 and Not Found
+	* 7.7 - 404 and Not Found
 */
 
 .not-found {
@@ -979,7 +1007,7 @@ fieldset {
 }
 
 /**
-	* Footer
+	* 8.0 - Footer
 */
 .footer-box {
 	display: flex;
@@ -1049,6 +1077,9 @@ fieldset {
 	color: var(--color-08);
 }
 
+/**
+	* 9.0 - Responsive
+*/
 @media (max-width: 1400px) {
 	.hero-photo svg {
 		height: 144px;
