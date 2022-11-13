@@ -209,7 +209,7 @@ function wa_custom_icon() {
 add_action('wp_enqueue_scripts', 'wa_style_queue_css');
 
 function wa_style_queue_css() {
-	wp_register_style('wa-main-style', get_template_directory_uri() . '/assets/css/main.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
+	wp_register_style('wa-main-style', get_template_directory_uri() . '/assets/css/main.min.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
 	wp_enqueue_style('wa-main-style');
 }
 
