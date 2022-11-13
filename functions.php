@@ -221,7 +221,7 @@ function wa_style_queue_css() {
 add_action('admin_enqueue_scripts', 'wa_custom_setting_style');
 
 function wa_custom_setting_style() {
-	wp_register_style('wa-admin-style', get_template_directory_uri() . '/assets/css/admin.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
+	wp_register_style('wa-admin-style', get_template_directory_uri() . '/assets/css/admin.min.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
 	wp_enqueue_style('wa-admin-style');
 }
 
@@ -233,7 +233,7 @@ function wa_custom_setting_style() {
 add_action('login_enqueue_scripts', 'wa_login_style');
 
 function wa_login_style() {
-	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
+	wp_register_style('wa-login-style', get_template_directory_uri() . '/assets/css/login.min.css', false, wp_get_theme()->get('Version') . '.' . date('YmdHis'));
 	wp_enqueue_style('wa-login-style');
 }
 
