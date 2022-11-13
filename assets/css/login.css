@@ -1,16 +1,3 @@
-:root {
-	--color-01: #fc757d;
-	--color-02: #fc5c65;
-	--color-03: #eb3b5a;
-	--color-04: #e92447;
-	--color-05: #36454f;
-	--color-06: #2c3840;
-	--color-07: #212b31;
-	--color-08: #f0f0f0;
-	--color-09: #d0d0d0;
-	--color-10: #7f7f7f;
-}
-
 :focus {
 	box-shadow: none !important;
 }
@@ -21,24 +8,22 @@
 
 body.login {
 	align-items: center;
-	background-color: var(--color-07);
-	background-image: repeating-linear-gradient(45deg, var(--color-07) 25%, transparent 25%, transparent 75%, var(--color-07) 75%, var(--color-07)),
-										repeating-linear-gradient(45deg, var(--color-07) 25%, var(--color-06) 25%, var(--color-06) 75%, var(--color-07) 75%, var(--color-07));
+	background-color: #212b31;
+	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
 	background-position: 0 0, 4px 4px;
 	background-size: 8px 8px;
 	display: flex;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	justify-content: center;
 }
 
 #login {
 	display: grid;
-	gap: .5rem;
-	padding: .25rem 0;
+	gap: 0.5rem;
+	padding: 0.25rem 0;
 	max-width: 340px;
 	width: 100%;
 }
-
 #login h1 {
 	display: none;
 }
@@ -47,11 +32,11 @@ body.login {
 #registerform,
 #lostpasswordform,
 #resetpassform {
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.65);
+	background-color: rgba(17, 25, 40, 0.65);
 	border: 0;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
@@ -66,9 +51,9 @@ body.login {
 #lostpasswordform label,
 #resetpassform label,
 #resetpassform .description {
-	color: var(--color-08);
+	color: #f0f0f0;
 	font-size: 1rem;
-	margin-bottom: .5rem !important;
+	margin-bottom: 0.5rem !important;
 }
 
 #user_login,
@@ -76,32 +61,32 @@ body.login {
 #rememberme,
 #user_email,
 #pass1 {
-	backdrop-filter: blur(16px) saturate(180%);
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(77, 92, 120, 0.65) !important;
-	color: var(--color-08) !important;
+	color: #f0f0f0 !important;
 	border: 0 !important;
 	margin: 0;
 }
 
-:is(#user_login, #user_pass, #rememberme, #user_email, #pass1):focus {
-	border-color: var(--color-02);
-	box-shadow: 0 0 0 .125rem var(--color-02) !important;
+#user_login:focus, #user_pass:focus, #rememberme:focus, #user_email:focus, #pass1:focus {
+	border-color: #fc5c65;
+	box-shadow: 0 0 0 0.125rem #fc5c65 !important;
 }
 
 .dashicons {
-	color: var(--color-07);
+	color: #212b31;
 }
 
 .login #pass-strength-result {
 	border-radius: 50rem;
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 }
 
 #loginform .forgetmenot {
 	align-items: center;
 	display: flex;
-	gap: .5rem;
+	gap: 0.5rem;
 }
 
 #loginform .forgetmenot input {
@@ -123,43 +108,43 @@ br.clear {
 }
 
 input[type=checkbox]:checked::before {
-	content:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23fc757d%27%2F%3E%3C%2Fsvg%3E");
+	content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23fc757d%27%2F%3E%3C%2Fsvg%3E");
 }
 
 #wp-submit,
 .submit .button {
-	background-color: var(--color-03);
+	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	border: none;
-	border-radius: .5rem;
-	color: var(--color-09);
+	border-radius: 0.5rem;
+	color: #d0d0d0;
 	margin-bottom: 0;
 }
 
-:is(#wp-submit, .submit .button):hover {
-	background-color: var(--color-02);
+#wp-submit:hover, .submit .button:hover {
+	background-color: #fc5c65;
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
-:is(#wp-submit, .submit .button):focus {
-	background-color: var(--color-03);
+#wp-submit:focus, .submit .button:focus {
+	background-color: #fc5c65;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
 
-#login :is(#login_error, .message, .success) {
-	backdrop-filter: blur(16px) saturate(180%);
+#login #login_error, #login .message, #login .success {
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	backdrop-filter: blur(16px) saturate(180%);
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	border-left: none !important;
-	border-radius: .5rem;
-	color: var(--color-08);
-	font-size: .875rem;
+	border-radius: 0.5rem;
+	color: #f0f0f0;
+	font-size: 0.875rem;
 	margin: 0;
 	text-align: center;
 }
 
-:is(#login_error, .message, .success) a {
-	color: var(--color-08);
+#login_error a, .message a, .success a {
+	color: #f0f0f0;
 }
 
 .privacy-policy-page-link {
@@ -174,19 +159,19 @@ input[type=checkbox]:checked::before {
 	text-align: center !important;
 }
 
-:is(#nav, #backtoblog) a {
-	backdrop-filter: blur(16px) saturate(180%);
+#nav a, #backtoblog a {
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(17, 25, 40, 0.65);
-	border-radius: .5rem;
-	color: var(--color-08) !important;
+	border-radius: 0.5rem;
+	color: #f0f0f0 !important;
 	display: inline-block;
-	padding: .75rem 1rem;
+	padding: 0.75rem 1rem;
 	text-decoration: none;
 }
 
-:is(#nav, #backtoblog) a:hover {
-	background-color: var(--color-03);
+#nav a:hover, #backtoblog a:hover {
+	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-	color: var(--color-08);
-}
+	color: #f0f0f0;
+}/*# sourceMappingURL=login.css.map */
