@@ -1046,6 +1046,7 @@ fieldset {
 	#main-menu {
 		flex-basis: 100%;
 		overflow: hidden;
+		max-height: 0;
 	}
 	#main-menu.hidden {
 		max-height: 0;
