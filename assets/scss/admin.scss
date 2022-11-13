@@ -13,18 +13,18 @@ $color-11: #3f3f3f;
 ::-webkit-scrollbar {
 	height: 12px;
 	width: 12px;
-}
 
-::-webkit-scrollbar-track {
-	background-color: $color-07;
-}
+	&-track {
+		background-color: $color-07;
+	}
 
-::-webkit-scrollbar-thumb {
-	background-color: $color-02;
-}
+	&-thumb {
+		background-color: $color-02;
 
-::-webkit-scrollbar-thumb:hover {
-	background-color: $color-04;
+		&:hover {
+			background-color: $color-04;
+		}
+	}
 }
 
 body {
@@ -35,9 +35,9 @@ body {
 	margin-right: .5rem;
 	max-width: 25rem;
 	width: 100%;
-}
 
-.wa-input[type=text]:focus {
-	border-color: $color-02;
-	box-shadow: 0 0 0 1px $color-02;
+	&:focus {
+		border-color: $color-02;
+		box-shadow: 0 0 0 1px $color-02;
+	}
 }
