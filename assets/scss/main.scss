@@ -426,7 +426,7 @@ body {
 }
 
 #main-menu {
-	font-family: $font-roboto;
+	font-family: $font-roboto-condensed;
 
 	ul {
 		display: flex;
@@ -532,7 +532,7 @@ body {
 	}
 
 	h2 {	
-		font-family: $font-roboto;
+		font-family: $font-roboto-condensed;
 		font-size: 1.875rem;
 
 		a {
@@ -674,7 +674,7 @@ body {
 	padding-bottom: 0.75rem;
 
 	h1 {
-		font-family: $font-roboto;
+		font-family: $font-roboto-condensed;
 		font-size: 2rem;
 		margin-bottom: .75rem;
 	}
@@ -1109,6 +1109,7 @@ fieldset {
 		display: flex;
 		height: 32px;
 		justify-content: center;
+		width: 32px;
 
 		&:hover {
 			background-color: $color-03;

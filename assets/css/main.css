@@ -383,7 +383,7 @@ body {
 }
 
 #main-menu {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto Condensed", sans-serif;
 }
 #main-menu ul {
 	display: flex;
@@ -476,7 +476,7 @@ body {
 	color: #7f7f7f;
 }
 .postcard-box h2 {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto Condensed", sans-serif;
 	font-size: 1.875rem;
 }
 .postcard-box h2 a {
@@ -597,7 +597,7 @@ body {
 	padding-bottom: 0.75rem;
 }
 .article-title h1 {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto Condensed", sans-serif;
 	font-size: 2rem;
 	margin-bottom: 0.75rem;
 }
@@ -963,6 +963,7 @@ fieldset {
 	display: flex;
 	height: 32px;
 	justify-content: center;
+	width: 32px;
 }
 .social-page a:hover {
 	background-color: #eb3b5a;
