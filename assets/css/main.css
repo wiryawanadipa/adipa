@@ -392,7 +392,6 @@ body {
 	content: "\A";
 	display: block;
 	height: .25rem;
-	width: 100%;
 	transform: scaleX(0);
 	transform-origin: bottom right;
   transition: transform 0.25s ease-out;
@@ -441,7 +440,6 @@ body {
 	content: "\A";
 	display: block;
 	height: .25rem;
-	width: 100%;
 	transform: scaleX(0);
 	transform-origin: bottom right;
   transition: transform 0.15s ease-out;
