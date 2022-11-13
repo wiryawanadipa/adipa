@@ -1,0 +1,43 @@
+$color-01: #fc757d;
+$color-02: #fc5c65;
+$color-03: #eb3b5a;
+$color-04: #e92447;
+$color-05: #36454f;
+$color-06: #2c3840;
+$color-07: #212b31;
+$color-08: #f0f0f0;
+$color-09: #d0d0d0;
+$color-10: #7f7f7f;
+$color-11: #3f3f3f;
+
+::-webkit-scrollbar {
+	height: 12px;
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: $color-07;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $color-02;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: $color-04;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.wa-input[type=text] {
+	margin-right: .5rem;
+	max-width: 25rem;
+	width: 100%;
+}
+
+.wa-input[type=text]:focus {
+	border-color: $color-02;
+	box-shadow: 0 0 0 1px $color-02;
+}
