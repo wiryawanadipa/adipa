@@ -366,10 +366,10 @@ body {
 
 	a {
 		color: $color-10;
-	}
-
-	&:hover {
-		color: $color-01;
+		
+		&:hover {
+			color: $color-01;
+		}
 	}
 }
 

@@ -330,7 +330,7 @@ body {
 .hero-footer a {
 	color: #7f7f7f;
 }
-.hero-footer:hover {
+.hero-footer a:hover {
 	color: #fc757d;
 }
 
