@@ -267,7 +267,7 @@ body {
 		filter: drop-shadow(1px 1px 2px #0f0f0f);
 		font-family: $font-roboto-condensed;
 		font-size: clamp(1.25rem, 2vw, 1.5rem);
-		letter-spacing: .05rem;
+		letter-spacing: 0.02rem;
 		padding: .5rem .75rem;
 
 		&:is(:focus, :hover) {
@@ -874,8 +874,12 @@ span.token {
 			line-height: 2rem;
 			list-style: decimal;
 			list-style-position: inside;
-			margin-bottom: .625rem;
-			padding-bottom: .625rem;
+		}
+
+		a {
+			display: inline-block;
+			margin: .25rem 0;
+			padding: .25rem 0;
 		}
 	}
 }
