@@ -24,11 +24,11 @@
 					</a>
 				</div>
 				<div class="hero-heading-link">
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page"><i class="fa-solid fa-newspaper"></i>Blog</a>
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page"><i class="fa-solid fa-palette"></i>Design Gallery</a>
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label"><i class="fa-solid fa-briefcase"></i>Project</a>
-					<a href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page"><i class="fa-solid fa-user"></i>About</a>
-					<a href="<?php echo esc_url(get_page_link(get_page_by_title('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page"><i class="fa-solid fa-envelope"></i>Contact</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page">Blog</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page">Design Gallery</a>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label">Project</a>
+					<a href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page">About</a>
+					<a href="<?php echo esc_url(get_page_link(get_page_by_title('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page">Contact</a>
 				</div>
 				<div class="search-box" itemscope itemtype="https://schema.org/WebSite">
 					<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>

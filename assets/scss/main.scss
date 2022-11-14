@@ -182,7 +182,7 @@ body {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 2.5rem;
 	justify-content: center;
 	margin: auto;
 	padding: 2rem;
@@ -225,13 +225,13 @@ body {
 	a {
 		align-items: center;
 		background-color: $color-05;
-		border-radius: .5rem;
+		border-radius: .25rem;
 		color: $color-09;
 		display: flex;
 		filter: drop-shadow(1px 1px 2px #0f0f0f);
-		height: 48px;
+		height: 44px;
 		justify-content: center;
-		width: 48px;
+		width: 44px;
 	
 		&:is(:focus, :hover) {
 			background-color: $color-03;
@@ -249,7 +249,7 @@ body {
 	
 		i {
 			display: block;
-			font-size: 1.75rem;
+			font-size: 1.5rem;
 		}
 	}
 }
@@ -262,16 +262,12 @@ body {
 
 	a {
 		background: $color-05;
-		border-radius: .5rem;
+		border-radius: .25rem;
 		color: $color-09;
 		filter: drop-shadow(1px 1px 2px #0f0f0f);
 		font-family: $font-roboto;
-		font-size: clamp(1.125rem, 2vw, 1.5rem);
+		font-size: clamp(1.25rem, 2vw, 1.5rem);
 		padding: .375rem .675rem;
-		display: flex;
-		align-items: center;
-		gap: .75rem;
-		justify-content: center;
 
 		&:is(:focus, :hover) {
 			background-color: $color-03;
@@ -310,7 +306,7 @@ body {
 			width: calc(100% - 52px);
 
 			&:focus {
-				border-color: $color-02;
+				border-color: #e64f97;
 			}
 		}
 
@@ -1084,7 +1080,7 @@ fieldset {
 	a {
 		align-items: center;
 		background-color: $color-05;
-		border-radius: 0.25rem;
+		border-radius: 0.125rem;
 		color: $color-09;
 		display: flex;
 		height: 32px;
@@ -1129,7 +1125,7 @@ fieldset {
 
 @media (max-width: 600px) {
 	.hero {
-		gap: 1.5rem;
+		gap: 2rem;
 		padding: 2rem 1rem;
 	}
 
@@ -1140,10 +1136,6 @@ fieldset {
 		i {
 			font-size: 1.5rem;
 		}
-	}
-
-	.hero-heading-link a {
-		gap: .5rem;
 	}
 
 	.navigation {
@@ -1234,6 +1226,10 @@ fieldset {
 		}
 	}
 
+	.content-list {
+		border-radius: 0;
+	}
+
 	.article {
 		border-radius: 0;
 	}
@@ -1275,7 +1271,7 @@ fieldset {
 	}
 
 	.content-list {
-		padding: 1rem;
+		padding: .875rem;
 
 		h1 {
 			font-size: 2.5rem;
@@ -1288,7 +1284,7 @@ fieldset {
 
 	.article {
 		font-size: 1rem;
-		padding: 1rem;
+		padding: .875rem;
 	}
 
 	.article-content {
