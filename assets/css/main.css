@@ -239,9 +239,10 @@ body {
 	border-radius: 0.25rem;
 	color: #d0d0d0;
 	filter: drop-shadow(1px 1px 2px #0f0f0f);
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto Condensed", sans-serif;
 	font-size: clamp(1.25rem, 2vw, 1.5rem);
-	padding: 0.375rem 0.675rem;
+	letter-spacing: 0.05rem;
+	padding: 0.5rem 0.75rem;
 }
 .hero-heading-link a:is(:focus, :hover) {
 	background-color: #eb3b5a;

@@ -265,9 +265,10 @@ body {
 		border-radius: .25rem;
 		color: $color-09;
 		filter: drop-shadow(1px 1px 2px #0f0f0f);
-		font-family: $font-roboto;
+		font-family: $font-roboto-condensed;
 		font-size: clamp(1.25rem, 2vw, 1.5rem);
-		padding: .375rem .675rem;
+		letter-spacing: .05rem;
+		padding: .5rem .75rem;
 
 		&:is(:focus, :hover) {
 			background-color: $color-03;
