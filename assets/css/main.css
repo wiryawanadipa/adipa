@@ -110,15 +110,12 @@ select {
 	height: 12px;
 	width: 12px;
 }
-
 ::-webkit-scrollbar-track {
 	background-color: #212b31;
 }
-
 ::-webkit-scrollbar-thumb {
 	background-color: #fc5c65;
 }
-
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #e92447;
 }
@@ -129,8 +126,7 @@ select {
 	-webkit-text-fill-color: #f0f0f0;
 }
 
-::selection,
-::-moz-selection {
+::selection {
 	background-color: #fc5c65;
 	color: #f0f0f0;
 	-webkit-text-fill-color: #f0f0f0;
@@ -204,7 +200,6 @@ body {
 	display: flex;
 	gap: 1rem;
 }
-
 .my-social a {
 	align-items: center;
 	background-color: #36454f;
@@ -216,7 +211,7 @@ body {
 	justify-content: center;
 	width: 48px;
 }
-.my-social a:focus, .my-social a:hover {
+.my-social a:is(:focus, :hover) {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: #f0f0f0;
@@ -252,7 +247,7 @@ body {
 	gap: 0.75rem;
 	justify-content: center;
 }
-.hero-heading-link a:focus, .hero-heading-link a:hover {
+.hero-heading-link a:is(:focus, :hover) {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: #f0f0f0;
@@ -298,7 +293,7 @@ body {
 	justify-content: center;
 	width: 52px;
 }
-.search-box form button:focus, .search-box form button:hover {
+.search-box form button:is(:focus, :hover) {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	outline: none;
@@ -519,15 +514,13 @@ body {
 	justify-content: center;
 	padding: 1rem 0;
 }
-.pagination span,
-.pagination a {
+.pagination :is(span, a) {
 	background-color: #2c3840;
 	border-radius: 0.25rem;
 	color: #f0f0f0;
 	padding: 0.5rem 0.875rem;
 }
-.pagination .current,
-.pagination a:hover {
+.pagination :is(.current, a:hover) {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
@@ -625,11 +618,7 @@ body {
 	line-height: 2rem;
 }
 
-.article-content h2,
-.article-content h3,
-.article-content h4,
-.article-content h5,
-.article-content h6 {
+.article-content :is(h2, h3, h4, h5, h6) {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.75rem;
 	margin: 3rem 0 1rem;
@@ -661,13 +650,11 @@ body {
 	margin: 0 auto;
 	padding: 0.75rem;
 }
-.article-content ol,
-.article-content ul {
+.article-content :is(ol, ul) {
 	margin: 0.5rem auto 1.5rem;
 	padding-left: 2rem;
 }
-.article-content ol li,
-.article-content ul li {
+.article-content :is(ol, ul) li {
 	display: list-item;
 	line-height: 2.25rem;
 }
@@ -725,7 +712,7 @@ body {
 	overflow-wrap: break-word;
 	scrollbar-color: #fc5c65 #212b31;
 }
-.article-content div.hcb_wrap pre, .article-content div.hcb_wrap code {
+.article-content div.hcb_wrap :is(pre, code) {
 	background-color: #212b31;
 	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
 	background-position: 0 0, 2px 2px;
@@ -749,7 +736,7 @@ body {
 	background-color: #eb3b5a;
 }
 
-span.token.constant, span.token.deleted, span.token.important, span.token.property, span.token.symbol, span.token.tag, span.token.keyword, span.token.operator {
+span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keyword, .operator) {
 	color: #fc5c65;
 }
 
@@ -798,8 +785,8 @@ fieldset {
 	gap: 1rem;
 	padding-bottom: 1rem;
 }
-.contact-form input,
-.contact-form textarea {
+.contact-form :is(input,
+textarea) {
 	background-color: #ffffff;
 	border: 0.125rem solid #d0d0d0;
 	border-radius: 0.25rem;
@@ -807,9 +794,8 @@ fieldset {
 	padding: 0.625rem;
 	overflow-wrap: break-word;
 }
-.contact-form input:focus-visible, .contact-form input:hover,
-.contact-form textarea:focus-visible,
-.contact-form textarea:hover {
+.contact-form :is(input,
+textarea):is(:focus-visible, :hover) {
 	border: 0.125rem solid #eb3b5a;
 	outline: none;
 }
@@ -1125,8 +1111,7 @@ fieldset {
 		font-size: 1rem;
 		padding: 1rem;
 	}
-	.article-content ol li,
-.article-content ul li {
+	.article-content :is(ol, ul) li {
 		line-height: 1.875rem;
 	}
 }/*# sourceMappingURL=main.css.map */

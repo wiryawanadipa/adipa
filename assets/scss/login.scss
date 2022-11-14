@@ -90,7 +90,7 @@ body {
 }
 
 #user_login, #user_pass, #rememberme, #user_email, #pass1 {
-	&:focus {
+	:is(&):focus {
 		border-color: $color-02;
 		box-shadow: 0 0 0 .125rem $color-02 !important;
 	}
@@ -144,21 +144,21 @@ input[type=checkbox]:checked::before {
 }
 
 #wp-submit, .submit .button {
-	&:hover {
+	:is(&):hover {
 		background-color: $color-02;
 		background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	}
 }
 
 #wp-submit, .submit .button {
-	&:focus {
+	:is(&):focus {
 		background-color: $color-02;
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	}
 }
 
 #login {
-	#login_error, .message, .success {
+	:is(#login_error, .message, .success) {
 		@include prefix(backdrop-filter, blur(16px) saturate(180%), webkit);
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 		border-left: none !important;
@@ -170,7 +170,7 @@ input[type=checkbox]:checked::before {
 	}
 }
 
-#login_error, .message, .success {
+:is(#login_error, .message, .success) {
 	a {
 		color: $color-08;
 	}
@@ -188,7 +188,7 @@ input[type=checkbox]:checked::before {
 	text-align: center !important;
 }
 
-#nav, #backtoblog {
+:is(#nav, #backtoblog) {
 	a {
 		@include prefix(backdrop-filter, blur(16px) saturate(180%), webkit);
 		background-color: rgba(17, 25, 40, 0.65);
@@ -200,7 +200,7 @@ input[type=checkbox]:checked::before {
 	}
 }
 
-#nav, #backtoblog {
+:is(#nav, #backtoblog) {
 	a:hover {
 		background-color: $color-03;
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);

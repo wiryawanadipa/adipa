@@ -129,25 +129,24 @@ select {
 ::-webkit-scrollbar {
 	height: 12px;
 	width: 12px;
+
+	&-track {
+		background-color: $color-07;
+	}
+
+	&-thumb {
+		background-color: $color-02;
+
+		&:hover {
+			background-color: $color-04;
+		}
+	}
 }
 
-::-webkit-scrollbar-track {
-	background-color: $color-07;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: $color-02;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background-color: $color-04;
-}
-
-::selection,
-::-moz-selection {
+::selection {
 	background-color: $color-02;
 	color: $color-08;
-  -webkit-text-fill-color: $color-08;
+	-webkit-text-fill-color: $color-08;
 }
 
 
@@ -222,37 +221,36 @@ body {
 .my-social {
 	display: flex;
 	gap: 1rem;
-}
 
-.my-social a {
-	align-items: center;
-	background-color: $color-05;
-	border-radius: .5rem;
-	color: $color-09;
-	display: flex;
-	filter: drop-shadow(1px 1px 2px #0f0f0f);
-	height: 48px;
-	justify-content: center;
-	width: 48px;
-
-	&:focus,
-	&:hover {
-		background-color: $color-03;
-		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-		color: $color-08;
-		outline: none;
-	}
-
-	&:active {
-		background-color: $color-04;
-		background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-		color: $color-08;
-		filter: drop-shadow(1px 1px 1px #0f0f0f);
-	}
-
-	i {
-		display: block;
-		font-size: 1.75rem;
+	a {
+		align-items: center;
+		background-color: $color-05;
+		border-radius: .5rem;
+		color: $color-09;
+		display: flex;
+		filter: drop-shadow(1px 1px 2px #0f0f0f);
+		height: 48px;
+		justify-content: center;
+		width: 48px;
+	
+		&:is(:focus, :hover) {
+			background-color: $color-03;
+			background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+			color: $color-08;
+			outline: none;
+		}
+	
+		&:active {
+			background-color: $color-04;
+			background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+			color: $color-08;
+			filter: drop-shadow(1px 1px 1px #0f0f0f);
+		}
+	
+		i {
+			display: block;
+			font-size: 1.75rem;
+		}
 	}
 }
 
@@ -275,8 +273,7 @@ body {
 		gap: .75rem;
 		justify-content: center;
 
-		&:focus,
-		&:hover {
+		&:is(:focus, :hover) {
 			background-color: $color-03;
 			background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 			color: $color-08;
@@ -328,8 +325,7 @@ body {
 			justify-content: center;
 			width: 52px;
 
-			&:focus,
-			&:hover {
+			&:is(:focus, :hover) {
 				background-color: $color-03;
 				background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 				outline: none;
@@ -585,16 +581,14 @@ body {
 	justify-content: center;
 	padding: 1rem 0;
 
-	span,
-	a {
+	:is(span, a) {
 		background-color: $color-06;
 		border-radius: .25rem;
 		color: $color-08;
 		padding: .5rem .875rem;
 	}
 
-	.current,
-	a:hover {
+	:is(.current, a:hover) {
 		background-color: $color-03;
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	}
@@ -704,11 +698,7 @@ body {
 }
 
 .article-content {
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+	:is(h2, h3, h4, h5, h6) {
 		font-family: $font-roboto;
 		font-size: 1.75rem;
 		margin: 3rem 0 1rem;
@@ -746,8 +736,7 @@ body {
 		}
 	}
 
-	ol,
-	ul {
+	:is(ol, ul) {
 		margin: 0.5rem auto 1.5rem;
 		padding-left: 2rem;
 
@@ -823,7 +812,7 @@ body {
 	overflow-wrap: break-word;
 	scrollbar-color: $color-02 $color-07;
 
-	pre, code {
+	:is(pre, code) {
 		background-color: $color-07;
 		background-image: repeating-linear-gradient(45deg, $color-07 25%, transparent 25%, transparent 75%, $color-07 75%, $color-07), repeating-linear-gradient(45deg, $color-07 25%, $color-06 25%, $color-06 75%, $color-07 75%, $color-07);
 		background-position: 0 0, 2px 2px;
@@ -854,14 +843,7 @@ body {
 }
 
 span.token {
-	&.constant,
-	&.deleted,
-	&.important,
-	&.property,
-	&.symbol,
-	&.tag,
-	&.keyword,
-	&.operator {
+	&:is(.constant, .deleted, .important, .property, .symbol, .tag, .keyword, .operator) {
 		color: $color-02;
 	}
 }
@@ -918,8 +900,8 @@ fieldset {
 	gap: 1rem;
 	padding-bottom: 1rem;
 
-	input,
-	textarea {
+	:is(input,
+	textarea) {
 		background-color: #ffffff;
 		border: .125rem solid $color-09;
 		border-radius: 0.25rem;
@@ -927,8 +909,7 @@ fieldset {
 		padding: 0.625rem;
 		overflow-wrap: break-word;
 
-		&:focus-visible,
-		&:hover {
+		&:is(:focus-visible, :hover) {
 			border: .125rem solid $color-03;
 			outline: none;
 		}
@@ -1312,8 +1293,7 @@ fieldset {
 	}
 
 	.article-content {
-		ol,
-		ul {
+		:is(ol, ul) {
 			li {
 				line-height: 1.875rem;
 			}
