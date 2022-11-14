@@ -3,7 +3,7 @@
 	* Default Theme Settings
 */
 if (isset($_GET['activated']) && is_admin()) {
-	update_option('posts_per_page', 12);
+	update_option('posts_per_page', 10);
 	update_option('thumbnail_size_w', 0);
 	update_option('thumbnail_size_h', 0);
 	update_option('thumbnail_crop', 1);
