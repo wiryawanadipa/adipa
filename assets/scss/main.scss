@@ -696,7 +696,7 @@ body {
 
 .article-content {
 	:is(h2, h3, h4, h5, h6) {
-		font-family: $font-roboto;
+		font-family: $font-roboto-condensed;
 		font-size: 1.75rem;
 		margin: 3rem 0 1rem;
 	}
