@@ -763,11 +763,7 @@ span.token:is(.constant, .deleted, .important, .property, .symbol, .tag, .keywor
 	line-height: 2rem;
 	list-style: decimal;
 	list-style-position: inside;
-}
-.related-article ul a {
-	display: inline-block;
-	margin: 0.25rem 0;
-	padding: 0.25rem 0;
+	padding: 0.5rem 0;
 }
 
 /**
