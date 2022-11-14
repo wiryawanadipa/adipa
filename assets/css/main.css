@@ -785,8 +785,7 @@ fieldset {
 	gap: 1rem;
 	padding-bottom: 1rem;
 }
-.contact-form :is(input,
-textarea) {
+.contact-form :is(input, textarea) {
 	background-color: #ffffff;
 	border: 0.125rem solid #d0d0d0;
 	border-radius: 0.25rem;
@@ -794,8 +793,7 @@ textarea) {
 	padding: 0.625rem;
 	overflow-wrap: break-word;
 }
-.contact-form :is(input,
-textarea):is(:focus-visible, :hover) {
+.contact-form :is(input, textarea):is(:focus-visible, :hover) {
 	border: 0.125rem solid #eb3b5a;
 	outline: none;
 }

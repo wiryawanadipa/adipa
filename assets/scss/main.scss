@@ -900,8 +900,7 @@ fieldset {
 	gap: 1rem;
 	padding-bottom: 1rem;
 
-	:is(input,
-	textarea) {
+	:is(input, textarea) {
 		background-color: #ffffff;
 		border: .125rem solid $color-09;
 		border-radius: 0.25rem;
