@@ -139,18 +139,14 @@ input[type=checkbox]:checked::before {
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	border: none;
 	border-radius: .5rem;
-	color: $color-09;
+	color: $color-08;
 	margin-bottom: 0;
-}
 
-#wp-submit, .submit .button {
 	:is(&):hover {
 		background-color: $color-02;
 		background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	}
-}
 
-#wp-submit, .submit .button {
 	:is(&):focus {
 		background-color: $color-02;
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
@@ -186,9 +182,7 @@ input[type=checkbox]:checked::before {
 	margin: 0 !important;
 	padding: 0 !important;
 	text-align: center !important;
-}
 
-:is(#nav, #backtoblog) {
 	a {
 		@include prefix(backdrop-filter, blur(16px) saturate(180%), webkit);
 		background-color: rgba(17, 25, 40, 0.65);
@@ -197,13 +191,11 @@ input[type=checkbox]:checked::before {
 		display: inline-block;
 		padding: .75rem 1rem;
 		text-decoration: none;
-	}
-}
 
-:is(#nav, #backtoblog) {
-	a:hover {
-		background-color: $color-03;
-		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-		color: $color-08;
+		&:hover {
+			background-color: $color-03;
+			background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+			color: $color-08;
+		}
 	}
 }
