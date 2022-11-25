@@ -246,11 +246,6 @@ body {
 			color: $color-08;
 			filter: drop-shadow(1px 1px 1px #0f0f0f);
 		}
-	
-		i {
-			display: block;
-			font-size: 1.5rem;
-		}
 	}
 }
 
@@ -283,10 +278,6 @@ body {
 			color: $color-08;
 			filter: drop-shadow(1px 1px 1px #0f0f0f);
 		}
-	}
-
-	i {
-		font-size: clamp(.75rem, 2vw, .875rem);
 	}
 }
 
@@ -333,8 +324,7 @@ body {
 				background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 			}
 
-			i {
-				color: $color-09;
+			svg {
 				margin-left: -4px;
 			}
 		}
@@ -358,11 +348,18 @@ body {
 	gap: 1rem;
 	justify-content: center;
 
-	a {
-		color: $color-10;
-		
-		&:hover {
-			color: $color-01;
+	.footer-list {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .25rem;
+
+		a {
+			color: $color-10;
+			
+			&:hover {
+				color: $color-01;
+			}
 		}
 	}
 }
@@ -673,8 +670,10 @@ body {
 }
 
 .article-info {
+	align-items: center;
 	color: $color-10;
 	display: flex;
+	flex-wrap: wrap;
 	font-size: .875rem;
 	gap: 1rem;
 }
@@ -1130,12 +1129,10 @@ fieldset {
 		padding: 2rem 1rem;
 	}
 
-	.my-social a {
-		height: 42px;
-		width: 42px;
-
-		i {
-			font-size: 1.5rem;
+	.my-social {
+		a {
+			height: 42px;
+			width: 42px;
 		}
 	}
 

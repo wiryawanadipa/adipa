@@ -223,10 +223,6 @@ body {
 	color: #f0f0f0;
 	filter: drop-shadow(1px 1px 1px #0f0f0f);
 }
-.my-social a i {
-	display: block;
-	font-size: 1.5rem;
-}
 
 .hero-heading-link {
 	display: flex;
@@ -255,9 +251,6 @@ body {
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: #f0f0f0;
 	filter: drop-shadow(1px 1px 1px #0f0f0f);
-}
-.hero-heading-link i {
-	font-size: clamp(0.75rem, 2vw, 0.875rem);
 }
 
 .search-box {
@@ -299,8 +292,7 @@ body {
 	background-color: #e92447;
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
-.search-box form button i {
-	color: #d0d0d0;
+.search-box form button svg {
 	margin-left: -4px;
 }
 
@@ -320,10 +312,16 @@ body {
 	gap: 1rem;
 	justify-content: center;
 }
-.hero-footer a {
+.hero-footer .footer-list {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+.hero-footer .footer-list a {
 	color: #7f7f7f;
 }
-.hero-footer a:hover {
+.hero-footer .footer-list a:hover {
 	color: #fc757d;
 }
 
@@ -594,8 +592,10 @@ body {
 }
 
 .article-info {
+	align-items: center;
 	color: #7f7f7f;
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 0.875rem;
 	gap: 1rem;
 }
@@ -982,9 +982,6 @@ fieldset {
 	.my-social a {
 		height: 42px;
 		width: 42px;
-	}
-	.my-social a i {
-		font-size: 1.5rem;
 	}
 	.navigation {
 		padding: 0.75rem;
