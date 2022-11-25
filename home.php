@@ -19,7 +19,7 @@
 					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa GitHub" aria-label="Wiryawan Adipa GitHub" href="https://github.com/wiryawanadipa" target="_blank">
 						<i class="fa-brands fa-github-alt"></i>
 					</a>
-					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Dribbble" aria-label="Wiryawan Adipa GitHub" href="https://dribbble.com/wiryawanadipa" target="_blank">
+					<a rel="nofollow noopener noreferrer" title="Wiryawan Adipa Dribbble" aria-label="Wiryawan Adipa Dribbble" href="https://dribbble.com/wiryawanadipa" target="_blank">
 						<i class="fa-brands fa-dribbble"></i>
 					</a>
 				</div>
