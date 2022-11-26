@@ -2,22 +2,26 @@
 *  CSS TABLE OF CONTENTS
 *   
 *  1.0 - Variables
-*  2.0 - Reset
-*  3.0 - Browser Styling
-*  4.0 - Global
-*  5.0 - Homepage
-*  6.0 - Header
-*  7.0 - Main Content
-*     7.1 - Content List
-*     7.2 - Pagination
-*     7.3 - Main Article
-*     7.4 - Highlighting Code Block Plugin Custom Styles
-*     7.5 - Related Article
-*     7.6 - Contact Page
-*     7.7 - 404 and Not Found
-*  8.0 - Footer
-*  9.0 - Responsive
+*  2.0 - Browser Styling
+*  3.0 - Global
+*  4.0 - Homepage
+*  5.0 - Header
+*  6.0 - Main Content
+*     6.1 - Content List
+*     6.2 - Pagination
+*     6.3 - Main Article
+*     6.4 - Highlighting Code Block Plugin Custom Styles
+*     6.5 - Related Article
+*     6.6 - Contact Page
+*     6.7 - 404 and Not Found
+*  7.0 - Footer
+*  8.0 - Responsive
 */
+
+
+
+@use 'reset.scss';
+@use 'fonts.scss';
 
 
 
@@ -45,86 +49,7 @@ $font-roboto-condensed: 'Roboto Condensed', sans-serif;
 
 
 /**
-	* 2.0 - Variables
-*/
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-	margin: 0;
-}
-
-ul,
-ol {
-	list-style: none;
-	margin-block-end: 0;
-	margin-block-start: 0;
-	padding-inline-start: 0;
-}
-
-li {
-	list-style: none;
-}
-
-html:focus-within {
-	scroll-behavior: smooth;
-}
-
-body {
-	min-height: 100vh;
-	text-rendering: optimizeSpeed;
-	line-height: 1.25;
-}
-
-a {
-	text-decoration: none;
-	text-decoration-skip-ink: auto;
-}
-
-img,
-picture {
-	max-width: 100%;
-	display: block;
-}
-
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-}
-
-
-
-/**
-	* 3.0 - Browser Styling
+	* 2.0 - Browser Styling
 */
 ::-webkit-scrollbar {
 	height: 12px;
@@ -152,7 +77,7 @@ select {
 
 
 /**
-	* 4.0 Global
+	* 3.0 Global
 */
 html {
 	font-family: $font-roboto;
@@ -171,7 +96,7 @@ body {
 
 
 /**
-	* 5.0 - Homepage
+	* 4.0 - Homepage
 */
 .homepage {
 	display: flex;
@@ -367,7 +292,7 @@ body {
 
 
 /**
-	* 6.0 - Header
+	* 5.0 - Header
 */
 .navigation {
 	margin: 0 auto;
@@ -456,11 +381,11 @@ body {
 
 
 /**
-	* 7.0 - Main Content
+	* 6.0 - Main Content
 */
 
 /**
-	* 7.1 - Content List
+	* 6.1 - Content List
 */
 .content-list {
 	background-color: $color-08;
@@ -567,7 +492,7 @@ body {
 
 
 /**
-	* 7.2 - Pagination
+	* 6.2 - Pagination
 */
 .pagination {
 	display: flex;
@@ -597,7 +522,7 @@ body {
 
 
 /**
-	* 7.3 - Main Article
+	* 6.3 - Main Article
 */
 .article {
 	background-color: $color-08;
@@ -801,7 +726,7 @@ body {
 
 
 /**
-	* 7.4 - Highlighting Code Block Plugin Custom Styles
+	* 6.4 - Highlighting Code Block Plugin Custom Styles
 */
 .article-content div.hcb_wrap {
 	border-radius: .5rem;
@@ -848,7 +773,7 @@ span.token {
 
 
 /**
-	* 7.5 - Related Article
+	* 6.5 - Related Article
 */
 .related-article {
 	margin-bottom: 1.25rem;
@@ -882,7 +807,7 @@ span.token {
 
 
 /**
-	* 7.6 - Contact Page
+	* 6.6 - Contact Page
 */
 fieldset {
 	border: 0;
@@ -989,7 +914,7 @@ fieldset {
 
 
 /**
-	* 7.7 - 404 and Not Found
+	* 6.7 - 404 and Not Found
 */
 
 .not-found {
@@ -1030,7 +955,7 @@ fieldset {
 
 
 /**
-	* 8.0 - Footer
+	* 7.0 - Footer
 */
 .footer-box {
 	display: flex;
@@ -1104,7 +1029,7 @@ fieldset {
 
 
 /**
-	* 9.0 - Responsive
+	* 8.0 - Responsive
 */
 @media (max-width: 1400px) {
 	.hero-photo svg {
