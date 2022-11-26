@@ -546,6 +546,9 @@ body {
 	color: #f0f0f0;
 	outline: none;
 }
+.my-social a:is(:focus, :hover) svg {
+	fill: #f0f0f0;
+}
 .my-social a:active {
 	background-color: #e92447;
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
@@ -616,6 +619,9 @@ body {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	outline: none;
+}
+.search-box form button:is(:focus, :hover) svg {
+	fill: #f0f0f0;
 }
 .search-box form button:active {
 	background-color: #e92447;
@@ -1279,6 +1285,9 @@ fieldset {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 	color: #f0f0f0;
+}
+.social-page a:hover svg {
+	fill: #f0f0f0;
 }
 .social-page a:active {
 	background-color: #e92447;

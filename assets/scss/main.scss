@@ -163,6 +163,10 @@ body {
 			background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 			color: $color-08;
 			outline: none;
+
+			svg {
+				fill: $color-08;
+			}
 		}
 	
 		&:active {
@@ -242,6 +246,10 @@ body {
 				background-color: $color-03;
 				background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 				outline: none;
+
+				svg {
+					fill: $color-08;
+				}
 			}
 
 			&:active {
@@ -1016,6 +1024,10 @@ fieldset {
 			background-color: $color-03;
 			background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 			color: $color-08;
+
+			svg {
+				fill: $color-08;
+			}
 		}
 
 		&:active {
