@@ -1163,11 +1163,11 @@ fieldset {
 	margin: 0;
 	padding: 0.5rem 0.75rem;
 }
-.contact-form .form-submit button button:hover {
+.contact-form .form-submit button:hover {
 	background-color: #eb3b5a;
 	background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
-.contact-form .form-submit button button:active {
+.contact-form .form-submit button:active {
 	background-color: #e92447;
 	background-image: linear-gradient(135deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 }
