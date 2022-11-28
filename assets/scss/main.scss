@@ -1171,26 +1171,26 @@ fieldset {
 
 	.contact-form {
 		padding-bottom: 2rem;
-	}
 
-	.contact-info {
-		flex-direction: column;
-	}
-
-	.bottom-form {
-		flex-direction: column;
-		gap: 2rem;
-		justify-content: center;
-	}
-
-	.g-recaptcha {
-		margin: 0 auto;
-	}
+		.contact-info {
+			flex-direction: column;
+		}
 	
-	.form-submit button {
-		border-radius: 5rem;
-		padding: 1rem;
-		width: 100%;
+		.bottom-form {
+			flex-direction: column;
+			gap: 2rem;
+			justify-content: center;
+		}
+	
+		.g-recaptcha {
+			margin: 0 auto;
+		}
+		
+		.form-submit button {
+			border-radius: 5rem;
+			padding: 1rem;
+			width: 100%;
+		}
 	}
 
 	.footer-box {
