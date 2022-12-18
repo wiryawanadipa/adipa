@@ -1,4 +1,4 @@
-<div class="postcard">
+<article class="postcard">
 	<div class="postcard-box">
 		<?php
 		if (
@@ -36,4 +36,4 @@
 		}
 		?>
 	</div>
-</div>
+</article>
