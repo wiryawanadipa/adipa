@@ -35,8 +35,8 @@
 			}
 			?>
 		</div>
-	<?php wa_related_by_tags(); ?>
 	</article>
+	<?php wa_related_by_tags(); ?>
 </main>
 <?php
 get_template_part('template-parts/footer');

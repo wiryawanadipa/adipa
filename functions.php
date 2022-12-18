@@ -512,15 +512,15 @@ function wa_related_by_tags() {
 		);
 		$my_query = new wp_query($args);
 		if ($my_query->have_posts()) {
-			echo '<div class="related-article">';
-			echo '<h2>Related Post</h2>';
+			echo '<aside class="related-article">';
+			echo '<h3>Related Post</h3>';
 			echo '<ul>';
 			while ($my_query->have_posts()) {
 				$my_query->the_post();
 				echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 			}
 			echo '</ul>';
-			echo '</div>';
+			echo '</aside>';
 		}
 	}
 	wp_reset_postdata();

@@ -784,10 +784,16 @@ span.token {
 	* 6.5 - Related Article
 */
 .related-article {
-	margin-bottom: 1.25rem;
-	margin-top: 4rem;
+	background-color: #f0f0f0;
+	border-radius: 0.25rem;
+	color: #36454f;
+	filter: drop-shadow(4px 4px 4px #0f0f0f);
+	font-size: 1.125rem;
+	margin: 2rem auto 0;
+	max-width: 800px;
+	padding: 2rem;
 
-	h2 {
+	h3 {
 		background-color: $color-02;
 		background-image: linear-gradient(45deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
 		border-radius: 0.25rem;
@@ -808,6 +814,14 @@ span.token {
 			list-style: decimal;
 			list-style-position: inside;
 			padding: .5rem 0;
+
+			a {
+				color: $color-03;
+		
+				&:hover {
+					text-decoration: .125rem underline;
+				}
+			}
 		}
 	}
 }
@@ -1169,6 +1183,10 @@ fieldset {
 		border-radius: 0;
 	}
 
+	.related-article {
+		border-radius: 0;
+	}
+
 	.contact-form {
 		padding-bottom: 2rem;
 
@@ -1213,10 +1231,6 @@ fieldset {
 		}
 	}
 
-	.related-article h2 {
-		font-size: 2.5rem;
-	}
-
 	.article {
 		font-size: 1rem;
 		padding: .875rem;
@@ -1227,6 +1241,20 @@ fieldset {
 			li {
 				line-height: 1.875rem;
 			}
+		}
+	}
+
+	.related-article {
+		padding: 2rem .875rem;
+
+		h3 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			padding: 1.5rem .75rem;
+		}
+
+		ul {
+			padding: .5rem;
 		}
 	}
 }
