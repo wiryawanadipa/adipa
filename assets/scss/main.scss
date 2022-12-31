@@ -150,13 +150,13 @@ body {
 	a {
 		align-items: center;
 		background-color: $color-05;
-		border-radius: .25rem;
+		border-radius: 5rem;
 		color: $color-09;
 		display: flex;
 		filter: drop-shadow(1px 1px 2px #0f0f0f);
-		height: 44px;
+		height: 48px;
 		justify-content: center;
-		width: 44px;
+		width: 48px;
 	
 		&:is(:focus, :hover) {
 			background-color: $color-03;
