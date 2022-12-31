@@ -1476,9 +1476,10 @@ fieldset {
 .social-page a {
 	align-items: center;
 	background-color: #36454f;
-	border-radius: 0.125rem;
+	border-radius: 5rem;
 	color: #d0d0d0;
 	display: flex;
+	filter: drop-shadow(1px 1px 2px #0f0f0f);
 	height: 32px;
 	justify-content: center;
 	width: 32px;
