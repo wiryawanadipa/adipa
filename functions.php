@@ -529,6 +529,47 @@ function wa_related_by_tags() {
 
 
 /**
+	* Get Page by Title
+*/
+function getPageByTitle($page_title, $output = OBJECT, $post_type = 'page') {
+	global $wpdb;
+	if ( is_array( $post_type ) ) {
+		$post_type						= esc_sql( $post_type );
+		$post_type_in_string	= "'" . implode( "','", $post_type ) . "'";
+		$sql									= $wpdb->prepare(
+			"
+			SELECT ID
+			FROM $wpdb->posts
+			WHERE post_title = %s
+			AND post_type IN ($post_type_in_string)
+		",
+			$page_title
+		);
+	} else {
+		$sql = $wpdb->prepare(
+			"
+			SELECT ID
+			FROM $wpdb->posts
+			WHERE post_title = %s
+			AND post_type = %s
+		",
+			$page_title,
+			$post_type
+		);
+	}
+
+	$page = $wpdb->get_var( $sql );
+
+	if ( $page ) {
+		return get_post( $page, $output );
+	}
+
+	return null;
+}
+
+
+
+/**
 	* Add <figure> tag on <img>
 */
 add_filter('the_content', 'figure_tag_img', 99);

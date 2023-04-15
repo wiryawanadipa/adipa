@@ -12,8 +12,8 @@
 			<div id="main-menu" aria-labelledby="menu-icon">
 				<ul>
 					<li><a <?php if (is_category('blog')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_category_link(get_cat_ID('Blog'))); ?>" title="Blog page" aria-label="Blog page">Blog</a></li>
-					<li><a <?php if (is_page('about')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title('About')->ID)); ?>" title="About page" aria-label="About page">About</a></li>
-					<li><a <?php if (is_page('contact')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(get_page_by_title('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page">Contact</a></li>
+					<li><a <?php if (is_page('about')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(getPageByTitle('About')->ID)); ?>" title="About page" aria-label="About page">About</a></li>
+					<li><a <?php if (is_page('contact')) { echo 'aria-current="page" '; } ?>href="<?php echo esc_url(get_page_link(getPageByTitle('Contact')->ID)); ?>" title="Contact page" aria-label="Contact page">Contact</a></li>
 				</ul>
 			</div>
 			<script>
