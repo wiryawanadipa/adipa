@@ -1404,12 +1404,7 @@ fieldset {
 	margin-bottom: 2rem;
 	text-align: center;
 }
-.not-found-info i {
-	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	color: #fc5c65;
+.not-found-info svg {
 	margin-bottom: 2rem;
 }
 .not-found-info p {

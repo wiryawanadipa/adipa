@@ -947,12 +947,7 @@ fieldset {
 	margin-bottom: 2rem;
 	text-align: center;
 
-	i {
-		background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: $color-02;
+	svg {
 		margin-bottom: 2rem;
 	}
 
