@@ -112,6 +112,18 @@ body {
 	margin: auto;
 	padding: 2rem;
 	max-width: $width-content;
+
+	h1 {
+		background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: $color-02;
+		filter: drop-shadow(1px 1px 2px #0f0f0f);
+		font-family: $font-audiowide;
+		font-size: clamp(2.5rem, 3.5vw, 4rem);
+		letter-spacing: .1rem;
+		text-align: center;
+	}
 }
 
 .hero-photo {
@@ -122,19 +134,6 @@ body {
 		box-shadow: 0 0 1px 0 $color-03 inset, 0 0 1px 0 $color-03;
 		filter: drop-shadow(2px 2px 2px #0f0f0f);
 	}
-}
-
-.hero h1 {
-	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-	background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-	color: $color-02;
-	filter: drop-shadow(1px 1px 2px #0f0f0f);
-	font-family: $font-audiowide;
-	font-size: clamp(2.5rem, 3.5vw, 4rem);
-	letter-spacing: .1rem;
-	text-align: center;
 }
 
 .hero-heading-text {

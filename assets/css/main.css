@@ -683,19 +683,8 @@ body {
 	padding: 2rem;
 	max-width: 800px;
 }
-
-.hero-photo {
-	display: flex;
-}
-.hero-photo svg {
-	border-radius: 50rem;
-	box-shadow: 0 0 1px 0 #eb3b5a inset, 0 0 1px 0 #eb3b5a;
-	filter: drop-shadow(2px 2px 2px #0f0f0f);
-}
-
 .hero h1 {
 	background: linear-gradient(180deg, #fc5c65, #e64f97, #b05dbf, #526cd0);
-	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: #fc5c65;
@@ -704,6 +693,15 @@ body {
 	font-size: clamp(2.5rem, 3.5vw, 4rem);
 	letter-spacing: 0.1rem;
 	text-align: center;
+}
+
+.hero-photo {
+	display: flex;
+}
+.hero-photo svg {
+	border-radius: 50rem;
+	box-shadow: 0 0 1px 0 #eb3b5a inset, 0 0 1px 0 #eb3b5a;
+	filter: drop-shadow(2px 2px 2px #0f0f0f);
 }
 
 .hero-heading-text {
