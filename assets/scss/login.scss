@@ -29,9 +29,6 @@ body {
 	&.login {
 		align-items: center;
 		background-color: $color-07;
-		background-image: repeating-linear-gradient(45deg, $color-07 25%, transparent 25%, transparent 75%, $color-07 75%, $color-07), repeating-linear-gradient(45deg, $color-07 25%, $color-06 25%, $color-06 75%, $color-07 75%, $color-07);
-		background-position: 0 0, 4px 4px;
-		background-size: 8px 8px;
 		display: flex;
 		font-family: $font-roboto;
 		justify-content: center;

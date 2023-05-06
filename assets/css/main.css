@@ -659,9 +659,6 @@ html {
 
 body {
 	background-color: #212b31;
-	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
 	color: #d0d0d0;
 }
 
@@ -1184,9 +1181,6 @@ body {
 }
 .article-content blockquote {
 	background-color: #212b31;
-	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
 	border-radius: 0.5rem;
 	color: #f0f0f0;
 	margin-bottom: 1.5rem;
@@ -1232,9 +1226,6 @@ body {
 }
 .article-content div.hcb_wrap :is(pre, code) {
 	background-color: #212b31;
-	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
 }
 .article-content div.hcb_wrap pre {
 	padding: 0.625rem;

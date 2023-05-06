@@ -87,9 +87,6 @@ html {
 
 body {
 	background-color: $color-07;
-	background-image: repeating-linear-gradient(45deg, $color-07 25%, transparent 25%, transparent 75%, $color-07 75%, $color-07), repeating-linear-gradient(45deg, $color-07 25%, $color-06 25%, $color-06 75%, $color-07 75%, $color-07);
-	background-position: 0 0, 2px 2px;
-	background-size: 4px 4px;
 	color: $color-09;
 }
 
@@ -685,10 +682,6 @@ body {
 
 	blockquote {
 		background-color: $color-07;
-		background-image: repeating-linear-gradient(45deg, $color-07 25%, transparent 25%, transparent 75%, $color-07 75%, $color-07),
-											repeating-linear-gradient(45deg, $color-07 25%, $color-06 25%, $color-06 75%, $color-07 75%, $color-07);
-		background-position: 0 0, 2px 2px;
-		background-size: 4px 4px;
 		border-radius: .5rem;
 		color: $color-08;
 		margin-bottom: 1.5rem;
@@ -743,9 +736,6 @@ body {
 
 	:is(pre, code) {
 		background-color: $color-07;
-		background-image: repeating-linear-gradient(45deg, $color-07 25%, transparent 25%, transparent 75%, $color-07 75%, $color-07), repeating-linear-gradient(45deg, $color-07 25%, $color-06 25%, $color-06 75%, $color-07 75%, $color-07);
-		background-position: 0 0, 2px 2px;
-		background-size: 4px 4px;
 	}
 
 	pre {

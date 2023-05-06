@@ -9,9 +9,6 @@
 body.login {
 	align-items: center;
 	background-color: #212b31;
-	background-image: repeating-linear-gradient(45deg, #212b31 25%, transparent 25%, transparent 75%, #212b31 75%, #212b31), repeating-linear-gradient(45deg, #212b31 25%, #2c3840 25%, #2c3840 75%, #212b31 75%, #212b31);
-	background-position: 0 0, 4px 4px;
-	background-size: 8px 8px;
 	display: flex;
 	font-family: "Roboto", sans-serif;
 	justify-content: center;
