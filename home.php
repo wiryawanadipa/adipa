@@ -28,7 +28,7 @@
 					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Design Gallery'))); ?>" title="Design Gallery page" aria-label="Design Gallery page">Design Gallery</a>
 					<a href="<?php echo esc_url(get_category_link(get_cat_ID('Project') ) ); ?>" title="Project" aria-label="Project label">Project</a>
 					<a href="<?php echo get_page_link_by_title('About'); ?>" title="About page" aria-label="About page">About</a>
-					<a href="<?php echo get_page_link_by_title('Title'); ?>" title="Contact page" aria-label="Contact page">Contact</a>
+					<a href="<?php echo get_page_link_by_title('Contact'); ?>" title="Contact page" aria-label="Contact page">Contact</a>
 				</div>
 				<div class="search-box" itemscope itemtype="https://schema.org/WebSite">
 					<meta itemprop="url" content="<?php bloginfo('url'); ?>"/>
