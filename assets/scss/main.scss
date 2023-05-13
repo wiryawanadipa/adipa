@@ -621,9 +621,7 @@ body {
 
 .article-content {
 	line-height: 2rem;
-}
-
-.article-content {
+	
 	:is(h2, h3, h4, h5, h6) {
 		font-family: $font-roboto-condensed;
 		font-size: 1.75rem;
