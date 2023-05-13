@@ -114,11 +114,33 @@ if (function_exists('add_theme_support')) {
 
 /**
 	* Custom shortcode for YouTube link
+	* To use this function put this in the post editor [youtube id=YOUTUBE_VIDEO_ID]
 */
-add_shortcode('youtube', 'youtube_link');
+add_shortcode('youtube', 'youtube_shortcode');
 
-function youtube_link($atts, $content = null) {
-	return '<div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/' . $content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>';
+function youtube_shortcode(array $atts = array(), $content = ''): string {
+	// Extract the shortcode attributes.
+	$atts = shortcode_atts(array(
+		'id' => '',
+		'width' => 560,
+		'height' => 315,
+	), $atts);
+
+	// Check if the video ID is set.
+	if (empty($atts['id'])) {
+		return '';
+	}
+
+	// Get the YouTube video embed HTML.
+	$embed_html = sprintf(
+		'<div class="youtube"><iframe width="%1$s" height="%2$s" src="https://www.youtube.com/embed/%3$s" frameborder="0" allowfullscreen></iframe></div>',
+		$atts['width'],
+		$atts['height'],
+		$atts['id']
+	);
+
+	// Return the YouTube video embed HTML.
+	return $embed_html;
 }
 
 
