@@ -553,7 +553,7 @@ function wa_related_by_tags() {
 /**
 	* Get Page Link based on Page Title
 */
-function get_page_link_by_title( $page_title ) {
+function get_page_link_by_title($page_title) {
 	global $wpdb;
 	$page_id = $wpdb->get_var(
 			$wpdb->prepare(
@@ -562,8 +562,8 @@ function get_page_link_by_title( $page_title ) {
 			)
 	);
 
-	if ( $page_id ) {
-			return get_permalink( $page_id );
+	if ($page_id) {
+			return get_permalink($page_id);
 	} else {
 			return null;
 	}
