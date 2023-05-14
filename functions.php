@@ -3,14 +3,15 @@
 	* Default Theme Settings
 */
 if (isset($_GET['activated']) && is_admin()) {
+	// Update some default options.
 	update_option('posts_per_page', 10);
 	update_option('thumbnail_size_w', 0);
 	update_option('thumbnail_size_h', 0);
 	update_option('thumbnail_crop', 1);
 	update_option('medium_size_w', 0);
 	update_option('medium_size_h', 0);
-	update_option('medium_large_size_w', '0');
-	update_option('medium_large_size_h', '0');
+	update_option('medium_large_size_w', 0);
+	update_option('medium_large_size_h', 0);
 	update_option('large_size_w', 0);
 	update_option('large_size_h', 0);
 	update_option('require_name_email', 1);
@@ -24,27 +25,16 @@ if (isset($_GET['activated']) && is_admin()) {
 	update_option('comment_previously_approved', 1);
 	update_option('show_avatars', 0);
 	update_option('permalink_structure', '/%category%/%postname%/');
+
+	// Create some new categories.
 	wp_insert_term('Blog', 'category', array('description' => 'List of all of my published articles, tutorial, study cases & etc.'));
 	wp_insert_term('Design Gallery', 'category', array('description' => 'List of all my design are in this page. Including mock up.'));
 	wp_insert_term('Project', 'category', array('description' => 'List of all my project in the past are in this page'));
+
+	// Delete some comments and posts.
 	wp_delete_comment(1);
 	wp_delete_post(1, true);
 	wp_delete_post(2, true);
-	$page_title = array('Contact', 'About');
-	foreach ($page_title as $new_page_title) {
-		$page_check = get_page_by_title($new_page_title);
-		$new_page = array(
-			'post_type'			=> 'page',
-			'post_title'		=> $new_page_title,
-			'post_content'	=> '',
-			'post_status'		=> 'publish',
-			'post_author'		=> 1,
-			'page_template'	=> 'page-templates/' . strtolower($new_page_title) . '.php'
-		);
-		if (!isset($page_check->ID)) {
-			$new_page_id = wp_insert_post($new_page);
-		}
-	}
 }
 
 
