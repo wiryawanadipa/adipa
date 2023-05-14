@@ -52,18 +52,13 @@ if (isset($_GET['activated']) && is_admin()) {
 /**
 	* Disable WordPress auto generating various image sizes
 */
-add_filter('intermediate_image_sizes_advanced', 'disable_media');
 add_filter('big_image_size_threshold', '__return_false');
+add_filter('intermediate_image_sizes_advanced', 'disable_auto_image_sizes');
 
-function disable_media($sizes) {
-	unset($sizes['thumbnail']);
-	unset($sizes['medium']);
-	unset($sizes['medium_large']);
-	unset($sizes['large']);
-	unset($sizes['1536x1536']);
-	unset($sizes['2048x2048']);
-	return $sizes;
-}
+function disable_auto_image_sizes($sizes) {
+	$keys = ['thumbnail', 'medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
+	return array_diff_key($sizes, array_flip($keys));
+};
 
 
 
