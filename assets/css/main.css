@@ -978,6 +978,7 @@ body {
 	margin-bottom: 1.5rem;
 }
 .postcard-box .postcard-image img {
+	height: auto;
 	margin: 0 auto;
 }
 .postcard-box .postcard-date {
