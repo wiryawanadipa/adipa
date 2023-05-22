@@ -11,7 +11,7 @@
 			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'bigthumb');
 			echo '<div class="postcard-image"><img width="' . $image_src[1] . '" height="' . $image_src[2] . '" src="' . $image_src[0] . '" alt="' . $image_title . '" /></div>';
 		}
-		echo '<div class="postcard-date">' . get_the_date('Y-m-d') . '</div>';
+		echo '<div class="postcard-date">' . get_the_date('Y-m-d H:i:s') . '</div>';
 		if (is_home()) {
 			echo '<h3>';
 		} else {
